@@ -27,8 +27,23 @@ pip install -r requirements.txt
 
 To migrate the first time your database:
 
+```sh
+python3 manage.py migrate api
 ```
-python manage.py migrate
+
+#### Tips
+
+For migrations, once edited models.py
+
+```sh
+python3 manage.py makemigrations api
+python3 manage.py migrate api
+```
+
+For administration, don't forget to create a super user:
+
+```sh
+python3 manage.py createsuperuser
 ```
 
 ### Run api serveur
