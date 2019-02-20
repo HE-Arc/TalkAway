@@ -1,4 +1,4 @@
-# DjangoChat
+# TalkAway
 
 ## Getting Started
 
