@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'api',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

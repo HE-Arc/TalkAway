@@ -31,6 +31,11 @@ To migrate the first time your database:
 python3 manage.py migrate api
 ```
 
+To seed the database:
+```
+python manage.py loaddata api/fixtures/seed.json
+```
+
 #### Tips
 
 For migrations, once edited models.py
