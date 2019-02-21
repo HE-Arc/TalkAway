@@ -122,7 +122,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 GRAPHENE = {
-    'SCHEMA': 'djangochat.schema.schema'
+    'SCHEMA': 'djangochat.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }
+
+# JWT Authentication
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]

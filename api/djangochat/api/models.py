@@ -14,7 +14,7 @@ class Server(models.Model):
     def __str__(self):
         return self.name
     
-class Chat(models.Model):
+class Channel(models.Model):
     name = models.CharField(max_length=200)
     direct_type = models.BooleanField()
     server = models.ForeignKey(
@@ -32,8 +32,8 @@ class Chat(models.Model):
 class Message(models.Model):
     text = models.TextField()
     date = models.DateTimeField()
-    chat = models.ForeignKey(
-        Chat, null=False, on_delete=models.CASCADE)
+    channel = models.ForeignKey(
+        Channel, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
         return "TODO Define"
