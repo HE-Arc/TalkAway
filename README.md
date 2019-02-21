@@ -51,11 +51,14 @@ For administration, don't forget to create a super user:
 python3 manage.py createsuperuser
 ```
 
-### Run api serveur
+### Run api server
 
 ```sh
 python3 ./api/djangochat/manage.py runserver 8080
 ```
+
+Admin account name: `admin` , password : `admin`
+Test users passwords: `qwertz`
 
 ## App
 
