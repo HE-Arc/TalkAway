@@ -46,6 +46,29 @@ class Query(object):
     def resolve_all_users(self, info, **kwargs):
         return User.objects.all()
 
-    def resolve_all_server(self, info, **kwargs):
+    def resolve_all_servers(self, info, **kwargs):
         # We can easily optimize query count in the resolve method
         return Server.objects.select_related('channel').all()
+
+
+class CreateServer(graphene.Mutation):
+    id = graphene.Int()
+    name = graphene.String()
+    user_adding_right = graphene.Boolean()
+
+    class Arguments:
+        name = graphene.String()
+        user_adding_right = graphene.String()
+
+    def mutate(self, info, name, user_adding_right):
+        server = Server(name=name, user_adding_right=user_adding_right)
+        server.save()
+
+        return CreateServer(
+            id=server.id,
+            name=server.name,
+            user_adding_right=server.user_adding_right,
+        )
+
+class Mutation(graphene.ObjectType):
+    create_link = CreateServer.Field()
