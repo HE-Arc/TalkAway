@@ -43,22 +43,24 @@ class Query(object):
     all_reactions = graphene.List(ReactionType)
     all_users = graphene.List(UserType)
 
+    def resolve_all_channels(self, info, **kwargs):
+        return Channel.objects.all()
+
     def resolve_all_users(self, info, **kwargs):
         return User.objects.all()
 
     def resolve_all_servers(self, info, **kwargs):
-        # We can easily optimize query count in the resolve method
-        return Server.objects.select_related('channel').all()
+        return Server.objects.all()
 
 
 class CreateServer(graphene.Mutation):
     id = graphene.Int()
     name = graphene.String()
-    user_adding_right = graphene.Boolean()
+    user_adding_right = graphene.Int()
 
     class Arguments:
         name = graphene.String()
-        user_adding_right = graphene.String()
+        user_adding_right = graphene.Int()
 
     def mutate(self, info, name, user_adding_right):
         server = Server(name=name, user_adding_right=user_adding_right)
@@ -71,4 +73,4 @@ class CreateServer(graphene.Mutation):
         )
 
 class Mutation(graphene.ObjectType):
-    create_link = CreateServer.Field()
+    create_server = CreateServer.Field()
