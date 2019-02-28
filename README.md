@@ -25,9 +25,16 @@ And to install the defined requirements:
 pip install -r requirements.txt
 ```
 
+Warning, if you want to upgrade all the dependencies:
+```sh
+pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U --user
+```
+The flag `--user` might not be necessary depending on your local configuration.
+
 To migrate the first time your database:
 
 ```sh
+python3 manage.py migrate auth
 python3 manage.py migrate api
 ```
 
@@ -113,7 +120,16 @@ Je vous recommande d'utiliser l'extension:
 - https://addons.mozilla.org/fr/firefox/addon/react-devtools/?src=search
 
 
+## GraphQL
 
+Example of request available:
+```js
+mutation {
+  tokenAuth(username: "username", password: "xxx") {
+    token
+  }
+}
+```
 
 # Sources
 - https://github.com/facebook/create-react-app
