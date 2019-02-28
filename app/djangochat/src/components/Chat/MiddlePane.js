@@ -6,18 +6,20 @@ class MiddlePane extends Component {
 
     constructor(props) {
         super(props);
-        this.setState({
+        this.state = {
             messageList: props.messageList
-        });
+        };
     }
 
     render() {
-
-        this.state.messageList.map(message => <MessageComponent messageObject={message}/>);
+        let messageList=Array(this.state.messageList).forEach(message => {
+            return <MessageComponent messageObject={message}/>
+        });
+        
 
         return(
             <div>
-                {this.state.messageList}
+                {messageList}
                 <ChatInputComponent/>
             </div>
         );
