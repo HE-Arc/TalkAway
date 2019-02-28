@@ -5,7 +5,7 @@ import './MainNavigation.css';
 
 const mainNavigation = props => (
     <header className="main-navigation">
-        <div classname="main-navigation__logo">
+        <div className="main-navigation__logo">
             <h1>TalkAway</h1>
         </div>
         <div className="main-navigation__item">
