@@ -9,7 +9,7 @@ class Login extends Component {
         name: '',
     }
 
-    constructor() {
+    constructor(props) {
         super(props);
     }
 
