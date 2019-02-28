@@ -10,7 +10,7 @@ class Login extends Component {
     }
 
     constructor() {
-
+        super(props);
     }
 
     render() {
