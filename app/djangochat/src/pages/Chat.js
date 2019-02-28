@@ -5,9 +5,9 @@ class ChatPage extends Component {
 
     constructor(props){
         super(props);
-        this.state.messageList={
-            messageList=JSON.parse("")
-        };
+        this.setState({
+            messageList:JSON.parse("{}")
+        });
 
     }
 
