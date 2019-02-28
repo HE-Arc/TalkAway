@@ -8,9 +8,9 @@ class LeftPane extends Component {
 
     render() {
         return (
-        <div>Hello :)</div>
+            <div>Hello :)</div>
         );
     }
 }
 
-export default Register; 
+export default LeftPane; 

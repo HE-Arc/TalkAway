@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import MiddlePane from '../components/Chat/MiddlePane';
+import MainPane from '../components/MainPane/MainPane';
 
 class ChatPage extends Component {
 
     constructor(props){
         super(props);
-        
-        this.state={
-            messageList:JSON.stringify("{}")
-        };
-
     }
 
     render() {
         return (<div>
-            <MiddlePane messageList={this.state.messageList}/>
+            <MainPane/>
         </div>);
     }
 }
