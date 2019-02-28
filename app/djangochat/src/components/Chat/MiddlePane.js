@@ -6,9 +6,9 @@ class MiddlePane extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
+        this.setState({
             messageList: props.messageList
-        };
+        });
     }
 
     render() {
