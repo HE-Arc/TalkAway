@@ -9,6 +9,7 @@ class MessageComponent extends Component {
         this.state = {
             messageObject: props.messageObject
         };
+        console.log(props)
     }
 
     render() {
