@@ -4,13 +4,15 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.1.27",
+    "bootstrap": "^4.3.1",
     "graphql": "^14.1.1",
     "react": "^16.8.1",
-    "react-apollo": "^2.4.1",
     "react-dom": "^16.8.1",
-    "react-redux": "^6.0.0",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.4"
+    "react-scripts": "2.1.4",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "redux-devtools": "^3.5.0"
+  }
 }
