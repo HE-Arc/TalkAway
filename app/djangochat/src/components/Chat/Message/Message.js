@@ -6,9 +6,9 @@ class MessageComponent extends Component {
     
     constructor(props) {
         super(props);
-        this.setState({
+        this.state = {
             messageObject: props.messageObject
-        });
+        };
     }
 
     render() {
