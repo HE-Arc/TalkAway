@@ -1,24 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
-const Login = props => {
+class Login extends React.Component {
+    state = {
+        username: '',
+        password: '',
+    }
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    useEffect(() => {
-        console.log("mounted")
-    }, []);
-
-    const submit = (event) => {
+    submit(event) {
         event.preventDefault();
 
-        if(username && password){
+        if(this.state.username && this.state.password){
             console.log("submit login")
             //TODO send login action
         }
-    };
+    }
 
-    let content = (
+    handleUsernameChange(e) {
+        this.setState({ 'username': e.target.value });
+    }
+    handlePasswordChange(e) {
+        this.setState({ 'password': e.target.value });
+    }
+
+    render(){
+        return (
         <React.Fragment>
             <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
 
@@ -30,8 +35,8 @@ const Login = props => {
                 placeholder="Username"
                 required
                 autoFocus
-                value={username}
-                onChange={value=>setUsername(value.target.value)}/>
+                value={this.state.username}
+                onChange={this.handleUsernameChange.bind(this)}/>
             <label htmlFor="inputPassword" className="sr-only">Password</label>
             <input
                 type="password"
@@ -39,8 +44,8 @@ const Login = props => {
                 className="form-control last"
                 placeholder="Password"
                 required
-                value={password}
-                onChange={value=>setPassword(value.target.value)}/>
+                value={this.state.password}
+                onChange={this.handlePasswordChange.bind(this)}/>
             {/* <label htmlFor="username">Username</label>
             <div className="form-control">
                 <input type="username" id="username"/>
@@ -49,10 +54,10 @@ const Login = props => {
             <div className="form-control">
                 <input type="password" id="password"/>
             </div> */}
-            <button className="btn btn-lg btn-primary btn-block" onClick={submit}>Log in</button>
+            <button className="btn btn-lg btn-primary btn-block" onClick={this.submit.bind(this)}>Log in</button>
         </React.Fragment>
-    );
-    return content;
+        );
+    }
 };
 
 export default Login;

@@ -1,66 +1,148 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Register = props => {
-    const [email,
-        setEmail] = useState('');
-    const [username,
-        setUsername] = useState('');
-    const [password,
-        setPassword] = useState('');
-    const [passwordCheck,
-        setPasswordCheck] = useState('');
+class Register extends React.Component {
+    state = {
+        email: '',
+        username: '',
+        password: '',
+        passwordCheck: '',
+        errors: {}
+    }
 
-    const submit = (event) => {
-        event.preventDefault();
-        
-        if (email && username && password && password === passwordCheck) {
-            console.log("TODO register");
+    handleUsernameChange(e) {
+        this.setState({username: e.target.value});
+    }
+    handleEmailChange(e) {
+        this.setState({email: e.target.value});
+    }
+    handlePasswordChange(e) {
+        this.setState({password: e.target.value});
+    }
+    handlePasswordCheckChange(e) {
+        this.setState({passwordCheck: e.target.value});
+    }
 
+    handleValidation() {
+        const {email, username, password, passwordCheck} = this.state;
+
+        let errors = {};
+        let formIsValid = true;
+
+        //Username
+        if (!username) {
+            formIsValid = false;
+            errors["username"] = "Cannot be empty";
         }
-    };
 
-    let content = (
-        <React.Fragment>
-            <h1 className="h3 mb-3 font-weight-normal">Register!</h1>
+        if (typeof username !== "undefined") {
+            if (!username.match(/^[a-zA-Z]+$/)) {
+                formIsValid = false;
+                errors["username"] = "Only letters";
+            }
+        }
 
-            <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input
-                type="email"
-                id="inputEmail"
-                className="form-control first"
-                placeholder="Email address"
-                required
-                autoFocus
-                value={email}
-                onChange={value => setEmail(value.target.value)}/>
-            <label htmlFor="inputUsername" className="sr-only">Username</label>
-            <input
-                type="text"
-                id="inputUsername"
-                className="form-control"
-                placeholder="Username"
-                required
-                value={username}
-                onChange={value => setUsername(value.target.value)}/>
-            <label htmlFor="inputPasswordCheck" className="sr-only">Password</label>
-            <input
-                type="password"
-                id="inputPasswordCheck"
-                className="form-control"
-                placeholder="Password"
-                required
-                value={password}
-                onChange={value => setPassword(value.target.value)}/>
-            <label htmlFor="inputPassword" className="sr-only">Password confirmation</label>
-            <input
-                type="password"
-                id="inputPassword"
-                className="form-control last"
-                placeholder="Password confirmation"
-                required
-                value={passwordCheck}
-                onChange={value => setPasswordCheck(value.target.value)}/>
-            {/* <div className="form-control">
+        //Email
+        if (!email) {
+            formIsValid = false;
+            errors["email"] = "Cannot be empty";
+        }
+
+        if (email !== "undefined") {
+            let lastAtPos = email.lastIndexOf('@');
+            let lastDotPos = email.lastIndexOf('.');
+
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && email.indexOf('@@') == -1 && lastDotPos > 2 && (email.length - lastDotPos) > 2)) {
+                formIsValid = false;
+                errors["email"] = "Email is not valid";
+            }
+        }
+
+        //Password
+        if (!password) {
+            formIsValid = false;
+            errors["password"] = "Cannot be empty";
+        }
+
+        if (typeof password !== "undefined") {
+            if (password.length < 8) {
+                formIsValid = false;
+                errors["password"] = "Min 8 characters";
+            }
+        }
+
+        if (password !== passwordCheck) {
+            formIsValid = false;
+            errors["passwordCheck"] = "Not identical to password";
+        }
+
+        this.setState({errors: errors});
+
+        return formIsValid;
+    }
+
+    submit(event) {
+        event.preventDefault();
+
+        if (this.handleValidation()) {
+            console.log("TODO register");
+        }
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <h1 className="h3 mb-3 font-weight-normal">Register!</h1>
+
+                <label htmlFor="inputEmail" className="sr-only">Email address</label>
+                <input
+                    type="email"
+                    id="inputEmail"
+                    className="form-control first"
+                    placeholder="Email address"
+                    required
+                    autoFocus
+                    value={this.state.email}
+                    onChange={this
+                    .handleEmailChange
+                    .bind(this)}/>
+                <span style={{color: "red"}}>{this.state.errors["email"]}</span>
+                <label htmlFor="inputUsername" className="sr-only">Username</label>
+                <input
+                    type="text"
+                    id="inputUsername"
+                    className="form-control"
+                    placeholder="Username"
+                    required
+                    value={this.state.username}
+                    onChange={this
+                    .handleUsernameChange
+                    .bind(this)}/>
+                <span style={{color: "red"}}>{this.state.errors["username"]}</span>
+                <label htmlFor="inputPassword" className="sr-only">Password</label>
+                <input
+                    type="password"
+                    id="inputPassword"
+                    className="form-control"
+                    placeholder="Password"
+                    required
+                    value={this.state.password}
+                    onChange={this
+                    .handlePasswordChange
+                    .bind(this)}/>
+                <span style={{color: "red"}}>{this.state.errors["password"]}</span>
+                <label htmlFor="inputPasswordCheck" className="sr-only">Password confirmation</label>
+                <input
+                    type="password"
+                    id="inputPasswordCheck"
+                    className="form-control last"
+                    placeholder="Password confirmation"
+                    required
+                    value={this.state.passwordCheck}
+                    onChange={this
+                    .handlePasswordCheckChange
+                    .bind(this)}/>
+                <span style={{color: "red"}}>{this.state.errors["passwordCheck"]}</span>
+                {/* <div className="form-control">
                 <label htmlFor="email">E-Mail</label>
                 <input type="email" id="email"/>
             </div>
@@ -77,10 +159,14 @@ const Register = props => {
                 <input type="password" id="password-confirm"/>
             </div> */}
 
-            <button className="btn btn-lg btn-primary btn-block" onClick={submit}>Register</button>
-        </React.Fragment>
-    );
-    return content;
-};
+                <button
+                    className="btn btn-lg btn-primary btn-block"
+                    onClick={this
+                    .submit
+                    .bind(this)}>Register</button>
+            </React.Fragment>
+        );
+    }
+}
 
 export default Register;
