@@ -14,9 +14,18 @@ class MainPane extends Component {
 
     render() {
         return(
-            <div>
-                <LeftPane/>
-                <MiddlePane messageList={this.state.messageList}/>
+            <div id="container" className="container">
+                <div className="row" style={{width: '100vw'}}>
+                    <div className="col-3 bg-dark text-white" style={{height: '100vh'}}>
+                        <LeftPane/>
+                    </div>
+                    <div className="col-6" style={{height: '100vh'}}>
+                        <MiddlePane messageList={this.state.messageList}/>
+                    </div>
+                    <div className="col-3 bg-dark" style={{height: '100vh'}}>
+                        
+                    </div>
+                </div>
             </div>
         );
     }

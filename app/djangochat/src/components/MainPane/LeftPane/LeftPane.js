@@ -8,7 +8,7 @@ class LeftPane extends Component {
 
     render() {
         return (
-            <div>Hello :)</div>
+            <div>LEFT PANE</div>
         );
     }
 }
