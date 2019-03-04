@@ -32,13 +32,13 @@ class MainPane extends Component {
         return(
             <div id="container" className="container">
                 <div className="row" style={{width: '100vw'}}>
-                    <div className="col-3 bg-dark text-white" style={{height: '100vh'}}>
+                    <div className="col-3 bg-dark text-white" style={{height: '100vh', padding: 0}}>
                         <LeftPane/>
                     </div>
-                    <div className="col-6" style={{height: '100vh'}}>
+                    <div className="col-6" style={{height: '100vh', padding: 0}}>
                         <MiddlePane messageList={this.state.messageList}/>
                     </div>
-                    <div className="col-3 bg-dark" style={{height: '100vh'}}>
+                    <div className="col-3 bg-dark" style={{height: '100vh', padding: 0}}>
                         
                     </div>
                 </div>
