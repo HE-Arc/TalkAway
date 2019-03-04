@@ -32,7 +32,11 @@ class LeftPane extends Component {
     }
     
     openSettings() {
-        alert(this.state.activity);
+        this.setState({
+            activity: "Connected",
+            time: Date.now()
+        })
+        alert("Settings needs to be implemented");
     }
 
     render() {
