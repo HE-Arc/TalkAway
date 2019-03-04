@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserSettings from './UserSettings/UserSettings';
 
 class LeftPane extends Component {
     
@@ -8,7 +9,9 @@ class LeftPane extends Component {
 
     render() {
         return (
-            <div>LEFT PANE</div>
+            <div className="bg-secondary" style={{height: '15vh'}}>
+                <UserSettings/>
+            </div>
         );
     }
 }
