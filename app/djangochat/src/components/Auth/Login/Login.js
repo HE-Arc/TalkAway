@@ -1,52 +1,78 @@
 import React from 'react';
 
 class Login extends React.Component {
-    state = {
-        username: '',
-        password: '',
+    constructor(props) {
+        super(props);
+        this.usernameRef = React.createRef();
+        this.passwordRef = React.createRef();
     }
 
-    submit(event) {
+    submit = (event) => {
         event.preventDefault();
 
-        if(this.state.username && this.state.password){
-            console.log("submit login")
-            //TODO send login action
+        const password = this.usernameRef.current.value;
+        const username = this.passwordRef.current.value;
+
+        if (username.trim().length === 0 || password.trim().length === 0) {
+            return; //TODO warning
         }
+
+        //TODO Send login
+        console.log(username, password);
+
+        const requestBody = {
+            query: `
+            mutation {
+                tokenAuth(username: "${username}", password: "${password}") {
+                    token
+                }
+              }
+            `
+        };
+
+        console.log(JSON.stringify(requestBody))
+
+        fetch('http://localhost:8080/graphql/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),  // JSON Object 
+            headers : { 
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log(res)
+            if(res.status !== 200 && res.status !== 201){
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            console.log(resData);
+        }).catch(err => {
+            console.log(err);
+        })
     }
 
-    handleUsernameChange(e) {
-        this.setState({ 'username': e.target.value });
-    }
-    handlePasswordChange(e) {
-        this.setState({ 'password': e.target.value });
-    }
-
-    render(){
+    render() {
         return (
-        <React.Fragment>
-            <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
+            <React.Fragment>
+                <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
 
-            <label htmlFor="inputUsername" className="sr-only">Username</label>
-            <input
-                type="text"
-                id="inputUsername"
-                className="form-control first"
-                placeholder="Username"
-                required
-                autoFocus
-                value={this.state.username}
-                onChange={this.handleUsernameChange.bind(this)}/>
-            <label htmlFor="inputPassword" className="sr-only">Password</label>
-            <input
-                type="password"
-                id="inputPassword"
-                className="form-control last"
-                placeholder="Password"
-                required
-                value={this.state.password}
-                onChange={this.handlePasswordChange.bind(this)}/>
-            {/* <label htmlFor="username">Username</label>
+                <label htmlFor="inputUsername" className="sr-only">Username</label>
+                <input
+                    type="text"
+                    id="inputUsername"
+                    className="form-control first"
+                    placeholder="Username"
+                    required
+                    autoFocus
+                    ref={this.usernameRef}/>
+                <label htmlFor="inputPassword" className="sr-only">Password</label>
+                <input
+                    type="password"
+                    id="inputPassword"
+                    className="form-control last"
+                    placeholder="Password"
+                    required
+                    ref={this.passwordRef}/> {/* <label htmlFor="username">Username</label>
             <div className="form-control">
                 <input type="username" id="username"/>
             </div>
@@ -54,8 +80,8 @@ class Login extends React.Component {
             <div className="form-control">
                 <input type="password" id="password"/>
             </div> */}
-            <button className="btn btn-lg btn-primary btn-block" onClick={this.submit.bind(this)}>Log in</button>
-        </React.Fragment>
+                <button className="btn btn-lg btn-primary btn-block" onClick={this.submit}>Log in</button>
+            </React.Fragment>
         );
     }
 };
