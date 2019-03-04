@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Login extends React.Component {
+
     constructor(props) {
         super(props);
         this.usernameRef = React.createRef();
@@ -17,7 +18,6 @@ class Login extends React.Component {
             return; //TODO warning
         }
 
-        //TODO Send login
         console.log(username, password);
 
         const requestBody = {
@@ -29,8 +29,6 @@ class Login extends React.Component {
               }
             `
         };
-
-        console.log(JSON.stringify(requestBody))
 
         fetch('http://localhost:8080/graphql/', {
             method: 'POST',
@@ -46,6 +44,7 @@ class Login extends React.Component {
             return res.json();
         }).then(resData => {
             console.log(resData);
+            //TODO get token
         }).catch(err => {
             console.log(err);
         })
