@@ -1,40 +1,33 @@
 import React from 'react';
 
 class Register extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.usernameRef = React.createRef();
+        this.emailRef = React.createRef();
+        this.passwordRef = React.createRef();
+        this.passwordCheckRef = React.createRef();
+    }
     state = {
-        email: '',
-        username: '',
-        password: '',
-        passwordCheck: '',
         errors: {}
     }
 
-    handleUsernameChange(e) {
-        this.setState({username: e.target.value});
-    }
-    handleEmailChange(e) {
-        this.setState({email: e.target.value});
-    }
-    handlePasswordChange(e) {
-        this.setState({password: e.target.value});
-    }
-    handlePasswordCheckChange(e) {
-        this.setState({passwordCheck: e.target.value});
-    }
-
     handleValidation() {
-        const {email, username, password, passwordCheck} = this.state;
+
+        const email = this.emailRef.current.value;
+        const username = this.usernameRef.current.value;
+        const password = this.passwordRef.current.value;
+        const passwordCheck = this.passwordCheckRef.current.value;
 
         let errors = {};
         let formIsValid = true;
 
         //Username
-        if (!username) {
+        if (username.trim().length === 0) {
             formIsValid = false;
             errors["username"] = "Cannot be empty";
-        }
-
-        if (typeof username !== "undefined") {
+        } else {
             if (!username.match(/^[a-zA-Z]+$/)) {
                 formIsValid = false;
                 errors["username"] = "Only letters";
@@ -42,12 +35,10 @@ class Register extends React.Component {
         }
 
         //Email
-        if (!email) {
+        if (email.trim().length === 0) {
             formIsValid = false;
             errors["email"] = "Cannot be empty";
-        }
-
-        if (email !== "undefined") {
+        } else {
             let lastAtPos = email.lastIndexOf('@');
             let lastDotPos = email.lastIndexOf('.');
 
@@ -58,7 +49,7 @@ class Register extends React.Component {
         }
 
         //Password
-        if (!password) {
+        if (password.trim().length === 0) {
             formIsValid = false;
             errors["password"] = "Cannot be empty";
         }
@@ -80,12 +71,78 @@ class Register extends React.Component {
         return formIsValid;
     }
 
-    submit(event) {
+    submit = (event) => {
         event.preventDefault();
 
-        if (this.handleValidation()) {
-            console.log("TODO register");
+        const username = this.usernameRef.current.value;
+        const email = this.emailRef.current.value;
+        const password = this.passwordRef.current.value;
+
+        if (!this.handleValidation()) {
+            return;
         }
+        console.log(username, password);
+
+        const requestBody = {
+            query: `
+            mutation {
+                createUser(username:"${username}", password:"${password}", email:"${email}") {
+                  user {
+                    username
+                  }
+                }
+              }
+            `
+        };
+
+        fetch('http://localhost:8080/graphql/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody), // JSON Object
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log(res)
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            console.log(resData);
+            //TODO get token
+            
+            const requestBody2 = {
+                query: `
+                mutation {
+                    tokenAuth(username: "${username}", password: "${password}") {
+                        token
+                    }
+                }
+                `
+            };
+
+            fetch('http://localhost:8080/graphql/', {
+                method: 'POST',
+                body: JSON.stringify(requestBody2),  // JSON Object 
+                headers : { 
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => {
+                console.log(res)
+                if(res.status !== 200 && res.status !== 201){
+                    throw new Error('Failed')
+                }
+                return res.json();
+            }).then(resData => {
+                console.log(resData);
+                console.log("Token received")
+                //TODO get token
+            }).catch(err => {
+                console.log(err);
+            })
+        }).catch(err => {
+            console.log(err);
+        })
     }
 
     render() {
@@ -101,11 +158,10 @@ class Register extends React.Component {
                     placeholder="Email address"
                     required
                     autoFocus
-                    value={this.state.email}
-                    onChange={this
-                    .handleEmailChange
-                    .bind(this)}/>
-                <span style={{color: "red"}}>{this.state.errors["email"]}</span>
+                    ref={this.emailRef}/>
+                <span style={{
+                    color: "red"
+                }}>{this.state.errors["email"]}</span>
                 <label htmlFor="inputUsername" className="sr-only">Username</label>
                 <input
                     type="text"
@@ -113,11 +169,10 @@ class Register extends React.Component {
                     className="form-control"
                     placeholder="Username"
                     required
-                    value={this.state.username}
-                    onChange={this
-                    .handleUsernameChange
-                    .bind(this)}/>
-                <span style={{color: "red"}}>{this.state.errors["username"]}</span>
+                    ref={this.usernameRef}/>
+                <span style={{
+                    color: "red"
+                }}>{this.state.errors["username"]}</span>
                 <label htmlFor="inputPassword" className="sr-only">Password</label>
                 <input
                     type="password"
@@ -125,11 +180,10 @@ class Register extends React.Component {
                     className="form-control"
                     placeholder="Password"
                     required
-                    value={this.state.password}
-                    onChange={this
-                    .handlePasswordChange
-                    .bind(this)}/>
-                <span style={{color: "red"}}>{this.state.errors["password"]}</span>
+                    ref={this.passwordRef}/>
+                <span style={{
+                    color: "red"
+                }}>{this.state.errors["password"]}</span>
                 <label htmlFor="inputPasswordCheck" className="sr-only">Password confirmation</label>
                 <input
                     type="password"
@@ -137,11 +191,11 @@ class Register extends React.Component {
                     className="form-control last"
                     placeholder="Password confirmation"
                     required
-                    value={this.state.passwordCheck}
-                    onChange={this
-                    .handlePasswordCheckChange
-                    .bind(this)}/>
-                <span style={{color: "red"}}>{this.state.errors["passwordCheck"]}</span>
+                    ref={this.passwordCheckRef}/>
+                <span style={{
+                    color: "red"
+                }}>{this.state.errors["passwordCheck"]}</span>
+
                 {/* <div className="form-control">
                 <label htmlFor="email">E-Mail</label>
                 <input type="email" id="email"/>
@@ -159,11 +213,7 @@ class Register extends React.Component {
                 <input type="password" id="password-confirm"/>
             </div> */}
 
-                <button
-                    className="btn btn-lg btn-primary btn-block"
-                    onClick={this
-                    .submit
-                    .bind(this)}>Register</button>
+                <button className="btn btn-lg btn-primary btn-block" onClick={this.submit}>Register</button>
             </React.Fragment>
         );
     }
