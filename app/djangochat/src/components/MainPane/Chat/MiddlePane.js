@@ -9,14 +9,17 @@ class MiddlePane extends Component {
         this.state = {
             messageList: props.messageList
         };
+        
     }
 
     render() {
-        let messageList=Array(this.state.messageList).forEach(message => {
-            return <MessageComponent messageObject={message}/>
+        //TODO: find a way to create multiple MessageComponent
+        let messageList=[];
+        Object.keys(this.state.messageList).forEach(key => {
+            messageList.push(React.createElement(MessageComponent,{'messageObject':this.state.messageList[key]}));
         });
         
-
+        console.log(messageList)
         return(
             <div>
                 {messageList}

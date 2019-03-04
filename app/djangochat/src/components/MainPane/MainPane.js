@@ -8,8 +8,24 @@ class MainPane extends Component {
         super(props);
         
         this.state={
-            messageList:JSON.stringify("{}")
-        };
+            messageList:JSON.parse(JSON.stringify(
+                {
+                    id_message1:{
+                    user: {
+                        username: "Jacques"
+                    },
+                    text: "test",
+                    date: "09:23"
+                    }, id_message2:{
+                    user: {
+                        username: "Jacques"
+                    },
+                    text: "test2",
+                    date: "10:23"
+                    }
+                }
+            )
+            )};
     }
 
     render() {
