@@ -7,18 +7,12 @@ class LeftPane extends Component {
         super(props);
         this.state = {
             activity: "Connected",
-            time: 0,
+            time: Date.now(),
             delay: 10000
         };
-        this.startTimer = this.startTimer.bind(this)
         this.checkActivity = this.checkActivity.bind(this);
         this.openSettings = this.openSettings.bind(this);
 
-        this.startTimer();
-    }
-
-    startTimer() {
-        this.state.time = Date.now();
         setInterval(this.checkActivity, 1000);
     }
 
