@@ -7,10 +7,43 @@ class ContactList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            serverDisplayed: true
+            serverDisplayed: true,
+            friends: null,
+            servers: null
         }
         this.displayServers = this.displayServers.bind(this);
         this.displayFriends = this.displayFriends.bind(this);
+        this.generateFakeServers = this.generateFakeServers.bind(this);
+
+        this.generateFakeServers();
+    }
+
+    generateFakeServers() {
+        var servers = []
+        servers.push({
+            name: "Server 1",
+            connected: 2,
+            max: 10}
+        )
+        servers.push({
+            name: "Server 2",
+            connected: 1,
+            max: 1}
+        )
+        servers.push({
+            name: "Server 3",
+            connected: 4,
+            max: 6}
+        )
+        servers.push({
+            name: "Server 4",
+            connected: 3,
+            max: 20}
+        )
+        /*this.setState({
+            servers: servers
+        })*/
+        this.state.servers = servers;
     }
 
     displayServers() {
@@ -40,6 +73,11 @@ class ContactList extends Component {
             styleFriends = blue;
         }
 
+        var res = [];
+        for (var i = 0; i < this.state.servers.length; i++) {
+            res.push(<div key={i} className="row"><Contact server={this.state.servers[i]}/></div>);
+        }
+
         // Return the component
         return (
             <div className="container" style={{paddingTop: '10px'}}>
@@ -54,21 +92,7 @@ class ContactList extends Component {
                         Friends
                     </div>
                 </div>
-                <div className="row">
-                    <Contact/>
-                </div>
-                <div className="row">
-                    <Contact/>
-                </div>
-                <div className="row">
-                    <Contact/>
-                </div>
-                <div className="row">
-                    <Contact/>
-                </div>
-                <div className="row">
-                    <Contact/>
-                </div>
+                {res}
             </div>
         );
     }

@@ -6,15 +6,15 @@ class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Contact name",
-            connected: 3,
-            max: 10
+            name: props.server.name,
+            connected: props.server.connected,
+            max: props.server.max
         }
     }
 
     render() {
         var connectivity = "";
-        if (this.state.connected != -1 && this.state.max != -1)
+        if (this.state.connected !== -1 && this.state.max !== -1)
         {
             connectivity = "(" + this.state.connected + "/" + this.state.max + ")";
         }

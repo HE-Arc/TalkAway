@@ -27,7 +27,7 @@ const userReducer = (state = {
                 ...state,
                 token: action.token
             };
-
+            break;
         default:
     }
     return state;
