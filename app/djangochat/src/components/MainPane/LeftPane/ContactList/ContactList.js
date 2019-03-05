@@ -62,13 +62,13 @@ class ContactList extends Component {
             styleServers = blue
             styleFriends = white;
             for (var i = 0; i < this.state.servers.length; i++) {
-                contactRows.push(<div key={i} className="row"><Contact contact={this.state.servers[i]}/></div>);
+                contactRows.push(<div key={i} className="row selectable"><Contact contact={this.state.servers[i]}/></div>);
             }
         } else {
             styleServers = white
             styleFriends = blue;
             for (var j = 0; j < this.state.friends.length; j++) {
-                contactRows.push(<div key={j + this.state.servers.length} className="row"><Contact contact={this.state.friends[j]}/></div>);
+                contactRows.push(<div key={j + this.state.servers.length} className="row selectable"><Contact contact={this.state.friends[j]}/></div>);
             }
         }
 
