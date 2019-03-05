@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Contact from './Contact/Contact';
 import './ContactList.css';
 
 class ContactList extends Component {
@@ -42,7 +43,7 @@ class ContactList extends Component {
         // Return the component
         return (
             <div className="container" style={{paddingTop: '10px'}}>
-                <div className="row">
+                <div className="row" style={{marginBottom: '20px'}}>
                     <div className="col-5 text-right" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
                         Servers
                     </div>
@@ -54,7 +55,19 @@ class ContactList extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    
+                    <Contact/>
+                </div>
+                <div className="row">
+                    <Contact/>
+                </div>
+                <div className="row">
+                    <Contact/>
+                </div>
+                <div className="row">
+                    <Contact/>
+                </div>
+                <div className="row">
+                    <Contact/>
                 </div>
             </div>
         );
