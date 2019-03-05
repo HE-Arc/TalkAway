@@ -6,9 +6,9 @@ class Contact extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: props.server.name,
-            connected: props.server.connected,
-            max: props.server.max
+            name: props.contact.name,
+            connected: props.contact.connected,
+            max: props.contact.max
         }
     }
 

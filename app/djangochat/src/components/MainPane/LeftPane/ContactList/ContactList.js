@@ -8,7 +8,17 @@ class ContactList extends Component {
         super(props);
         this.state = {
             serverDisplayed: true,
-            friends: [],
+            friends: [{
+                name: "Friend 1",
+                connected: -1,
+                max: -1},{
+                name: "Friend 2",
+                connected: -1,
+                max: -1},{
+                name: "Friend 3",
+                connected: -1,
+                max: -1}
+            ],
             servers: [{
                 name: "Server 1",
                 connected: 2,
@@ -44,21 +54,21 @@ class ContactList extends Component {
         // Update the displayed list
         var white = '#FFFFFF';
         var blue = '#0D6CB8';
+        var contactRows = [];
 
         var styleServers;
         var styleFriends;
         if (this.state.serverDisplayed) {
             styleServers = blue
             styleFriends = white;
+            for (var i = 0; i < this.state.servers.length; i++) {
+                contactRows.push(<div key={i} className="row"><Contact contact={this.state.servers[i]}/></div>);
+            }
         } else {
             styleServers = white
             styleFriends = blue;
-        }
-
-        var res = [];
-        if (this.state.servers !== null) {
-            for (var i = 0; i < this.state.servers.length; i++) {
-                res.push(<div key={i} className="row"><Contact server={this.state.servers[i]}/></div>);
+            for (var j = 0; j < this.state.friends.length; j++) {
+                contactRows.push(<div key={j + this.state.servers.length} className="row"><Contact contact={this.state.friends[j]}/></div>);
             }
         }
 
@@ -76,7 +86,7 @@ class ContactList extends Component {
                         Friends
                     </div>
                 </div>
-                {res}
+                {contactRows}
             </div>
         );
     }
