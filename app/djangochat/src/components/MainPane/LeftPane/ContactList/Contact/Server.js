@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Contact.css';
+import './Server.css';
 
-class Contact extends Component {
+class Server extends Component {
     
     constructor(props) {
         super(props);
@@ -20,15 +20,15 @@ class Contact extends Component {
         }
 
         return (
-            <div className="container" style={{margin: '5px'}}>
+            <div id="containerServer" className="container">
                 <div className="row">
                     <div className="col-3">
                         <img alt="" src={require('./images/profile.png')} width="50" height="50"/>
                     </div>
-                    <div className="col-6" style={{padding: 0, paddingTop: '10px', fontSize: '1.2em'}}>
+                    <div className="col-6 textServer">
                         {this.state.name}
                     </div>
-                    <div className="col-3" style={{padding: 0, paddingTop: '10px', fontSize: '1.2em'}}>
+                    <div className="col-3 textServer">
                         {connectivity}
                     </div>
                 </div>
@@ -37,4 +37,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact; 
+export default Server; 
