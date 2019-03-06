@@ -62,6 +62,7 @@ class Query(object):
     def resolve_all_users(self, info, **kwargs):
         return get_user_model().objects.all()
 
+    @login_required
     def resolve_all_messages_by_channel(self, info, channel_id, **kwargs):
         return Message.objects.filter(channel=Channel.objects.get(id=channel_id))
 
