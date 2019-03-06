@@ -63,8 +63,4 @@ class Login extends React.Component {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {auth: state.authReducer, server: state.serverReducer};
-};
-
-export default connect(mapStateToProps, {requestLogin})(Login);
+export default connect(null, {requestLogin})(Login);

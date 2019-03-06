@@ -163,6 +163,4 @@ class Register extends React.Component {
     }
 }
 
-export default connect((state) => {
-    return {};
-}, {requestRegister})(Register);
+export default connect(null, {requestRegister})(Register);
