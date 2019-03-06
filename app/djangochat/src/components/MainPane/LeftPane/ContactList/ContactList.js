@@ -76,13 +76,13 @@ class ContactList extends Component {
         return (
             <div className="container" style={{paddingTop: '10px'}}>
                 <div className="row" style={{marginBottom: '20px'}}>
-                    <div className="col-5 text-right" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
+                    <div className="col-5 text-right cursor" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
                         Servers
                     </div>
                     <div className="col-2 text-center" style={{padding: 0, fontSize: '2em'}}>
                         /
                     </div>
-                    <div className="col-5 text-left" onClick={this.displayFriends} style={{color: styleFriends, padding: 0, fontSize: '2em'}}>
+                    <div className="col-5 text-left cursor" onClick={this.displayFriends} style={{color: styleFriends, padding: 0, fontSize: '2em'}}>
                         Friends
                     </div>
                 </div>
