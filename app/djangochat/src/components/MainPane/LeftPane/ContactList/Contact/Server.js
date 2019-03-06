@@ -6,10 +6,20 @@ class Server extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            idServer: props.idServer,
             name: props.contact.name,
             connected: props.contact.connected,
-            max: props.contact.max
+            max: props.contact.max,
+            serverSelected: props.serverSelected
         }
+        this.select = this.select.bind(this);
+    }
+
+    select() {
+        this.setState({
+            selected: true
+        })
+        this.state.serverSelected(this.state.idServer);
     }
 
     render() {
@@ -20,7 +30,7 @@ class Server extends Component {
         }
 
         return (
-            <div id="containerServer" className="container">
+            <div id="containerServer" className="container" onClick={this.select}>
                 <div className="row">
                     <div className="col-3">
                         <img alt="" src={require('./images/profile.png')} width="50" height="50"/>

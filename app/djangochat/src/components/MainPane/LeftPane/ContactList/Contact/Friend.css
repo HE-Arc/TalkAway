@@ -7,3 +7,7 @@
 #containerClient {
     margin: 5px;
 }
+
+.selected {
+    background: green;
+}

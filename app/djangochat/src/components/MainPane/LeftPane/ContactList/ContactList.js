@@ -9,6 +9,8 @@ class ContactList extends Component {
         super(props);
         this.state = {
             serverDisplayed: true,
+            friendlock: 0,
+            serverlock: 0,
             friends: [{
                 name: "Friend 1",
                 connected: -1,
@@ -55,6 +57,8 @@ class ContactList extends Component {
         }
         this.displayServers = this.displayServers.bind(this);
         this.displayFriends = this.displayFriends.bind(this);
+        this.friendSelected = this.friendSelected.bind(this);
+        this.serverSelected = this.serverSelected.bind(this);
     }
 
     displayServers() {
@@ -69,6 +73,18 @@ class ContactList extends Component {
         })
     }
 
+    friendSelected(id) {
+        this.setState({
+            friendlock: id
+        })
+    }
+
+    serverSelected(id) {
+        this.setState({
+            serverlock: id
+        })
+    }
+
     render() {
         // Update the displayed list
         var white = '#FFFFFF';
@@ -78,23 +94,35 @@ class ContactList extends Component {
         var styleServers;
         var styleFriends;
         if (this.state.serverDisplayed) {
-            styleServers = blue
+            styleServers = blue;
             styleFriends = white;
             for (var i = 0; i < this.state.servers.length; i++) {
-                contactRows.push(<div key={i} className="row selectable"><Server contact={this.state.servers[i]}/></div>);
+                let classes = ["row"];
+                if (i === this.state.serverlock) {
+                    classes.push("selected");
+                } else {
+                    classes.push("selectable");
+                }
+                contactRows.push(<div key={i} className={classes.join(' ')}><Server contact={this.state.servers[i]} serverSelected={this.serverSelected} idServer={i}/></div>);
             }
         } else {
-            styleServers = white
+            styleServers = white;
             styleFriends = blue;
             for (var j = 0; j < this.state.friends.length; j++) {
-                contactRows.push(<div key={j + this.state.servers.length} className="row selectable"><Friend contact={this.state.friends[j]}/></div>);
+                let classes = ["row"];
+                if (j === this.state.friendlock) {
+                    classes.push("selected");
+                } else {
+                    classes.push("selectable");
+                }
+                contactRows.push(<div key={j + this.state.servers.length} className={classes.join(' ')}><Friend contact={this.state.friends[j]} friendSelected={this.friendSelected} idFriend={j}/></div>);
             }
         }
 
         // Return the component
         return (
             <div className="container" style={{paddingTop: '10px', height: '100%'}}>
-                <div className="row contactSelector" style={{marginBottom: '20px'}}>
+                <div className="row contactSelector unselectable" style={{marginBottom: '20px'}}>
                     <div className="col-5 text-right cursor" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
                         Servers
                     </div>
@@ -105,7 +133,7 @@ class ContactList extends Component {
                         Friends
                     </div>
                 </div>
-                <div className="container scrollable">
+                <div className="container scrollable unselectable">
                     {contactRows}
                 </div>
             </div>
