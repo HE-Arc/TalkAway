@@ -49,7 +49,9 @@ class Query(object):
     all_friends = graphene.List(FriendType)
     all_rights = graphene.List(RightType)
     all_reactions = graphene.List(ReactionType)
-    all_messages = graphene.List(MessageType)
+
+    all_messages_by_channel = graphene.List(
+        MessageType, channel_id=graphene.Int())
 
     def resolve_all_channels(self, info, **kwargs):
         return Channel.objects.all()
@@ -57,11 +59,11 @@ class Query(object):
     def resolve_all_servers(self, info, **kwargs):
         return Server.objects.all()
 
-    def resolve_all_messages(self, info, **kwargs):
-        return Message.objects.all()
-
     def resolve_all_users(self, info, **kwargs):
         return get_user_model().objects.all()
+
+    def resolve_all_messages_by_channel(self, info, channel_id, **kwargs):
+        return Message.objects.filter(channel=Channel.objects.get(id=channel_id))
 
 
 class CreateUser(graphene.Mutation):
@@ -127,8 +129,8 @@ class CreateMessage(graphene.Mutation):
         if authUser.id != user_id:
             raise Exception('You are not correctly authentified')
 
-        message = Message(text=text, channel=channel, user=get_user_model().objects.get(
-            id=user_id))
+        message = Message(text=text, channel=channel, user=get_user_model()
+                          .objects.get(id=user_id))
         message.save()
 
         return CreateMessage(
