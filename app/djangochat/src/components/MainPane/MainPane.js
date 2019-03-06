@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import LeftPane from './LeftPane/LeftPane';
 import MiddlePane from './Chat/MiddlePane';
+import './MainPane.css';
 
 class MainPane extends Component {
 
@@ -31,15 +32,15 @@ class MainPane extends Component {
 
     render() {
         return (
-            <div id="container" className="container-fluid">
-                <div className="row" style={{width: '100vw'}}>
-                    <div className="col-3 bg-dark text-white" style={{height: '100vh', padding: 0}}>
+            <div className="container-fluid">
+                <div className="row fullHeight">
+                    <div className="col-3 sidepane pane text-white">
                         <LeftPane/>
                     </div>
-                    <div className="col-6" style={{height: '100vh', padding: 0}}>
+                    <div className="col-6 pane">
                         <MiddlePane messageList={this.state.messageList}/>
                     </div>
-                    <div className="col-3 bg-dark" style={{height: '100vh', padding: 0}}>
+                    <div className="col-3 sidepane pane">
                         
                     </div>
                 </div>

@@ -7,18 +7,12 @@ class LeftPane extends Component {
         super(props);
         this.state = {
             activity: "Connected",
-            time: 0,
+            time: Date.now(),
             delay: 10000
         };
-        this.startTimer = this.startTimer.bind(this)
         this.checkActivity = this.checkActivity.bind(this);
         this.openSettings = this.openSettings.bind(this);
 
-        this.startTimer();
-    }
-
-    startTimer() {
-        this.state.time = Date.now();
         setInterval(this.checkActivity, 1000);
     }
 
@@ -54,16 +48,16 @@ class LeftPane extends Component {
         // Return the component
         return (
             <div className="container">
-                <div className="row" style={{height: '100%', textAlign: 'center'}}>
-                    <div className="col-3" style={{paddingTop: '20px', paddingRight: '0', paddingLeft: '30px'}}>
+                <div id="rowProfile" className="row">
+                    <div id="image" className="col-3">
                         <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
                         <img id="connection" alt="" src={connectionImg}/>
                     </div>
-                    <div className="col-6" style={{paddingTop: '35px', paddingLeft: '10px', fontSize: '1.5em', color: '#000000'}}>
+                    <div id="username" className="col-6">
                         Username
                     </div>
-                    <div className="col-3" style={{paddingTop: '35px', paddingLeft: '0'}}>
-                        <img alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
+                    <div id="settingsButton" className="col-3">
+                        <img className="cursor" alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,28 @@
+.row.selectable:hover {
+    background-color: gray;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.contactSelector {
+    max-height: 10%;
+}
+
+.scrollable {
+    max-height: 85%;
+    overflow: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 0.2em;
+}
+ 
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
