@@ -1,0 +1,12 @@
+.sidepane {
+    background: black;
+}
+
+.pane {
+    height: 100vh;
+    padding: 0;
+}
+
+.fullHeight {
+    height: 100vh;
+}

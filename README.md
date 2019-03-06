@@ -135,3 +135,4 @@ mutation {
 - https://github.com/facebook/create-react-app
 - https://docs.graphene-python.org/projects/django/en/latest/tutorial-plain/
 - https://pypi.org/project/django-cors-headers/
+- [Intégration de redux avec react](https://github.com/ohansemmanuel/fake-medium/commit/589c2e1fb429659ee20131ed1d7558b03c8bf3f9)

@@ -1,2 +1,2 @@
 /.ENV
-api/db.sqlite3
+djangochat/db.sqlite3

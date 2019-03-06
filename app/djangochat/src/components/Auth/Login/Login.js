@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
+import {requestLogin} from "../../../actions/AuthAction";
 
 class Login extends React.Component {
 
@@ -18,36 +21,11 @@ class Login extends React.Component {
             return; //TODO warning
         }
 
-        console.log(username, password);
-
-        const requestBody = {
-            query: `
-            mutation {
-                tokenAuth(username: "${username}", password: "${password}") {
-                    token
-                }
-              }
-            `
-        };
-
-        fetch('http://localhost:8080/graphql/', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),  // JSON Object 
-            headers : { 
-                'Content-Type': 'application/json'
-            }
-        }).then(res => {
-            console.log(res)
-            if(res.status !== 200 && res.status !== 201){
-                throw new Error('Failed')
-            }
-            return res.json();
-        }).then(resData => {
-            console.log(resData);
-            //TODO get token
-        }).catch(err => {
-            console.log(err);
-        })
+        console.log("Request login");
+        this
+            .props
+            .requestLogin(username, password);
+        //TODO use redux
     }
 
     render() {
@@ -85,4 +63,4 @@ class Login extends React.Component {
     }
 };
 
-export default Login;
+export default connect(null, {requestLogin})(Login);
