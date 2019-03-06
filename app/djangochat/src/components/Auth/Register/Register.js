@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
+import {requestRegister} from "../../../actions/AuthAction";
 
 class Register extends React.Component {
 
@@ -14,7 +17,6 @@ class Register extends React.Component {
     }
 
     handleValidation() {
-
         const email = this.emailRef.current.value;
         const username = this.usernameRef.current.value;
         const password = this.passwordRef.current.value;
@@ -74,75 +76,17 @@ class Register extends React.Component {
     submit = (event) => {
         event.preventDefault();
 
-        const username = this.usernameRef.current.value;
-        const email = this.emailRef.current.value;
-        const password = this.passwordRef.current.value;
-
         if (!this.handleValidation()) {
             return;
         }
-        console.log(username, password);
 
-        const requestBody = {
-            query: `
-            mutation {
-                createUser(username:"${username}", password:"${password}", email:"${email}") {
-                  user {
-                    username
-                  }
-                }
-              }
-            `
-        };
+        const email = this.emailRef.current.value;
+        const username = this.usernameRef.current.value;
+        const password = this.passwordRef.current.value;
 
-        fetch('http://localhost:8080/graphql/', {
-            method: 'POST',
-            body: JSON.stringify(requestBody), // JSON Object
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res => {
-            console.log(res)
-            if (res.status !== 200 && res.status !== 201) {
-                throw new Error('Failed')
-            }
-            return res.json();
-        }).then(resData => {
-            console.log(resData);
-            //TODO get token
-            
-            const requestBody2 = {
-                query: `
-                mutation {
-                    tokenAuth(username: "${username}", password: "${password}") {
-                        token
-                    }
-                }
-                `
-            };
-
-            fetch('http://localhost:8080/graphql/', {
-                method: 'POST',
-                body: JSON.stringify(requestBody2),  // JSON Object 
-                headers : { 
-                    'Content-Type': 'application/json'
-                }
-            }).then(res => {
-                console.log(res)
-                if(res.status !== 200 && res.status !== 201){
-                    throw new Error('Failed')
-                }
-                return res.json();
-            }).then(resData => {
-                console.log(resData);
-                console.log("Token received")
-                //TODO get token
-            }).catch(err => {
-                console.log(err);
-            })
-        }).catch(err => {
-            console.log(err);
-        })
+        this
+            .props
+            .requestRegister(email, username, password)
     }
 
     render() {
@@ -219,4 +163,6 @@ class Register extends React.Component {
     }
 }
 
-export default Register;
+export default connect((state) => {
+    return {};
+}, {requestRegister})(Register);
