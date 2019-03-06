@@ -31,7 +31,25 @@ class ContactList extends Component {
                 max: 6},{
                 name: "Server 4",
                 connected: 3,
-                max: 20}
+                max: 20},{
+                name: "Server 5",
+                connected: 1,
+                max: 2},{
+                name: "Server 6",
+                connected: 5,
+                max: 6},{
+                name: "Server 7",
+                connected: 5,
+                max: 8},{
+                name: "Server 8",
+                connected: 10,
+                max: 10},{
+                name: "Server 9",
+                connected: 4,
+                max: 11},{
+                name: "Server 10",
+                connected: 10,
+                max: 13}
             ]
         }
         this.displayServers = this.displayServers.bind(this);
@@ -74,8 +92,8 @@ class ContactList extends Component {
 
         // Return the component
         return (
-            <div className="container" style={{paddingTop: '10px'}}>
-                <div className="row" style={{marginBottom: '20px'}}>
+            <div className="container" style={{paddingTop: '10px', height: '100%'}}>
+                <div className="row contactSelector" style={{marginBottom: '20px'}}>
                     <div className="col-5 text-right cursor" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
                         Servers
                     </div>
@@ -86,7 +104,9 @@ class ContactList extends Component {
                         Friends
                     </div>
                 </div>
-                {contactRows}
+                <div className="container scrollable">
+                    {contactRows}
+                </div>
             </div>
         );
     }
