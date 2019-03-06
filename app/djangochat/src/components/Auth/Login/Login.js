@@ -4,6 +4,9 @@ import {connect} from 'react-redux';
 import {requestLogin} from "../../../actions/AuthAction";
 
 class Login extends React.Component {
+    state = {
+        errors : null
+    }
 
     constructor(props) {
         super(props);
@@ -18,7 +21,10 @@ class Login extends React.Component {
         const username = this.passwordRef.current.value;
 
         if (username.trim().length === 0 || password.trim().length === 0) {
-            return; //TODO warning
+            this.setState({
+                errors: 'Invalid credentials'
+            })
+            return;
         }
 
         console.log("Request login");
@@ -32,6 +38,9 @@ class Login extends React.Component {
             <React.Fragment>
                 <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
 
+                <span style={{
+                    color: "red"
+                }}>{this.state.errors}</span>
                 <label htmlFor="inputUsername" className="sr-only">Username</label>
                 <input
                     type="text"

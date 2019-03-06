@@ -1,10 +1,12 @@
 const friendReducer = (state = {
-    friends: [],
+    friends: []
 }, action) => {
     switch (action.type) {
         case "ADD_FRIEND":
             state = {
-                ...state
+                friends: state
+                    .friends
+                    .push(action.payload)
             }
             break;
         default:

@@ -6,7 +6,9 @@ const serverReducer = (state = {
     switch (action.type) {
         case "CREATE_SERVER":
             state = {
-                ...state
+                friends: state
+                    .friends
+                    .push(action.payload)
             }
             break;
         default:

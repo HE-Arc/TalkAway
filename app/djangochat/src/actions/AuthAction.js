@@ -17,7 +17,6 @@ export function requestLogin(username, password) {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
-            console.log(res)
             if (res.status !== 200 && res.status !== 201) {
                 throw new Error('Failed')
             }
@@ -27,7 +26,6 @@ export function requestLogin(username, password) {
                 token: resData.data.tokenAuth.token,
                 username: username,
             }
-            console.log(response);
             dispatch(login(response));
         }).catch(err => {
             console.log(err);
@@ -63,7 +61,6 @@ export function requestRegister(email, username, password) {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
-            console.log(res)
             if (res.status !== 200 && res.status !== 201) {
                 throw new Error('Failed')
             }
