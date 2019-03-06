@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserSettings from './UserSettings/UserSettings';
 import ContactList from './ContactList/ContactList';
+import './LeftPane.css';
 
 class LeftPane extends Component {
     
@@ -11,10 +12,10 @@ class LeftPane extends Component {
     render() {
         return (
             <div>
-                <div className="bg-secondary" style={{height: '15vh'}}>
+                <div id="settings" className="bg-secondary">
                     <UserSettings/>
                 </div>
-                <div style={{height: '85vh'}}>
+                <div id="list">
                     <ContactList/>
                 </div>
             </div>

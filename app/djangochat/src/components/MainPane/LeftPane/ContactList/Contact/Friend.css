@@ -1,0 +1,9 @@
+.textClient {
+    padding: 0;
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+
+#containerClient {
+    margin: 5px;
+}
