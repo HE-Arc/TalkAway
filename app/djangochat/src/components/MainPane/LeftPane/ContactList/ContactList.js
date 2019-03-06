@@ -94,7 +94,7 @@ class ContactList extends Component {
         // Return the component
         return (
             <div className="container" style={{paddingTop: '10px', height: '100%'}}>
-                <div className="row contactSelector" style={{marginBottom: '20px'}}>
+                <div className="row contactSelector unselectable" style={{marginBottom: '20px'}}>
                     <div className="col-5 text-right cursor" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
                         Servers
                     </div>
@@ -105,7 +105,7 @@ class ContactList extends Component {
                         Friends
                     </div>
                 </div>
-                <div className="container scrollable">
+                <div className="container scrollable unselectable">
                     {contactRows}
                 </div>
             </div>

@@ -47,7 +47,7 @@ class LeftPane extends Component {
 
         // Return the component
         return (
-            <div className="container">
+            <div className="container unselectable">
                 <div id="rowProfile" className="row">
                     <div id="image" className="col-3">
                         <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
