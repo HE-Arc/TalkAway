@@ -25,7 +25,6 @@ class Login extends React.Component {
         this
             .props
             .requestLogin(username, password);
-        //TODO use redux
     }
 
     render() {
