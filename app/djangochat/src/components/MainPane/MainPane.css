@@ -2,6 +2,10 @@
     background: black;
 }
 
+.middlepane {
+    background: lightgray;
+}
+
 .pane {
     height: 100vh;
     padding: 0;

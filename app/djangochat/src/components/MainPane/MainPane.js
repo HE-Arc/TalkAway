@@ -14,17 +14,24 @@ class MainPane extends Component {
             messageList: JSON.parse(JSON.stringify({
                 id_message1: {
                     user: {
-                        username: "Jacques"
+                        username: "Etienne"
                     },
-                    text: "test",
+                    text: "Salut",
                     date: "09:23"
                 },
                 id_message2: {
                     user: {
-                        username: "Jacques"
+                        username: "Bastien"
                     },
-                    text: "test2",
-                    date: "10:23"
+                    text: "Bonjour",
+                    date: "09:24"
+                },
+                id_message3: {
+                    user: {
+                        username: "Sergy"
+                    },
+                    text: "Coucou",
+                    date: "09:26"
                 }
             }))
         };
@@ -37,7 +44,7 @@ class MainPane extends Component {
                     <div className="col-3 sidepane pane text-white">
                         <LeftPane/>
                     </div>
-                    <div className="col-6 pane">
+                    <div className="col-6 middlepane pane">
                         <MiddlePane messageList={this.state.messageList}/>
                     </div>
                     <div className="col-3 sidepane pane">
