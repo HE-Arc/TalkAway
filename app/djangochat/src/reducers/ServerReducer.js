@@ -14,6 +14,7 @@ const serverReducer = (state = {
                 ...state
             }
             break;
+        default:
     }
     return state;
 }

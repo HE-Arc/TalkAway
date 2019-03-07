@@ -1,7 +1,11 @@
 .row.selectable:hover {
+    background-color: rgba(40, 40, 40, 200);
+    cursor: pointer;
+}
+
+.row.selected {
     background-color: gray;
     cursor: pointer;
-    border-radius: 30px;
 }
 
 .cursor {

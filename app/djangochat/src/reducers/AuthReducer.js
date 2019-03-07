@@ -17,6 +17,7 @@ const authReducer = (state = {
                 email: ''
             }
             break;
+        default:
     }
     return state;
 }
