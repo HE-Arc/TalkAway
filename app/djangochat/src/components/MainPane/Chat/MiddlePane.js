@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import MessageComponent from './Message/Message';
 import ChatInputComponent from './ChatInput/ChatInput';
+import "./MiddlePane.css";
 
 class MiddlePane extends Component {
 
@@ -27,8 +28,12 @@ class MiddlePane extends Component {
 
         return (
             <div>
-                {messageList}
-                <ChatInputComponent/>
+                <div>
+                    {messageList}
+                </div>
+                <div id="inputText">
+                    <ChatInputComponent/>
+                </div>
             </div>
         );
     }

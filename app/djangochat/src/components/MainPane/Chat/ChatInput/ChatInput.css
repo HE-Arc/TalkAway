@@ -1,0 +1,10 @@
+#inputMessage {
+    height: 35px;
+    width: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    font-size: 1em;
+    outline: none;
+    resize: none;
+    bottom: 0;
+}

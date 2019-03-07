@@ -1,6 +1,7 @@
 import React, {
     Component
 } from 'react';
+import "./ChatInput.css"
 
 class ChatInputComponent extends Component {
 
@@ -11,7 +12,7 @@ class ChatInputComponent extends Component {
     render() {
         return (
             <div>
-                <input id="inputMessage" type="text"/><button id="sendMessage">Send</button>
+                <textarea id="inputMessage" spellCheck="false"></textarea>
             </div>
         );
     }
