@@ -65,7 +65,7 @@ python3 ./api/djangochat/manage.py runserver 8080
 ```
 
 Admin account name: `admin` , password : `admin`
-Test users passwords: `qwertz`
+Test users passwords: `qwertzui`
 
 ## App
 
