@@ -40,6 +40,27 @@ set :repo_url, "git@github.com:HE-Arc/TalkAway.git"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
+
+
+after 'deploy:updating', 'python:create_venv'
+
+namespace :python do
+
+    def venv_path
+        File.join(shared_path, 'env')
+    end
+
+    desc 'Create venv'
+    task :create_venv do
+        on roles([:app, :web]) do |h|
+	    execute "python3.6 -m venv #{venv_path}"
+        execute "source #{venv_path}/bin/activate"
+	    execute "#{venv_path}/bin/pip install -r #{release_path}/api/requirements.txt"
+        end
+    end
+end
+
+
 task :restart_sidekiq do
     on roles(:worker) do
       execute :service, "sidekiq restart"
@@ -55,24 +76,5 @@ namespace :uwsgi do
         on roles(:web) do |h|
 	    execute :sudo, 'sv reload uwsgi'
 	    end
-    end
-end
-
-
-after 'deploy:updating', 'python:create_venv'
-
-namespace :python do
-
-    def venv_path
-        File.join(shared_path, 'env')
-    end
-
-    desc 'Create venv'
-    task :create_venv do
-        on roles([:app, :web]) do |h|
-	    execute "python3.6 -m venv #{venv_path}"
-            execute "source #{venv_path}/bin/activate"
-	    execute "#{venv_path}/bin/pip install –r #{release_path}/api/requirements.txt"
-        end
     end
 end
