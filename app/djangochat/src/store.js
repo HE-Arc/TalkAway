@@ -12,9 +12,9 @@ const logger = createLogger({
 
 export default createStore(
     combineReducers({
-        authReducer,
-        serverReducer,
-        channelReducer
+        auth: authReducer,
+        server: serverReducer,
+        channel: channelReducer
     }),
     {},
     applyMiddleware(logger, thunk)

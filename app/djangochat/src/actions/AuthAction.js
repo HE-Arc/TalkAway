@@ -1,3 +1,11 @@
+export function logout() {
+    return dispatch => {
+        dispatch(
+            _logout()
+        );
+    }
+}
+
 export function requestLogin(username, password) {
     return dispatch => {
         const requestBody = {
@@ -12,7 +20,7 @@ export function requestLogin(username, password) {
 
         return fetch('http://localhost:8080/graphql/', {
             method: 'POST',
-            body: JSON.stringify(requestBody), // JSON Object
+            body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -26,20 +34,14 @@ export function requestLogin(username, password) {
             const response = {
                 token: resData.data.tokenAuth.token,
                 username: username,
+                isLogged: true
             }
             console.log(response);
-            dispatch(login(response));
+            dispatch(_login(response));
         }).catch(err => {
             console.log(err);
         });
     }
-}
-
-function login(data) {
-    return {
-        type: 'LOGIN',
-        payload: data
-    };
 }
 
 export function requestRegister(email, username, password) {
@@ -74,4 +76,18 @@ export function requestRegister(email, username, password) {
             console.log(err);
         })
     }
+}
+
+function _logout() {
+    return {
+        type: 'LOGOUT',
+        payload: null
+    }
+}
+
+function _login(data) {
+    return {
+        type: 'LOGIN',
+        payload: data
+    };
 }

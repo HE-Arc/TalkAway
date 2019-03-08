@@ -60,7 +60,6 @@ namespace :python do
     end
 end
 
-
 task :restart_sidekiq do
     on roles(:worker) do
       execute :service, "sidekiq restart"

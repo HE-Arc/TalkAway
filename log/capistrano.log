@@ -1370,3 +1370,75 @@ Requirement already satisfied: Cython==0.29.6 in /var/www/TalkAway/shared/env/li
   INFO [53eff8cb] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155918 by sergiy" >> /var/www/TalkAway/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
  DEBUG [53eff8cb] Command: cd /var/www/TalkAway/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155918 by sergiy" >> /var/www/TalkAway/revisions.log
   INFO [00e61029] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:14:53 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cc14e73f] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [cc14e73f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9c6a38ab] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [62fa2750] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62fa2750] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [846634a7] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [851cb0e7] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [851cb0e7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [151432af] 	git@github.com: Permission denied (publickey).
+ DEBUG [151432af] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:15:27 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a9b22be3] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a9b22be3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [43e1a1fb] Finished in 0.280 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [7b3e9334] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7b3e9334] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [e88e4815] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [f56d84fe] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f56d84fe] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [79d481a5] 	git@github.com: Permission denied (publickey).
+ DEBUG [79d481a5] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:16:06 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2d01bd23] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2d01bd23] Command: /usr/bin/env mkdir -p /tmp
+  INFO [62cb57b2] Finished in 0.261 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [1a8bd0e1] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1a8bd0e1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [bf557cc5] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [d9606f44] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d9606f44] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [8624f32b] 	git@github.com: Permission denied (publickey).
+ DEBUG [8624f32b] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 18:46:11 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bc13809c] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bc13809c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9ec4e450] Finished in 0.272 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [a982a084] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a982a084] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [45b9223e] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [ed04bce5] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ed04bce5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [eb18e089] 	git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
