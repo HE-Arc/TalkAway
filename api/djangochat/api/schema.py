@@ -82,7 +82,8 @@ class CreateUser(graphene.Mutation):
         )
         user.set_password(password)
         user.save()
-
+        # TODO Check if username already exist
+        # if so throw an exception
         return CreateUser(
             user=user,
         )

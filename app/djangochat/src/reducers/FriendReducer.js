@@ -1,10 +1,8 @@
-const serverReducer = (state = {
-    id: null,
-    name: '',
-    channelsId: []
+const friendReducer = (state = {
+    friends: []
 }, action) => {
     switch (action.type) {
-        case "CREATE_SERVER":
+        case "ADD_FRIEND":
             state = {
                 friends: state
                     .friends
@@ -16,4 +14,4 @@ const serverReducer = (state = {
     return state;
 }
 
-export default serverReducer;
+export default friendReducer;
