@@ -14,8 +14,8 @@ class Login extends React.Component {
     submit = (event) => {
         event.preventDefault();
 
-        const password = this.usernameRef.current.value;
-        const username = this.passwordRef.current.value;
+        const username = this.usernameRef.current.value;
+        const password = this.passwordRef.current.value;
 
         if (username.trim().length === 0 || password.trim().length === 0) {
             return; //TODO warning
