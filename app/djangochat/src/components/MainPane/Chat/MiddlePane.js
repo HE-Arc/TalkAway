@@ -31,6 +31,7 @@ class MiddlePane extends Component {
                 <div>
                     {messageList}
                 </div>
+                <hr/>
                 <div id="inputText">
                     <ChatInputComponent/>
                 </div>

@@ -11,3 +11,13 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+
+#inputMessage::-webkit-scrollbar {
+    width: 0.4em;
+}
+ 
+#inputMessage::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
