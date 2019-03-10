@@ -1,7 +1,5 @@
 const serverReducer = (state = {
-    id: null,
-    name: '',
-    channelsId: []
+    servers: []
 }, action) => {
     switch (action.type) {
         case "CREATE_SERVER":
@@ -9,6 +7,11 @@ const serverReducer = (state = {
                 friends: state
                     .friends
                     .push(action.payload)
+            }
+            break;
+        case "LIST_SERVER":
+            state = {
+                servers: action.payload
             }
             break;
         default:
