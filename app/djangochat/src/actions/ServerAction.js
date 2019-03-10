@@ -13,9 +13,10 @@ function _updateServerList(data) {
     }
 }
 
-export function requestServer() {
+export function requestServerList() {
     return dispatch => {
         const requestBody = {
+            //TODO: Update query
             query: `
             query {
                 allServers{
@@ -41,6 +42,7 @@ export function requestServer() {
             }
             return res.json();
         }).then(resData => {
+            //TODO: update parse taka after updating query
             const response = resData.data.allServers;
             dispatch(_updateServerList(response));
         }).catch(err => {

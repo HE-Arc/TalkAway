@@ -9,6 +9,11 @@ const friendReducer = (state = {
                     .push(action.payload)
             }
             break;
+        case "LIST_FRIEND":
+            state = {
+                friends: action.payload
+            }
+            break;
         default:
     }
     return state;
