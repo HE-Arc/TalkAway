@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'api',
     'corsheaders',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,17 @@ AUTHENTICATION_BACKENDS = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_REPLACE_HTTPS_REFERER = True
+
+ASGI_APPLICATION = "djangochat.routing.application"
+
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:8080')],
+        },
+        "ROUTING": "djangochat.routing.channel_routing",
+    },
+}
+
