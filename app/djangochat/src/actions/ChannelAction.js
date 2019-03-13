@@ -9,14 +9,13 @@ function _updateChannelList(data) {
 export function requestChannelList(serverId) {
     return dispatch => {
         const requestBody = {
-            //TODO: Update query
             query: `
-            query {
-                allChannels{
-                    name
-                    id
+            query{
+                serverChannels(serverId:${serverId}){
+                  id
+                  name
                 }
-            }
+              }
             `
         };
 
@@ -32,10 +31,9 @@ export function requestChannelList(serverId) {
             }
             return res.json();
         }).then(resData => {
-            //TODO: update parse data after updating query
             const response = {
                 serverId: serverId,
-                channels: resData.data.allServers
+                channels: resData.data.serverChannels
             };
             dispatch(_updateChannelList(response));
         }).catch(err => {

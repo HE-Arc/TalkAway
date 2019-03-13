@@ -16,17 +16,16 @@ function _updateServerList(data) {
 export function requestServerList() {
     return dispatch => {
         const requestBody = {
-            //TODO: Update query
             query: `
-            query {
-                allServers{
-                    name
-                    id
-                    channelSet{
-                        id
-                    }
+            query{
+                myServers{
+                  name
+                  id
+                  channelSet{
+                      id
+                  }
                 }
-            }
+              }
             `
         };
 
@@ -42,8 +41,7 @@ export function requestServerList() {
             }
             return res.json();
         }).then(resData => {
-            //TODO: update parse data after updating query
-            const response = resData.data.allServers;
+            const response = resData.data.myServers;
             dispatch(_updateServerList(response));
         }).catch(err => {
             console.log(err);

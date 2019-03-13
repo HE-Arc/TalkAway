@@ -3,13 +3,13 @@ const serverReducer = (state = {
 }, action) => {
     switch (action.type) {
         case "CREATE_SERVER":
+            //TODO
             state = {
-                friends: state
-                    .friends
-                    .push(action.payload)
+                ...state,
             }
             break;
         case "LIST_SERVER":
+        console.log(action.payload)
             state = {
                 servers: action.payload
             }

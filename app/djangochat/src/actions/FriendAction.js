@@ -1,14 +1,13 @@
 export function requestFriendList() {
     return dispatch => {
         const requestBody = {
-            //TODO: Update query
             query: `
             query{
-                allUsers{
+                myFriends{
                     id
                     username
                 }
-            }
+              }
             `
         };
 
@@ -24,8 +23,7 @@ export function requestFriendList() {
             }
             return res.json();
         }).then(resData => {
-            //TODO: update parse taka after updating query
-            const response = resData.data.allUsers;
+            const response = resData.data.myFriends;
             dispatch(_updateFriendList(response));
         }).catch(err => {
             console.log(err);
