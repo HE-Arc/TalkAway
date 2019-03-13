@@ -5,11 +5,11 @@ const channelReducer = (state = {
         case "SEND_MESSAGE":
             //state = state + action.value;
             break;
-        default:
         case "LIST_CHANNEL":
-            state.channels[action.payload.serverId] = [action.payload.channels]
+            state.channels[action.payload.serverId] = action.payload.channels
             break;
-    }
+        default:
+        }
     return state;
 };
 
