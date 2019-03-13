@@ -16,7 +16,7 @@ export function requestFriendList() {
             body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': getState().auth.token
+                'Authorization': 'JWT '+getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
