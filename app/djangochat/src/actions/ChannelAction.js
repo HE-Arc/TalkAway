@@ -7,7 +7,7 @@ function _updateChannelList(data) {
 }
 
 export function requestChannelList(serverId) {
-    return dispatch => {
+    return (dispatch, getState) => {
         const requestBody = {
             query: `
             query{
@@ -23,7 +23,8 @@ export function requestChannelList(serverId) {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -31,10 +32,13 @@ export function requestChannelList(serverId) {
             }
             return res.json();
         }).then(resData => {
-            const response = {
+            let response = {
                 serverId: serverId,
                 channels: resData.data.serverChannels
             };
+            if(response.channels == null){
+                response.channels = [];
+            }
             dispatch(_updateChannelList(response));
         }).catch(err => {
             console.log(err);

@@ -1,5 +1,5 @@
 export function requestFriendList() {
-    return dispatch => {
+    return (dispatch, getState) => {
         const requestBody = {
             query: `
             query{
@@ -15,7 +15,8 @@ export function requestFriendList() {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -23,7 +24,10 @@ export function requestFriendList() {
             }
             return res.json();
         }).then(resData => {
-            const response = resData.data.myFriends;
+            let response = resData.data.myFriends;
+            if(response == null){
+                response = []
+            }
             dispatch(_updateFriendList(response));
         }).catch(err => {
             console.log(err);

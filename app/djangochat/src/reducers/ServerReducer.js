@@ -9,7 +9,6 @@ const serverReducer = (state = {
             }
             break;
         case "LIST_SERVER":
-        console.log(action.payload)
             state = {
                 servers: action.payload
             }

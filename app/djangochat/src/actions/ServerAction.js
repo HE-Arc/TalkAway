@@ -14,7 +14,7 @@ function _updateServerList(data) {
 }
 
 export function requestServerList() {
-    return dispatch => {
+    return (dispatch, getState) => {
         const requestBody = {
             query: `
             query{
@@ -33,7 +33,8 @@ export function requestServerList() {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -41,7 +42,10 @@ export function requestServerList() {
             }
             return res.json();
         }).then(resData => {
-            const response = resData.data.myServers;
+            let response = resData.data.myServers;
+            if(response == null){
+                response = [];
+            }
             dispatch(_updateServerList(response));
         }).catch(err => {
             console.log(err);
