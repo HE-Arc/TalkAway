@@ -146,3 +146,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_REPLACE_HTTPS_REFERER = True
 
 ASGI_APPLICATION = 'djangochat.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 8001)],
+        },
+    },
+}
