@@ -42,7 +42,7 @@ export function requestServerList() {
             }
             return res.json();
         }).then(resData => {
-            //TODO: update parse taka after updating query
+            //TODO: update parse data after updating query
             const response = resData.data.allServers;
             dispatch(_updateServerList(response));
         }).catch(err => {
@@ -50,5 +50,3 @@ export function requestServerList() {
         });
     }
 }
-
-
