@@ -1,0 +1,22 @@
+#rowProfile {
+    height: 100%;
+    text-align: center;
+}
+
+#image {
+    padding-top: 20px;
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+#servername {
+    padding-top: 35px;
+    padding-left: 10px;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+.cursor {
+    cursor: pointer
+}
+
