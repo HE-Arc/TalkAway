@@ -1,0 +1,15 @@
+#serverContainer {
+    height: 100%;
+}
+
+#serverButtons {
+    height: 100px;
+}
+
+#serverChannels {
+    height: calc(100% - 300px);
+}
+
+#serverUsers {
+    height: 200px;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './UserSettings.css';
 
-class LeftPane extends Component {
+class UserSettings extends Component {
     
     constructor(props) {
         super(props);
@@ -65,4 +65,4 @@ class LeftPane extends Component {
     }
 }
 
-export default LeftPane; 
+export default UserSettings; 
