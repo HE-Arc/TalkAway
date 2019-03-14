@@ -75,8 +75,7 @@ class MiddlePane extends Component {
             
         
         this.chatSocket.onmessage = function(e) {
-            var message = JSON.parse(e.data);
-            console.log(message)
+            var message = JSON.parse(e.data).message;
             let keyCount=this.state.messageComponentList.length;
             this.state.messageComponentList.push(React.createElement(MessageComponent,{
                 'messageObject': message,
