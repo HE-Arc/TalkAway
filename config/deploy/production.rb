@@ -74,14 +74,13 @@ namespace :reactjs do
  end
 end
 
-after 'reactjs:download', 'redix:start'
+after 'reactjs:download', 'redis:start'
 
-namespace :redix do
- desc "Install dependencies and reload reactjs"
+namespace :redis do
+ desc "Start redis server"
  task :start do
   on roles(:web) do |h|
-   execute "cd /etc/init.d/"
-   execute :sudo, "redis-server start"
+   execute :sudo, "/etc/init.d/redis-server start"
   end
  end
 end
