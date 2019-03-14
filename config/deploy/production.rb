@@ -61,3 +61,15 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+after 'deploy:updating', 'reactjs:download'
+
+namespace :nuxtjs do
+ desc "Install dependencies and reload reactjs"
+ task :download do
+  on roles(:web) do |h|
+   execute "cd #{release_path}/app/djangochat/ && npm install"
+   execute "cd #{release_path}/app/djangochat/ && npm run build"
+  end
+ end
+end
