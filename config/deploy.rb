@@ -2,7 +2,6 @@
 lock "~> 3.11.0"
 
 
-
 set :application, "TalkAway"
 set :repo_url, "git@github.com:HE-Arc/TalkAway.git"
 

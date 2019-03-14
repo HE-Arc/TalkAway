@@ -6,10 +6,6 @@ from datetime import datetime
 
 # Create your models here.
 
-# As recommended here: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
-class User(AbstractUser):
-    pass
-
 
 class Server(models.Model):
     name = models.CharField(max_length=200)
@@ -18,6 +14,12 @@ class Server(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# As recommended here: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
+class User(AbstractUser):
+    servers = models.ManyToManyField(Server, through='Right')
+    friends = models.ManyToManyField('self', blank=True, null=True)
 
 
 class Channel(models.Model):
@@ -60,19 +62,6 @@ class Reaction(models.Model):
 
     def __str__(self):
         return f"{self.message} - {self.user} : {str(self.reaction)}"
-
-
-class Friend(models.Model):
-    user_one = models.ForeignKey(
-        User, null=False, on_delete=models.CASCADE,
-        related_name='friend_one')
-    user_two = models.ForeignKey(
-        User, null=False, on_delete=models.CASCADE,
-        related_name='friend_two')
-
-    def __str__(self):
-        return f"{self.user_one} - {self.user_two}"
-
 
 class Right(models.Model):
     # 1-Emperor -> Add user, ban a user + Master rights
