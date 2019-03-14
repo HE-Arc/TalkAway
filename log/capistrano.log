@@ -1,0 +1,1558 @@
+# Logfile created on 2019-03-07 15:46:58 +0100 by logger.rb/v1.2.7
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:46:58 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [250269fa] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [250269fa] Command: /usr/bin/env mkdir -p /tmp
+  INFO [08258dce] Finished in 0.347 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [70ff09bc] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [70ff09bc] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [15c4dc1b] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [082a4c9d] Running /usr/bin/env git ls-remote git@https://github.com/HE-Arc/TalkAway HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [082a4c9d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@https://github.com/HE-Arc/TalkAway HEAD )
+ DEBUG [5b16125a] 	fatal: I don't handle protocol 'git@https'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:47:53 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f90e54fb] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f90e54fb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bdc20c38] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [835feac5] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [835feac5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [89cefdcc] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [9967346a] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9967346a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway HEAD )
+ DEBUG [15b5d661] 	fatal: 'git@github.com/HE-Arc/TalkAway' does not appear to be a git repository
+ DEBUG [15b5d661] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:48:03 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3d7e7e3c] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3d7e7e3c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2ede8de1] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [e0053278] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e0053278] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [bee80dd3] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [1285d114] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1285d114] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [a83a11c5] 	fatal: 'git@github.com/HE-Arc/TalkAway.git' does not appear to be a git repository
+ DEBUG [a83a11c5] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:50:51 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [85e4006e] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [85e4006e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0604da10] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [1c83fa3e] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1c83fa3e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [11e92b9d] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [bb3ea16c] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bb3ea16c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [bb1950af] 	fatal: 'git@github.com/HE-Arc/TalkAway.git' does not appear to be a git repository
+ DEBUG [bb1950af] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:51:49 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8d499995] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8d499995] Command: /usr/bin/env mkdir -p /tmp
+  INFO [52a61101] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [41d0b2fb] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [41d0b2fb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [0a622528] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [ddd3e3a3] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ddd3e3a3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [39c58745] 	fatal: 'git@github.com/HE-Arc/TalkAway.git' does not appear to be a git repository
+ DEBUG [39c58745] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:52:12 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b66227f8] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b66227f8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5a29eb1e] Finished in 0.379 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 100.0%
+  INFO [50ece010] Running /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [50ece010] Command: /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh
+  INFO [acc74976] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [8bf602ae] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8bf602ae] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [62ddbff4] 	fatal: 'git@github.com/HE-Arc/TalkAway.git' does not appear to be a git repository
+ DEBUG [62ddbff4] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:56:00 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a524ad59] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a524ad59] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e67de10f] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 100.0%
+  INFO [1175808f] Running /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1175808f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh
+  INFO [fb47b1df] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [22872632] Running /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [22872632] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [ac9e99e5] 	fatal: 'git@github.com/HE-Arc/TalkAway.git' does not appear to be a git repository
+ DEBUG [ac9e99e5] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:56:31 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1d12bb94] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1d12bb94] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b18155f5] Finished in 0.295 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 100.0%
+  INFO [958c6b16] Running /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [958c6b16] Command: /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh
+  INFO [f6c7ba76] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [fd5727de] Running /usr/bin/env git ls-remote git@ssh://github.com/HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fd5727de] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git ls-remote git@ssh://github.com/HE-Arc/TalkAway.git HEAD )
+ DEBUG [c1bea1ca] 	fatal: I don't handle protocol 'git@ssh'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:56:50 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [be485266] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [be485266] Command: /usr/bin/env mkdir -p /tmp
+  INFO [58413233] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 100.0%
+  INFO [78563fc1] Running /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [78563fc1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh
+  INFO [c86e37cc] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [de318412] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [de318412] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [2a678281] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [2a678281] Finished in 1.523 seconds with exit status 0 (successful).
+  INFO [a9735841] Running /usr/bin/env mkdir -p /var/www/DjangoChat/shared /var/www/DjangoChat/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a9735841] Command: /usr/bin/env mkdir -p /var/www/DjangoChat/shared /var/www/DjangoChat/releases
+  INFO [35ce6dd8] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [f72924c6] Running [ -f /var/www/DjangoChat/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f72924c6] Command: [ -f /var/www/DjangoChat/current/REVISION ]
+ DEBUG [0514a134] Finished in 0.303 seconds with exit status 1 (failed).
+ DEBUG [95cb7829] Running [ -f /var/www/DjangoChat/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [95cb7829] Command: [ -f /var/www/DjangoChat/repo/HEAD ]
+ DEBUG [26795da7] Finished in 0.244 seconds with exit status 1 (failed).
+ DEBUG [12ce5e5a] Running if test ! -d /var/www/DjangoChat; then echo "Directory does not exist '/var/www/DjangoChat'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [12ce5e5a] Command: if test ! -d /var/www/DjangoChat; then echo "Directory does not exist '/var/www/DjangoChat'" 1>&2; false; fi
+ DEBUG [a2ffd3f8] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [3b50bd57] Running /usr/bin/env git clone --mirror git@github.com:HE-Arc/TalkAway.git /var/www/DjangoChat/repo as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3b50bd57] Command: cd /var/www/DjangoChat && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git clone --mirror git@github.com:HE-Arc/TalkAway.git /var/www/DjangoChat/repo )
+ DEBUG [e40c55d9] 	Cloning into bare repository '/var/www/DjangoChat/repo'...
+  INFO [e40c55d9] Finished in 2.077 seconds with exit status 0 (successful).
+ DEBUG [84ac535b] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [84ac535b] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [62eaecb7] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [a5a53031] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a5a53031] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [f7b09a6c] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [1aa1ebee] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1aa1ebee] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ee1c2b5b] 	Fetching origin
+  INFO [ee1c2b5b] Finished in 1.378 seconds with exit status 0 (successful).
+ DEBUG [a36782ad] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a36782ad] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [76539ded] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [002379a9] Running /usr/bin/env mkdir -p /var/www/DjangoChat/releases/20190307145653 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [002379a9] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/DjangoChat/releases/20190307145653 )
+  INFO [a7261a75] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [f699056f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/DjangoChat/releases/20190307145653 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f699056f] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/DjangoChat/releases/20190307145653 )
+  INFO [a7bb0715] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [b07a0f5e] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b07a0f5e] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [e767beeb] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [a6d81e94] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a6d81e94] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e0145db0] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [e0145db0] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [44f262bb] Running if test ! -d /var/www/DjangoChat/releases/20190307145653; then echo "Directory does not exist '/var/www/DjangoChat/releases/20190307145653'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [44f262bb] Command: if test ! -d /var/www/DjangoChat/releases/20190307145653; then echo "Directory does not exist '/var/www/DjangoChat/releases/20190307145653'" 1>&2; false; fi
+ DEBUG [dfd61f2d] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [81c241f1] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [81c241f1] Command: cd /var/www/DjangoChat/releases/20190307145653 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [7d771794] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [0290aca1] Running /usr/bin/env ln -s /var/www/DjangoChat/releases/20190307145653 /var/www/DjangoChat/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0290aca1] Command: /usr/bin/env ln -s /var/www/DjangoChat/releases/20190307145653 /var/www/DjangoChat/releases/current
+  INFO [0bdc8d64] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [9c0ad126] Running /usr/bin/env mv /var/www/DjangoChat/releases/current /var/www/DjangoChat as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9c0ad126] Command: /usr/bin/env mv /var/www/DjangoChat/releases/current /var/www/DjangoChat
+  INFO [7a6e25dc] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [efda0ea2] Running /usr/bin/env ls -x /var/www/DjangoChat/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [efda0ea2] Command: /usr/bin/env ls -x /var/www/DjangoChat/releases
+ DEBUG [53657c66] 	20190307145653
+ DEBUG [53657c66] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [d0a01a6b] Running if test ! -d /var/www/DjangoChat/releases; then echo "Directory does not exist '/var/www/DjangoChat/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d0a01a6b] Command: if test ! -d /var/www/DjangoChat/releases; then echo "Directory does not exist '/var/www/DjangoChat/releases'" 1>&2; false; fi
+ DEBUG [2867b664] Finished in 0.186 seconds with exit status 0 (successful).
+  INFO [1b31cedd] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307145653 by sergiy" >> /var/www/DjangoChat/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1b31cedd] Command: cd /var/www/DjangoChat/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307145653 by sergiy" >> /var/www/DjangoChat/revisions.log
+  INFO [cd9774f7] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 15:57:32 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [eda8e971] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eda8e971] Command: /usr/bin/env mkdir -p /tmp
+  INFO [072b77dd] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-DjangoChat-production-sergiy.sh 100.0%
+  INFO [2560f772] Running /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2560f772] Command: /usr/bin/env chmod 700 /tmp/git-ssh-DjangoChat-production-sergiy.sh
+  INFO [a2379c85] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [4341b3e7] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4341b3e7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [438e7910] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [438e7910] Finished in 1.350 seconds with exit status 0 (successful).
+  INFO [f0ba41b3] Running /usr/bin/env mkdir -p /var/www/DjangoChat/shared /var/www/DjangoChat/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f0ba41b3] Command: /usr/bin/env mkdir -p /var/www/DjangoChat/shared /var/www/DjangoChat/releases
+  INFO [611397a2] Finished in 0.015 seconds with exit status 0 (successful).
+ DEBUG [9fe49d2f] Running [ -f /var/www/DjangoChat/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9fe49d2f] Command: [ -f /var/www/DjangoChat/current/REVISION ]
+ DEBUG [81a6bb68] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [c768e7bf] Running /usr/bin/env cat /var/www/DjangoChat/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c768e7bf] Command: /usr/bin/env cat /var/www/DjangoChat/current/REVISION 2>/dev/null
+ DEBUG [14f51556] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [14f51556] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [c0861cb4] Running [ -f /var/www/DjangoChat/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c0861cb4] Command: [ -f /var/www/DjangoChat/repo/HEAD ]
+ DEBUG [fe683dfa] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/DjangoChat/repo
+ DEBUG [29fdcbd3] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [29fdcbd3] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [a8bc79c8] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [2950a28d] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2950a28d] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [2ce4732e] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [6a1b7864] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6a1b7864] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [497f4c76] 	Fetching origin
+  INFO [497f4c76] Finished in 1.348 seconds with exit status 0 (successful).
+ DEBUG [12627520] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [12627520] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [1da6d4b9] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [d3a6355c] Running /usr/bin/env mkdir -p /var/www/DjangoChat/releases/20190307145733 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d3a6355c] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/DjangoChat/releases/20190307145733 )
+  INFO [dc4c9c93] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [9b787816] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/DjangoChat/releases/20190307145733 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9b787816] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/DjangoChat/releases/20190307145733 )
+  INFO [79718331] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [3778a03b] Running if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3778a03b] Command: if test ! -d /var/www/DjangoChat/repo; then echo "Directory does not exist '/var/www/DjangoChat/repo'" 1>&2; false; fi
+ DEBUG [07fb8c9f] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [ad43476f] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ad43476f] Command: cd /var/www/DjangoChat/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-DjangoChat-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b98c1eaa] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [b98c1eaa] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [5bcde262] Running if test ! -d /var/www/DjangoChat/releases/20190307145733; then echo "Directory does not exist '/var/www/DjangoChat/releases/20190307145733'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5bcde262] Command: if test ! -d /var/www/DjangoChat/releases/20190307145733; then echo "Directory does not exist '/var/www/DjangoChat/releases/20190307145733'" 1>&2; false; fi
+ DEBUG [9f4b7570] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [6670d0aa] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6670d0aa] Command: cd /var/www/DjangoChat/releases/20190307145733 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [7c1d1baf] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [061e3f54] Running /usr/bin/env ln -s /var/www/DjangoChat/releases/20190307145733 /var/www/DjangoChat/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [061e3f54] Command: /usr/bin/env ln -s /var/www/DjangoChat/releases/20190307145733 /var/www/DjangoChat/releases/current
+  INFO [3e00f2f3] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [d5f3f2b5] Running /usr/bin/env mv /var/www/DjangoChat/releases/current /var/www/DjangoChat as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d5f3f2b5] Command: /usr/bin/env mv /var/www/DjangoChat/releases/current /var/www/DjangoChat
+  INFO [0d5e25d7] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [e83f39fc] Running /usr/bin/env ls -x /var/www/DjangoChat/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e83f39fc] Command: /usr/bin/env ls -x /var/www/DjangoChat/releases
+ DEBUG [1698d2b4] 	20190307145653	20190307145733
+ DEBUG [1698d2b4] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [995d4dee] Running if test ! -d /var/www/DjangoChat/releases; then echo "Directory does not exist '/var/www/DjangoChat/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [995d4dee] Command: if test ! -d /var/www/DjangoChat/releases; then echo "Directory does not exist '/var/www/DjangoChat/releases'" 1>&2; false; fi
+ DEBUG [133fd911] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [6f0925ad] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307145733 by sergiy" >> /var/www/DjangoChat/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6f0925ad] Command: cd /var/www/DjangoChat/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307145733 by sergiy" >> /var/www/DjangoChat/revisions.log
+  INFO [87e72f79] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:33:25 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [416c73ec] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [416c73ec] Command: /usr/bin/env mkdir -p /tmp
+  INFO [27b51814] Finished in 0.364 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [8e16836e] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8e16836e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [d7e8e7be] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [468ba092] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [468ba092] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [4130b182] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [4130b182] Finished in 1.317 seconds with exit status 0 (successful).
+  INFO [c64fa217] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c64fa217] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [98a7a1fc] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [625cca85] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [625cca85] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [d7381a27] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [05fa0fd8] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [05fa0fd8] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [3607932e] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [3607932e] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [159935ee] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [159935ee] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [fac0015f] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [f10bb801] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f10bb801] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [85cefd70] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [247693f6] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [247693f6] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [34d04b21] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [2b3a6c21] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2b3a6c21] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5907b748] 	Fetching origin
+  INFO [5907b748] Finished in 1.340 seconds with exit status 0 (successful).
+ DEBUG [971533d6] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [971533d6] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [917b54bf] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [1b89b4e3] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153327 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1b89b4e3] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153327 )
+  INFO [85224a1f] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [603621a2] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153327 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [603621a2] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153327 )
+  INFO [ab45e468] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [edf41416] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [edf41416] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [e26a0392] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [47b31148] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [47b31148] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [4df2d56a] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [4df2d56a] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [62c99968] Running if test ! -d /var/www/TalkAway/releases/20190307153327; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153327'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62c99968] Command: if test ! -d /var/www/TalkAway/releases/20190307153327; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153327'" 1>&2; false; fi
+ DEBUG [36ef59fd] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [0ba4050b] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0ba4050b] Command: cd /var/www/TalkAway/releases/20190307153327 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [28d545cf] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [e1d0b11e] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e1d0b11e] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [0e4666a3] Finished in 3.722 seconds with exit status 0 (successful).
+  INFO [b6cdde91] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b6cdde91] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [fcad65ae] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [ebafc911] Running /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307153327/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ebafc911] Command: /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307153327/requirements.txt
+ DEBUG [101bdaa4] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:36:17 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [62f66c21] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62f66c21] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f825028b] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [bc35889b] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bc35889b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [746233ce] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [2a3d7ac6] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2a3d7ac6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [3dddf5d0] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [3dddf5d0] Finished in 1.276 seconds with exit status 0 (successful).
+  INFO [5a87a0ec] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5a87a0ec] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [053de4b6] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [feedc1e0] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [feedc1e0] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [ea111bae] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [a2aaf78b] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a2aaf78b] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [fb1125e3] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [fb1125e3] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [8f825791] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8f825791] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [aca6a0bb] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [d33ce840] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d33ce840] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [7bc1e32e] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [9cb717c6] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9cb717c6] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [9ccfc5c9] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [9cb066b0] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9cb066b0] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0cd9ae73] 	Fetching origin
+  INFO [0cd9ae73] Finished in 1.296 seconds with exit status 0 (successful).
+ DEBUG [4d25c830] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4d25c830] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [b41dd5e9] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [6d0b2301] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153618 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6d0b2301] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153618 )
+  INFO [aca4f696] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [2bd3efc0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153618 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2bd3efc0] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153618 )
+  INFO [07adbf39] Finished in 0.064 seconds with exit status 0 (successful).
+ DEBUG [774030a4] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [774030a4] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [34d85799] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [18de8185] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [18de8185] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [29374194] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [29374194] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [932ce046] Running if test ! -d /var/www/TalkAway/releases/20190307153618; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153618'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [932ce046] Command: if test ! -d /var/www/TalkAway/releases/20190307153618; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153618'" 1>&2; false; fi
+ DEBUG [90051f34] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [155ca476] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [155ca476] Command: cd /var/www/TalkAway/releases/20190307153618 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [5057767a] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [513392ac] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [513392ac] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [c7a4b944] Finished in 1.465 seconds with exit status 0 (successful).
+  INFO [e97f89b4] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e97f89b4] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [9af97eb8] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [f8d18a0f] Running /var/www/TalkAway/shared/env/bin/pip3 install –r /var/www/TalkAway/releases/20190307153618/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f8d18a0f] Command: /var/www/TalkAway/shared/env/bin/pip3 install –r /var/www/TalkAway/releases/20190307153618/requirements.txt
+ DEBUG [96d1f169] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:38:52 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2770ffa6] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2770ffa6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ed0a6890] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [6a6d50f4] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6a6d50f4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [4dd0e288] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [6e88dc29] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6e88dc29] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [95c5b10e] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [95c5b10e] Finished in 1.321 seconds with exit status 0 (successful).
+  INFO [2ee59c1c] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2ee59c1c] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [2e7b36e8] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [c1b43ce8] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c1b43ce8] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [1bdb2d07] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [bc247d77] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bc247d77] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [957d6a0f] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [957d6a0f] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [7f3a411c] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7f3a411c] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [20c19140] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [2aab5c60] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2aab5c60] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [7f21956b] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [584a1cff] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [584a1cff] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [6c2b6491] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [f6df31c1] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f6df31c1] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [715a5925] 	Fetching origin
+  INFO [715a5925] Finished in 1.274 seconds with exit status 0 (successful).
+ DEBUG [da94f297] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [da94f297] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [6bcd778f] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [63ede2f1] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153854 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [63ede2f1] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307153854 )
+  INFO [c1748d3d] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [891eb9c1] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153854 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [891eb9c1] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307153854 )
+  INFO [9129d93e] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [b359586b] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b359586b] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [0544572d] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [2d3d4db7] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2d3d4db7] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3e39a00a] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [3e39a00a] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [27b54369] Running if test ! -d /var/www/TalkAway/releases/20190307153854; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153854'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [27b54369] Command: if test ! -d /var/www/TalkAway/releases/20190307153854; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307153854'" 1>&2; false; fi
+ DEBUG [432de47d] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [0e7676df] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0e7676df] Command: cd /var/www/TalkAway/releases/20190307153854 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [65bd23bb] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [952a0873] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [952a0873] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [450b4451] Finished in 1.473 seconds with exit status 0 (successful).
+  INFO [2b424471] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2b424471] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [77675284] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [4112f5f5] Running /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307153854/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4112f5f5] Command: /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307153854/api/requirements.txt
+ DEBUG [33790905] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:42:02 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [016c5404] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [016c5404] Command: /usr/bin/env mkdir -p /tmp
+  INFO [22fc7c96] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [ee9b7e5a] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ee9b7e5a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [bc82a9e6] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [ecd7d931] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ecd7d931] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [555f3837] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [555f3837] Finished in 3.376 seconds with exit status 0 (successful).
+  INFO [a6e8b828] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a6e8b828] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [e769d7a0] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [7fd22c18] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7fd22c18] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [ece55fdb] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [1a671f95] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1a671f95] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [d9d12aa4] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [d9d12aa4] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [eea88f05] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eea88f05] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [2f0fe0cc] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [0e43d329] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0e43d329] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [dd4c8e68] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [fa9cc63a] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fa9cc63a] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [985db1ad] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [c36ceceb] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c36ceceb] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [83ea7873] 	Fetching origin
+  INFO [83ea7873] Finished in 1.904 seconds with exit status 0 (successful).
+ DEBUG [f02d48f9] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f02d48f9] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [b28abc38] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [83e60216] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307154206 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [83e60216] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307154206 )
+  INFO [71b0836e] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [3dd0601d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307154206 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3dd0601d] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307154206 )
+  INFO [02370f63] Finished in 0.063 seconds with exit status 0 (successful).
+ DEBUG [60e0458f] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [60e0458f] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [1e29941d] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [1241d102] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1241d102] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3c6dd081] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [3c6dd081] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [6ed0bf48] Running if test ! -d /var/www/TalkAway/releases/20190307154206; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307154206'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6ed0bf48] Command: if test ! -d /var/www/TalkAway/releases/20190307154206; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307154206'" 1>&2; false; fi
+ DEBUG [4c10a5aa] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [52a444d0] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [52a444d0] Command: cd /var/www/TalkAway/releases/20190307154206 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [760aa8b4] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [fb23e5f5] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fb23e5f5] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [68eab392] Finished in 1.464 seconds with exit status 0 (successful).
+  INFO [c36b97ac] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c36b97ac] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [cc273a23] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [6f8e94e4] Running /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307154206/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6f8e94e4] Command: /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307154206/api/requirements.txt
+ DEBUG [087c0cb2] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:46:05 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [97913019] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [97913019] Command: /usr/bin/env mkdir -p /tmp
+  INFO [37df4ce5] Finished in 0.200 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [b52afbff] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b52afbff] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [984ef15d] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [3381f465] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3381f465] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [ddd9ad25] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [ddd9ad25] Finished in 2.177 seconds with exit status 0 (successful).
+  INFO [81215f04] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [81215f04] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [540e6013] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [c680cb05] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c680cb05] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [c6001a99] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [3dcae90d] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3dcae90d] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [317872f7] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [317872f7] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [3b0a1a31] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3b0a1a31] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [1e9284b3] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [87b8a8e2] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [87b8a8e2] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [ae921aee] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [22a1b33f] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [22a1b33f] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [5d6fa061] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [f7f1dffa] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f7f1dffa] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [754674df] 	Fetching origin
+  INFO [754674df] Finished in 1.287 seconds with exit status 0 (successful).
+ DEBUG [36735f51] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [36735f51] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [3770e400] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [40929660] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307154608 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [40929660] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307154608 )
+  INFO [fbf380c4] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [14acc164] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307154608 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [14acc164] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307154608 )
+  INFO [db694a30] Finished in 0.067 seconds with exit status 0 (successful).
+ DEBUG [5048a3cf] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5048a3cf] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [52e129a6] Finished in 0.154 seconds with exit status 0 (successful).
+ DEBUG [ee241bae] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ee241bae] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e7d5c1cf] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [e7d5c1cf] Finished in 0.081 seconds with exit status 0 (successful).
+ DEBUG [6ff1dc85] Running if test ! -d /var/www/TalkAway/releases/20190307154608; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307154608'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6ff1dc85] Command: if test ! -d /var/www/TalkAway/releases/20190307154608; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307154608'" 1>&2; false; fi
+ DEBUG [cdb2a7ab] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [b9ae80fe] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b9ae80fe] Command: cd /var/www/TalkAway/releases/20190307154608 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [3d03c3ea] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [b7ff5590] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b7ff5590] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [c6b8bed1] Finished in 1.670 seconds with exit status 0 (successful).
+  INFO [233e7b37] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [233e7b37] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [bb66c35a] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [020d98d8] Running /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307154608/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [020d98d8] Command: /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307154608/api/requirements.txt
+ DEBUG [b5b966cb] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:51:53 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fee234ae] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fee234ae] Command: /usr/bin/env mkdir -p /tmp
+  INFO [368e079e] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [66472d12] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [66472d12] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [f88e1d45] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [fecb6570] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fecb6570] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [cf6ed2e8] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [cf6ed2e8] Finished in 1.266 seconds with exit status 0 (successful).
+  INFO [3215c857] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3215c857] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [c7471666] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [26fee0ac] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [26fee0ac] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [60387220] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [adf5137f] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [adf5137f] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [772980dc] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [772980dc] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [96fdb445] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [96fdb445] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [684f31f3] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [8c695a6d] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8c695a6d] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [6cd08fb3] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [8e8a8a27] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8e8a8a27] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [93752111] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [6b708833] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6b708833] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4f6b74a5] 	Fetching origin
+  INFO [4f6b74a5] Finished in 1.316 seconds with exit status 0 (successful).
+ DEBUG [91b65076] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [91b65076] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [f616c421] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [f8d65daa] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155155 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f8d65daa] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155155 )
+  INFO [4114f58c] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [b01832b0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155155 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b01832b0] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155155 )
+  INFO [d4ff67bd] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [3587199d] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3587199d] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [fb190718] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [8b028154] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8b028154] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5064eb6e] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [5064eb6e] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [f96b076b] Running if test ! -d /var/www/TalkAway/releases/20190307155155; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155155'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f96b076b] Command: if test ! -d /var/www/TalkAway/releases/20190307155155; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155155'" 1>&2; false; fi
+ DEBUG [b01dc45a] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [9e4065b6] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9e4065b6] Command: cd /var/www/TalkAway/releases/20190307155155 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [2e0a6b28] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [bf572271] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bf572271] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [55333104] Finished in 1.441 seconds with exit status 0 (successful).
+  INFO [60050ef7] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [60050ef7] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [4396c55d] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [cdead2bf] Running pip freeze as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [cdead2bf] Command: pip freeze
+ DEBUG [3941822f] 	bash: pip: command not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:52:10 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bf0679d4] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bf0679d4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fd820854] Finished in 0.527 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [2341a566] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2341a566] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [74a8365a] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [d330fa9c] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d330fa9c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [68191e55] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [68191e55] Finished in 1.350 seconds with exit status 0 (successful).
+  INFO [f2af67ec] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f2af67ec] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [6361c6ce] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [39b3c0a7] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [39b3c0a7] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [ef4720e7] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [16e58130] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [16e58130] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [960aa641] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [960aa641] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [eb8a4835] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eb8a4835] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [eef6512f] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [4fc46050] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4fc46050] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [6c51d62e] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [be3da189] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [be3da189] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [154fefff] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [825a6200] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [825a6200] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e37452f6] 	Fetching origin
+  INFO [e37452f6] Finished in 1.293 seconds with exit status 0 (successful).
+ DEBUG [115d282d] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [115d282d] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [a42dc394] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [bbf5e525] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155212 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bbf5e525] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155212 )
+  INFO [4684dd78] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [0feaa38a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155212 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0feaa38a] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155212 )
+  INFO [182b9b70] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [27bd68fe] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [27bd68fe] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [5c4bc87b] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [328f40f6] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [328f40f6] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7bbb048f] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [7bbb048f] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [778bf3c8] Running if test ! -d /var/www/TalkAway/releases/20190307155212; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155212'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [778bf3c8] Command: if test ! -d /var/www/TalkAway/releases/20190307155212; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155212'" 1>&2; false; fi
+ DEBUG [833e3662] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [6a41a5c6] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [6a41a5c6] Command: cd /var/www/TalkAway/releases/20190307155212 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [9fad4954] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [54a2ab49] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [54a2ab49] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [e378cc82] Finished in 1.463 seconds with exit status 0 (successful).
+  INFO [353688e0] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [353688e0] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [5284fefc] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [090351ec] Running /var/www/TalkAway/shared/env/bin/pip freeze as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [090351ec] Command: /var/www/TalkAway/shared/env/bin/pip freeze
+ DEBUG [547bdbeb] 	aniso8601==3.0.2
+Cython==0.29.6
+Django==2.1.7
+django-cors-headers==2.4.1
+django-graphql-jwt==0.2.1
+Faker==1.0.2
+graphene==2.1.3
+graphene-django==2.2.0
+graphql-core==2.1
+graphql-relay==0.4.5
+pkg-resources==0.0.0
+promise==2.2.1
+PyJWT==1.7.1
+python-dateutil==2.8.0
+pytz==2018.9
+Rx==1.6.1
+singledispatch==3.4.0.3
+six==1.12.0
+text-unidecode==1.2
+  INFO [547bdbeb] Finished in 1.253 seconds with exit status 0 (successful).
+  INFO [c02a64d7] Running /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307155212/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c02a64d7] Command: /var/www/TalkAway/shared/env/bin/pip install –r /var/www/TalkAway/releases/20190307155212/api/requirements.txt
+ DEBUG [36eebcd5] 	Invalid requirement: '–r'
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 93, in __init__
+    req = REQUIREMENT.parseString(requirement_string)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1632, in parseString
+    raise exc
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1622, in parseString
+    loc, tokens = self._parse( instring, 0 )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3395, in parseImpl
+    loc, exprtokens = e._parse( instring, loc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3717, in parseImpl
+    return self.expr._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1379, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 3378, in parseImpl
+    loc, resultlist = self.exprs[0]._parse( instring, loc, doActions, callPreParse=False )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 1383, in _parseNoCache
+    loc,tokens = self.parseImpl( instring, preloc, doActions )
+  File "/var/www/TalkAway/shared/env/share/python-wheels/pyparsing-2.2.0-py2.py3-none-any.whl/pyparsing.py", line 2689, in parseImpl
+    raise ParseException(instring, loc, self.errmsg, self)
+pyparsing.ParseException: Expected W:(abcd...) (at char 0), (line:1, col:1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/TalkAway/shared/env/lib/python3.6/site-packages/pip/req/req_install.py", line 82, in __init__
+    req = Requirement(req)
+  File "/var/www/TalkAway/shared/env/share/python-wheels/packaging-17.1-py2.py3-none-any.whl/packaging/requirements.py", line 97, in __init__
+    requirement_string[e.loc:e.loc + 8]))
+pip._vendor.packaging.requirements.InvalidRequirement: Invalid requirement, parse error at "'–r'"
+
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:54:01 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [06c77781] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [06c77781] Command: /usr/bin/env mkdir -p /tmp
+  INFO [076c4eaa] Finished in 0.194 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [c408dbf1] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c408dbf1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [c1de1883] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [1d373746] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1d373746] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [4b1450ed] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [4b1450ed] Finished in 2.945 seconds with exit status 0 (successful).
+  INFO [80ee1f77] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [80ee1f77] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [7d025c58] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [5c9a0aac] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5c9a0aac] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [0bda4167] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [0a03a3bf] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0a03a3bf] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [197e82b7] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [197e82b7] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [b2d18b5d] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b2d18b5d] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [32718273] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [00ca7981] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [00ca7981] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [de45700c] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [41de2703] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [41de2703] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [67c7dc8c] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [0d16826f] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [0d16826f] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [602d3017] 	Fetching origin
+  INFO [602d3017] Finished in 2.708 seconds with exit status 0 (successful).
+ DEBUG [ef4603c1] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ef4603c1] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [a508b713] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [997ed11a] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155404 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [997ed11a] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155404 )
+  INFO [56f7a976] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [8c179f79] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155404 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8c179f79] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155404 )
+  INFO [a1c4471d] Finished in 0.064 seconds with exit status 0 (successful).
+ DEBUG [52b5e011] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [52b5e011] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [ca667a1a] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [c58a7b74] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c58a7b74] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3ce31dda] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [3ce31dda] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [3062433b] Running if test ! -d /var/www/TalkAway/releases/20190307155404; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155404'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3062433b] Command: if test ! -d /var/www/TalkAway/releases/20190307155404; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155404'" 1>&2; false; fi
+ DEBUG [db269872] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [9bc792f1] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9bc792f1] Command: cd /var/www/TalkAway/releases/20190307155404 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [1f9ad268] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [45e22a20] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [45e22a20] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [911538bd] Finished in 1.536 seconds with exit status 0 (successful).
+  INFO [26d63f3b] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [26d63f3b] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [edda0730] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [ea424249] Running /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ea424249] Command: /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt
+ DEBUG [6b31dbdf] 	Requirement already satisfied: aniso8601==3.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 1))
+Requirement already satisfied: Cython==0.29.6 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 2))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: Django==2.1.7 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 3))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: django-graphql-jwt==0.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 4))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: django-cors-headers==2.4.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 5))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: Faker==1.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 6))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: graphene==2.1.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 7))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: graphene-django==2.2.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 8))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: graphql-core==2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 9))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: graphql-relay==0.4.5 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 10))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: promise==2.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 11))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: PyJWT==1.7.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 12))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: python-dateutil==2.8.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 13))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: pytz==2018.9 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 14))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: Rx==1.6.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 15))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: singledispatch==3.4.0.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 16))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: six==1.12.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 17))
+ DEBUG [6b31dbdf] 	Requirement already satisfied: text-unidecode==1.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155404/api/requirements.txt (line 18))
+  INFO [6b31dbdf] Finished in 1.396 seconds with exit status 0 (successful).
+  INFO [b7f66ecc] Running /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155404 /var/www/TalkAway/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b7f66ecc] Command: /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155404 /var/www/TalkAway/releases/current
+  INFO [2f2d6111] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [59c50447] Running /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [59c50447] Command: /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway
+  INFO [f0ec1e0a] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [5a7b2119] Running /usr/bin/env sudo sv reload uwsgi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5a7b2119] Command: /usr/bin/env sudo sv reload uwsgi
+ DEBUG [45c64cb9] 	ok: down: uwsgi: 1s, normally up, want up
+  INFO [45c64cb9] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [75001bca] Running /usr/bin/env ls -x /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [75001bca] Command: /usr/bin/env ls -x /var/www/TalkAway/releases
+ DEBUG [980d851f] 	20190307145527	20190307145748	20190307145948	20190307152850	20190307153327
+20190307153618	20190307153854	20190307154206	20190307154608	20190307154853
+20190307155155	20190307155212	20190307155404
+ DEBUG [980d851f] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 13 deployed releases on djangochat.srvz-webapp.he-arc.ch
+ DEBUG [43987635] Running [ -d /var/www/TalkAway/current ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [43987635] Command: [ -d /var/www/TalkAway/current ]
+ DEBUG [672030c9] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [083c95ab] Running /usr/bin/env readlink /var/www/TalkAway/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [083c95ab] Command: /usr/bin/env readlink /var/www/TalkAway/current
+ DEBUG [3212095c] 	/var/www/TalkAway/releases/20190307155404
+ DEBUG [3212095c] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [8585ec65] Running /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307145527 /var/www/TalkAway/releases/20190307145748 /var/www/TalkAway/releases/20190307145948 /var/www/TalkAway/releases/20190307152850 /var/www/TalkAway/releases/20190307153327 /var/www/TalkAway/releases/20190307153618 /var/www/TalkAway/releases/20190307153854 /var/www/TalkAway/releases/20190307154206 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8585ec65] Command: /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307145527 /var/www/TalkAway/releases/20190307145748 /var/www/TalkAway/releases/20190307145948 /var/www/TalkAway/releases/20190307152850 /var/www/TalkAway/releases/20190307153327 /var/www/TalkAway/releases/20190307153618 /var/www/TalkAway/releases/20190307153854 /var/www/TalkAway/releases/20190307154206
+  INFO [8d427acd] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [778a2e40] Running if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [778a2e40] Command: if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi
+ DEBUG [9d827297] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [44848726] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155404 by sergiy" >> /var/www/TalkAway/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [44848726] Command: cd /var/www/TalkAway/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155404 by sergiy" >> /var/www/TalkAway/revisions.log
+  INFO [0d58754b] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:56:46 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8d35ce24] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [8d35ce24] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a9479dfc] Finished in 0.198 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [f1726fa0] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f1726fa0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [09511ce6] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [e7613f5d] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e7613f5d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [393ba976] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [393ba976] Finished in 1.292 seconds with exit status 0 (successful).
+  INFO [2b780d6d] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2b780d6d] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [30875bdc] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [4e5edee7] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4e5edee7] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [1f99e810] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [075d09ba] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [075d09ba] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [c043c1bf] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [c043c1bf] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [eae597a2] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eae597a2] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [8ccd11cb] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [eacd97b7] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eacd97b7] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [ab0ee5d5] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [7dc8172b] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7dc8172b] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [8a2ee6fc] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [5fbbd13a] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5fbbd13a] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a349aa18] 	Fetching origin
+  INFO [a349aa18] Finished in 1.281 seconds with exit status 0 (successful).
+ DEBUG [331e6f66] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [331e6f66] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [c95dbdd9] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [59e7a1ea] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155648 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [59e7a1ea] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155648 )
+  INFO [c4c18f2d] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [87afb7b3] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155648 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [87afb7b3] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155648 )
+  INFO [40c42c73] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [9c99c800] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9c99c800] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [22d382ca] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [364eab54] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [364eab54] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [909b5f80] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [909b5f80] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [46bad279] Running if test ! -d /var/www/TalkAway/releases/20190307155648; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155648'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [46bad279] Command: if test ! -d /var/www/TalkAway/releases/20190307155648; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155648'" 1>&2; false; fi
+ DEBUG [dde04bf0] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [dc9bd3a2] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [dc9bd3a2] Command: cd /var/www/TalkAway/releases/20190307155648 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [8f023659] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [632b7a4c] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [632b7a4c] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [51ad1d3d] Finished in 1.443 seconds with exit status 0 (successful).
+  INFO [74f22b1f] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [74f22b1f] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [2453404d] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [2f2ca99e] Running /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2f2ca99e] Command: /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt
+ DEBUG [c6933bb6] 	Requirement already satisfied: aniso8601==3.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 1))
+ DEBUG [c6933bb6] 	Requirement already satisfied: Cython==0.29.6 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 2))
+ DEBUG [c6933bb6] 	Requirement already satisfied: Django==2.1.7 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 3))
+ DEBUG [c6933bb6] 	Requirement already satisfied: django-graphql-jwt==0.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 4))
+ DEBUG [c6933bb6] 	Requirement already satisfied: django-cors-headers==2.4.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 5))
+ DEBUG [c6933bb6] 	Requirement already satisfied: Faker==1.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 6))
+ DEBUG [c6933bb6] 	Requirement already satisfied: graphene==2.1.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 7))
+ DEBUG [c6933bb6] 	Requirement already satisfied: graphene-django==2.2.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 8))
+ DEBUG [c6933bb6] 	Requirement already satisfied: graphql-core==2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 9))
+ DEBUG [c6933bb6] 	Requirement already satisfied: graphql-relay==0.4.5 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 10))
+ DEBUG [c6933bb6] 	Requirement already satisfied: promise==2.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 11))
+ DEBUG [c6933bb6] 	Requirement already satisfied: PyJWT==1.7.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 12))
+ DEBUG [c6933bb6] 	Requirement already satisfied: python-dateutil==2.8.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 13))
+ DEBUG [c6933bb6] 	Requirement already satisfied: pytz==2018.9 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 14))
+ DEBUG [c6933bb6] 	Requirement already satisfied: Rx==1.6.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 15))
+ DEBUG [c6933bb6] 	Requirement already satisfied: singledispatch==3.4.0.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 16))
+ DEBUG [c6933bb6] 	Requirement already satisfied: six==1.12.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 17))
+ DEBUG [c6933bb6] 	Requirement already satisfied: text-unidecode==1.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155648/api/requirements.txt (line 18))
+  INFO [c6933bb6] Finished in 1.858 seconds with exit status 0 (successful).
+  INFO [2045cb4d] Running /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155648 /var/www/TalkAway/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2045cb4d] Command: /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155648 /var/www/TalkAway/releases/current
+  INFO [b4649a4c] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [74314ea1] Running /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [74314ea1] Command: /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway
+  INFO [cabaa4fc] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO [2fcb32c9] Running /usr/bin/env sudo sv reload uwsgi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2fcb32c9] Command: /usr/bin/env sudo sv reload uwsgi
+ DEBUG [9152210f] 	ok: down: uwsgi: 1s, normally up, want up
+  INFO [9152210f] Finished in 0.075 seconds with exit status 0 (successful).
+ DEBUG [bbaec113] Running /usr/bin/env ls -x /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bbaec113] Command: /usr/bin/env ls -x /var/www/TalkAway/releases
+ DEBUG [7e87a791] 	20190307154608	20190307154853	20190307155155	20190307155212	20190307155404
+20190307155648
+ DEBUG [7e87a791] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e815b4be] Running [ -d /var/www/TalkAway/current ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [e815b4be] Command: [ -d /var/www/TalkAway/current ]
+ DEBUG [f9748f7d] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [fb02b498] Running /usr/bin/env readlink /var/www/TalkAway/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fb02b498] Command: /usr/bin/env readlink /var/www/TalkAway/current
+ DEBUG [64a840c8] 	/var/www/TalkAway/releases/20190307155648
+ DEBUG [64a840c8] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [9a0c8922] Running /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307154608 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9a0c8922] Command: /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307154608
+  INFO [b0d0912f] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [efa069b7] Running if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [efa069b7] Command: if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi
+ DEBUG [98934d0d] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [54760760] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155648 by sergiy" >> /var/www/TalkAway/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [54760760] Command: cd /var/www/TalkAway/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155648 by sergiy" >> /var/www/TalkAway/revisions.log
+  INFO [0e162d1e] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-07 16:59:16 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d4f0c222] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d4f0c222] Command: /usr/bin/env mkdir -p /tmp
+  INFO [35ca74e2] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-sergiy.sh 100.0%
+  INFO [5dbf111d] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5dbf111d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-sergiy.sh
+  INFO [9261c8a3] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [527d70fd] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [527d70fd] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [e9dfeb1c] 	Warning: Permanently added the RSA host key for IP address '192.30.253.113' to the list of known hosts.
+ DEBUG [e9dfeb1c] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [e9dfeb1c] Finished in 1.238 seconds with exit status 0 (successful).
+  INFO [9f1ace22] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9f1ace22] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [3176fd23] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [d5288d1a] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d5288d1a] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [c81e844e] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [aa265228] Running /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [aa265228] Command: /usr/bin/env cat /var/www/TalkAway/current/REVISION 2>/dev/null
+ DEBUG [0d2908b8] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [0d2908b8] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [42c52af8] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [42c52af8] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [9a35ae62] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [cfcf054b] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [cfcf054b] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [dcbf236a] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [21bbad75] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [21bbad75] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [b96d1eb6] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [f3566a67] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f3566a67] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b2482ecc] 	Fetching origin
+ DEBUG [b2482ecc] 	Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+  INFO [b2482ecc] Finished in 1.280 seconds with exit status 0 (successful).
+ DEBUG [a5da7032] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a5da7032] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [29263b9d] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [a346c34b] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155918 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a346c34b] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190307155918 )
+  INFO [87cce73d] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [a1718a08] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155918 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a1718a08] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190307155918 )
+  INFO [4767c4ca] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [324a98ed] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [324a98ed] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [dfba115c] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [2dcb9619] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2dcb9619] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-sergiy.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [abb65e32] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [abb65e32] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [ff8553d9] Running if test ! -d /var/www/TalkAway/releases/20190307155918; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155918'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ff8553d9] Command: if test ! -d /var/www/TalkAway/releases/20190307155918; then echo "Directory does not exist '/var/www/TalkAway/releases/20190307155918'" 1>&2; false; fi
+ DEBUG [9759249a] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [7eab9fb3] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7eab9fb3] Command: cd /var/www/TalkAway/releases/20190307155918 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [4d44a4ff] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [217ea3ac] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [217ea3ac] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [35dd4a3c] Finished in 1.461 seconds with exit status 0 (successful).
+  INFO [f07c6bbd] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f07c6bbd] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [62624849] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [3b6660fa] Running /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [3b6660fa] Command: /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt
+ DEBUG [4f661095] 	Requirement already satisfied: aniso8601==3.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 1))
+ DEBUG [4f661095] 	Requirement already satisfied: Cython==0.29.6 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 2))
+ DEBUG [4f661095] 	Requirement already satisfied: Django==2.1.7 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 3))
+ DEBUG [4f661095] 	Requirement already satisfied: django-graphql-jwt==0.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 4))
+ DEBUG [4f661095] 	Requirement already satisfied: django-cors-headers==2.4.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 5))
+ DEBUG [4f661095] 	Requirement already satisfied: Faker==1.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 6))
+ DEBUG [4f661095] 	Requirement already satisfied: graphene==2.1.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 7))
+ DEBUG [4f661095] 	Requirement already satisfied: graphene-django==2.2.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 8))
+ DEBUG [4f661095] 	Requirement already satisfied: graphql-core==2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 9))
+ DEBUG [4f661095] 	Requirement already satisfied: graphql-relay==0.4.5 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 10))
+ DEBUG [4f661095] 	Requirement already satisfied: promise==2.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 11))
+ DEBUG [4f661095] 	Requirement already satisfied: PyJWT==1.7.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 12))
+ DEBUG [4f661095] 	Requirement already satisfied: python-dateutil==2.8.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 13))
+ DEBUG [4f661095] 	Requirement already satisfied: pytz==2018.9 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 14))
+ DEBUG [4f661095] 	Requirement already satisfied: Rx==1.6.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 15))
+ DEBUG [4f661095] 	Requirement already satisfied: singledispatch==3.4.0.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 16))
+ DEBUG [4f661095] 	Requirement already satisfied: six==1.12.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 17))
+ DEBUG [4f661095] 	Requirement already satisfied: text-unidecode==1.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190307155918/api/requirements.txt (line 18))
+  INFO [4f661095] Finished in 1.397 seconds with exit status 0 (successful).
+  INFO [939e2528] Running /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155918 /var/www/TalkAway/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [939e2528] Command: /usr/bin/env ln -s /var/www/TalkAway/releases/20190307155918 /var/www/TalkAway/releases/current
+  INFO [6ff570c7] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [a8e99a94] Running /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a8e99a94] Command: /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway
+  INFO [6ea74493] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [74aa94b4] Running /usr/bin/env sudo sv reload uwsgi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [74aa94b4] Command: /usr/bin/env sudo sv reload uwsgi
+ DEBUG [1be88480] 	ok: run: uwsgi: (pid 16006) 17s
+  INFO [1be88480] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [5ebf571a] Running /usr/bin/env ls -x /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5ebf571a] Command: /usr/bin/env ls -x /var/www/TalkAway/releases
+ DEBUG [cf480c32] 	20190307154853	20190307155155	20190307155212	20190307155404	20190307155648
+20190307155918
+ DEBUG [cf480c32] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on djangochat.srvz-webapp.he-arc.ch
+ DEBUG [44d66689] Running [ -d /var/www/TalkAway/current ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [44d66689] Command: [ -d /var/www/TalkAway/current ]
+ DEBUG [9725e6be] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [43a41202] Running /usr/bin/env readlink /var/www/TalkAway/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [43a41202] Command: /usr/bin/env readlink /var/www/TalkAway/current
+ DEBUG [86a72ec6] 	/var/www/TalkAway/releases/20190307155918
+ DEBUG [86a72ec6] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [c9c48dce] Running /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307154853 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c9c48dce] Command: /usr/bin/env rm -rf /var/www/TalkAway/releases/20190307154853
+  INFO [c9a6238b] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [5d83dd35] Running if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [5d83dd35] Command: if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi
+ DEBUG [6f57c887] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [53eff8cb] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155918 by sergiy" >> /var/www/TalkAway/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [53eff8cb] Command: cd /var/www/TalkAway/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190307155918 by sergiy" >> /var/www/TalkAway/revisions.log
+  INFO [00e61029] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:14:53 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cc14e73f] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [cc14e73f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9c6a38ab] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [62fa2750] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62fa2750] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [846634a7] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [851cb0e7] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [851cb0e7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [151432af] 	git@github.com: Permission denied (publickey).
+ DEBUG [151432af] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:15:27 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a9b22be3] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a9b22be3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [43e1a1fb] Finished in 0.280 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [7b3e9334] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7b3e9334] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [e88e4815] Finished in 0.091 seconds with exit status 0 (successful).
+  INFO [f56d84fe] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [f56d84fe] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [79d481a5] 	git@github.com: Permission denied (publickey).
+ DEBUG [79d481a5] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 17:16:06 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2d01bd23] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2d01bd23] Command: /usr/bin/env mkdir -p /tmp
+  INFO [62cb57b2] Finished in 0.261 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [1a8bd0e1] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [1a8bd0e1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [bf557cc5] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [d9606f44] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [d9606f44] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [8624f32b] 	git@github.com: Permission denied (publickey).
+ DEBUG [8624f32b] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-08 18:46:11 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bc13809c] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [bc13809c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9ec4e450] Finished in 0.272 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [a982a084] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a982a084] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [45b9223e] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO [ed04bce5] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [ed04bce5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [eb18e089] 	git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-11 21:19:17 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [62311867] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62311867] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-03-11 21:22:23 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [62efebfd] Running /usr/bin/env mkdir -p /tmp as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [62efebfd] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9a46f4eb] Finished in 1.414 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 0.0%
+  INFO Uploading /tmp/git-ssh-TalkAway-production-bastien.sh 100.0%
+  INFO [4b7c6fd6] Running /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4b7c6fd6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-TalkAway-production-bastien.sh
+  INFO [292aedba] Finished in 0.106 seconds with exit status 0 (successful).
+  INFO [050e830b] Running /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [050e830b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git ls-remote git@github.com:HE-Arc/TalkAway.git HEAD )
+ DEBUG [6ede6d0c] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da	HEAD
+  INFO [6ede6d0c] Finished in 1.623 seconds with exit status 0 (successful).
+  INFO [714e0039] Running /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [714e0039] Command: /usr/bin/env mkdir -p /var/www/TalkAway/shared /var/www/TalkAway/releases
+  INFO [2e53d28a] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [453c9f5f] Running [ -f /var/www/TalkAway/current/REVISION ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [453c9f5f] Command: [ -f /var/www/TalkAway/current/REVISION ]
+ DEBUG [d537b497] Finished in 0.087 seconds with exit status 1 (failed).
+ DEBUG [2b368803] Running [ -f /var/www/TalkAway/repo/HEAD ] as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [2b368803] Command: [ -f /var/www/TalkAway/repo/HEAD ]
+ DEBUG [2daaded1] Finished in 0.094 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/TalkAway/repo
+ DEBUG [cf202c1f] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [cf202c1f] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [f924d1f0] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [eb11e769] Running /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [eb11e769] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git remote set-url origin git@github.com:HE-Arc/TalkAway.git )
+  INFO [dc4d7a2e] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [24b51111] Running /usr/bin/env git remote update --prune as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [24b51111] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [55cdb223] 	Fetching origin
+ DEBUG [55cdb223] 	From github.com:HE-Arc/TalkAway
+   a09ec64..3102daf  auth           -> auth
+ DEBUG [55cdb223] 	 * [new branch]      chatPane       -> chatPane
+ DEBUG [55cdb223] 	   473d9f3..3102daf  dev            -> dev
+ DEBUG [55cdb223] 	 * [new branch]      djangoChannels -> djangoChannels
+  INFO [55cdb223] Finished in 2.113 seconds with exit status 0 (successful).
+ DEBUG [9b6ca65e] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9b6ca65e] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [63542b11] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [993be3cf] Running /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190311202227 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [993be3cf] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env mkdir -p /var/www/TalkAway/releases/20190311202227 )
+  INFO [461e5097] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [381b782e] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190311202227 as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [381b782e] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/TalkAway/releases/20190311202227 )
+  INFO [62458963] Finished in 0.151 seconds with exit status 0 (successful).
+ DEBUG [191a1f47] Running if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [191a1f47] Command: if test ! -d /var/www/TalkAway/repo; then echo "Directory does not exist '/var/www/TalkAway/repo'" 1>&2; false; fi
+ DEBUG [746c4dee] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [aa6e1df1] Running /usr/bin/env git rev-list --max-count=1 master as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [aa6e1df1] Command: cd /var/www/TalkAway/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-TalkAway-production-bastien.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b9e99a73] 	bbc0e82089b1ccb64eec514b18b170ad8e2bf7da
+ DEBUG [b9e99a73] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [4edd406d] Running if test ! -d /var/www/TalkAway/releases/20190311202227; then echo "Directory does not exist '/var/www/TalkAway/releases/20190311202227'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [4edd406d] Command: if test ! -d /var/www/TalkAway/releases/20190311202227; then echo "Directory does not exist '/var/www/TalkAway/releases/20190311202227'" 1>&2; false; fi
+ DEBUG [8195814e] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [c17e0a2e] Running /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [c17e0a2e] Command: cd /var/www/TalkAway/releases/20190311202227 && /usr/bin/env echo "bbc0e82089b1ccb64eec514b18b170ad8e2bf7da" > REVISION
+  INFO [6651e06b] Finished in 0.090 seconds with exit status 0 (successful).
+  INFO [b21f7b18] Running python3.6 -m venv /var/www/TalkAway/shared/env as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b21f7b18] Command: python3.6 -m venv /var/www/TalkAway/shared/env
+  INFO [a38b31fb] Finished in 5.915 seconds with exit status 0 (successful).
+  INFO [b7ec97de] Running source /var/www/TalkAway/shared/env/bin/activate as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [b7ec97de] Command: source /var/www/TalkAway/shared/env/bin/activate
+  INFO [0b8cc137] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [54959fee] Running /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [54959fee] Command: /var/www/TalkAway/shared/env/bin/pip install -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt
+ DEBUG [afd41087] 	Requirement already satisfied: aniso8601==3.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 1))
+ DEBUG [afd41087] 	Requirement already satisfied: Cython==0.29.6 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 2))
+ DEBUG [afd41087] 	Requirement already satisfied: Django==2.1.7 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 3))
+ DEBUG [afd41087] 	Requirement already satisfied: django-graphql-jwt==0.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 4))
+ DEBUG [afd41087] 	Requirement already satisfied: django-cors-headers==2.4.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 5))
+ DEBUG [afd41087] 	Requirement already satisfied: Faker==1.0.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 6))
+ DEBUG [afd41087] 	Requirement already satisfied: graphene==2.1.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 7))
+ DEBUG [afd41087] 	Requirement already satisfied: graphene-django==2.2.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 8))
+ DEBUG [afd41087] 	Requirement already satisfied: graphql-core==2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 9))
+ DEBUG [afd41087] 	Requirement already satisfied: graphql-relay==0.4.5 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 10))
+ DEBUG [afd41087] 	Requirement already satisfied: promise==2.2.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 11))
+ DEBUG [afd41087] 	Requirement already satisfied: PyJWT==1.7.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 12))
+ DEBUG [afd41087] 	Requirement already satisfied: python-dateutil==2.8.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 13))
+ DEBUG [afd41087] 	Requirement already satisfied: pytz==2018.9 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 14))
+ DEBUG [afd41087] 	Requirement already satisfied: Rx==1.6.1 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 15))
+ DEBUG [afd41087] 	Requirement already satisfied: singledispatch==3.4.0.3 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 16))
+ DEBUG [afd41087] 	Requirement already satisfied: six==1.12.0 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 17))
+ DEBUG [afd41087] 	Requirement already satisfied: text-unidecode==1.2 in /var/www/TalkAway/shared/env/lib/python3.6/site-packages (from -r /var/www/TalkAway/releases/20190311202227/api/requirements.txt (line 18))
+  INFO [afd41087] Finished in 2.202 seconds with exit status 0 (successful).
+  INFO [a2e9a869] Running /usr/bin/env ln -s /var/www/TalkAway/releases/20190311202227 /var/www/TalkAway/releases/current as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [a2e9a869] Command: /usr/bin/env ln -s /var/www/TalkAway/releases/20190311202227 /var/www/TalkAway/releases/current
+  INFO [883fa011] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [fc9cc394] Running /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [fc9cc394] Command: /usr/bin/env mv /var/www/TalkAway/releases/current /var/www/TalkAway
+  INFO [27dbcd43] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [143788be] Running /usr/bin/env sudo sv reload uwsgi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [143788be] Command: /usr/bin/env sudo sv reload uwsgi
+ DEBUG [ff0ab102] 	ok: run: uwsgi: (pid 16106) 361209s
+  INFO [ff0ab102] Finished in 0.262 seconds with exit status 0 (successful).
+ DEBUG [9a1595d2] Running /usr/bin/env ls -x /var/www/TalkAway/releases as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [9a1595d2] Command: /usr/bin/env ls -x /var/www/TalkAway/releases
+ DEBUG [e4d9967c] 	20190311202227
+ DEBUG [e4d9967c] Finished in 0.143 seconds with exit status 0 (successful).
+ DEBUG [19980718] Running if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [19980718] Command: if test ! -d /var/www/TalkAway/releases; then echo "Directory does not exist '/var/www/TalkAway/releases'" 1>&2; false; fi
+ DEBUG [bf217716] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [7f74bbb0] Running /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190311202227 by bastien" >> /var/www/TalkAway/revisions.log as poweruser@djangochat.srvz-webapp.he-arc.ch
+ DEBUG [7f74bbb0] Command: cd /var/www/TalkAway/releases && /usr/bin/env echo "Branch master (at bbc0e82089b1ccb64eec514b18b170ad8e2bf7da) deployed as release 20190311202227 by bastien" >> /var/www/TalkAway/revisions.log
+  INFO [93843036] Finished in 0.114 seconds with exit status 0 (successful).

@@ -4,10 +4,6 @@ import ContactList from './ContactList/ContactList';
 import './LeftPane.css';
 
 class LeftPane extends Component {
-    
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

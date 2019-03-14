@@ -1,17 +1,16 @@
 const serverReducer = (state = {
-    id: null,
-    name: '',
-    channelsId: []
+    servers: []
 }, action) => {
     switch (action.type) {
         case "CREATE_SERVER":
+            //TODO
             state = {
-                ...state
+                ...state,
             }
             break;
-        case "LOGIN":
+        case "LIST_SERVER":
             state = {
-                ...state
+                servers: action.payload
             }
             break;
         default:

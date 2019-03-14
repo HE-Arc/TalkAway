@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 import Server from './Contact/Server';
 import Friend from './Contact/Friend';
 import './ContactList.css';
+
+import {requestServerList} from "../../../../actions/ServerAction";
+import {requestFriendList} from "../../../../actions/FriendAction";
 
 class ContactList extends Component {
     
@@ -11,75 +16,31 @@ class ContactList extends Component {
             serverDisplayed: true,
             friendlock: 0,
             serverlock: 0,
-            friends: [{
-                name: "Friend 1",
-                connected: -1,
-                max: -1},{
-                name: "Friend 2",
-                connected: -1,
-                max: -1},{
-                name: "Friend 3",
-                connected: -1,
-                max: -1}
-            ],
-            servers: [{
-                name: "Server 1",
-                connected: 2,
-                max: 10},{
-                name: "Server 2",
-                connected: 1,
-                max: 1},{
-                name: "Server 3",
-                connected: 4,
-                max: 6},{
-                name: "Server 4",
-                connected: 3,
-                max: 20},{
-                name: "Server 5",
-                connected: 1,
-                max: 2},{
-                name: "Server 6",
-                connected: 5,
-                max: 6},{
-                name: "Server 7",
-                connected: 5,
-                max: 8},{
-                name: "Server 8",
-                connected: 10,
-                max: 10},{
-                name: "Server 9",
-                connected: 4,
-                max: 11},{
-                name: "Server 10",
-                connected: 10,
-                max: 13}
-            ]
         }
-        this.displayServers = this.displayServers.bind(this);
-        this.displayFriends = this.displayFriends.bind(this);
-        this.friendSelected = this.friendSelected.bind(this);
-        this.serverSelected = this.serverSelected.bind(this);
+
+        this.props.requestFriendList();
+        this.props.requestServerList();
     }
 
-    displayServers() {
+    displayServers = () => {
         this.setState({
             serverDisplayed: true
         })
     }
 
-    displayFriends() {
+    displayFriends = () => {
         this.setState({
             serverDisplayed: false
         })
     }
 
-    friendSelected(id) {
+    friendSelected = (id) => {
         this.setState({
             friendlock: id
         })
     }
 
-    serverSelected(id) {
+    serverSelected = (id) => {
         this.setState({
             serverlock: id
         })
@@ -96,26 +57,28 @@ class ContactList extends Component {
         if (this.state.serverDisplayed) {
             styleServers = blue;
             styleFriends = white;
-            for (var i = 0; i < this.state.servers.length; i++) {
+            for (var i = 0; i < this.props.servers.length; i++) {
                 let classes = ["row"];
                 if (i === this.state.serverlock) {
                     classes.push("selected");
                 } else {
                     classes.push("selectable");
                 }
-                contactRows.push(<div key={i} className={classes.join(' ')}><Server contact={this.state.servers[i]} serverSelected={this.serverSelected} idServer={i}/></div>);
+                contactRows.push(<div key={i} className={classes.join(' ')}>
+                <Server contact={this.props.servers[i]} serverSelected={this.serverSelected} idServer={i}/></div>);
             }
         } else {
             styleServers = white;
             styleFriends = blue;
-            for (var j = 0; j < this.state.friends.length; j++) {
+            for (var j = 0; j < this.props.friends.length; j++) {
                 let classes = ["row"];
                 if (j === this.state.friendlock) {
                     classes.push("selected");
                 } else {
                     classes.push("selectable");
                 }
-                contactRows.push(<div key={j + this.state.servers.length} className={classes.join(' ')}><Friend contact={this.state.friends[j]} friendSelected={this.friendSelected} idFriend={j}/></div>);
+                contactRows.push(<div key={j + this.props.servers.length} className={classes.join(' ')}>
+                <Friend contact={this.props.friends[j]} friendSelected={this.friendSelected} idFriend={j}/></div>);
             }
         }
 
@@ -141,4 +104,11 @@ class ContactList extends Component {
     }
 }
 
-export default ContactList; 
+const mapsStateToProps = (state) => {
+    return {
+        servers: state.server.servers,
+        friends: state.friend.friends
+    }
+}
+
+export default connect(mapsStateToProps, {requestServerList, requestFriendList})(ContactList); 

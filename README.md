@@ -69,7 +69,7 @@ netstat -nao | find "8080"
 Taskkill /F /PID app_PID
 
 Admin account name: `admin` , password : `admin`
-Test users passwords: `qwertz`
+Test users passwords: `qwertzui`
 
 ## App
 

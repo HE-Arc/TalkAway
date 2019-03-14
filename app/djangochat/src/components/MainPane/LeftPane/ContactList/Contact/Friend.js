@@ -7,7 +7,7 @@ class Friend extends Component {
         super(props);
         this.state = {
             idFriend: props.idFriend,
-            name: props.contact.name,
+            name: props.contact.username,
             selected: false,
             friendSelected: props.friendSelected
         }

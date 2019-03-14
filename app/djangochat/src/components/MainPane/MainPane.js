@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import LeftPane from './LeftPane/LeftPane';
 import MiddlePane from './Chat/MiddlePane';
+import RightPane from './RightPane/RightPane';
 import './MainPane.css';
 
 class MainPane extends Component {
@@ -48,7 +49,7 @@ class MainPane extends Component {
                         <MiddlePane messageList={this.state.messageList}/>
                     </div>
                     <div className="col-3 sidepane pane">
-                        
+                        <RightPane/>
                     </div>
                 </div>
             </div> 

@@ -1,7 +1,8 @@
 const authReducer = (state = {
     username: '',
     email: '',
-    token: ''
+    token: '',
+    isLogged: false
 }, action) => {
     switch (action.type) {
         case "LOGIN":
@@ -14,7 +15,8 @@ const authReducer = (state = {
             state = {
                 username: '',
                 token: '',
-                email: ''
+                email: '',
+                isLogged: false,
             }
             break;
         default:

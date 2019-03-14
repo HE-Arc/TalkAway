@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import {connect} from 'react-redux';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import AuthPage from './pages/Auth';
@@ -16,7 +17,20 @@ class App extends Component {
                         <Switch >
                             <Redirect from="/" to='/home' exact/>
                             <Route path="/home" component={HomePage}/>
-                            <Route path="/auth" component={AuthPage}/>
+                            <Route path="/auth" render={() => (
+                                this.props.isLogged ? (
+                                    <Redirect to="/chat"/>
+                                ) : (
+                                    <AuthPage/>
+                                )
+                            )}/>
+                            <Route path="/chat" render={() => (
+                                !this.props.isLogged ? (
+                                    <Redirect to="/auth"/>
+                                ) : (
+                                    <ChatPage/>
+                                )
+                            )}/>
                             <Route path="/chat" component={ChatPage}/>
                         </Switch>
                     </main>
@@ -26,4 +40,10 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapsStateToProps = (state) => {
+    return {
+        isLogged: state.auth.isLogged
+    }
+}
+
+export default connect(mapsStateToProps)(App);

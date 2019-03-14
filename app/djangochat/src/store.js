@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import authReducer from './reducers/AuthReducer';
 import channelReducer from './reducers/ChannelReducer';
 import serverReducer from './reducers/ServerReducer';
+import friendReducer from './reducers/FriendReducer';
 
 const logger = createLogger({
     // ...options
@@ -12,9 +13,10 @@ const logger = createLogger({
 
 export default createStore(
     combineReducers({
-        authReducer,
-        serverReducer,
-        channelReducer
+        auth: authReducer,
+        server: serverReducer,
+        channel: channelReducer,
+        friend: friendReducer
     }),
     {},
     applyMiddleware(logger, thunk)
