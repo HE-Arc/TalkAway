@@ -1,4 +1,6 @@
 
+import {baseGraphqlUrl} from '../config/config';
+
 export function createServer(data) {
     return {
         type: 'CREATE_SERVER',
@@ -29,7 +31,7 @@ export function requestServerList() {
             `
         };
 
-        return fetch('http://localhost:8080/graphql/', {
+        return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

@@ -1,0 +1,3 @@
+export const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://djangochat.srvz-webapp.he-arc.ch'
+export const baseGraphqlUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8080/graphql' : 'https://djangochat.srvz-webapp.he-arc.ch/graphql'
+export const baseWebsocketUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : 'ws://djangochat.srvz-webapp.he-arc.ch'

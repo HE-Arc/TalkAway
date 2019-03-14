@@ -1,3 +1,6 @@
+
+import {baseGraphqlUrl} from '../config/config';
+
 export function requestFriendList() {
     return (dispatch, getState) => {
         const requestBody = {
@@ -11,7 +14,7 @@ export function requestFriendList() {
             `
         };
 
-        return fetch('http://localhost:8080/graphql/', {
+        return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

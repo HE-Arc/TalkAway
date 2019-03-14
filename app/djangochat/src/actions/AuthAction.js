@@ -1,3 +1,6 @@
+
+import {baseGraphqlUrl} from '../config/config';
+
 export function logout() {
     return dispatch => {
         dispatch(
@@ -18,7 +21,7 @@ export function requestLogin(username, password) {
             `
         };
 
-        return fetch('http://localhost:8080/graphql/', {
+        return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -57,7 +60,7 @@ export function requestRegister(email, username, password) {
             `
         };
 
-        fetch('http://localhost:8080/graphql/', {
+        fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody), // JSON Object
             headers: {
