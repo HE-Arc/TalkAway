@@ -64,6 +64,10 @@ python3 manage.py createsuperuser
 python3 ./api/djangochat/manage.py runserver 8080
 ```
 
+Kill applications on port 8080:
+netstat -nao | find "8080"
+Taskkill /F /PID app_PID
+
 Admin account name: `admin` , password : `admin`
 Test users passwords: `qwertz`
 
