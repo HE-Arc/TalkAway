@@ -43,6 +43,16 @@ To seed the database:
 python manage.py loaddata api/fixtures/seed.json
 ```
 
+Install redis server:
+```
+sudo apt install redis
+```
+
+Run redis server (maybe it's already running):
+```
+redis-server
+```
+
 #### Tips
 
 For migrations, once edited models.py

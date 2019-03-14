@@ -1,6 +1,9 @@
 import React, {
     Component
 } from 'react';
+
+import {connect} from 'react-redux';
+
 import MessageComponent from './Message/Message';
 
 class MiddlePane extends Component {
@@ -13,8 +16,6 @@ class MiddlePane extends Component {
             messageInput:''
         };
 
-        this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.handleChange = this.handleChange.bind(this);
 
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
@@ -26,11 +27,7 @@ class MiddlePane extends Component {
 
     }
 
-    
-
     render() {
-
-    
         return (
             <div>
                 <div id="messages">
@@ -41,25 +38,26 @@ class MiddlePane extends Component {
         );
     }
 
-    handleKeyPress(event){
+    handleKeyPress = (event) => {
         if(event.key === 'Enter'){
             this.sendMessage();
         }
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({messageInput: event.target.value});
     }
 
-    sendMessage(){
+    sendMessage = () => {
         var message = this.state.messageInput;
+        let now=new Date();
         this.chatSocket.send(JSON.stringify({
             id_message3: {
                 user: {
-                    username: "Yves"
+                    username: this.props.username
                 },
                 text: message,
-                date: "04:20"
+                date: `${now.getHours()}:${now.getMinutes()}`
             }
         }));
 
@@ -91,4 +89,10 @@ class MiddlePane extends Component {
     }
 }
 
-export default MiddlePane;
+const mapsStateToProps = (state) => {
+    return {
+        username: state.auth.username
+    }
+}
+
+export default connect(mapsStateToProps)(MiddlePane); 
