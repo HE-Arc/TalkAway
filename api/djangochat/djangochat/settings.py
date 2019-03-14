@@ -25,7 +25,7 @@ SECRET_KEY = 'as0*j_%@)den2&^l0&gz%aneh!x(=jws1$=5*9z=26d_(js40h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch','127.0.0.1']
+ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch','127.0.0.1', 'localhost']
 
 
 # Application definition
