@@ -7,9 +7,43 @@
 }
 
 #serverChannels {
-    height: calc(100% - 300px);
+    height: calc(100% - 344px);
 }
 
 #serverUsers {
     height: 200px;
+}
+
+#channelsContainer {
+    width: 90%;
+    height: 100%;
+}
+
+.serverhr {
+    height: 10px;
+    margin: 0;
+    margin-top: 10px;
+    border-width: 2px;
+}
+
+.buttonServer {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 100%;
+}
+
+.scrollableServer {
+    max-height: 100%;
+    overflow: auto;
+}
+
+.scrollableServer::-webkit-scrollbar {
+    width: 0.2em;
+}
+ 
+.scrollableServer::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
 }
