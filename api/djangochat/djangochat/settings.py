@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +144,15 @@ AUTHENTICATION_BACKENDS = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_REPLACE_HTTPS_REFERER = True
+
+ASGI_APPLICATION = 'djangochat.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+            "symmetric_encryption_keys": [SECRET_KEY],
+        },
+    },
+}

@@ -12,7 +12,7 @@ class MainPane extends Component {
 
         this.state = {
             messageList: JSON.parse(JSON.stringify({
-                id_message1: {
+                id_message: {
                     user: {
                         username: "Jacques"
                     },
