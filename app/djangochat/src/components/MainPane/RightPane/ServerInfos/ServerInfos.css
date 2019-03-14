@@ -47,3 +47,13 @@
   outline: 1px solid slategrey;
   border-radius: 10px;
 }
+
+.row.selectable:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.row.selected {
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}

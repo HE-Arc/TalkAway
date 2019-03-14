@@ -8,15 +8,28 @@ class ServerInfos extends Component {
         super(props);
         this.state = {
             channels: ["Channel 1", "Channel 2", "Channel 3", "Channel 4", "Channel 5", 
-                "Channel 6", "Channel 7", "Channel 8", "Channel 9", "Channel 10"]
+                "Channel 6", "Channel 7", "Channel 8", "Channel 9", "Channel 10"],
+            channelLock: 0
         };
+    }
+
+    channelSelected = (id) => {
+        this.setState({
+            channelLock: id
+        })
     }
 
     render() {
         var channels = [];
         for (var i = 0; i < this.state.channels.length; i++) {
-            channels.push(  <div key={i}>
-                                <Channel name={this.state.channels[i]} idChannel={i}/>
+            let classes = ["row"];
+            if (i === this.state.channelLock) {
+                classes.push("selected");
+            } else {
+                classes.push("selectable");
+            }
+            channels.push(  <div key={i} className={classes.join(' ')}>
+                                <Channel name={this.state.channels[i]} channelSelected={this.channelSelected} idChannel={i}/>
                             </div>);
         }
 
