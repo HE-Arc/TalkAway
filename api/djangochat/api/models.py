@@ -19,7 +19,7 @@ class Server(models.Model):
 # As recommended here: https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
 class User(AbstractUser):
     servers = models.ManyToManyField(Server, through='Right')
-    friends = models.ManyToManyField('self', blank=True, null=True)
+    friends = models.ManyToManyField('self', blank=True)
 
 
 class Channel(models.Model):
