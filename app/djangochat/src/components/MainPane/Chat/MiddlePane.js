@@ -70,7 +70,6 @@ class MiddlePane extends Component {
         this.chatSocket = new WebSocket(
             'ws://' + window.location.host.split(":")[0] +
             ':8080/ws/djangochat/' + roomName + '/');
-            
         
         this.chatSocket.onmessage = function(e) {
             var message = JSON.parse(e.data).message;

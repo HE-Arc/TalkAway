@@ -1,4 +1,6 @@
 
+import {baseGraphqlUrl} from '../config/config';
+
 function _updateChannelList(data) {
     return {
         type: 'LIST_CHANNEL',
@@ -19,7 +21,7 @@ export function requestChannelList(serverId) {
             `
         };
 
-        return fetch('http://localhost:8080/graphql/', {
+        return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
