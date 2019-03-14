@@ -64,7 +64,7 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 
 after 'deploy:updating', 'reactjs:download'
 
-namespace :nuxtjs do
+namespace :reactjs do
  desc "Install dependencies and reload reactjs"
  task :download do
   on roles(:web) do |h|
