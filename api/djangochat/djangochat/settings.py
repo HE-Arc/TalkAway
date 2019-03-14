@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'as0*j_%@)den2&^l0&gz%aneh!x(=jws1$=5*9z=26d_(js40h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch','127.0.0.1', 'localhost']
 
