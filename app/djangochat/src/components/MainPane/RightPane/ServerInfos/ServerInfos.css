@@ -51,9 +51,11 @@
 .row.selectable:hover {
     background-color: lightgray;
     cursor: pointer;
+    width: 100%;
 }
 
 .row.selected {
     background-color: rgb(240, 240, 240);
     cursor: pointer;
+    width: 100%;
 }
