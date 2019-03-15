@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './UserSettings.css';
 
+import {connect} from 'react-redux';
+
 class UserSettings extends Component {
     
     constructor(props) {
@@ -54,7 +56,7 @@ class UserSettings extends Component {
                         <img id="connection" alt="" src={connectionImg}/>
                     </div>
                     <div id="username" className="col-6">
-                        Username
+                    {this.props.username}
                     </div>
                     <div id="settingsButton" className="col-3">
                         <img className="cursor" alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
@@ -65,4 +67,10 @@ class UserSettings extends Component {
     }
 }
 
-export default UserSettings; 
+const mapsStateToProps = (state) => {
+    return {
+        username: state.auth.username
+    }
+}
+
+export default connect(mapsStateToProps)(UserSettings); 

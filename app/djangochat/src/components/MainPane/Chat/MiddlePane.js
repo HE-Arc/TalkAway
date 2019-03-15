@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 
 import MessageComponent from './Message/Message';
 
+import {baseWebsocketUrl} from '../../../config/config.js';
+
 class MiddlePane extends Component {
 
     constructor(props) {
@@ -66,10 +68,10 @@ class MiddlePane extends Component {
 
     componentDidMount(){
         let roomName="test"; //TODO: CHANGE THIS
-
+        console.log(
+            baseWebsocketUrl+'/'+ roomName+'/')
         this.chatSocket = new WebSocket(
-            'ws://' + window.location.host.split(":")[0] +
-            ':8080/ws/djangochat/' + roomName + '/');
+            baseWebsocketUrl+'/'+ roomName+'/');
         
         this.chatSocket.onmessage = function(e) {
             var message = JSON.parse(e.data).message;
