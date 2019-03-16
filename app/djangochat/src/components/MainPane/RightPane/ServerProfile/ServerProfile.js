@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 import './ServerProfile.css';
 
 class ServerProfile extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            
-        };
-    }
-    
+
     render() {
         // Return the component
         return (
@@ -19,7 +14,7 @@ class ServerProfile extends Component {
                         <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
                     </div>
                     <div id="servername" className="col-9">
-                        Servername
+                        {this.props.activeServer[0]!==undefined ? this.props.activeServer[0].name:""}
                     </div>
                 </div>
             </div>
@@ -27,4 +22,10 @@ class ServerProfile extends Component {
     }
 }
 
-export default ServerProfile; 
+const mapsStateToProps = (state) => {
+    return {
+        activeServer: state.server.servers.filter(s=>s.id===state.server.activeServerId)
+    }
+}
+
+export default connect(mapsStateToProps)(ServerProfile);
