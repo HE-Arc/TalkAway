@@ -1,6 +1,15 @@
 
 import {baseGraphqlUrl} from '../config/config';
 
+export function selectFriend(friendId) {
+    return (dispatch) => {
+        dispatch({
+            type: 'SELECT_FRIEND',
+            payload: friendId
+        });
+    }
+}
+
 export function requestFriendList() {
     return (dispatch, getState) => {
         const requestBody = {

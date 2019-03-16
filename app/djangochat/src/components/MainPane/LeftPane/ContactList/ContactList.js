@@ -7,7 +7,7 @@ import './ContactList.css';
 
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
-import {requestFriendList} from "../../../../actions/FriendAction";
+import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
 
 class ContactList extends Component {
     
@@ -15,7 +15,6 @@ class ContactList extends Component {
         super(props);
         this.state = {
             serverDisplayed: true,
-            friendlock: 0,
         }
 
         this.props.requestFriendList();
@@ -35,9 +34,7 @@ class ContactList extends Component {
     }
 
     friendSelected = (id) => {
-        this.setState({
-            friendlock: id
-        })
+        this.props.selectFriend(id);
     }
 
     serverSelected = (id) => {
@@ -49,30 +46,21 @@ class ContactList extends Component {
         // Update the displayed list
         const white = '#FFFFFF';
         const blue = '#0D6CB8';
-        var contactRows = [];
+        let contactRows = [];
+        const classesSelected = ["row", "selected"];
+        const classesSelectable = ["row", "selectable"];
 
         const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
-            
             contactRows = this.props.servers.map((server)=>{
-                let classes = ["row"];
-                if (server.id === this.props.activeServerId) {
-                    classes.push("selected");
-                } else {
-                    classes.push("selectable");
-                }
+                let classes = (server.id === this.props.activeServerId) ? classesSelected : classesSelectable;
                 return( <div key={server.id} className={classes.join(' ')}>
                             <Server contact={{}} server={server} serverSelected={this.serverSelected}/>
                         </div>);
             });
         } else {
             contactRows = this.props.friends.map((friend)=>{
-                let classes = ["row"];
-                if (friend.id === this.props.activeServerId) {
-                    classes.push("selected");
-                } else {
-                    classes.push("selectable");
-                }
+                let classes = (friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
                 return( <div key={friend.id + this.props.servers.length} className={classes.join(' ')}>
                             <Friend friend={friend} friendSelected={this.friendSelected}/>
                         </div>);
@@ -105,8 +93,17 @@ const mapsStateToProps = (state) => {
     return {
         servers: state.server.servers,
         activeServerId: state.server.activeServerId,
-        friends: state.friend.friends
+        friends: state.friend.friends,
+        activeFriendId: state.friend.activeFriendId,
     }
 }
 
-export default connect(mapsStateToProps, {requestServerList, requestFriendList, requestChannelList, selectServer})(ContactList); 
+const mapDispatchToProps= {
+    requestServerList,
+    requestFriendList,
+    requestChannelList,
+    selectServer,
+    selectFriend,
+}
+
+export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 

@@ -12,7 +12,7 @@ class Server extends Component {
     }
 
     render() {
-        var connectivity = "";
+        let connectivity = "";
         if (this.state.connected !== -1 && this.state.max !== -1)
         {
             connectivity = "(" + this.state.connected + "/" + this.state.max + ")";
