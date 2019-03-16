@@ -6,6 +6,7 @@ import authReducer from './reducers/AuthReducer';
 import channelReducer from './reducers/ChannelReducer';
 import serverReducer from './reducers/ServerReducer';
 import friendReducer from './reducers/FriendReducer';
+import messageReducer from './reducers/MessageReducer';
 
 const logger = createLogger({
     // ...options
@@ -16,7 +17,8 @@ export default createStore(
         auth: authReducer,
         server: serverReducer,
         channel: channelReducer,
-        friend: friendReducer
+        friend: friendReducer,
+        message: messageReducer
     }),
     {},
     applyMiddleware(logger, thunk)

@@ -29,6 +29,7 @@ class ChatConsumer(WebsocketConsumer):
         date = messageJson['date']
         username = messageJson['user']['username']
 
+        #TODO Insert into database
         async_to_sync(self.channel_layer.group_send)(
             self.room_group_name,
             {

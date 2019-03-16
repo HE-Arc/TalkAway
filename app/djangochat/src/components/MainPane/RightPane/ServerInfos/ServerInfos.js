@@ -5,11 +5,13 @@ import './ServerInfos.css';
 import Channel from './Channel/Channel';
 
 import {selectChannel} from "../../../../actions/ChannelAction";
+import {requestMessageList} from "../../../../actions/MessageAction";
 
 class ServerInfos extends Component {
 
     channelSelected = (id) => {
         this.props.selectChannel(id);
+        this.props.requestMessageList(id);
     }
 
     render() {
@@ -53,5 +55,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps, {selectChannel})(ServerInfos); 
-
+export default connect(mapsStateToProps, {selectChannel, requestMessageList})(ServerInfos); 

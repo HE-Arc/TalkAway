@@ -7,30 +7,6 @@ import RightPane from './RightPane/RightPane';
 import './MainPane.css';
 
 class MainPane extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            messageList: JSON.parse(JSON.stringify({
-                id_message: {
-                    user: {
-                        username: "Jacques"
-                    },
-                    text: "test",
-                    date: "09:23"
-                },
-                id_message2: {
-                    user: {
-                        username: "Jacques"
-                    },
-                    text: "test2",
-                    date: "10:23"
-                }
-            }))
-        };
-    }
-
     render() {
         return (
             <div className="container-fluid">
@@ -39,7 +15,7 @@ class MainPane extends Component {
                         <LeftPane/>
                     </div>
                     <div className="col-6 pane">
-                        <MiddlePane messageList={this.state.messageList}/>
+                        <MiddlePane/>
                     </div>
                     <div className="col-3 sidepane pane">
                         <RightPane/>
