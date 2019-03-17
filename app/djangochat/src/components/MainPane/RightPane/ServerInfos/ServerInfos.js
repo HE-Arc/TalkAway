@@ -1,37 +1,31 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 import './ServerInfos.css';
 import Channel from './Channel/Channel';
 
+import {selectChannel} from "../../../../actions/ChannelAction";
+import {requestMessageList} from "../../../../actions/MessageAction";
+
 class ServerInfos extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            channels: ["Channel 1", "Channel 2", "Channel 3", "Channel 4", "Channel 5", 
-                "Channel 6", "Channel 7", "Channel 8", "Channel 9", "Channel 10"],
-            channelLock: 0
-        };
-    }
-
     channelSelected = (id) => {
-        this.setState({
-            channelLock: id
-        })
+        this.props.selectChannel(id);
+        this.props.requestMessageList(id);
     }
 
     render() {
-        var channels = [];
-        for (var i = 0; i < this.state.channels.length; i++) {
+        const channels = this.props.channels.map((channel)=>{
             let classes = ["row"];
-            if (i === this.state.channelLock) {
+            if (this.props.activeChannelId === channel.id) {
                 classes.push("selected");
             } else {
                 classes.push("selectable");
             }
-            channels.push(  <div key={i} className={classes.join(' ')}>
-                                <Channel name={this.state.channels[i]} channelSelected={this.channelSelected} idChannel={i}/>
-                            </div>);
-        }
+            return( <div key={channel.id} className={classes.join(' ')}>
+                        <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id}/>
+                    </div>);
+        })
 
         return (
             <div id="serverContainer" className="container">
@@ -54,4 +48,11 @@ class ServerInfos extends Component {
     }
 }
 
-export default ServerInfos; 
+const mapsStateToProps = (state) => {
+    return {
+        channels: state.channel.channels,
+        activeChannelId: state.channel.activeChannelId
+    }
+}
+
+export default connect(mapsStateToProps, {selectChannel, requestMessageList})(ServerInfos); 

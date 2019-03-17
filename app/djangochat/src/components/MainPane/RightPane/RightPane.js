@@ -4,7 +4,6 @@ import ServerProfile from './ServerProfile/ServerProfile';
 import ServerInfos from './ServerInfos/ServerInfos';
 
 class RightPane extends Component {
-
     render() {
         return (
             <div>

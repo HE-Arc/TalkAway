@@ -1,4 +1,5 @@
 const authReducer = (state = {
+    id: null,
     username: '',
     email: '',
     token: '',
@@ -13,6 +14,7 @@ const authReducer = (state = {
             break;
         case "LOGOUT":
             state = {
+                is: null,
                 username: '',
                 token: '',
                 email: '',

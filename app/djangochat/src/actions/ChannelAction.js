@@ -8,6 +8,15 @@ function _updateChannelList(data) {
     }
 }
 
+export function selectChannel(channelId) {
+    return (dispatch) => {
+        dispatch({
+            type: 'SELECT_CHANNEL',
+            payload: channelId
+        });
+    }
+}
+
 export function requestChannelList(serverId) {
     return (dispatch, getState) => {
         const requestBody = {

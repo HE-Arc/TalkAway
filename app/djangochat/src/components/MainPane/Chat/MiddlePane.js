@@ -1,38 +1,31 @@
-import React, {
-    Component
-} from 'react';
-
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import MessageComponent from './Message/Message';
 
 import {baseWebsocketUrl} from '../../../config/config.js';
+import {addMessage} from "../../../actions/MessageAction";
 
 class MiddlePane extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            messageList: props.messageList,
             messageComponentList : [],
             messageInput:''
         };
 
-
-        Object.keys(this.state.messageList).forEach(key => {
-            this.state.messageComponentList.push(React.createElement(MessageComponent, {
-                'messageObject': this.state.messageList[key],
-                'key': key
-            }));
-        });
-
-
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     render() {
         return (
             <div>
                 <div id="messages">
+                    {this.props.messages.map(message=>{
+                        return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
+                    })}
                     {this.state.messageComponentList}
                 </div>
                 <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button>
@@ -55,11 +48,9 @@ class MiddlePane extends Component {
         let now=new Date();
         this.chatSocket.send(JSON.stringify({
             id_message3: {
-                user: {
-                    username: this.props.username
-                },
+                user: this.props.user,
                 text: message,
-                date: `${now.getHours()}:${now.getMinutes()}`
+                date: Date.now()
             }
         }));
 
@@ -67,33 +58,31 @@ class MiddlePane extends Component {
     }
 
     componentDidMount(){
-        let roomName="test"; //TODO: CHANGE THIS
-        console.log(
-            baseWebsocketUrl+'/'+ roomName+'/')
+        let roomName="test";
+
         this.chatSocket = new WebSocket(
             baseWebsocketUrl+'/'+ roomName+'/');
         
         this.chatSocket.onmessage = function(e) {
             var message = JSON.parse(e.data).message;
-            let keyCount=this.state.messageComponentList.length;
-            this.state.messageComponentList.push(React.createElement(MessageComponent,{
-                'messageObject': message,
-            'key':keyCount})); //TODO: check if it's correct how i'm passing the message attribute
-            this.forceUpdate();
+            this.props.addMessage(message);
         };
         this.chatSocket.onmessage = this.chatSocket.onmessage.bind(this);
 
         this.chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');
         };
-
     }
 }
 
 const mapsStateToProps = (state) => {
     return {
-        username: state.auth.username
+        messages: state.message.messages,
+        user: {
+            username: state.auth.username,
+            id: state.auth.id
+        }
     }
 }
 
-export default connect(mapsStateToProps)(MiddlePane); 
+export default connect(mapsStateToProps, {addMessage})(MiddlePane); 

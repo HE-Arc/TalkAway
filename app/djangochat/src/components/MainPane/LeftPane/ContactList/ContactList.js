@@ -5,8 +5,9 @@ import Server from './Contact/Server';
 import Friend from './Contact/Friend';
 import './ContactList.css';
 
-import {requestServerList} from "../../../../actions/ServerAction";
-import {requestFriendList} from "../../../../actions/FriendAction";
+import {requestChannelList} from "../../../../actions/ChannelAction";
+import {requestServerList, selectServer} from "../../../../actions/ServerAction";
+import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
 
 class ContactList extends Component {
     
@@ -14,8 +15,6 @@ class ContactList extends Component {
         super(props);
         this.state = {
             serverDisplayed: true,
-            friendlock: 0,
-            serverlock: 0,
         }
 
         this.props.requestFriendList();
@@ -35,51 +34,37 @@ class ContactList extends Component {
     }
 
     friendSelected = (id) => {
-        this.setState({
-            friendlock: id
-        })
+        this.props.selectFriend(id);
     }
 
     serverSelected = (id) => {
-        this.setState({
-            serverlock: id
-        })
+        this.props.selectServer(id);
+        this.props.requestChannelList(id);
     }
 
     render() {
         // Update the displayed list
-        var white = '#FFFFFF';
-        var blue = '#0D6CB8';
-        var contactRows = [];
+        const white = '#FFFFFF';
+        const blue = '#0D6CB8';
+        let contactRows = [];
+        const classesSelected = ["row", "selected"];
+        const classesSelectable = ["row", "selectable"];
 
-        var styleServers;
-        var styleFriends;
+        const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
-            styleServers = blue;
-            styleFriends = white;
-            for (var i = 0; i < this.props.servers.length; i++) {
-                let classes = ["row"];
-                if (i === this.state.serverlock) {
-                    classes.push("selected");
-                } else {
-                    classes.push("selectable");
-                }
-                contactRows.push(<div key={i} className={classes.join(' ')}>
-                <Server contact={this.props.servers[i]} serverSelected={this.serverSelected} idServer={i}/></div>);
-            }
+            contactRows = this.props.servers.map((server)=>{
+                let classes = (server.id === this.props.activeServerId) ? classesSelected : classesSelectable;
+                return( <div key={server.id} className={classes.join(' ')}>
+                            <Server contact={{}} server={server} serverSelected={this.serverSelected}/>
+                        </div>);
+            });
         } else {
-            styleServers = white;
-            styleFriends = blue;
-            for (var j = 0; j < this.props.friends.length; j++) {
-                let classes = ["row"];
-                if (j === this.state.friendlock) {
-                    classes.push("selected");
-                } else {
-                    classes.push("selectable");
-                }
-                contactRows.push(<div key={j + this.props.servers.length} className={classes.join(' ')}>
-                <Friend contact={this.props.friends[j]} friendSelected={this.friendSelected} idFriend={j}/></div>);
-            }
+            contactRows = this.props.friends.map((friend)=>{
+                let classes = (friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
+                return( <div key={friend.id + this.props.servers.length} className={classes.join(' ')}>
+                            <Friend friend={friend} friendSelected={this.friendSelected}/>
+                        </div>);
+            });
         }
 
         // Return the component
@@ -107,8 +92,18 @@ class ContactList extends Component {
 const mapsStateToProps = (state) => {
     return {
         servers: state.server.servers,
-        friends: state.friend.friends
+        activeServerId: state.server.activeServerId,
+        friends: state.friend.friends,
+        activeFriendId: state.friend.activeFriendId,
     }
 }
 
-export default connect(mapsStateToProps, {requestServerList, requestFriendList})(ContactList); 
+const mapDispatchToProps= {
+    requestServerList,
+    requestFriendList,
+    requestChannelList,
+    selectServer,
+    selectFriend,
+}
+
+export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 

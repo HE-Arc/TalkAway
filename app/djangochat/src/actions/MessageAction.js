@@ -1,23 +1,35 @@
 
 import {baseGraphqlUrl} from '../config/config';
 
-export function selectFriend(friendId) {
+function _updateMessageList(data) {
+    return {
+        type: 'LIST_MESSAGE',
+        payload: data
+    }
+}
+
+export function addMessage(message) {
     return (dispatch) => {
         dispatch({
-            type: 'SELECT_FRIEND',
-            payload: friendId
+            type: 'SEND_MESSAGE',
+            payload: message
         });
     }
 }
 
-export function requestFriendList() {
+export function requestMessageList(channelId) {
     return (dispatch, getState) => {
         const requestBody = {
             query: `
             query{
-                myFriends{
+                allMessagesByChannel(channelId:${channelId}){
+                  id,
+                  date,
+                  text,
+                  user{
                     id
                     username
+                  }
                 }
               }
             `
@@ -36,20 +48,13 @@ export function requestFriendList() {
             }
             return res.json();
         }).then(resData => {
-            let response = resData.data.myFriends;
+            let response = resData.data.allMessagesByChannel;
             if(response == null){
-                response = []
+                response = [];
             }
-            dispatch(_updateFriendList(response));
+            dispatch(_updateMessageList(response));
         }).catch(err => {
             console.log(err);
         });
-    }
-}
-
-function _updateFriendList(data) {
-    return {
-        type: 'LIST_FRIEND',
-        payload: data
     }
 }

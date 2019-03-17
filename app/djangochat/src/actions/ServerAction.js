@@ -15,6 +15,15 @@ function _updateServerList(data) {
     }
 }
 
+export function selectServer(serverId) {
+    return (dispatch) => {
+        dispatch({
+            type: 'SELECT_SERVER',
+            payload: serverId
+        });
+    }
+}
+
 export function requestServerList() {
     return (dispatch, getState) => {
         const requestBody = {
