@@ -12,14 +12,14 @@ class MiddlePane extends Component {
         super(props);
         this.state = {
             messageComponentList : [],
-            messageInput:''
+            messageInput:'',
+            lastChannelId:0
         };
 
-        this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     render() {
+
         return (
             <div>
                 <div id="messages">
@@ -28,9 +28,20 @@ class MiddlePane extends Component {
                     })}
                     {this.state.messageComponentList}
                 </div>
-                <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button>
+                {this.props.channelId!==0?
+                <div><input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button></div>
+                :<div>Choose a channel</div>}
             </div>
         );
+        
+    }
+
+    componentDidUpdate(){
+        if(this.state.lastChannelId !== this.props.channelId )
+        {
+            this.connectWebsocket();
+            this.setState({lastChannelId:this.props.channelId});
+        }
     }
 
     handleKeyPress = (event) => {
@@ -45,23 +56,27 @@ class MiddlePane extends Component {
 
     sendMessage = () => {
         var message = this.state.messageInput;
-        let now=new Date();
+        console.log(this.props.user)
         this.chatSocket.send(JSON.stringify({
-            id_message3: {
-                user: this.props.user,
+            id_message: {
                 text: message,
-                date: Date.now()
+                channel:this.props.channelId
             }
         }));
 
         this.setState({messageInput: ''});
     }
 
-    componentDidMount(){
-        let roomName="test";
+    connectWebsocket = () => {
+
+        //If we select a new channel and a previous WebSocket instance already exists
+        if(this.chatSocket instanceof WebSocket)
+        {
+            this.chatSocket.close();
+        }
 
         this.chatSocket = new WebSocket(
-            baseWebsocketUrl+'/'+ roomName+'/');
+            baseWebsocketUrl+'/'+ this.props.channelId+'/');
         
         this.chatSocket.onmessage = function(e) {
             var message = JSON.parse(e.data).message;
@@ -69,9 +84,9 @@ class MiddlePane extends Component {
         };
         this.chatSocket.onmessage = this.chatSocket.onmessage.bind(this);
 
-        this.chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
-        };
+        // this.chatSocket.onclose = function(e) {
+        //     console.error('Chat socket closed unexpectedly');
+        // };
     }
 }
 
@@ -81,7 +96,8 @@ const mapsStateToProps = (state) => {
         user: {
             username: state.auth.username,
             id: state.auth.id
-        }
+        },
+        channelId:state.channel.activeChannelId
     }
 }
 

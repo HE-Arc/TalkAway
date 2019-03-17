@@ -33,6 +33,7 @@ export function requestLogin(username, password) {
             }
             return res.json();
         }).then(resData => {
+            console.log(resData)
             const response = {
                 token: resData.data.tokenAuth.token,
                 username: username,
