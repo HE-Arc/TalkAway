@@ -26,7 +26,13 @@ SECRET_KEY = 'as0*j_%@)den2&^l0&gz%aneh!x(=jws1$=5*9z=26d_(js40h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
 
-ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch','127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch', '127.0.0.1', 'localhost']
+
+
+
+GRAPHQL_JWT = {
+    'JWT_ALLOW_ARGUMENT': True
+}
 
 
 # Application definition
@@ -108,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "api.User" 
+AUTH_USER_MODEL = "api.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

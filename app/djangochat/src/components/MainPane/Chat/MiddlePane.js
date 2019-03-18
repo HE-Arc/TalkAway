@@ -59,8 +59,10 @@ class MiddlePane extends Component {
         console.log(this.props.user)
         this.chatSocket.send(JSON.stringify({
             id_message: {
-                text: message,
-                channel:this.props.channelId
+                text : message,
+                channel : this.props.channelId,
+                user : this.props.user.id,
+                token : this.props.user.token
             }
         }));
 
@@ -95,7 +97,8 @@ const mapsStateToProps = (state) => {
         messages: state.message.messages,
         user: {
             username: state.auth.username,
-            id: state.auth.id
+            id: state.auth.id,
+            token : state.auth.token
         },
         channelId:state.channel.activeChannelId
     }

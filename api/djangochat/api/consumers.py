@@ -2,6 +2,7 @@ from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
 import json
 from . import schema
+import graphene
 
 
 class ChatConsumer(WebsocketConsumer):
@@ -28,23 +29,30 @@ class ChatConsumer(WebsocketConsumer):
         messageJson = text_data_json[list(text_data_json.keys())[0]]
         text = messageJson['text']
         channel = messageJson['channel']
-        user = messageJson['user']
-        print(text)
-        print(channel)
-        print(user)
+        token = messageJson['token']
+
         # TODO Insert into database
 
-        query = """
-        {
-            CreateMessage(text:{0}, userId:{1}, channelId:{2}){
-                id,
-                date
-            }
-        }
-        """.format(text, user, channel)
-        result = schema.execute(query)
+        # query = """mutation{
+        #     createMessage(text:{0}, userId:{1}, channelId:{2}){
+        #         id,
+        #         date
+        #     }
+        # }""".format(text, user, channel)
+        
+        print(token)
 
-        print(result)
+        result = graphene.Schema(query=schema.Query, mutation=schema.Mutation).execute(
+            '''mutation($text: String!, $channel:Int!, $token:String!) {
+                createMessage(text: $text, channelId: $channel, token: $token) {
+                    id,
+                    date,
+                    text
+                }
+            }''',
+            variables={'text': text, 'channel': channel, 'token':token})
+
+        print(result.errors)
 
         async_to_sync(self.channel_layer.group_send)(
             self.room_group_name,

@@ -1,6 +1,7 @@
 # djangochat/api/schema.py
 
 import graphene
+import graphql_jwt
 from graphene_django.types import DjangoObjectType
 from .models import Message, Server, Channel, Right, Reaction
 from django.contrib.auth import get_user_model
@@ -41,7 +42,7 @@ class Query(graphene.ObjectType):
     all_messages_by_channel = graphene.List(
         MessageType, channel_id=graphene.Int()
     )
-    
+
     my_servers = graphene.List(ServerType)
     my_friends = graphene.List(UserType)
 
@@ -57,7 +58,7 @@ class Query(graphene.ObjectType):
     @login_required
     def resolve_my_friends(self, info, **kwargs):
         return info.context.user.friends.all()
-    
+
     @login_required
     def resolve_my_servers(self, info, **kwargs):
         return info.context.user.servers.all()
@@ -119,24 +120,26 @@ class CreateMessage(graphene.Mutation):
     date = graphene.DateTime()
     user = graphene.Field(UserType)
     channel = graphene.Field(ChannelType)
+    token = graphene.String()
     id = graphene.Int()
 
     class Arguments:
-        text = graphene.String()
-        user_id = graphene.Int()
-        channel_id = graphene.Int()
+        text = graphene.String(required=True)
+        #user_id = graphene.Int(required=True)
+        channel_id = graphene.Int(required=True)
+        token = graphene.String(required=True)
 
-    @login_required
-    def mutate(self, info, text, user_id, channel_id):
+    #@login_required
+    def mutate(self, info, text, channel_id, token):
+        print(info)
         authUser = info.context.user
         channel = Channel.objects.get(id=channel_id)
 
         # or channel.user_one != None and channel.user_one != authUser.id and channel.user_two != authUser.id:
-        if authUser.id != user_id:
-            raise Exception('You are not correctly authentified')
+        # if authUser.id != user_id:
+        #     raise Exception('You are not correctly authentified')
 
-        message = Message(text=text, channel=channel, user=get_user_model()
-                          .objects.get(id=user_id))
+        message = Message(text=text, channel=channel, user=authUser)
         message.save()
 
         return CreateMessage(
@@ -147,8 +150,16 @@ class CreateMessage(graphene.Mutation):
         )
 
 
+class ObtainJSONWebTokenWithUser(graphql_jwt.JSONWebTokenMutation):
+    user = graphene.Field(UserType)
+
+    @classmethod
+    def resolve(cls, root, info, **kwargs):
+        return cls(user=info.context.user)
+
+
 class Mutation(graphene.ObjectType):
     create_server = CreateServer.Field()
     create_user = CreateUser.Field()
     create_message = CreateMessage.Field()
-
+    getJWTToken = ObtainJSONWebTokenWithUser.Field()

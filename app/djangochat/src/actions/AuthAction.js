@@ -14,8 +14,12 @@ export function requestLogin(username, password) {
         const requestBody = {
             query: `
             mutation {
-                tokenAuth(username: "${username}", password: "${password}") {
+                getJWTToken(username: "${username}", password: "${password}") {
                     token
+                    user {
+                        id
+                        username
+                    }
                 }
               }
             `
@@ -33,10 +37,10 @@ export function requestLogin(username, password) {
             }
             return res.json();
         }).then(resData => {
-            console.log(resData)
             const response = {
-                token: resData.data.tokenAuth.token,
-                username: username,
+                token: resData.data.getJWTToken.token,
+                username: resData.data.getJWTToken.user.username,
+                id: resData.data.getJWTToken.user.id,
                 isLogged: true
             }
             
