@@ -2,6 +2,8 @@ import React, {
     Component
 } from 'react';
 import MessageComponent from './Message/Message';
+import ChatInput from './ChatInput/ChatInput';
+import './MiddlePane.css';
 
 class MiddlePane extends Component {
 
@@ -10,11 +12,13 @@ class MiddlePane extends Component {
         this.state = {
             messageList: props.messageList,
             messageComponentList : [],
-            messageInput:''
+            messageInput:'',
+            chatInputHeight: 50
         };
 
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.adaptMessagesSpace = this.adaptMessagesSpace.bind(this);
 
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
@@ -22,21 +26,25 @@ class MiddlePane extends Component {
                 'key': key
             }));
         });
-
-
     }
 
-    
+    adaptMessagesSpace() {
+        const height = document.getElementById('inputMessage').clientHeight;
+        this.setState({
+            chatInputHeight: height + 19
+        })
+    }
 
     render() {
-
-    
         return (
-            <div>
-                <div id="messages">
+            <div id="messagesContainer">
+                <div style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
                     {this.state.messageComponentList}
                 </div>
-                <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button>
+                <div style={{height: this.state.chatInputHeight}} id="chatInput">
+                    <ChatInput adaptMessagesSpace={this.adaptMessagesSpace}/>
+                </div>
+                {/* <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button> */}
             </div>
         );
     }
