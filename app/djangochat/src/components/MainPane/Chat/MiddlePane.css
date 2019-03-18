@@ -4,6 +4,12 @@
     top: -10px;
 }
 
+#messages {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
 #chatInput {
     padding-top: 5px;
     padding-left: 40px;
