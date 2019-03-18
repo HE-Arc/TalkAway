@@ -23,9 +23,18 @@ class MiddlePane extends Component {
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
                 'messageObject': this.state.messageList[key],
-                'key': key
+                'key': key,
+                style: {height: 1000}
             }));
         });
+
+        // Messages scrollbar policy
+        document.body.addEventListener('DOMSubtreeModified', function () {
+            let element = document.getElementById("messages");
+            if (element != null) {
+                element.scrollTop = element.scrollHeight;
+            }
+        }, false);
     }
 
     adaptMessagesSpace() {
@@ -38,9 +47,9 @@ class MiddlePane extends Component {
     render() {
         return (
             <div id="messagesContainer">
-                <div style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
+                <section style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
                     {this.state.messageComponentList}
-                </div>
+                </section>
                 <div style={{height: this.state.chatInputHeight}} id="chatInput">
                     <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
                 </div>

@@ -2,12 +2,14 @@
     height: 100%;
     position: relative;
     top: -10px;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
 }
 
 #messages {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
 }
 
 #chatInput {
