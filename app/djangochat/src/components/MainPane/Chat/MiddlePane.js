@@ -11,30 +11,39 @@ class MiddlePane extends Component {
         super(props);
         this.state = {
             messageList: props.messageList,
-            messageComponentList : [],
-            messageInput:'',
-            chatInputHeight: 50
+            messageComponentList: [],
+            messageInput: '',
+            chatInputHeight: 50,
+            messageSent: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.adaptMessagesSpace = this.adaptMessagesSpace.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
+        this.DOMModified = this.DOMModified.bind(this);
 
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
                 'messageObject': this.state.messageList[key],
                 'key': key,
-                style: {height: 1000}
             }));
         });
 
         // Messages scrollbar policy
-        document.body.addEventListener('DOMSubtreeModified', function () {
+        document.body.addEventListener('DOMSubtreeModified', this.DOMModified, false);
+    }
+
+    DOMModified() {
+        if (this.state.messageSent) {
             let element = document.getElementById("messages");
             if (element != null) {
                 element.scrollTop = element.scrollHeight;
             }
-        }, false);
+
+            this.setState({
+                messageSent: false
+            });
+        }
     }
 
     adaptMessagesSpace() {
@@ -72,7 +81,10 @@ class MiddlePane extends Component {
             }
         }));
 
-        this.setState({messageInput: ''});
+        this.setState({
+            messageInput: '',
+            messageSent: true
+        });
     }
 
     componentDidMount(){

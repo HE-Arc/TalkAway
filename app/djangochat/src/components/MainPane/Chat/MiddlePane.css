@@ -10,6 +10,17 @@
 #messages {
     flex: 1;
     overflow-y: scroll;
+    margin-right: 5px;
+}
+
+#messages::-webkit-scrollbar {
+    width: 0.2em;
+}
+ 
+#messages::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
 }
 
 #chatInput {
