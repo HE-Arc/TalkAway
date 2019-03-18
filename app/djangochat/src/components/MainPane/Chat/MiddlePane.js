@@ -16,9 +16,9 @@ class MiddlePane extends Component {
             chatInputHeight: 50
         };
 
-        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.adaptMessagesSpace = this.adaptMessagesSpace.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
 
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
@@ -42,25 +42,17 @@ class MiddlePane extends Component {
                     {this.state.messageComponentList}
                 </div>
                 <div style={{height: this.state.chatInputHeight}} id="chatInput">
-                    <ChatInput adaptMessagesSpace={this.adaptMessagesSpace}/>
+                    <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
                 </div>
-                {/* <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button> */}
             </div>
         );
-    }
-
-    handleKeyPress(event){
-        if(event.key === 'Enter'){
-            this.sendMessage();
-        }
     }
 
     handleChange(event) {
         this.setState({messageInput: event.target.value});
     }
 
-    sendMessage(){
-        var message = this.state.messageInput;
+    sendMessage(message) {
         this.chatSocket.send(JSON.stringify({
             id_message3: {
                 user: {

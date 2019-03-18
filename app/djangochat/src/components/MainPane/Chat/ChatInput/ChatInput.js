@@ -8,8 +8,10 @@ class ChatInput extends Component {
     constructor(props) {
         super(props);
         this.updateArea = this.updateArea.bind(this);
+        this.keyEvent = this.keyEvent.bind(this);
         this.state = {
-            adaptMessagesSpace: props.adaptMessagesSpace
+            adaptMessagesSpace: props.adaptMessagesSpace,
+            sendMessage: props.sendMessage
         }
     }
 
@@ -24,10 +26,19 @@ class ChatInput extends Component {
         this.state.adaptMessagesSpace();
     }
 
+    keyEvent(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            this.state.sendMessage(e.target.value);
+            e.target.value = "";
+            e.preventDefault();
+            this.updateArea();
+        }
+    }
+
     render() {
         return (
             <div>
-                <textarea ref="textArea" id="inputMessage" spellCheck="false" onChange={this.updateArea}></textarea>
+                <textarea ref="textArea" id="inputMessage" spellCheck="false" onKeyDown={this.keyEvent} onChange={this.updateArea}></textarea>
             </div>
         );
     }
