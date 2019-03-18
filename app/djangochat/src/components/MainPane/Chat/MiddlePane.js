@@ -14,6 +14,7 @@ class MiddlePane extends Component {
             messageComponentList: [],
             messageInput: '',
             chatInputHeight: 50,
+            scrolling: false,
             messageSent: false
         };
 
@@ -21,6 +22,8 @@ class MiddlePane extends Component {
         this.adaptMessagesSpace = this.adaptMessagesSpace.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
         this.DOMModified = this.DOMModified.bind(this);
+        this.scroll = this.scroll.bind(this);
+        this.dropDown = this.dropDown.bind(this);
 
         Object.keys(this.state.messageList).forEach(key => {
             this.state.messageComponentList.push(React.createElement(MessageComponent, {
@@ -46,6 +49,16 @@ class MiddlePane extends Component {
         }
     }
 
+    scroll(event) {
+        const element = event.target;
+        if (element != null)
+        {
+            this.setState({
+                scrolling: Math.round(element.scrollHeight - element.scrollTop) > element.clientHeight
+            })
+        }
+    }
+
     adaptMessagesSpace() {
         const height = document.getElementById('inputMessage').clientHeight;
         this.setState({
@@ -53,15 +66,29 @@ class MiddlePane extends Component {
         })
     }
 
+    dropDown() {
+        let element = document.getElementById("messages");
+        if (element != null) {
+            element.scrollTop = element.scrollHeight;
+        }
+    }
+
     render() {
+        let dropDownVisibility = {};
+        if (!this.state.scrolling) {
+            dropDownVisibility = {display: 'none'};
+        }
         return (
             <div id="messagesContainer">
-                <section style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
+                <section onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
                     {this.state.messageComponentList}
                 </section>
                 <div style={{height: this.state.chatInputHeight}} id="chatInput">
                     <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
                 </div>
+                <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
+                    Derniers messages
+                </button>
             </div>
         );
     }
