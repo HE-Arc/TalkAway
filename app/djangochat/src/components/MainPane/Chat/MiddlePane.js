@@ -74,9 +74,9 @@ class MiddlePane extends Component {
     }
 
     render() {
-        let dropDownVisibility = {};
+        let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
         if (!this.state.scrolling) {
-            dropDownVisibility = {display: 'none'};
+            dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
         }
         return (
             <div id="messagesContainer">
