@@ -22,7 +22,12 @@ class MessageComponent extends Component {
                     <div>
                         <p id="sender">{this.state.messageObject.user.username}</p><p id="time">{this.state.messageObject.date}</p>
                     </div>
-                    <p id="message">{this.state.messageObject.text}</p>
+                    <div id="message">
+                        {/*Source https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746*/}
+                        {this.state.messageObject.text.split('\n').map((item, key) => {
+                            return <span key={key}>{item}<br/></span>
+                        })}
+                    </div>
                 </div>
             </div>
         );

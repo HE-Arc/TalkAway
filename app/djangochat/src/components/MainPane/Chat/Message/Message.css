@@ -1,6 +1,7 @@
 .messageBox {
     margin: 10px;
-    width: 100% - 20px;
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
     position: relative;
 }
 
@@ -19,6 +20,7 @@
 
 .messageContent {
     width: 85%;
+    max-width: 85%;
     left: 15%;
     position: relative;
     display: inline-block;
@@ -38,4 +40,12 @@
     left: 10px;
     font-size: 0.8em;
     display: inline-block;
+}
+
+#message {
+    width: 100%;
+    max-width: 500px;
+    text-align: justify;
+    text-justify: inter-word;
+    overflow-wrap: break-word;
 }

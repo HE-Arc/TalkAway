@@ -78,6 +78,7 @@ class MiddlePane extends Component {
         if (!this.state.scrolling) {
             dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
         }
+
         return (
             <div id="messagesContainer">
                 <section onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
