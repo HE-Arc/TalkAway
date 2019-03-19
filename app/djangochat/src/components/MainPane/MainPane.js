@@ -13,7 +13,7 @@ class MainPane extends Component {
 
         this.state = {
             messageList: JSON.parse(JSON.stringify({
-                id_message: {
+                /*id_message: {
                     user: {
                         username: "Jacques"
                     },
@@ -26,7 +26,7 @@ class MainPane extends Component {
                     },
                     text: "test2",
                     date: "10:23"
-                }
+                }*/
             }))
         };
     }

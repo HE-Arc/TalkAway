@@ -74,6 +74,8 @@ class MiddlePane extends Component {
     }
 
     render() {
+        const messagesAvailable = this.state.messageComponentList.length > 0;
+        
         let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
         if (!this.state.scrolling) {
             dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
@@ -81,9 +83,16 @@ class MiddlePane extends Component {
 
         return (
             <div id="messagesContainer">
-                <section onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}} id="messages">
-                    {this.state.messageComponentList}
-                </section>
+                {messagesAvailable ? 
+                    <section id="messages" onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}}>
+                        {this.state.messageComponentList}  
+                    </section> :
+                    <div id="noMessages">
+                        <div id="noMessageContainer">
+                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120"/>
+                        </div>
+                    </div>
+                }
                 <div style={{height: this.state.chatInputHeight}} id="chatInput">
                     <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
                 </div>
@@ -92,6 +101,10 @@ class MiddlePane extends Component {
                 </button>
             </div>
         );
+        /*<div id="noMessages">
+            <img id="noMessageImage" alt="" src={require('./images/profile.png')} width="80" height="80"/>
+            <p>Nothing</p>
+        </div>*/
     }
 
     handleChange(event) {
