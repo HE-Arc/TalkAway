@@ -16,11 +16,11 @@ class ServerInfos extends Component {
 
     render() {
         const channels = this.props.channels.map((channel)=>{
-            let classes = ["row"];
+            let classes = ["row", "channels"];
             if (this.props.activeChannelId === channel.id) {
-                classes.push("selected");
+                classes.push("selectedChannel");
             } else {
-                classes.push("selectable");
+                classes.push("selectableChannel");
             }
             return( <div key={channel.id} className={classes.join(' ')}>
                         <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id}/>
