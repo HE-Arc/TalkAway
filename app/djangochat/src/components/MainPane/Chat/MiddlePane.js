@@ -17,7 +17,8 @@ class MiddlePane extends Component {
             chatInputHeight: 50,
             scrolling: false,
             messageSent: false,
-            lastChannelId:0
+            lastChannelId:0,
+            messageReceived:false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -46,7 +47,8 @@ class MiddlePane extends Component {
         if (element != null)
         {
             this.setState({
-                scrolling: Math.round(element.scrollHeight - element.scrollTop) > element.clientHeight
+                scrolling: Math.round(element.scrollHeight - element.scrollTop) > element.clientHeight,
+                messageReceived:false
             })
         }
     }
@@ -69,7 +71,7 @@ class MiddlePane extends Component {
         const messagesAvailable = this.props.messages.length > 0;
         
         let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
-        if (!this.state.scrolling) {
+        if (!this.state.scrolling && !this.state.messageReceived) {
             dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
         }
 
@@ -113,6 +115,7 @@ class MiddlePane extends Component {
         {
             this.connectWebsocket();
             this.setState({lastChannelId:this.props.channelId});
+            this.dropDown();
         }
     }
 
@@ -177,8 +180,8 @@ class MiddlePane extends Component {
             var message = JSON.parse(e.data).message;
             this.props.addMessage(message);
             this.setState({
-            messageSent: true
-        });
+                messageReceived: true
+            });
         };
 
         // this.chatSocket.onclose = function(e) {

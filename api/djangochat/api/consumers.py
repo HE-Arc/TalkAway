@@ -32,8 +32,8 @@ class ChatConsumer(WebsocketConsumer):
         messageId = text_data_json['newMessage']['id']
 
         message = Message.objects.get(id=messageId)
-        print(self.room_name)
-        print(self.room_group_name)
+        # print(self.room_name)
+        # print(self.room_group_name)
         async_to_sync(self.channel_layer.group_send)(
             self.room_group_name,
             {
