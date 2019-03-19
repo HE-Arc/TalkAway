@@ -3,11 +3,14 @@ from channels.generic.websocket import WebsocketConsumer
 import json
 from . import schema
 import graphene
+from .models import Message
+from django.core.serializers.json import DjangoJSONEncoder
 
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
-        self.room_name = self.scope['url_route']['kwargs']['room_name']
+        self.room_name = self.scope['url_route']['kwargs']['channel_id']
+        
         self.room_group_name = 'chat_%s' % self.room_name
 
         # Join room group
@@ -26,43 +29,21 @@ class ChatConsumer(WebsocketConsumer):
 
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
-        messageJson = text_data_json[list(text_data_json.keys())[0]]
-        text = messageJson['text']
-        channel = messageJson['channel']
-        token = messageJson['token']
+        messageId = text_data_json['newMessage']['id']
 
-        # TODO Insert into database
-
-        # query = """mutation{
-        #     createMessage(text:{0}, userId:{1}, channelId:{2}){
-        #         id,
-        #         date
-        #     }
-        # }""".format(text, user, channel)
-        
-        print(token)
-
-        result = graphene.Schema(query=schema.Query, mutation=schema.Mutation).execute(
-            '''mutation($text: String!, $channel:Int!, $token:String!) {
-                createMessage(text: $text, channelId: $channel, token: $token) {
-                    id,
-                    date,
-                    text
-                }
-            }''',
-            variables={'text': text, 'channel': channel, 'token':token})
-
-        print(result.errors)
-
+        message = Message.objects.get(id=messageId)
+        print(self.room_name)
+        print(self.room_group_name)
         async_to_sync(self.channel_layer.group_send)(
             self.room_group_name,
             {
                 'type': 'chat_message',
                 'message': {
-                    'text': text,
-                    'date': date,
+                    'id': messageId,
+                    'text': message.text,
+                    'date': json.dumps(message.date, cls=DjangoJSONEncoder),
                     'user': {
-                        'username': username
+                        'username': message.user.username
                     }
                 }
             })

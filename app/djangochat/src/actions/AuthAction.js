@@ -21,7 +21,7 @@ export function requestLogin(username, password) {
                         username
                     }
                 }
-              }
+            }
             `
         };
 

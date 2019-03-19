@@ -118,26 +118,19 @@ class CreateServer(graphene.Mutation):
 class CreateMessage(graphene.Mutation):
     text = graphene.String()
     date = graphene.DateTime()
-    user = graphene.Field(UserType)
     channel = graphene.Field(ChannelType)
-    token = graphene.String()
     id = graphene.Int()
 
     class Arguments:
         text = graphene.String(required=True)
-        #user_id = graphene.Int(required=True)
         channel_id = graphene.Int(required=True)
-        token = graphene.String(required=True)
 
-    #@login_required
-    def mutate(self, info, text, channel_id, token):
-        print(info)
+    @login_required
+    def mutate(self, info, text, channel_id):
         authUser = info.context.user
         channel = Channel.objects.get(id=channel_id)
 
-        # or channel.user_one != None and channel.user_one != authUser.id and channel.user_two != authUser.id:
-        # if authUser.id != user_id:
-        #     raise Exception('You are not correctly authentified')
+        # TODO: CHECK IF USER IS IN CHANNEL
 
         message = Message(text=text, channel=channel, user=authUser)
         message.save()

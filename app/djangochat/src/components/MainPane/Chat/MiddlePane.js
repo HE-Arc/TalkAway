@@ -5,7 +5,7 @@ import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
-import {baseWebsocketUrl} from '../../../config/config.js';
+import {baseWebsocketUrl,baseGraphqlUrl} from '../../../config/config.js';
 import {addMessage} from "../../../actions/MessageAction";
 
 class MiddlePane extends Component {
@@ -101,7 +101,7 @@ class MiddlePane extends Component {
                 </div>
                 }
                 <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
-                    Derniers messages
+                    View last messages
                 </button>
             </div>
         );
@@ -120,16 +120,41 @@ class MiddlePane extends Component {
         this.setState({messageInput: event.target.value});
     }
 
-    sendMessage = () => {
-        let message = this.state.messageInput;
-        this.chatSocket.send(JSON.stringify({
-            id_message: {
-                text : message,
-                channel : this.props.channelId,
-                user : this.props.user.id,
-                token : this.props.user.token
+    sendMessage = (text) => {
+
+        const requestBody = {
+            query: `
+            mutation {
+                createMessage(text: "${text}", channelId: ${this.props.channelId}) {
+                    id
+                }
             }
-        }));
+            `
+        };
+        fetch(baseGraphqlUrl+'/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT '+this.props.user.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            const messageId = resData.data.createMessage.id;
+
+            this.chatSocket.send(JSON.stringify({
+                newMessage: {
+                    id:messageId
+                }
+            }));
+
+        }).catch(err => {
+            console.log(err);
+        });
 
         this.setState({
             messageInput: '',
@@ -148,11 +173,13 @@ class MiddlePane extends Component {
         this.chatSocket = new WebSocket(
             baseWebsocketUrl+'/'+ this.props.channelId+'/');
         
-        this.chatSocket.onmessage = function(e) {
+        this.chatSocket.onmessage = (e) => {
             var message = JSON.parse(e.data).message;
             this.props.addMessage(message);
+            this.setState({
+            messageSent: true
+        });
         };
-        this.chatSocket.onmessage = this.chatSocket.onmessage.bind(this);
 
         // this.chatSocket.onclose = function(e) {
         //     console.error('Chat socket closed unexpectedly');
@@ -166,7 +193,7 @@ const mapsStateToProps = (state) => {
         user: {
             username: state.auth.username,
             id: state.auth.id,
-            token : state.auth.token
+            token:state.auth.token
         },
         channelId:state.channel.activeChannelId
     }

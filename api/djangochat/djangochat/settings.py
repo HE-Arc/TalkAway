@@ -28,13 +28,6 @@ DEBUG = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = ['djangochat.srvz-webapp.he-arc.ch', '127.0.0.1', 'localhost']
 
-
-
-GRAPHQL_JWT = {
-    'JWT_ALLOW_ARGUMENT': True
-}
-
-
 # Application definition
 
 INSTALLED_APPS = [
