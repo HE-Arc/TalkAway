@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import MessageComponent from './Message/Message';
+import ChatInput from './ChatInput/ChatInput';
+import './MiddlePane.css';
 
 import {addMessage} from "../../../actions/MessageAction";
 
@@ -10,40 +12,98 @@ class MiddlePane extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            messageComponentList : [],
-            messageInput:''
+            messageInput:'',
+            chatInputHeight: 50,
+            scrolling: false,
+            messageSent: false
         };
 
-        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.scroll = this.scroll.bind(this);
+
+
+        // Messages scrollbar policy
+        document.body.addEventListener('DOMSubtreeModified', this.DOMModified, false);
+    }
+
+    DOMModified = () => {
+        if (this.state.messageSent) {
+            let element = document.getElementById("messages");
+            if (element != null) {
+                element.scrollTop = element.scrollHeight;
+            }
+
+            this.setState({
+                messageSent: false
+            });
+        }
+    }
+
+    scroll(event) {
+        const element = event.target;
+        if (element != null)
+        {
+            this.setState({
+                scrolling: Math.round(element.scrollHeight - element.scrollTop) > element.clientHeight
+            })
+        }
+    }
+
+    adaptMessagesSpace = () => {
+        const height = document.getElementById('inputMessage').clientHeight;
+        this.setState({
+            chatInputHeight: height + 19
+        })
+    }
+
+    dropDown = () => {
+        let element = document.getElementById("messages");
+        if (element != null) {
+            element.scrollTop = element.scrollHeight;
+        }
     }
 
     render() {
+        const messagesAvailable = this.props.messages.length > 0;
+        
+        let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
+        if (!this.state.scrolling) {
+            dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
+        }
+
         return (
-            <div>
-                <div id="messages">
-                    {this.props.messages.map(message=>{
-                        return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
-                    })}
-                    {this.state.messageComponentList}
+            <div id="messagesContainer">
+                {messagesAvailable ?
+                    <section id="messages" onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}}>
+                        {
+                            this.props.messages.map(message=>{
+                                return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
+                            })
+                        }
+                    </section>
+                :
+                    <div id="noMessages">
+                        <div id="noMessageContainer">
+                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120"/>
+                        </div>
+                    </div>
+                }
+                <div style={{height: this.state.chatInputHeight}} id="chatInput">
+                    <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
                 </div>
-                <input onChange={this.handleChange} onKeyPress={this.handleKeyPress} autoFocus value={this.state.messageInput} ref={(input) => this.handleChange} type="text"/><button onClick={this.sendMessage} >Send</button>
+                <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
+                    Derniers messages
+                </button>
             </div>
         );
-    }
-
-    handleKeyPress(event){
-        if(event.key === 'Enter'){
-            this.sendMessage();
-        }
     }
 
     handleChange(event) {
         this.setState({messageInput: event.target.value});
     }
 
-    sendMessage = ()=>{
-        var message = this.state.messageInput;
+    sendMessage = () => {
+        let message = this.state.messageInput;
         this.chatSocket.send(JSON.stringify({
             id_message3: {
                 user: this.props.user,
@@ -52,7 +112,10 @@ class MiddlePane extends Component {
             }
         }));
 
-        this.setState({messageInput: ''});
+        this.setState({
+            messageInput: '',
+            messageSent: true
+        });
     }
 
     componentDidMount(){
