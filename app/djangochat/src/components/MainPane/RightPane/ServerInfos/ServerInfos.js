@@ -15,7 +15,7 @@ class ServerInfos extends Component {
     }
 
     render() {
-        const channels = this.props.channels.map((channel)=>{
+        const channels = this.props.channels.map((channel) => {
             let classes = ["row", "channels"];
             if (this.props.activeChannelId === channel.id) {
                 classes.push("selectedChannel");
@@ -41,7 +41,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr"/>
                 <div id="serverUsers" className="row">
-
+                    {/* TODO */}
                 </div>
             </div>
         );

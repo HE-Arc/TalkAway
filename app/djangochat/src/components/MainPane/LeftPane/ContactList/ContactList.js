@@ -8,6 +8,7 @@ import './ContactList.css';
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
 import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
+import {showFriends, showServers} from "../../../../actions/ContactAction";
 
 class ContactList extends Component {
     
@@ -21,16 +22,18 @@ class ContactList extends Component {
         this.props.requestServerList();
     }
 
-    displayServers = () => {
-        this.setState({
-            serverDisplayed: true
-        })
-    }
-
     displayFriends = () => {
         this.setState({
             serverDisplayed: false
         })
+        this.props.showFriends();
+    }
+
+    displayServers = () => {
+        this.setState({
+            serverDisplayed: true
+        })
+        this.props.showServers();
     }
 
     friendSelected = (id) => {
@@ -104,6 +107,8 @@ const mapDispatchToProps= {
     requestChannelList,
     selectServer,
     selectFriend,
+    showFriends,
+    showServers
 }
 
 export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 
