@@ -12,6 +12,15 @@ class MessageComponent extends Component {
         };
     }
 
+    extractTime(date) {
+        const index = date.toString().indexOf("T");
+        if (index >= 0) {
+            return date.substring(index + 1, index + 9);
+        } else {
+            return "--:--:--";
+        }
+    }
+
     render() {
         return (
             <div className="messageBox">
@@ -20,7 +29,7 @@ class MessageComponent extends Component {
                 </div>
                 <div className="messageContent">
                     <div>
-                        <p id="sender">{this.state.messageObject.user.username}</p><p id="time">{this.state.messageObject.date}</p>
+                        <p id="sender">{this.state.messageObject.user.username}</p><p id="time">{this.extractTime(this.state.messageObject.date)}</p>
                     </div>
                     <div id="message">
                         {/*Source https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746*/}
