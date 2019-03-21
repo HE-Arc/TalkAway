@@ -47,19 +47,17 @@ class UserSettings extends Component {
 
         // Return the component
         return (
-            <div className="container unselectable">
-                <div id="rowProfile" className="row">
-                    <div id="image" className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
-                        <img id="connection" alt="" src={connectionImg}/>
-                    </div>
-                    <div id="username" className="col-6">
-                        Username
-                    </div>
-                    <div id="settingsButton" className="col-3">
-                        <img className="cursor" alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
-                    </div>
+            <div id="rowProfile">
+                <div id="images">
+                    <img id="image" alt="" src={require('./images/profile.png')}/>
+                    <img id="connection" alt="" src={connectionImg}/>
                 </div>
+                <div id="username">
+                    Username
+                </div>
+                {/*<div id="settingsButton" className="col-5 col-md-2">
+                    <img className="cursor" alt="" src={require('./images/settings.png')} width="30" height="30" onClick={this.openSettings}/>
+                </div>*/}
             </div>
         );
     }

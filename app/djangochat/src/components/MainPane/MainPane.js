@@ -5,19 +5,20 @@ import MiddlePane from './Chat/MiddlePane';
 import RightPane from './RightPane/RightPane';
 import './MainPane.css';
 
+//.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
 class MainPane extends Component {
     render() {
         if (this.props.serversDisplayed) {
             return (
                 <div className="container-fluid">
                     <div className="row fullHeight">
-                        <div className="col-2 sidepane pane text-white">
+                        <div id="leftPane" className="col-3 col-md-3 col-xl-2             sidepane pane text-white">
                             <LeftPane/>
                         </div>
-                        <div className="col-8 pane">
+                        <div id="middlePane" className="col-9 col-md-6 col-xl-8                        pane">
                             <MiddlePane/>
                         </div>
-                        <div className="col-2 sidepane pane">
+                        <div id="rightPane" className="d-none d-md-block col-md-3 col-xl-2                          sidepane pane">
                             <RightPane/>
                         </div>
                     </div>

@@ -8,14 +8,12 @@ class ServerProfile extends Component {
     render() {
         // Return the component
         return (
-            <div className="container unselectable">
-                <div id="rowProfile" className="row">
-                    <div id="image" className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
-                    </div>
-                    <div id="servername" className="col-9">
-                        {this.props.activeServer[0]!==undefined ? this.props.activeServer[0].name:""}
-                    </div>
+            <div id="rowProfileServer">
+                <div id="divImageServer">
+                    <img id="imageServer" alt="" src={require('./images/profile.png')} width="50" height="50"/>
+                </div>
+                <div id="servername">
+                    {this.props.activeServer[0]!==undefined ? this.props.activeServer[0].name:"X"}
                 </div>
             </div>
         );
