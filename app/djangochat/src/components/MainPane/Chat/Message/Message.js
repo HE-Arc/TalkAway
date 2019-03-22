@@ -9,10 +9,10 @@ const MessageComponent = (props) => {
             </div>
             <div className="messageContent">
                 <div>
-                    <p id="sender">{this.props.messageObject.user.username}</p><p id="time">{this.props.messageObject.date}</p>
+                    <p id="sender">{props.messageObject.user.username}</p><p id="time">{props.messageObject.date}</p>
                 </div>
                 <div id="message">
-                    {this.props.messageObject.text.split('\n').map((item, key) => {
+                    {props.messageObject.text.split('\n').map((item, key) => {
                         return <span key={key}>{item}<br/></span>
                     })}
                 </div>
