@@ -2,8 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {requestRegister} from "../../../actions/AuthAction";
+import '../Auth.css';
 
 class Register extends React.Component {
+    
+    state = {
+        errors: {},
+        shakingError : false
+    }
 
     constructor(props) {
         super(props);
@@ -12,8 +18,16 @@ class Register extends React.Component {
         this.passwordRef = React.createRef();
         this.passwordCheckRef = React.createRef();
     }
-    state = {
-        errors: {}
+
+    shakeError = () => {
+        this.setState({
+            shakingError: true
+        });
+        setTimeout(()=>{
+            this.setState({
+                shakingError: false
+            })
+        }, 500);
     }
 
     handleValidation() {
@@ -77,6 +91,7 @@ class Register extends React.Component {
         event.preventDefault();
 
         if (!this.handleValidation()) {
+            this.shakeError();
             return;
         }
 
@@ -87,6 +102,10 @@ class Register extends React.Component {
         this
             .props
             .requestRegister(email, username, password)
+            .catch((error)=>{
+                this.setState({errors: {'global':'Error username already taken'}});
+                this.shakeError();
+            })
     }
 
     render() {
@@ -94,6 +113,11 @@ class Register extends React.Component {
             <React.Fragment>
                 <h1 className="h3 mb-3 font-weight-normal">Register!</h1>
 
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors['global']}</span>
+                </div>
                 <label htmlFor="inputEmail" className="sr-only">Email address</label>
                 <input
                     type="email"
@@ -103,9 +127,11 @@ class Register extends React.Component {
                     required
                     autoFocus
                     ref={this.emailRef}/>
-                <span style={{
-                    color: "red"
-                }}>{this.state.errors["email"]}</span>
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors["email"]}</span>
+                </div>
                 <label htmlFor="inputUsername" className="sr-only">Username</label>
                 <input
                     type="text"
@@ -114,9 +140,11 @@ class Register extends React.Component {
                     placeholder="Username"
                     required
                     ref={this.usernameRef}/>
-                <span style={{
-                    color: "red"
-                }}>{this.state.errors["username"]}</span>
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors["username"]}</span>
+                </div>
                 <label htmlFor="inputPassword" className="sr-only">Password</label>
                 <input
                     type="password"
@@ -125,9 +153,11 @@ class Register extends React.Component {
                     placeholder="Password"
                     required
                     ref={this.passwordRef}/>
-                <span style={{
-                    color: "red"
-                }}>{this.state.errors["password"]}</span>
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors["password"]}</span>
+                </div>
                 <label htmlFor="inputPasswordCheck" className="sr-only">Password confirmation</label>
                 <input
                     type="password"
@@ -136,9 +166,11 @@ class Register extends React.Component {
                     placeholder="Password confirmation"
                     required
                     ref={this.passwordCheckRef}/>
-                <span style={{
-                    color: "red"
-                }}>{this.state.errors["passwordCheck"]}</span>
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors["passwordCheck"]}</span>
+                </div>
 
                 {/* <div className="form-control">
                 <label htmlFor="email">E-Mail</label>

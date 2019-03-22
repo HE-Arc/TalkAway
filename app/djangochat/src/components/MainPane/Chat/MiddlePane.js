@@ -24,7 +24,6 @@ class MiddlePane extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.scroll = this.scroll.bind(this);
 
-
         // Messages scrollbar policy
         document.body.addEventListener('DOMSubtreeModified', this.DOMModified, false);
     }
@@ -65,49 +64,6 @@ class MiddlePane extends Component {
         if (element != null) {
             element.scrollTop = element.scrollHeight;
         }
-    }
-
-    render() {
-        const messagesAvailable = this.props.messages.length > 0;
-        
-        let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
-        if (!this.state.scrolling && !this.state.messageReceived) {
-            dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
-        }
-
-        return (
-            <div id="messagesContainer">
-                {messagesAvailable ?
-                    <section id="messages" onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}}>
-                        {
-                            this.props.messages.map(message=>{
-                                return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
-                            })
-                        }
-                    </section>
-                :
-                    <div id="noMessages">
-                        <div id="noMessageContainer">
-                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120"/>
-                        </div>
-                    </div>
-                }
-                {
-                this.props.channelId!==0 ?
-                <div style={{height: this.state.chatInputHeight}} id="chatInput">
-                    <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
-                </div>
-                :
-                <div>
-                    Please select a channel
-                </div>
-                }
-                <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
-                    View last messages
-                </button>
-            </div>
-        );
-        
     }
 
     componentDidUpdate(){
@@ -166,7 +122,6 @@ class MiddlePane extends Component {
     }
 
     connectWebsocket = () => {
-
         //If we select a new channel and a previous WebSocket instance already exists
         if(this.chatSocket instanceof WebSocket)
         {
@@ -187,6 +142,49 @@ class MiddlePane extends Component {
         // this.chatSocket.onclose = function(e) {
         //     console.error('Chat socket closed unexpectedly');
         // };
+    }
+
+    render() {
+        const messagesAvailable = this.props.messages.length > 0;
+        
+        let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
+        if (!this.state.scrolling && !this.state.messageReceived) {
+            dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
+        }
+
+        return (
+            <div id="messagesContainer">
+                {messagesAvailable ?
+                    <section id="messages" onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}}>
+                        {
+                            this.props.messages.map(message=>{
+                                return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
+                            })
+                        }
+                    </section>
+                :
+                    <div id="noMessages">
+                        <div id="noMessageContainer">
+                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120"/>
+                        </div>
+                    </div>
+                }
+                {
+                this.props.channelId!==0 ?
+                <div style={{height: this.state.chatInputHeight}} id="chatInput">
+                    <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
+                </div>
+                :
+                <div>
+                    Please select a channel
+                </div>
+                }
+                <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
+                    View last messages
+                </button>
+            </div>
+        );
+        
     }
 }
 

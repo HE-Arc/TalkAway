@@ -3,25 +3,14 @@ import './Channel.css';
 
 class Channel extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: props.name,
-            idChannel: props.idChannel,
-            channelSelected: props.channelSelected
-        }
-
-        this.select = this.select.bind(this);
-    }
-
-    select() {
-        this.state.channelSelected(this.state.idChannel);
+    select = () => {
+        this.props.channelSelected(this.props.idChannel);
     }
 
     render() {
         return (
             <div className="channel" onClick={this.select}>
-                {this.state.name}
+                {this.props.name}
             </div>
         );
     }
