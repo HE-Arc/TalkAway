@@ -2,16 +2,30 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {requestLogin} from "../../../actions/AuthAction";
+import '../Auth.css';
 
 class Login extends React.Component {
     state = {
-        errors : null
+        errors : null,
+        shakingError : false
     }
 
     constructor(props) {
         super(props);
         this.usernameRef = React.createRef();
         this.passwordRef = React.createRef();
+    }
+
+    showError = () => {
+        this.setState({
+            errors: 'Invalid credentials',
+            shakingError: true
+        });
+        setTimeout(()=>{
+            this.setState({
+                shakingError: false
+            })
+        }, 500);
     }
 
     submit = (event) => {
@@ -21,16 +35,17 @@ class Login extends React.Component {
         const password = this.passwordRef.current.value;
 
         if (username.trim().length === 0 || password.trim().length === 0) {
-            this.setState({
-                errors: 'Invalid credentials'
-            })
+            this.showError();
             return;
         }
 
         console.log("Request login");
         this
             .props
-            .requestLogin(username, password);
+            .requestLogin(username, password)
+            .catch((error)=>{
+                this.showError();
+            });
     }
 
     render() {
@@ -38,9 +53,11 @@ class Login extends React.Component {
             <React.Fragment>
                 <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
 
-                <span style={{
-                    color: "red"
-                }}>{this.state.errors}</span>
+                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                    <span style={{
+                        color: "red"
+                    }}>{this.state.errors}</span>
+                </div>
                 <label htmlFor="inputUsername" className="sr-only">Username</label>
                 <input
                     type="text"
@@ -57,14 +74,7 @@ class Login extends React.Component {
                     className="form-control last"
                     placeholder="Password"
                     required
-                    ref={this.passwordRef}/> {/* <label htmlFor="username">Username</label>
-            <div className="form-control">
-                <input type="username" id="username"/>
-            </div>
-            <label htmlFor="password">Password</label>
-            <div className="form-control">
-                <input type="password" id="password"/>
-            </div> */}
+                    ref={this.passwordRef}/>
                 <button className="btn btn-lg btn-primary btn-block" onClick={this.submit}>Log in</button>
             </React.Fragment>
         );
