@@ -28,12 +28,13 @@ class ChatInput extends Component {
 
     keyEvent(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            
             const message = e.target.value;
             if (message !== "") {
                 this.state.sendMessage(message);
             }
             e.target.value = "";
-            e.preventDefault();
             this.updateArea();
         }
     }
