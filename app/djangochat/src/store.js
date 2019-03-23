@@ -12,7 +12,9 @@ const logger = createLogger({
     // ...options
 });
 
-export default createStore(
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+
+const store = createStore(
     combineReducers({
         auth: authReducer,
         server: serverReducer,
@@ -20,6 +22,12 @@ export default createStore(
         friend: friendReducer,
         message: messageReducer
     }),
-    {},
+    persistedState,
     applyMiddleware(logger, thunk)
 );
+
+store.subscribe(()=>{
+    localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
+
+export default store;
