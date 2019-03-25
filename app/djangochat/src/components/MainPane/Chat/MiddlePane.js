@@ -71,7 +71,10 @@ class MiddlePane extends Component {
         const messagesAvailable = this.props.messages.length > 0;
         
         let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
-        if (!this.state.scrolling && !this.state.messageReceived) {
+        if (this.state.scrolling || (this.state.messageReceived && !this.state.scrolling)){
+            //show "new messages button"
+        }
+        else {
             dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
         }
 
