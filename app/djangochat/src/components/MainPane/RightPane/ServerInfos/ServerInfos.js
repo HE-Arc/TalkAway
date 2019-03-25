@@ -41,7 +41,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr"/>
                 <div id="serverUsers" className="row">
-
+                    {/* TODO Add user section */}
                 </div>
             </div>
         );

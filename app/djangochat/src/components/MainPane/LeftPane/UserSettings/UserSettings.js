@@ -12,13 +12,11 @@ class UserSettings extends Component {
             time: Date.now(),
             delay: 10000
         };
-        this.checkActivity = this.checkActivity.bind(this);
-        this.openSettings = this.openSettings.bind(this);
 
         setInterval(this.checkActivity, 1000);
     }
 
-    checkActivity() {
+    checkActivity = () => {
         if (Date.now() - this.state.time > this.state.delay)
         {
             this.setState({
@@ -27,7 +25,7 @@ class UserSettings extends Component {
         }
     }
     
-    openSettings() {
+    openSettings = () => {
         this.setState({
             activity: "Connected",
             time: Date.now()
@@ -36,8 +34,8 @@ class UserSettings extends Component {
     }
 
     render() {
-        // Find appropritate state image
-        var connectionImg;
+        // Find appropriate state image
+        let connectionImg;
         switch (this.state.activity)
         {
             case "Away":    

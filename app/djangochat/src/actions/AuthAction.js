@@ -45,8 +45,6 @@ export function requestLogin(username, password) {
             }
             
             dispatch(_login(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }
@@ -65,7 +63,7 @@ export function requestRegister(email, username, password) {
             `
         };
 
-        fetch(baseGraphqlUrl+'/', {
+        return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
             body: JSON.stringify(requestBody), // JSON Object
             headers: {
@@ -77,9 +75,7 @@ export function requestRegister(email, username, password) {
             }
             return res.json();
         }).then(resData => {
-            dispatch(requestLogin(username, password));
-        }).catch(err => {
-            console.log(err);
+            return dispatch(requestLogin(username, password));
         })
     }
 }
