@@ -13,11 +13,18 @@ const channelReducer = (state = {
             //state = state + action.value;
             break;
         case "LIST_CHANNEL":
-        console.log(action.payload.channels)
+        // console.log(action.payload.channels)
             state = {
                 ...state,
                 activeChannelId : 0,
                 channels : action.payload.channels,
+            }
+            break;
+        case "NOTIFY_NEW_MESSAGE":
+            console.log(action.payload)
+            state = {
+                ...state,
+                newMessageChannelId : action.payload
             }
             break;
         default:

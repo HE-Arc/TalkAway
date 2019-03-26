@@ -8,6 +8,8 @@ import './MiddlePane.css';
 import {baseWebsocketUrl,baseGraphqlUrl} from '../../../config/config.js';
 import {addMessage} from "../../../actions/MessageAction";
 
+import {notifyNewMessage} from "../../../actions/ChannelAction";
+
 class MiddlePane extends Component {
 
     constructor(props) {
@@ -66,6 +68,10 @@ class MiddlePane extends Component {
         }
     }
 
+    notifyNewMessage = (channel_id) => {
+
+    }
+
     componentDidUpdate(){
         if(this.state.lastChannelId !== this.props.channelId )
         {
@@ -78,6 +84,7 @@ class MiddlePane extends Component {
     handleChange(event) {
         this.setState({messageInput: event.target.value});
     }
+
 
     sendMessage = (text) => {
 
@@ -129,14 +136,18 @@ class MiddlePane extends Component {
         }
 
         this.chatSocket = new WebSocket(
-            baseWebsocketUrl+'/'+ this.props.channelId+'/');
+            baseWebsocketUrl+'/'+ this.props.channelId+'/'+this.props.user.token);
         
         this.chatSocket.onmessage = (e) => {
-            var message = JSON.parse(e.data).message;
-            this.props.addMessage(message);
-            this.setState({
-                messageReceived: true
-            });
+            let message = JSON.parse(e.data).message;
+            if (message.channel_id==this.props.channelId){
+                this.props.addMessage(message);
+                this.setState({
+                    messageReceived: true
+                });
+            }else{
+                notifyNewMessage(message.channel_id);
+            }
         };
 
         // this.chatSocket.onclose = function(e) {
@@ -196,8 +207,9 @@ const mapsStateToProps = (state) => {
             id: state.auth.id,
             token:state.auth.token
         },
-        channelId:state.channel.activeChannelId
+        channelId:state.channel.activeChannelId,
+        serverId:state.server.activeServerId
     }
 }
 
-export default connect(mapsStateToProps, {addMessage})(MiddlePane); 
+export default connect(mapsStateToProps, {addMessage,notifyNewMessage})(MiddlePane); 

@@ -3,16 +3,36 @@ from channels.generic.websocket import WebsocketConsumer
 import json
 from . import schema
 import graphene
-from .models import Message
+from .models import Message, User, Channel
 from django.core.serializers.json import DjangoJSONEncoder
+from graphql_jwt.utils import jwt_decode
 
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
-        self.room_name = self.scope['url_route']['kwargs']['channel_id']
-        
-        self.room_group_name = 'chat_%s' % self.room_name
-        print(self.scope["user"])
+        channel_id = int(self.scope['url_route']['kwargs']['channel_id'])
+
+        token = self.scope['url_route']['kwargs']['token']
+
+        username = jwt_decode(token)['username']
+        user = User.objects.get(username=username)
+        channel = Channel.objects.get(id=channel_id)
+        server = channel.server
+
+        subscribedServers = user.servers.all()
+
+        authServer = False
+
+        for subscribedServer in subscribedServers:
+            if subscribedServer == server:
+                authServer = True
+
+        if not authServer:
+            raise Exception("Authentication error, the user isn't allowed to join this channel")
+
+        self.room_name = channel_id
+        self.room_group_name = str(server.id)
+
         # Join room group
         async_to_sync(self.channel_layer.group_add)(
             self.room_group_name,
@@ -44,7 +64,8 @@ class ChatConsumer(WebsocketConsumer):
                     'date': json.dumps(message.date, cls=DjangoJSONEncoder),
                     'user': {
                         'username': message.user.username
-                    }
+                    },
+                    'channel_id':message.channel.id
                 }
             })
 
