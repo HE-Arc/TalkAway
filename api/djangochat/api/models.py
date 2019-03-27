@@ -6,7 +6,6 @@ from datetime import datetime
 
 # Create your models here.
 
-
 class Server(models.Model):
     name = models.CharField(max_length=200)
     user_adding_right = models.IntegerField(

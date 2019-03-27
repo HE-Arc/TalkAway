@@ -8,6 +8,8 @@ import './MiddlePane.css';
 import {baseWebsocketUrl,baseGraphqlUrl} from '../../../config/config.js';
 import {addMessage} from "../../../actions/MessageAction";
 
+import {notifyNewMessage} from "../../../actions/ChannelAction";
+
 class MiddlePane extends Component {
 
     constructor(props) {
@@ -66,6 +68,10 @@ class MiddlePane extends Component {
         }
     }
 
+    notifyNewMessage = (channel_id) => {
+
+    }
+
     componentDidUpdate(){
         if(this.state.lastChannelId !== this.props.channelId )
         {
@@ -78,6 +84,7 @@ class MiddlePane extends Component {
     handleChange(event) {
         this.setState({messageInput: event.target.value});
     }
+
 
     sendMessage = (text) => {
 
@@ -127,16 +134,24 @@ class MiddlePane extends Component {
         {
             this.chatSocket.close();
         }
-
+        document.cookie="token="+this.props.user.token+"; max-age=1";
         this.chatSocket = new WebSocket(
             baseWebsocketUrl+'/'+ this.props.channelId+'/');
         
         this.chatSocket.onmessage = (e) => {
-            var message = JSON.parse(e.data).message;
-            this.props.addMessage(message);
-            this.setState({
-                messageReceived: true
-            });
+            let message = JSON.parse(e.data).message;
+            if (message.channel_id==this.props.channelId){
+                this.props.addMessage(message);
+                this.setState({
+                    messageReceived: true
+                });
+            }else if(message.server_id==this.props.serverId){
+                console.log("New message from another channel but same server, channelId: "+message.channel_id);
+                notifyNewMessage(message.channel_id);
+            }else{
+                console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
+                //notifyNewMessage(message.channel_id);
+            }
         };
 
         // this.chatSocket.onclose = function(e) {
@@ -196,8 +211,9 @@ const mapsStateToProps = (state) => {
             id: state.auth.id,
             token:state.auth.token
         },
-        channelId:state.channel.activeChannelId
+        channelId:state.channel.activeChannelId,
+        serverId:state.server.activeServerId
     }
 }
 
-export default connect(mapsStateToProps, {addMessage})(MiddlePane); 
+export default connect(mapsStateToProps, {addMessage,notifyNewMessage})(MiddlePane); 
