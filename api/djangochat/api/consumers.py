@@ -25,6 +25,7 @@ class ChatConsumer(WebsocketConsumer):
             if subscribedServer == self.server:
                 authServer = True
 
+        #TODO: Sergiy add auth validation for friends channels!
         if not authServer:
             raise Exception(
                 "Authentication error, the user isn't allowed to join this channel")

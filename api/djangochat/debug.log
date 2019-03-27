@@ -18776,3 +18776,9 @@ WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:49284]
 (0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
 (0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
 WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:49284]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
