@@ -1,9 +1,12 @@
 # djangochat/api/schema.py
 
+from itertools import chain
+
 import graphene
 import graphql_jwt
 from graphene_django.types import DjangoObjectType
-from .models import Message, Server, Channel, Right, Reaction
+
+from .models import Message, Server, Channel, Right, Reaction, Friend
 from django.contrib.auth import get_user_model
 from graphql_jwt.decorators import login_required, user_passes_test
 
@@ -33,6 +36,11 @@ class ReactionType(DjangoObjectType):
         model = Reaction
 
 
+class FriendType(DjangoObjectType):
+    class Meta:
+        model = Friend
+
+
 class UserType(DjangoObjectType):
     class Meta:
         model = get_user_model()
@@ -44,7 +52,7 @@ class Query(graphene.ObjectType):
     )
 
     my_servers = graphene.List(ServerType)
-    my_friends = graphene.List(UserType)
+    my_friends = graphene.List(FriendType)
 
     server_channels = graphene.List(
         ChannelType, server_id=graphene.Int()
@@ -57,7 +65,7 @@ class Query(graphene.ObjectType):
 
     @login_required
     def resolve_my_friends(self, info, **kwargs):
-        return info.context.user.friends.all()
+        return chain(info.context.user.user_one.all(), info.context.user.user_two.all())
 
     @login_required
     def resolve_my_servers(self, info, **kwargs):
