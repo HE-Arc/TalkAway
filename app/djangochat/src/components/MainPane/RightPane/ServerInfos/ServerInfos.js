@@ -50,7 +50,7 @@ class ServerInfos extends Component {
 
 const mapsStateToProps = (state) => {
     return {
-        channels: state.channel.channels,
+        channels: state.server.servers.filter(c=>c.id === state.server.activeServerId)[0].channelSet,
         activeChannelId: state.channel.activeChannelId
     }
 }

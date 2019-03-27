@@ -34,6 +34,7 @@ export function requestServerList() {
                   id
                   channelSet{
                       id
+                      name
                   }
                 }
               }

@@ -1,6 +1,7 @@
 const channelReducer = (state = {
     channels:[],
-    activeChannelId:0
+    activeChannelId:0,
+    newMessageChannelId:[]
 }, action) => {
     switch (action.type) {
         case "SELECT_CHANNEL":
@@ -24,7 +25,10 @@ const channelReducer = (state = {
             console.log(action.payload)
             state = {
                 ...state,
-                newMessageChannelId : action.payload
+                newMessageChannelId : [
+                    ...state.newMessageChannelId,
+                    action.payload
+                ]
             }
             break;
         default:

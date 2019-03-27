@@ -60,8 +60,8 @@ class ContactList extends Component {
             });
         } else {
             contactRows = this.props.friends.map((friend)=>{
-                let classes = (friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
-                return( <div key={friend.id + this.props.servers.length} className={classes.join(' ')}>
+                let classes = (friend.friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
+                return( <div key={friend.friend.id + this.props.servers.length} className={classes.join(' ')}>
                             <Friend friend={friend} friendSelected={this.friendSelected}/>
                         </div>);
             });

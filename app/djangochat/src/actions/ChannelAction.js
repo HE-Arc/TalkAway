@@ -1,19 +1,19 @@
 
 import {baseGraphqlUrl} from '../config/config';
 
-function _updateChannelList(data) {
-    return {
-        type: 'LIST_CHANNEL',
-        payload: data
-    }
-}
-
 export function selectChannel(channelId) {
     return (dispatch) => {
         dispatch({
             type: 'SELECT_CHANNEL',
             payload: channelId
         });
+    }
+}
+
+function _updateChannelList(data) {
+    return {
+        type: 'LIST_CHANNEL',
+        payload: data
     }
 }
 

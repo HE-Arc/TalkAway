@@ -2,10 +2,14 @@
 import {baseGraphqlUrl} from '../config/config';
 
 export function selectFriend(friendId) {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         dispatch({
             type: 'SELECT_FRIEND',
             payload: friendId
+        });
+        dispatch({
+            type: 'SELECT_CHANNEL',
+            payload: getState().friend.friends.filter(f=>f.friend.id === friendId)[0].channelId
         });
     }
 }
@@ -16,8 +20,17 @@ export function requestFriendList() {
             query: `
             query{
                 myFriends{
-                    id
+                  userOne{
                     username
+                    id
+                  }
+                  userTwo{
+                    username
+                    id
+                  }
+                  chanel{
+                    id
+                  }
                 }
               }
             `
@@ -36,11 +49,21 @@ export function requestFriendList() {
             }
             return res.json();
         }).then(resData => {
-            let response = resData.data.myFriends;
-            if(response == null){
-                response = []
+            let data = resData.data.myFriends;
+            const id = getState().auth.id;
+            let friends = data.map(d=>{
+                const friendData = d.userOne.id !== id ? d.userOne : d.userTwo;
+                return {
+                    channelId: d.chanel.id,
+                    friend:{
+                        ...friendData
+                    }
+                }
+            });
+            if(friends == null){
+                friends = []
             }
-            dispatch(_updateFriendList(response));
+            dispatch(_updateFriendList(friends));
         }).catch(err => {
             console.log(err);
         });
