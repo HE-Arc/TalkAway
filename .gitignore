@@ -1,3 +1,6 @@
 /.vs
+/log
+/log/*
 api/djangochat/debug.log
 api/djangochat/db.sqlite3
+api/djangochat/.fuse_hidden0000147400000001

@@ -141,6 +141,12 @@ mutation {
 }
 ```
 
+## Web sockets
+- nginx as the proxy
+- daphne as the interface server
+- redis as the backend
+
+
 # Sources
 - https://github.com/facebook/create-react-app
 - https://docs.graphene-python.org/projects/django/en/latest/tutorial-plain/

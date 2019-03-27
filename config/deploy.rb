@@ -63,10 +63,10 @@ task :restart_sidekiq do
     on roles(:worker) do
       execute :service, "sidekiq restart"
     end
-  end
-  after "deploy:published", "restart_sidekiq"
+end
+after "deploy:published", "restart_sidekiq"
 
-  after 'deploy:publishing', 'uwsgi:restart'
+after 'deploy:publishing', 'uwsgi:restart'
 
 namespace :uwsgi do
     desc 'Restart application'
