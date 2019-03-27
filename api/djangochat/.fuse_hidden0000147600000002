@@ -523,3 +523,18 @@ WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:41772]
 (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-27 09:19:27.747687' AND "django_session"."session_key" = 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc'); args=('2019-03-27 09:19:27.747687', 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc')
 (0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
 WebSocket CONNECT /ws/channel/5/ [127.0.0.1:41772]
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:41772]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:41880][0m
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:41878][0m
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:41882]
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-27 09:21:46.213538' AND "django_session"."session_key" = 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc'); args=('2019-03-27 09:21:46.213538', 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc')
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:41882]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:41880][0m
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:41878][0m
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:41900]
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-27 09:22:29.967006' AND "django_session"."session_key" = 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc'); args=('2019-03-27 09:22:29.967006', 'n1nhfpprhffyiqs2qt7kb4n8f8t909lc')
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:41900]
