@@ -64,23 +64,36 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 
 after 'deploy:updating', 'reactjs:download'
 
+
 namespace :reactjs do
  desc "Install dependencies and reload reactjs"
  task :download do
-  on roles(:web) do |h|
-   execute "cd #{release_path}/app/djangochat/ && npm install"
-   execute "cd #{release_path}/app/djangochat/ && npm run build"
-  end
+    on roles(:web) do |h|
+        execute "cd #{release_path}/app/djangochat/ && npm install"
+        execute "cd #{release_path}/app/djangochat/ && npm run build"
+    end
  end
 end
 
 after 'reactjs:download', 'redis:start'
 
 namespace :redis do
- desc "Start redis server"
- task :start do
-  on roles(:web) do |h|
-   execute :sudo, "/etc/init.d/redis-server start"
-  end
- end
+    desc "Start redis server"
+    task :start do
+        on roles(:web) do |h|
+            execute :sudo, "/etc/init.d/redis-server start"
+        end
+    end
+end
+
+after 'redis:start', 'daphne:restart'
+
+namespace :daphne do
+    desc "Restart daphne server for websockets"
+    task :restart do
+        on roles(:web) do |h|
+            execute :sudo, "chmod a+rw #{release_path}/api/djangochat/debug.log"
+            execute :sudo, "sv restart daphne"
+        end
+    end
 end
