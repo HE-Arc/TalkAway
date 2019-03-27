@@ -1,12 +1,12 @@
-from channels.auth import AuthMiddlewareStack
+
 from channels.routing import ProtocolTypeRouter, URLRouter
 import api.routing
+from api.token_auth import TokenAuthMiddlewareStack
 
 ASGI_APPLICATION = "api.routing.application"
 
 application = ProtocolTypeRouter({
-    # (http->django views is added by default)
-    'websocket': AuthMiddlewareStack(
+    'websocket': TokenAuthMiddlewareStack(
         URLRouter(
             api.routing.websocket_urlpatterns
         )

@@ -1,4 +1,3 @@
 /.vs
 api/djangochat/debug.log
-
 api/djangochat/db.sqlite3

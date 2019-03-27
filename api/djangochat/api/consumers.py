@@ -12,26 +12,25 @@ class ChatConsumer(WebsocketConsumer):
     def connect(self):
         channel_id = int(self.scope['url_route']['kwargs']['channel_id'])
 
-        token = self.scope['url_route']['kwargs']['token']
+        user = self.scope['user']
 
-        username = jwt_decode(token)['username']
-        user = User.objects.get(username=username)
         channel = Channel.objects.get(id=channel_id)
-        server = channel.server
+        self.server = channel.server
 
-        subscribedServers = user.servers.all()
+        self.subscribedServers = user.servers.all()
 
         authServer = False
 
-        for subscribedServer in subscribedServers:
-            if subscribedServer == server:
+        for subscribedServer in self.subscribedServers:
+            if subscribedServer == self.server:
                 authServer = True
 
         if not authServer:
-            raise Exception("Authentication error, the user isn't allowed to join this channel")
+            raise Exception(
+                "Authentication error, the user isn't allowed to join this channel")
 
         self.room_name = channel_id
-        self.room_group_name = str(server.id)
+        self.room_group_name = "all"
 
         # Join room group
         async_to_sync(self.channel_layer.group_add)(
@@ -65,7 +64,8 @@ class ChatConsumer(WebsocketConsumer):
                     'user': {
                         'username': message.user.username
                     },
-                    'channel_id':message.channel.id
+                    'channel_id': message.channel.id,
+                    'server_id': self.server.id
                 }
             })
 
@@ -74,7 +74,9 @@ class ChatConsumer(WebsocketConsumer):
     def chat_message(self, event):
         message = event['message']
 
-        # Send message to WebSocket
-        self.send(text_data=json.dumps({
-            'message': message
-        }))
+        for server in self.subscribedServers:
+            if server.id == message['server_id']:
+                self.send(text_data=json.dumps({
+                    'message': message
+                }))
+                break

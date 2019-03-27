@@ -134,9 +134,9 @@ class MiddlePane extends Component {
         {
             this.chatSocket.close();
         }
-
+        document.cookie="token="+this.props.user.token+"; max-age=1";
         this.chatSocket = new WebSocket(
-            baseWebsocketUrl+'/'+ this.props.channelId+'/'+this.props.user.token);
+            baseWebsocketUrl+'/'+ this.props.channelId+'/');
         
         this.chatSocket.onmessage = (e) => {
             let message = JSON.parse(e.data).message;
@@ -145,8 +145,12 @@ class MiddlePane extends Component {
                 this.setState({
                     messageReceived: true
                 });
-            }else{
+            }else if(message.server_id==this.props.serverId){
+                console.log("New message from another channel but same server, channelId: "+message.channel_id);
                 notifyNewMessage(message.channel_id);
+            }else{
+                console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
+                //notifyNewMessage(message.channel_id);
             }
         };
 
