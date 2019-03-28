@@ -5,7 +5,7 @@ import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
-import { baseWebsocketUrl, baseGraphqlUrl } from '../../../config/config.js';
+import { baseWebsocketUrl } from '../../../config/config.js';
 import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
 
 import { notifyNewMessage } from "../../../actions/ChannelAction";
