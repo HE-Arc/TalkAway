@@ -17,6 +17,33 @@ export function addMessage(message) {
     }
 }
 
+export function requestSendMessage(text, channelId) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            mutation {
+                createMessage(text: "${text}", channelId: ${channelId}) {
+                    id
+                }
+            }
+            `
+        };
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        })
+    }
+}
+
 export function requestMessageList(channelId) {
     return (dispatch, getState) => {
         const requestBody = {

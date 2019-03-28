@@ -6,7 +6,7 @@ import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
 import { baseWebsocketUrl, baseGraphqlUrl } from '../../../config/config.js';
-import { addMessage } from "../../../actions/MessageAction";
+import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
 
 import { notifyNewMessage } from "../../../actions/ChannelAction";
 
@@ -83,47 +83,26 @@ class MiddlePane extends Component {
         this.setState({ messageInput: event.target.value });
     }
 
-
     sendMessage = (text) => {
+        this.props
+            .requestSendMessage(text, this.props.channelId)
+            .then(resData => {
+                const messageId = resData.data.createMessage.id;
+    
+                this.chatSocket.send(JSON.stringify({
+                    newMessage: {
+                        id: messageId
+                    }
+                }));
 
-        const requestBody = {
-            query: `
-            mutation {
-                createMessage(text: "${text}", channelId: ${this.props.channelId}) {
-                    id
-                }
-            }
-            `
-        };
-        fetch(baseGraphqlUrl + '/', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'JWT ' + this.props.user.token
-            }
-        }).then(res => {
-            if (res.status !== 200 && res.status !== 201) {
-                throw new Error('Failed')
-            }
-            return res.json();
-        }).then(resData => {
-            const messageId = resData.data.createMessage.id;
-
-            this.chatSocket.send(JSON.stringify({
-                newMessage: {
-                    id: messageId
-                }
-            }));
-
-        }).catch(err => {
-            console.log(err);
-        });
-
-        this.setState({
-            messageInput: '',
-            messageSent: true
-        });
+                this.setState({
+                    messageInput: '',
+                    messageSent: true
+                });
+            }).catch((err)=>{
+                console.log("Error while sending yout message :(");
+                console.log(err);
+            });
     }
 
     connectWebsocket = () => {
@@ -216,4 +195,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, notifyNewMessage })(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage, notifyNewMessage })(MiddlePane); 
