@@ -1,26 +1,26 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
-import {baseWebsocketUrl,baseGraphqlUrl} from '../../../config/config.js';
-import {addMessage} from "../../../actions/MessageAction";
+import { baseWebsocketUrl, baseGraphqlUrl } from '../../../config/config.js';
+import { addMessage } from "../../../actions/MessageAction";
 
-import {notifyNewMessage} from "../../../actions/ChannelAction";
+import { notifyNewMessage } from "../../../actions/ChannelAction";
 
 class MiddlePane extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            messageInput:'',
+            messageInput: '',
             chatInputHeight: 50,
             scrolling: false,
             messageSent: false,
-            lastChannelId:0,
-            messageReceived:false
+            lastChannelId: 0,
+            messageReceived: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -45,11 +45,10 @@ class MiddlePane extends Component {
 
     scroll(event) {
         const element = event.target;
-        if (element != null)
-        {
+        if (element) {
             this.setState({
                 scrolling: Math.round(element.scrollHeight - element.scrollTop) > element.clientHeight,
-                messageReceived:false
+                messageReceived: false
             })
         }
     }
@@ -63,7 +62,7 @@ class MiddlePane extends Component {
 
     dropDown = () => {
         let element = document.getElementById("messages");
-        if (element != null) {
+        if (element) {
             element.scrollTop = element.scrollHeight;
         }
     }
@@ -72,17 +71,16 @@ class MiddlePane extends Component {
 
     }
 
-    componentDidUpdate(){
-        if(this.state.lastChannelId !== this.props.channelId )
-        {
+    componentDidUpdate() {
+        if (this.state.lastChannelId !== this.props.channelId) {
             this.connectWebsocket();
-            this.setState({lastChannelId:this.props.channelId});
+            this.setState({ lastChannelId: this.props.channelId });
             this.dropDown();
         }
     }
 
     handleChange(event) {
-        this.setState({messageInput: event.target.value});
+        this.setState({ messageInput: event.target.value });
     }
 
 
@@ -97,12 +95,12 @@ class MiddlePane extends Component {
             }
             `
         };
-        fetch(baseGraphqlUrl+'/', {
+        fetch(baseGraphqlUrl + '/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'JWT '+this.props.user.token
+                'Authorization': 'JWT ' + this.props.user.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -114,7 +112,7 @@ class MiddlePane extends Component {
 
             this.chatSocket.send(JSON.stringify({
                 newMessage: {
-                    id:messageId
+                    id: messageId
                 }
             }));
 
@@ -129,31 +127,30 @@ class MiddlePane extends Component {
     }
 
     connectWebsocket = () => {
-        if(this.props.channelId != 0){
+        if (this.props.channelId > 0) {
             //If we select a new channel and a previous WebSocket instance already exists
-            if(this.chatSocket instanceof WebSocket)
-            {
+            if (this.chatSocket instanceof WebSocket) {
                 this.chatSocket.close();
             }
-            console.log(this.props.user.token)
-            document.cookie="token="+this.props.user.token+";max-age=1";
-            this.chatSocket = new WebSocket(
-                baseWebsocketUrl+'/'+ this.props.channelId+'/');
             
+            document.cookie = "token=" + this.props.user.token + ";max-age=1";
+            this.chatSocket = new WebSocket(
+                baseWebsocketUrl + '/' + this.props.channelId + '/');
+
             this.chatSocket.onmessage = (e) => {
                 let message = JSON.parse(e.data).message;
-                if (message.channel_id==this.props.channelId){
+                if (Number(message.channel_id) === Number(this.props.channelId)) {
                     this.props.addMessage(message);
                     this.setState({
                         messageReceived: true
                     });
-                }else if(message.direct_type="false" && message.server_id==this.props.serverId){
+                }else if(message.direct_type=="false" && message.server_id==this.props.serverId){
                     console.log("New message from another channel but same server, channelId: "+message.channel_id);
                     notifyNewMessage(message.channel_id);
-                }else if(message.direct_type="false"){
+                }else if(message.direct_type=="false"){
                     console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
                     //notifyNewMessage(message.channel_id);
-                }else if(message.direct_type="true"){
+                }else if(message.direct_type=="true"){
                     console.log("New message from friend, friendId: "+message.friend_id+" channelId: "+message.channel_id);
                 }
             };
@@ -166,37 +163,37 @@ class MiddlePane extends Component {
 
     render() {
         const messagesAvailable = this.props.messages.length > 0;
-        
-        let dropDownVisibility = {bottom: this.state.chatInputHeight + 10};
+
+        let dropDownVisibility = { bottom: this.state.chatInputHeight + 10 };
         if (!this.state.scrolling && !this.state.messageReceived) {
-            dropDownVisibility = {display: 'none', bottom: this.state.chatInputHeight + 10};
+            dropDownVisibility = { display: 'none', bottom: this.state.chatInputHeight + 10 };
         }
 
         return (
             <div id="messagesContainer">
                 {messagesAvailable ?
-                    <section id="messages" onScroll={this.scroll} style={{height: window.innerHeight - this.state.chatInputHeight}}>
+                    <section id="messages" onScroll={this.scroll} style={{ height: window.innerHeight - this.state.chatInputHeight }}>
                         {
-                            this.props.messages.map(message=>{
+                            this.props.messages.map(message => {
                                 return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
                             })
                         }
                     </section>
-                :
+                    :
                     <div id="noMessages">
                         <div id="noMessageContainer">
-                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120"/>
+                            <img id="noMessageImage" alt="" src={require('./images/noMessage.png')} width="120" height="120" />
                         </div>
                     </div>
                 }
                 {
-                this.props.channelId!==0 ?
-                <div style={{height: this.state.chatInputHeight}} id="chatInput">
-                    <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace}/>
-                </div>
-                :
-                <div>
-                    Please select a channel
+                    this.props.channelId > 0 ?
+                        <div style={{ height: this.state.chatInputHeight }} id="chatInput">
+                            <ChatInput sendMessage={this.sendMessage} adaptMessagesSpace={this.adaptMessagesSpace} />
+                        </div>
+                        :
+                        <div>
+                            Please select a channel
                 </div>
                 }
                 <button id="dropdown" style={dropDownVisibility} onClick={this.dropDown}>
@@ -204,7 +201,7 @@ class MiddlePane extends Component {
                 </button>
             </div>
         );
-        
+
     }
 }
 
@@ -214,11 +211,11 @@ const mapsStateToProps = (state) => {
         user: {
             username: state.auth.username,
             id: state.auth.id,
-            token:state.auth.token
+            token: state.auth.token
         },
-        channelId:state.channel.activeChannelId,
-        serverId:state.server.activeServerId
+        channelId: state.channel.activeChannelId,
+        serverId: state.server.activeServerId
     }
 }
 
-export default connect(mapsStateToProps, {addMessage,notifyNewMessage})(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, notifyNewMessage })(MiddlePane); 
