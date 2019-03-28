@@ -104,7 +104,7 @@ class ChatConsumer(WebsocketConsumer):
     def chat_message(self, event):
         message = event['message']
 
-        if self.channel.direct_type and message['direct_type'] == "true":
+        if message['direct_type'] == "true":
             if message['friend_id'] == self.user.id or message['my_id'] == self.user.id:
                 self.send(text_data=json.dumps({
                     'message': message
