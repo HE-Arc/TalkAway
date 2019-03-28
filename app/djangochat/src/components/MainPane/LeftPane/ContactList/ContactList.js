@@ -56,14 +56,16 @@ class ContactList extends Component {
         const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
             contactRows = this.props.servers.map((server)=>{
-                let classes = (server.id === this.props.activeServerId) ? classesSelected : classesSelectable;
-                return( <div key={server.id} className={classes.join(' ')}>
+                const serverId = Number(server.id);
+                let classes = (serverId === this.props.activeServerId) ? classesSelected : classesSelectable;
+                return( <div key={serverId} className={classes.join(' ')}>
                             <Server contact={{}} server={server} serverSelected={this.serverSelected}/>
                         </div>);
             });
         } else {
             contactRows = this.props.friends.map((friend)=>{
-                let classes = (friend.friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
+                const friendId = Number(friend.friend.id);
+                let classes = (friendId === this.props.activeFriendId) ? classesSelected : classesSelectable;
                 return( <div key={friend.friend.id + this.props.servers.length} className={classes.join(' ')}>
                             <Friend friend={friend} friendSelected={this.friendSelected}/>
                         </div>);

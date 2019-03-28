@@ -68,7 +68,7 @@ class MiddlePane extends Component {
     }
 
     notifyNewMessage = (channel_id) => {
-
+        //TODO: notify
     }
 
     componentDidUpdate() {
@@ -118,18 +118,25 @@ class MiddlePane extends Component {
 
             this.chatSocket.onmessage = (e) => {
                 let message = JSON.parse(e.data).message;
+                console.log(message.server_id)
+                console.log(typeof(message.server_id))
+                console.log(typeof(this.props.serverId))
+                
+                const messageType = Boolean(message.direct_type);
+                const messageId = Number(this.props.serverId)
+
                 if (Number(message.channel_id) === Number(this.props.channelId)) {
                     this.props.addMessage(message);
                     this.setState({
                         messageReceived: true
                     });
-                }else if(message.direct_type=="false" && message.server_id==this.props.serverId){
+                }else if(!messageType && message.server_id===this.props.serverId){
                     console.log("New message from another channel but same server, channelId: "+message.channel_id);
                     notifyNewMessage(message.channel_id);
-                }else if(message.direct_type=="false"){
+                }else if(!messageType){
                     console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
                     //notifyNewMessage(message.channel_id);
-                }else if(message.direct_type=="true"){
+                }else {
                     console.log("New message from friend, friendId: "+message.friend_id+" channelId: "+message.channel_id);
                 }
             };

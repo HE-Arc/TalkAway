@@ -6,7 +6,7 @@ const serverReducer = (state = {
         case "SELECT_SERVER":
             state = {
                 ...state,
-                activeServerId: action.payload
+                activeServerId: Number(action.payload)
             };
             break;
         case "CREATE_SERVER":
