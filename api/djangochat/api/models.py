@@ -66,9 +66,6 @@ class Right(models.Model):
         return f"{self.server} - {self.user} : {self.right}"
 
 class Friend(models.Model):
-    # 1-Emperor -> Add user, ban a user + Master rights
-    # 2-Master -> Creation of chat + Padawan rights
-    # 3-Padawan -> Send messages
     user_one = models.ForeignKey(
         User, null=False, on_delete=models.CASCADE,
         related_name="user_one")

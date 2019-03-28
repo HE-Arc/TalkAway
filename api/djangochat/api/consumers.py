@@ -14,18 +14,25 @@ class ChatConsumer(WebsocketConsumer):
 
         user = self.scope['user']
 
-        channel = Channel.objects.get(id=channel_id)
-        self.server = channel.server
-
-        self.subscribedServers = user.servers.all()
+        self.channel = Channel.objects.get(id=channel_id)
 
         authServer = False
 
-        for subscribedServer in self.subscribedServers:
-            if subscribedServer == self.server:
-                authServer = True
+        if self.channel.direct_type:
+            self.friends = user.friends.all()
+            for friend in self.friends:
+                if friend.channel == self.channel:
+                    authServer = True
+        else:
+            self.server = self.channel.server
 
-        #TODO: Sergiy add auth validation for friends channels!
+            self.subscribedServers = user.servers.all()
+
+            for subscribedServer in self.subscribedServers:
+                if subscribedServer == self.server:
+                    authServer = True
+
+        # TODO: Sergiy add auth validation for friends channels!
         if not authServer:
             raise Exception(
                 "Authentication error, the user isn't allowed to join this channel")
