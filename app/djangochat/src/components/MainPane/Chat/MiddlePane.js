@@ -129,35 +129,37 @@ class MiddlePane extends Component {
     }
 
     connectWebsocket = () => {
-        //If we select a new channel and a previous WebSocket instance already exists
-        if(this.chatSocket instanceof WebSocket)
-        {
-            this.chatSocket.close();
-        }
-        console.log(this.props.user.token)
-        document.cookie="token="+this.props.user.token+";max-age=1";
-        this.chatSocket = new WebSocket(
-            baseWebsocketUrl+'/'+ this.props.channelId+'/');
-        
-        this.chatSocket.onmessage = (e) => {
-            let message = JSON.parse(e.data).message;
-            if (message.channel_id==this.props.channelId){
-                this.props.addMessage(message);
-                this.setState({
-                    messageReceived: true
-                });
-            }else if(message.server_id==this.props.serverId){
-                console.log("New message from another channel but same server, channelId: "+message.channel_id);
-                notifyNewMessage(message.channel_id);
-            }else{
-                console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
-                //notifyNewMessage(message.channel_id);
+        if(this.props.channelId != 0){
+            //If we select a new channel and a previous WebSocket instance already exists
+            if(this.chatSocket instanceof WebSocket)
+            {
+                this.chatSocket.close();
             }
-        };
+            console.log(this.props.user.token)
+            document.cookie="token="+this.props.user.token+";max-age=1";
+            this.chatSocket = new WebSocket(
+                baseWebsocketUrl+'/'+ this.props.channelId+'/');
+            
+            this.chatSocket.onmessage = (e) => {
+                let message = JSON.parse(e.data).message;
+                if (message.channel_id==this.props.channelId){
+                    this.props.addMessage(message);
+                    this.setState({
+                        messageReceived: true
+                    });
+                }else if(message.server_id==this.props.serverId){
+                    console.log("New message from another channel but same server, channelId: "+message.channel_id);
+                    notifyNewMessage(message.channel_id);
+                }else{
+                    console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
+                    //notifyNewMessage(message.channel_id);
+                }
+            };
 
-        // this.chatSocket.onclose = function(e) {
-        //     console.error('Chat socket closed unexpectedly');
-        // };
+            // this.chatSocket.onclose = function(e) {
+            //     console.error('Chat socket closed unexpectedly');
+            // };
+        }
     }
 
     render() {
