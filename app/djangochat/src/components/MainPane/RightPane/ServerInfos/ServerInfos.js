@@ -16,7 +16,7 @@ class ServerInfos extends Component {
 
     render() {
         let channelComponents = '';
-        console.log(this.props.server)
+        
         if (this.props.server.length > 0) {
             const channels = this.props.server[0].channelSet;
             channelComponents = channels.map((channel) => {

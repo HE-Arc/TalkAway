@@ -15,22 +15,25 @@ class LeftPane extends Component {
         })
     }
 
-    closeSettings = () => {
-        this.setState({
-            settingsVisible: false
-        })
-    }
-
     render() {
-        const displayComponent = this.state.settingsVisible ? <UserSettings  closeSettings={this.closeSettings}/> : <ContactList />;
+        let component;
+        if(this.state.settingsVisible){
+            component =
+                <div>
+                    <div id="settings" className="bg-secondary">
+                        <UserHeader switchSettings={this.switchSettings} />
+                    </div>
+                    <div id="list">
+                        <ContactList />
+                    </div>
+                </div>;
+        } else {
+            component = <UserSettings switchSettings={this.switchSettings}/>
+        }
+
         return (
             <div>
-                <div id="settings" className="bg-secondary">
-                    <UserHeader switchSettings={this.switchSettings} />
-                </div>
-                <div id="list">
-                    {displayComponent}
-                </div>
+                {component}
             </div>
         );
     }
