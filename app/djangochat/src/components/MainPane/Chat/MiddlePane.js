@@ -118,14 +118,10 @@ class MiddlePane extends Component {
 
             this.chatSocket.onmessage = (e) => {
                 let message = JSON.parse(e.data).message;
-                console.log(message.server_id)
-                console.log(typeof(message.server_id))
-                console.log(typeof(this.props.serverId))
                 
                 const messageType = Boolean(message.direct_type);
-                const messageId = Number(this.props.serverId)
-
-                if (Number(message.channel_id) === Number(this.props.channelId)) {
+                
+                if (message.channel_id === this.props.channelId) {
                     this.props.addMessage(message);
                     this.setState({
                         messageReceived: true
