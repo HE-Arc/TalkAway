@@ -19169,3 +19169,1223 @@ WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:34956]
 (0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
 WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:34952]
 WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:34956]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34972][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/0/ [127.0.0.1:34974]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:23:55.503311' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:23:55.503311', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 0; args=(0,)
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:34974]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 2; args=(2,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34972][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34972][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34972][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:34978]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:23:59.617073' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:23:59.617073', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.003) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:34978]
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34972][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.002) INSERT INTO "api_message" ("text", "date", "channel_id", "user_id") VALUES ('Test', '2019-03-28 14:24:02.523420', 1, 1); args=['Test', '2019-03-28 14:24:02.523420', 1, 1]
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34972][0m
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."id" = 6; args=(6,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34978]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:34984]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:24:09.457345' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:24:09.457345', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:34984]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.002) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.003) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.002) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+(0.005) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:34994][0m
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34996][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:34998]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:26:27.679391' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:26:27.679391', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:34998]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34996][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34994][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35012]
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:00.342143' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:00.342143', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35012]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 3; args=(3,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34996][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34994][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:35018]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:04.072965' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:04.072965', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35018]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 3; args=(3,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34994][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35022]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:05.469835' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:05.469835', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35022]
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:34994][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:35026]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:06.604953' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:06.604953', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35026]
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 3; args=(3,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34994][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35030]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:09.932943' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:09.932943', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35030]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34994][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/0/ [127.0.0.1:35034]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:13.209906' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:13.209906', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 0; args=(0,)
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:35034]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34994][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34994][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:34994][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:35038]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34994][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:17.411601' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:17.411601', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:35038]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35038]
+(0.004) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/2/ [127.0.0.1:35046]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34994][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:18.655138' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:18.655138', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/2/ [127.0.0.1:35046]
+[32mHTTP GET /admin 301 [0.00, 127.0.0.1:35050][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:29.350051' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:29.350051', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bec41df28>>, 'request': <AsgiRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f5bc4686a58>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f5bdc0d3240>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'name': 'Channels', 'object_name': 'Channel', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/channel/', 'add_url': '/admin/api/channel/add/'}, {'name': 'Friends', 'object_name': 'Friend', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/friend/', 'add_url': '/admin/api/friend/add/'}, {'name': 'Messages', 'object_name': 'Message', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/message/', 'add_url': '/admin/api/message/add/'}, {'name': 'Reactions', 'object_name': 'Reaction', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/reaction/', 'add_url': '/admin/api/reaction/add/'}, {'name': 'Rights', 'object_name': 'Right', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/right/', 'add_url': '/admin/api/right/add/'}, {'name': 'Servers', 'object_name': 'Server', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/server/', 'add_url': '/admin/api/server/add/'}, {'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/'}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': 'Site administration', 'app_list': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'name': 'Channels', 'object_name': 'Channel', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/channel/', 'add_url': '/admin/api/channel/add/'}, {'name': 'Friends', 'object_name': 'Friend', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/friend/', 'add_url': '/admin/api/friend/add/'}, {'name': 'Messages', 'object_name': 'Message', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/message/', 'add_url': '/admin/api/message/add/'}, {'name': 'Reactions', 'object_name': 'Reaction', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/reaction/', 'add_url': '/admin/api/reaction/add/'}, {'name': 'Rights', 'object_name': 'Right', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/right/', 'add_url': '/admin/api/right/add/'}, {'name': 'Servers', 'object_name': 'Server', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/server/', 'add_url': '/admin/api/server/add/'}, {'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/'}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}]
+Exception while resolving variable 'is_popup' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_popup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_popup] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bec41df28>>, 'request': <AsgiRequest: GET '/admin/'>, 'user': <SimpleLazyObject: <User: admin>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7f5bc4686a58>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7f5bdc0d3240>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'name': 'Channels', 'object_name': 'Channel', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/channel/', 'add_url': '/admin/api/channel/add/'}, {'name': 'Friends', 'object_name': 'Friend', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/friend/', 'add_url': '/admin/api/friend/add/'}, {'name': 'Messages', 'object_name': 'Message', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/message/', 'add_url': '/admin/api/message/add/'}, {'name': 'Reactions', 'object_name': 'Reaction', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/reaction/', 'add_url': '/admin/api/reaction/add/'}, {'name': 'Rights', 'object_name': 'Right', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/right/', 'add_url': '/admin/api/right/add/'}, {'name': 'Servers', 'object_name': 'Server', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/server/', 'add_url': '/admin/api/server/add/'}, {'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/'}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'title': 'Site administration', 'app_list': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'name': 'Channels', 'object_name': 'Channel', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/channel/', 'add_url': '/admin/api/channel/add/'}, {'name': 'Friends', 'object_name': 'Friend', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/friend/', 'add_url': '/admin/api/friend/add/'}, {'name': 'Messages', 'object_name': 'Message', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/message/', 'add_url': '/admin/api/message/add/'}, {'name': 'Reactions', 'object_name': 'Reaction', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/reaction/', 'add_url': '/admin/api/reaction/add/'}, {'name': 'Rights', 'object_name': 'Right', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/right/', 'add_url': '/admin/api/right/add/'}, {'name': 'Servers', 'object_name': 'Server', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/server/', 'add_url': '/admin/api/server/add/'}, {'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/'}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'view_only': False, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/'}]}], 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}]
+(0.001) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "api_user" ON ("django_admin_log"."user_id" = "api_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 1 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(1,)
+[mHTTP GET /admin/ 200 [0.06, 127.0.0.1:35050][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:37.061011' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:37.061011', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" ORDER BY "api_friend"."chanel_id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bdc08c6a8>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+[mHTTP GET /admin/api/friend/ 200 [0.05, 127.0.0.1:35066][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:37.260071' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:37.260071', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35066][0m
+[mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.00, 127.0.0.1:35066][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:38.770751' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:38.770751', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 5; args=(5,)
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'api' AND "django_content_type"."model" = 'friend'); args=('api', 'friend')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel"; args=()
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+[mHTTP GET /admin/api/friend/5/change/ 200 [0.05, 127.0.0.1:35070][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:27:38.939798' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:27:38.939798', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+[mHTTP GET /static/admin/css/forms.css 200 [0.00, 127.0.0.1:35072][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35070][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:28:11.764337' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:28:11.764337', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/? 200 [0.03, 127.0.0.1:35078][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:28:44.983824' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:28:44.983824', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/? 200 [0.03, 127.0.0.1:35078][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:28:51.665670' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:28:51.665670', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/? 200 [0.03, 127.0.0.1:35078][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35046]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35082]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:29:01.379785' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:29:01.379785', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 3; args=(3,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 3; args=(3,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35080][0m
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35082]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35080][0m
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35086]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35100][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35108]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:31:56.029317' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:31:56.029317', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35108]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:35112]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:31:57.354248' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:31:57.354248', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35112]
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35104]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:13.868080' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:13.868080', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 5; args=(5,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT (1) AS "a" FROM "api_user" WHERE "api_user"."id" = 1  LIMIT 1; args=(1,)
+(0.000) SELECT (1) AS "a" FROM "api_user" WHERE "api_user"."id" = 3  LIMIT 1; args=(3,)
+(0.000) SELECT (1) AS "a" FROM "api_channel" WHERE "api_channel"."id" = 1  LIMIT 1; args=(1,)
+(0.000) UPDATE "api_friend" SET "user_one_id" = 1, "user_two_id" = 3 WHERE "api_friend"."chanel_id" = 1; args=(1, 3, 1)
+(0.002) INSERT INTO "api_friend" ("user_one_id", "user_two_id", "chanel_id") SELECT 1, 3, 1; args=(1, 3, 1)
+(0.001) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2019-03-28 14:32:13.886020', 1, 8, '1', 'Friend object (1)', 2, '[{"changed": {"fields": ["chanel"]}}]'); args=['2019-03-28 14:32:13.886020', 1, 8, '1', 'Friend object (1)', 2, '[{"changed": {"fields": ["chanel"]}}]']
+[32mHTTP POST /admin/api/friend/5/change/ 302 [0.03, 127.0.0.1:35116][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:13.913078' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:13.913078', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" ORDER BY "api_friend"."chanel_id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bc46fdf28>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+[mHTTP GET /admin/api/friend/ 200 [0.05, 127.0.0.1:35116][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:14.085839' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:14.085839', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35116][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:16.177779' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:16.177779', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel"; args=()
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+[mHTTP GET /admin/api/friend/1/change/ 200 [0.06, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:16.346228' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:16.346228', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:18.423193' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:18.423193', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" ORDER BY "api_friend"."chanel_id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bed4ef1e0>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+[mHTTP GET /admin/api/friend/ 200 [0.04, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:19.818243' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:19.818243', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.001) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 4; args=(4,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel"; args=()
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+[mHTTP GET /admin/api/friend/4/change/ 200 [0.08, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:20.021232' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:20.021232', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35118][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:20.396968' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:20.396968', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.001) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 5; args=(5,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user"; args=()
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel"; args=()
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+[mHTTP GET /admin/api/friend/5/change/ 200 [0.08, 127.0.0.1:35118][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:20.586237' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:20.586237', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:25.340562' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:25.340562', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 5; args=(5,)
+[mHTTP GET /admin/api/friend/5/delete/ 200 [0.02, 127.0.0.1:35118][0m
+[mHTTP GET /static/admin/js/cancel.js 200 [0.00, 127.0.0.1:35118][0m
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:27.055985' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:27.055985', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.002) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 5; args=(5,)
+(0.006) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2019-03-28 14:32:27.078852', 1, 8, '5', 'Friend object (5)', 3, ''); args=['2019-03-28 14:32:27.078852', 1, 8, '5', 'Friend object (5)', 3, '']
+(0.003) DELETE FROM "api_friend" WHERE "api_friend"."chanel_id" IN (5); args=(5,)
+[32mHTTP POST /admin/api/friend/5/delete/ 302 [0.05, 127.0.0.1:35118][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:27.194367' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:27.194367', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "api_friend"; args=()
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" ORDER BY "api_friend"."chanel_id" DESC; args=()
+Exception while resolving variable 'errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [errors] in None
+Exception while resolving variable 'show' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'show'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [show] in [{'True': True, 'False': False, 'None': None, 'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7f5bdc0c4950>>}]
+Exception while resolving variable 'is_multipart' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'is_multipart'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [is_multipart] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+Exception while resolving variable 'non_field_errors' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'non_field_errors'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bastien/.local/lib/python3.6/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [non_field_errors] in None
+[mHTTP GET /admin/api/friend/ 200 [0.05, 127.0.0.1:35118][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:27.361519' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:27.361519', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:35118][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35120]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:29.263892' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:29.263892', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35120]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35102][0m
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 5; args=(5,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35102][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35126]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:31.403058' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:31.403058', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35126]
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35124]
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.002) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+(0.004) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.003) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.003) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+(0.001) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 3; args=(3,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35100][0m
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35102][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/5/ [127.0.0.1:35136]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:36.675407' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:36.675407', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 5; args=(5,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/5/ [127.0.0.1:35136]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35100][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:35142]
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:39.867769' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:39.867769', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:35142]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) BEGIN; args=None
+(0.002) INSERT INTO "api_message" ("text", "date", "channel_id", "user_id") VALUES ('Hi', '2019-03-28 14:32:54.949161', 1, 1); args=['Hi', '2019-03-28 14:32:54.949161', 1, 1]
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."id" = 7; args=(7,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 2; args=(2,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35102][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35142]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/0/ [127.0.0.1:35150]
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:57.568495' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:57.568495', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 0; args=(0,)
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:35150]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35102][0m
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:35152]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:32:59.923954' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:32:59.923954', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:35152]
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35152]
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/2/ [127.0.0.1:35158]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:33:03.197114' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:33:03.197114', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/2/ [127.0.0.1:35158]
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35158]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:35164]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:33:04.935171' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:33:04.935171', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35164]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) BEGIN; args=None
+(0.002) INSERT INTO "api_message" ("text", "date", "channel_id", "user_id") VALUES ('Test', '2019-03-28 14:33:07.370254', 4, 1); args=['Test', '2019-03-28 14:33:07.370254', 4, 1]
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35102][0m
+(0.005) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) BEGIN; args=None
+(0.008) INSERT INTO "api_message" ("text", "date", "channel_id", "user_id") VALUES ('My name is admin to bernard', '2019-03-28 14:33:26.308543', 4, 1); args=['My name is admin to bernard', '2019-03-28 14:33:26.308543', 4, 1]
+[mHTTP POST /graphql/ 200 [0.05, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35102][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:35166]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:33:28.153010' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:33:28.153010', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:35166]
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35166]
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 4; args=(4,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'admin'; args=('admin',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:35174]
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35102][0m
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:33:28.684440' AND "django_session"."session_key" = 'dcraz59a6x4s41ng93vyz13voc6cui32'); args=('2019-03-28 14:33:28.684440', 'dcraz59a6x4s41ng93vyz13voc6cui32')
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:35174]
