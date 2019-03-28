@@ -15,17 +15,22 @@ class ServerInfos extends Component {
     }
 
     render() {
-        const channels = this.props.channels.map((channel)=>{
-            let classes = ["row"];
-            if (this.props.activeChannelId === channel.id) {
-                classes.push("selected");
-            } else {
-                classes.push("selectable");
-            }
-            return( <div key={channel.id} className={classes.join(' ')}>
-                        <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id}/>
-                    </div>);
-        })
+        let channelComponents = '';
+        console.log(this.props.server)
+        if(this.props.server.length > 0){
+            const channels = this.props.server[0].channelSet;
+            channelComponents = channels.map((channel)=>{
+                let classes = ["row"];
+                if (this.props.activeChannelId === channel.id) {
+                    classes.push("selected");
+                } else {
+                    classes.push("selectable");
+                }
+                return( <div key={channel.id} className={classes.join(' ')}>
+                            <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id}/>
+                        </div>);
+            });
+        };
 
         return (
             <div id="serverContainer" className="container">
@@ -36,7 +41,7 @@ class ServerInfos extends Component {
                 <hr className="serverhr"/>
                 <div id="serverChannels" className="row">
                     <div id="channelsContainer" className="container scrollableServer unselectable">
-                        {channels}
+                        {channelComponents}
                     </div>
                 </div>
                 <hr className="serverhr"/>
@@ -50,7 +55,7 @@ class ServerInfos extends Component {
 
 const mapsStateToProps = (state) => {
     return {
-        channels: state.server.servers.filter(c=>c.id === state.server.activeServerId)[0].channelSet,
+        server: state.server.servers.filter(c=>c.id === state.server.activeServerId),
         activeChannelId: state.channel.activeChannelId
     }
 }
