@@ -1,63 +1,22 @@
 import React, { Component } from 'react';
-import './UserSettings.css';
 
 import {connect} from 'react-redux';
 
 class UserSettings extends Component {
     
-    constructor(props) {
-        super(props);
-        this.state = {
-            activity: "Connected",
-            time: Date.now(),
-            delay: 10000
-        };
-
-        setInterval(this.checkActivity, 1000);
-    }
-
-    checkActivity = () => {
-        if (Date.now() - this.state.time > this.state.delay)
-        {
-            this.setState({
-                activity: "Away"
-            })
-        }
-    }
-    
-    openSettings = () => {
-        this.setState({
-            activity: "Connected",
-            time: Date.now()
-        })
-        alert("Settings needs to be implemented");
-    }
-
     render() {
         // Find appropriate state image
         let connectionImg;
-        switch (this.state.activity)
-        {
-            case "Away":    
-                connectionImg = require('./images/away.png');
-                break;
-            default:
-                connectionImg = require('./images/connected.png');
-        }
 
         // Return the component
         return (
-            <div className="container unselectable">
-                <div id="rowProfile" className="row">
-                    <div id="image" className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
-                        <img id="connection" alt="" src={connectionImg}/>
-                    </div>
-                    <div id="username" className="col-6">
-                    {this.props.username}
-                    </div>
-                    <div id="settingsButton" className="col-3">
-                        <img className="cursor" alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
+            <div className="container" style={{paddingTop: '10px', height: '100%'}}>
+                <div className="row contactSelector unselectable" style={{marginBottom: '20px'}}>
+                    <button onClick={this.props.closeSettings}>Close</button>
+                    {/* TODO MODIFIER AVEC UNE CROIX */}
+
+                    <div className="col-12" onClick={this.displayServers}>
+                        TODO ADD Settings fields and actions
                     </div>
                 </div>
             </div>
@@ -67,7 +26,7 @@ class UserSettings extends Component {
 
 const mapsStateToProps = (state) => {
     return {
-        username: state.auth.username
+        auth: state.auth
     }
 }
 

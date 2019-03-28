@@ -14,7 +14,6 @@ const channelReducer = (state = {
             //state = state + action.value;
             break;
         case "LIST_CHANNEL":
-        // console.log(action.payload.channels)
             state = {
                 ...state,
                 activeChannelId : 0,
