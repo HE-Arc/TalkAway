@@ -147,12 +147,14 @@ class MiddlePane extends Component {
                     this.setState({
                         messageReceived: true
                     });
-                }else if(message.server_id==this.props.serverId){
+                }else if(message.direct_type="false" && message.server_id==this.props.serverId){
                     console.log("New message from another channel but same server, channelId: "+message.channel_id);
                     notifyNewMessage(message.channel_id);
-                }else{
+                }else if(message.direct_type="false"){
                     console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
                     //notifyNewMessage(message.channel_id);
+                }else if(message.direct_type="true"){
+                    console.log("New message from friend, friendId: "+message.friend_id+" channelId: "+message.channel_id);
                 }
             };
 
