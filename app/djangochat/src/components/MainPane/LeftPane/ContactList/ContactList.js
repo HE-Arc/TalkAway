@@ -5,6 +5,7 @@ import Server from './Contact/Server';
 import Friend from './Contact/Friend';
 import './ContactList.css';
 
+import {requestMessageList} from "../../../../actions/MessageAction";
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
 import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
@@ -35,6 +36,8 @@ class ContactList extends Component {
 
     friendSelected = (id) => {
         this.props.selectFriend(id);
+        const channelId = this.props.friends.filter(f=>f.friend.id === id)[0].channelId;
+        this.props.requestMessageList(channelId);
     }
 
     serverSelected = (id) => {
@@ -101,6 +104,7 @@ const mapsStateToProps = (state) => {
 const mapDispatchToProps= {
     requestServerList,
     requestFriendList,
+    requestMessageList,
     requestChannelList,
     selectServer,
     selectFriend,

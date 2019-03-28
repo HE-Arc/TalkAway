@@ -3,7 +3,7 @@ from channels.generic.websocket import WebsocketConsumer
 import json
 from . import schema
 import graphene
-from .models import Message, User, Channel
+from .models import Message, User, Channel, Friend
 from django.core.serializers.json import DjangoJSONEncoder
 from graphql_jwt.utils import jwt_decode
 
@@ -19,10 +19,9 @@ class ChatConsumer(WebsocketConsumer):
         authServer = False
 
         if self.channel.direct_type:
-            self.friends = user.friends.all()
-            for friend in self.friends:
-                if friend.channel == self.channel:
-                    authServer = True
+            self.friend = Friend.objects.get(chanel=self.channel)
+            if self.friend.user_one == user or self.friend.user_two == user:
+                authServer = True
         else:
             self.server = self.channel.server
 

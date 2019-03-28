@@ -1,0 +1,555 @@
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:33914][0m
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:33918]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:33914][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:33922]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:33942][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:33946]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+[mHTTP POST /graphql/ 200 [0.08, 127.0.0.1:33990][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.016) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.003) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:33994][0m
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:33990][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:33990][0m
+(0.004) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:33990][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:33998]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34002][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34006]
+(0.003) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34026][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34030]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34062][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34066]
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34076][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34080]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34076][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34084]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34096][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34100]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34096][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34108]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34128]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34134]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34146]
+[mHTTP OPTIONS /graphql/ 200 [0.00, 127.0.0.1:34124][0m
+[mHTTP OPTIONS /graphql/ 200 [0.00, 127.0.0.1:34164][0m
+(0.009) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.07, 127.0.0.1:34164][0m
+[mHTTP POST /graphql/ 200 [0.07, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34170]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34208]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34328]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:34124][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34358]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34576]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34124][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:34124][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:34670]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.06, 127.0.0.1:34932][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:34936]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35164][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35168]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35164][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.001) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.007) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35164][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35616]
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:35164][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35630]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35704][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35708]
+(0.004) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.07, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35704][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35800]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:35852]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35704][0m
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:35874]
+[mHTTP OPTIONS /graphql/ 200 [0.00, 127.0.0.1:35704][0m
+[mHTTP OPTIONS /graphql/ 200 [0.00, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:36176][0m
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:35704][0m
+WebSocket DISCONNECT /ws/channel/6/ [127.0.0.1:36180]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:36204]
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35704][0m
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:36216]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.05, 127.0.0.1:35704][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/2/ [127.0.0.1:36312]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:41:34.689507' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:41:34.689507', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/2/ [127.0.0.1:36312]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:37810]
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:44:37.658774' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:44:37.658774', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.13, 127.0.0.1:37806][0m
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:37810]
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:37810]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:37850]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:44:41.137419' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:44:41.137419', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" INNER JOIN "api_friend" ON ("api_user"."id" = "api_friend"."user_two_id") WHERE "api_friend"."user_one_id" = 2; args=(2,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:37850]
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/2/ [127.0.0.1:40116]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:15.049946' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:15.049946', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.001) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.12, 127.0.0.1:40112][0m
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/2/ [127.0.0.1:40116]
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:40116]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.003) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:40132]
+(0.002) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+[mHTTP POST /graphql/ 200 [0.03, 127.0.0.1:40112][0m
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:16.068950' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:16.068950', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:40132]
+WebSocket DISCONNECT /ws/channel/1/ [127.0.0.1:40132]
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:40162]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:18.536497' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:18.536497', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:40162]
+(0.003) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:40112][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/0/ [127.0.0.1:40174]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:19.750376' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:19.750376', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 0; args=(0,)
+WebSocket DISCONNECT /ws/channel/0/ [127.0.0.1:40174]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:40112][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:40112][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:40112][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:40112][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:40112][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.01, 127.0.0.1:40112][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:40112][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/2/ [127.0.0.1:40236]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:26.469143' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:26.469143', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 2; args=(2,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/2/ [127.0.0.1:40236]
+WebSocket DISCONNECT /ws/channel/2/ [127.0.0.1:40236]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/1/ [127.0.0.1:40252]
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:27.387097' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:27.387097', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.000) SELECT "api_message"."id", "api_message"."text", "api_message"."date", "api_message"."channel_id", "api_message"."user_id" FROM "api_message" WHERE "api_message"."channel_id" = 1; args=(1,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+(0.002) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 1; args=(1,)
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 3; args=(3,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" WHERE "api_server"."id" = 1; args=(1,)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:40112][0m
+WebSocket CONNECT /ws/channel/1/ [127.0.0.1:40252]
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:40512]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:49:58.310954' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:49:58.310954', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.001) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+WebSocket DISCONNECT /ws/channel/4/ [127.0.0.1:40512]
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+Daphne running, listening on 127.0.0.1:8080
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_one_id" = 2; args=(2,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 1; args=(1,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."user_two_id" = 2; args=(2,)
+[mHTTP POST /graphql/ 200 [0.04, 127.0.0.1:41042][0m
+(0.001) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+(0.000) SELECT "api_server"."id", "api_server"."name", "api_server"."user_adding_right" FROM "api_server" INNER JOIN "api_right" ON ("api_server"."id" = "api_right"."server_id") WHERE "api_right"."user_id" = 2; args=(2,)
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."server_id" = 1; args=(1,)
+[mHTTP POST /graphql/ 200 [0.02, 127.0.0.1:41042][0m
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."username" = 'Bernard'; args=('Bernard',)
+WebSocket HANDSHAKING /ws/channel/4/ [127.0.0.1:41046]
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-03-28 14:50:59.921358' AND "django_session"."session_key" = 'f89jaliabj1uu6glq4xecfi8q4reizyn'); args=('2019-03-28 14:50:59.921358', 'f89jaliabj1uu6glq4xecfi8q4reizyn')
+(0.000) SELECT "api_channel"."id", "api_channel"."name", "api_channel"."direct_type", "api_channel"."server_id" FROM "api_channel" WHERE "api_channel"."id" = 4; args=(4,)
+(0.000) SELECT "api_friend"."user_one_id", "api_friend"."user_two_id", "api_friend"."chanel_id" FROM "api_friend" WHERE "api_friend"."chanel_id" = 4; args=(4,)
+(0.000) SELECT "api_user"."id", "api_user"."password", "api_user"."last_login", "api_user"."is_superuser", "api_user"."username", "api_user"."first_name", "api_user"."last_name", "api_user"."email", "api_user"."is_staff", "api_user"."is_active", "api_user"."date_joined" FROM "api_user" WHERE "api_user"."id" = 2; args=(2,)
+WebSocket CONNECT /ws/channel/4/ [127.0.0.1:41046]

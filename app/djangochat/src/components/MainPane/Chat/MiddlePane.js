@@ -134,7 +134,8 @@ class MiddlePane extends Component {
         {
             this.chatSocket.close();
         }
-        document.cookie="token="+this.props.user.token+"; max-age=1";
+        console.log(this.props.user.token)
+        document.cookie="token="+this.props.user.token+";max-age=1";
         this.chatSocket = new WebSocket(
             baseWebsocketUrl+'/'+ this.props.channelId+'/');
         
