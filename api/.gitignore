@@ -1,4 +1,4 @@
 /.ENV
-djangochat/db.sqlite3
-djangochat/db.sqlite3_old
-djangochat/debug.log
+/djangochat/db.sqlite3
+/djangochat/db.sqlite3_old
+/djangochat/debug.log
