@@ -92,7 +92,7 @@ namespace :daphne do
     desc "Restart daphne server for websockets"
     task :restart do
         on roles(:web) do |h|
-            execute :sudo, "chmod a+rw #{release_path}/api/djangochat/debug.log"
+            #execute :sudo, "chmod a+rw #{release_path}/api/djangochat/debug.log"
             execute :sudo, "sv restart daphne"
         end
     end
