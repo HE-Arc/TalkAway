@@ -52,7 +52,7 @@ class UserHeader extends Component {
 
         // Return the component
         return (
-            <div id="rowProfile">
+            <div id="rowProfile" onClick={this.openSettings}>
                 <div id="images">
                     <img id="image" alt="" src={require('./images/profile.png')}/>
                     <img id="connection" alt="" src={connectionImg}/>

@@ -59,6 +59,7 @@
     width: 180px;
     margin-left: calc((100% - 180px) / 2);
     height: 100%;
+    cursor: pointer;
 }
 
 #settingsButton {

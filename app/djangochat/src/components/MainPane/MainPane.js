@@ -5,7 +5,6 @@ import MiddlePane from './Chat/MiddlePane';
 import RightPane from './RightPane/RightPane';
 import './MainPane.css';
 
-//.col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
 class MainPane extends Component {
     render() {
         if (this.props.serversDisplayed) {
