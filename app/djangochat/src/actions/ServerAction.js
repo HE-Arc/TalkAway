@@ -1,5 +1,5 @@
 
-import {baseGraphqlUrl} from '../config/config';
+import { baseGraphqlUrl } from '../config/config';
 
 export function createServer(data) {
     return {
@@ -30,23 +30,19 @@ export function requestServerList() {
             query: `
             query{
                 myServers{
-                  name
-                  id
-                  channelSet{
-                      id
-                      name
-                  }
+                    name
+                    id
                 }
-              }
+            }
             `
         };
 
-        return fetch(baseGraphqlUrl+'/', {
+        return fetch(baseGraphqlUrl + '/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'JWT '+getState().auth.token
+                'Authorization': 'JWT ' + getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -55,7 +51,7 @@ export function requestServerList() {
             return res.json();
         }).then(resData => {
             let response = resData.data.myServers;
-            if(response == null){
+            if (response == null) {
                 response = [];
             }
             dispatch(_updateServerList(response));

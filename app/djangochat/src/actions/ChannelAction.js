@@ -1,5 +1,5 @@
 
-import {baseGraphqlUrl} from '../config/config';
+import { baseGraphqlUrl } from '../config/config';
 
 export function selectChannel(channelId) {
     return (dispatch) => {
@@ -17,25 +17,33 @@ function _updateChannelList(data) {
     }
 }
 
-export function requestChannelList(serverId) {
+function _createChannel(data) {
+    return {
+        type: 'CREATE_CHANNEL',
+        payload: data
+    }
+}
+export function requestCreateChannel(serverId, name) {
     return (dispatch, getState) => {
         const requestBody = {
             query: `
-            query{
-                serverChannels(serverId:${serverId}){
-                  id
-                  name
+            mutation{
+                createChannel(serverId:${serverId}, name:"${name}"){
+                    channel{
+                        id
+                        name
+                    }
                 }
-              }
+            }
             `
         };
 
-        return fetch(baseGraphqlUrl+'/', {
+        return fetch(baseGraphqlUrl + '/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'JWT '+getState().auth.token
+                'Authorization': 'JWT ' + getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -43,11 +51,49 @@ export function requestChannelList(serverId) {
             }
             return res.json();
         }).then(resData => {
+            let response = { ...resData.data.createChannel.channel, serverId: serverId };
+            dispatch(_createChannel(response));
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+}
+
+export function requestChannelList(serverId) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            query{
+                serverChannels(serverId:${serverId}){
+                    id
+                    name
+                    server{
+                        id
+                    }
+                }
+              }
+            `
+        };
+
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            console.log()
             let response = {
                 serverId: serverId,
-                channels: resData.data.serverChannels
+                channels: resData.data.serverChannels.map(c => { return { ...c, serverId: Number(serverId) } })
             };
-            if(response.channels == null){
+            if (response.channels == null) {
                 response.channels = [];
             }
             dispatch(_updateChannelList(response));
