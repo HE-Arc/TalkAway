@@ -122,6 +122,36 @@ class CreateServer(graphene.Mutation):
         )
 
 
+class CreateFriend(graphene.Mutation):
+    friend = graphene.Field(FriendType)
+    channel = graphene.Field(ChannelType)
+
+    class Arguments:
+        friend_id = graphene.Int(required=True)
+
+    @login_required
+    def mutate(self, info, friend_id):
+        authUser = info.context.user
+        friendUser = get_user_model().objects.get(id=friend_id)
+
+        if Friend.objects.filter(user_one=authUser, user_two=friendUser).exists() or Friend.objects.filter(user_one=friendUser, user_two=authUser).exists():
+            raise Exception("Friend relation already exists")
+
+        channel = Channel(
+            name=f"{authUser.username}-{friendUser.username}", direct_type=True)
+
+        channel.save()
+
+        friend = Friend(user_one=authUser, user_two=friendUser, chanel=channel)
+
+        friend.save()
+
+        return CreateFriend(
+            friend=friend,
+            channel=channel
+        )
+
+
 class CreateMessage(graphene.Mutation):
     text = graphene.String()
     date = graphene.DateTime()
@@ -182,3 +212,4 @@ class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()
     create_message = CreateMessage.Field()
     getJWTToken = ObtainJSONWebTokenWithUser.Field()
+    create_friend = CreateFriend.Field()
