@@ -50,6 +50,9 @@ class UserSettings extends Component {
 
                     <input type="button" value="Disconnect" onClick={this.props.logout}/>
                 </div>
+                <div id="username">
+                    Username
+                </div>
             </div>
         );
     }

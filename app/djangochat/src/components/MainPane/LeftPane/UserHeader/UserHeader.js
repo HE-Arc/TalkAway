@@ -55,14 +55,11 @@ class UserHeader extends Component {
             <div className="container unselectable">
                 <div id="rowProfile" className="row">
                     <div id="image" className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="70" height="70"/>
+                        <img alt="" src={require('./images/profile.png')} width="50" height="50" onClick={this.openSettings}/>
                         <img id="connection" alt="" src={connectionImg}/>
                     </div>
                     <div id="username" className="col-6">
                     {this.props.username}
-                    </div>
-                    <div id="settingsButton" className="col-3">
-                        <img className="cursor" alt="" src={require('./images/settings.png')} width="40" height="40" onClick={this.openSettings}/>
                     </div>
                 </div>
             </div>
