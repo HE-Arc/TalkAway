@@ -152,6 +152,32 @@ class CreateFriend(graphene.Mutation):
         )
 
 
+# class AddUser(graphene.Mutation):
+#     server = graphene.Field(ServerType)
+#     user = graphene.Field(UserType)
+
+#     class Arguments:
+#         server_id = graphene.Int(required=True)
+#         user_id = graphene.Int(required=True)
+
+#         @login_required
+#         def mutate(self, info, server_id, user_id):
+
+#             authUser = info.context.user
+
+#             server = Server.objects.get(id=server_id)
+
+#             mySubScribedServers = authUser.servers()
+
+#             if server not in mySubScribedServers:
+#                 raise Exception("You are not in this server")
+
+#             user = get_user_model().objects.get(id=user_id)
+
+#             if server in user.servers():
+#                 Exception("This user is already in this server")
+
+
 class CreateMessage(graphene.Mutation):
     text = graphene.String()
     date = graphene.DateTime()
@@ -167,26 +193,16 @@ class CreateMessage(graphene.Mutation):
         authUser = info.context.user
         channel = Channel.objects.get(id=channel_id)
 
-        authServer = False
-
         if channel.direct_type:
             friend = Friend.objects.get(chanel=channel)
 
-            if friend.user_one == authUser or friend.user_two == authUser:
-                authServer = True
+            if friend.user_one != authUser and friend.user_two != authUser:
+                raise Exception(
+                    "Authentication error, the user isn't a friend with the user he's trying to send a message to")
         else:
-            subscribedServers = authUser.servers.all()
-
-            server = channel.server
-
-            for subscribedServer in subscribedServers:
-                if subscribedServer == server:
-                    authServer = True
-                    break
-
-        if not authServer:
-            raise Exception(
-                "Authentication error, the user isn't allowed to add a message in this channel")
+            if channel.server not in authUser.servers.all():
+                raise Exception(
+                    "Authentication error, the user isn't allowed to add a message in this channel")
 
         message = Message(text=text, channel=channel, user=authUser)
         message.save()

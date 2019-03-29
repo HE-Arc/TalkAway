@@ -121,14 +121,14 @@ class MiddlePane extends Component {
                 console.log(e.data)
                 let message = JSON.parse(e.data).message;
                 
-                const messageType = Boolean(message.direct_type);
+                const messageType = String(message.direct_type) === 'true' ? true: false;
                 
-                if (message.channel_id === this.props.channelId) {
+                if (Number(message.channel_id) === Number(this.props.channelId)) {
                     this.props.addMessage(message);
                     this.setState({
                         messageReceived: true
                     });
-                }else if(!messageType && message.server_id===this.props.serverId){
+                }else if(!messageType && Number(message.server_id)===Number(this.props.serverId)){
                     console.log("New message from another channel but same server, channelId: "+message.channel_id);
                     notifyNewMessage(message.channel_id);
                 }else if(!messageType){
