@@ -20,6 +20,11 @@ class ContactList extends Component {
 
         this.props.requestFriendList();
         this.props.requestServerList();
+        window.addEventListener("resize", this.updateDimensions);
+    }
+
+    updateDimensions = () => {
+        this.forceUpdate();
     }
 
     displayFriends = () => {
@@ -50,8 +55,8 @@ class ContactList extends Component {
         const white = '#FFFFFF';
         const blue = '#0D6CB8';
         let contactRows = [];
-        const classesSelected = ["row", "selected"];
-        const classesSelectable = ["row", "selectable"];
+        const classesSelected = ["row", "contact", "selected"];
+        const classesSelectable = ["row", "contact", "selectable"];
 
         const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
@@ -63,6 +68,7 @@ class ContactList extends Component {
             });
         } else {
             contactRows = this.props.friends.map((friend)=>{
+                console.log(friend);
                 let classes = (friend.id === this.props.activeFriendId) ? classesSelected : classesSelectable;
                 return( <div key={friend.id + this.props.servers.length} className={classes.join(' ')}>
                             <Friend friend={friend} friendSelected={this.friendSelected}/>
@@ -70,21 +76,26 @@ class ContactList extends Component {
             });
         }
 
+        let selectorServersDescription = "S";
+        let selectorfriendsDescription = "F";
+        if (window.innerWidth > 767) {
+            selectorServersDescription = "Servers";
+            selectorfriendsDescription = "Friends";
+        }
+
         // Return the component
         return (
-            <div className="container" style={{paddingTop: '10px', height: '100%'}}>
-                <div className="row contactSelector unselectable" style={{marginBottom: '20px'}}>
-                    <div className="col-5 text-right cursor" onClick={this.displayServers} style={{color: styleServers, padding: 0, fontSize: '2em'}}>
-                        Servers
+            <div style={{paddingTop: '10px', height: '100%', width: '100%'}}>
+                <div className="contactSelector unselectable">
+                    <div id="selectorServers" className="cursor" onClick={this.displayServers} style={{color: styleServers}}>
+                        {selectorServersDescription}
                     </div>
-                    <div className="col-2 text-center" style={{padding: 0, fontSize: '2em'}}>
-                        /
-                    </div>
-                    <div className="col-5 text-left cursor" onClick={this.displayFriends} style={{color: styleFriends, padding: 0, fontSize: '2em'}}>
-                        Friends
+                    <div id="selectorSeparator">/</div>
+                    <div id="selectorFriends" className="cursor" onClick={this.displayFriends} style={{color: styleFriends}}>
+                        {selectorfriendsDescription}
                     </div>
                 </div>
-                <div className="container scrollable unselectable">
+                <div id="contactList" className="container scrollable unselectable">
                     {contactRows}
                 </div>
             </div>

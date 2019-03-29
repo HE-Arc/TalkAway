@@ -1,14 +1,50 @@
-.textClient {
-    padding: 0;
-    padding-top: 15px;
-    padding-left: 20px;
+@media (min-width: 1281px) {
+    #contactFriendImage { left: 0; top: 5px; width: 40px; height: 40px;}
+    #contactFriendName { visibility: visible; width: calc(100% - 40px); }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #contactFriendImage { left: 0; top: 5px; width: 40px; height: 40px;}
+    #contactFriendName { visibility: visible; width: calc(100% - 40px); }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #contactFriendImage { left: 0; top: 5px; width: 40px; height: 40px;}
+    #contactFriendName { visibility: visible; width: calc(100% - 40px); }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #contactFriendImage { left: 0; top: 5px; width: 40px; height: 40px;}
+    #contactFriendName { visibility: hidden; width: 0%; }
+}
+
+@media (max-width: 480px) {
+    #contactFriendImage { left: 0; width: 50px; height: 50px;}
+    #contactFriendName { visibility: hidden; width: 0%; }
+}
+
+.containerFriend {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#contactFriendImages {
+    height: 50px;
+    width: 50%;
+    position: absolute;
+}
+
+#contactFriendImage {
+    position: absolute;
+}
+
+#contactFriendName {
+    position: absolute;
+    top: 14px;
+    height: 100%;
     font-size: 0.8em;
-}
-
-#containerClient {
-    margin: 5px;
-}
-
-.selected {
-    background: green;
+    color: white;
+    left: 50px;
 }

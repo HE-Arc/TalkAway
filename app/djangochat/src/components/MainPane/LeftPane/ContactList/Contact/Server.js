@@ -19,18 +19,16 @@ class Server extends Component {
         }*/
 
         return (
-            <div id="containerServer" className="container" onClick={() => this.props.serverSelected(this.props.server.id)}>
-                <div className="row">
-                    <div className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="50" height="50"/>
-                    </div>
-                    <div className="col-9 textServer">
-                        {this.props.server.name}
-                    </div>
-                    {/*<div className="col-3 textServer">
-                        {connectivity}
-                    </div>*/}
+            <div className="containerServer" onClick={() => this.props.serverSelected(this.props.server.id)}>
+                <div id="contactServerImages">
+                    <img id="contactServerImage" alt="" src={require('./images/profile.png')}/>
                 </div>
+                <div id="contactServerName">
+                    {this.props.server.name}
+                </div>
+                {/*<div className="col-3 textServer">
+                    {connectivity}
+                </div>*/}
             </div>
         );
     }
