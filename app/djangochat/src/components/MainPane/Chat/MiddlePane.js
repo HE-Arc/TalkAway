@@ -88,7 +88,7 @@ class MiddlePane extends Component {
             .requestSendMessage(text, this.props.channelId)
             .then(resData => {
                 const messageId = resData.data.createMessage.id;
-    
+
                 this.chatSocket.send(JSON.stringify({
                     newMessage: {
                         id: messageId
@@ -99,7 +99,7 @@ class MiddlePane extends Component {
                     messageInput: '',
                     messageSent: true
                 });
-            }).catch((err)=>{
+            }).catch((err) => {
                 console.log("Error while sending yout message :(");
                 console.log(err);
             });
@@ -111,31 +111,28 @@ class MiddlePane extends Component {
             if (this.chatSocket instanceof WebSocket) {
                 this.chatSocket.close();
             }
-            
+
             document.cookie = "token=" + this.props.user.token + ";max-age=1";
             this.chatSocket = new WebSocket(
                 baseWebsocketUrl + '/' + this.props.channelId + '/');
 
             this.chatSocket.onmessage = (e) => {
-                console.log("Message received")
-                console.log(e.data)
                 let message = JSON.parse(e.data).message;
-                
-                const messageType = String(message.direct_type) === 'true' ? true: false;
-                
-                if (Number(message.channel_id) === Number(this.props.channelId)) {
+
+                const messageType = message.direct_type;
+                if (message.channel_id === this.props.channelId) {
                     this.props.addMessage(message);
                     this.setState({
                         messageReceived: true
                     });
-                }else if(!messageType && Number(message.server_id)===Number(this.props.serverId)){
-                    console.log("New message from another channel but same server, channelId: "+message.channel_id);
+                } else if (!messageType && message.server_id === this.props.serverId) {
+                    console.log("New message from another channel but same server, channelId: " + message.channel_id);
                     notifyNewMessage(message.channel_id);
-                }else if(!messageType){
-                    console.log("New message from another server, serverId:"+message.server_id+" channelId: "+message.channel_id);
+                } else if (!messageType) {
+                    console.log("New message from another server, serverId:" + message.server_id + " channelId: " + message.channel_id);
                     //notifyNewMessage(message.channel_id);
-                }else {
-                    console.log("New message from friend, friendId: "+message.friend_id+" channelId: "+message.channel_id);
+                } else {
+                    console.log("New message from friend, friendId: " + message.friend_id + " channelId: " + message.channel_id);
                 }
             };
 
