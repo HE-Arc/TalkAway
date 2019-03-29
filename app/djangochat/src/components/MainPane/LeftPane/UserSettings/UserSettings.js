@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
 import {connect} from 'react-redux';
+
+import {logout} from "../../../../actions/AuthAction";
 
 class UserSettings extends Component {
     
@@ -46,6 +47,8 @@ class UserSettings extends Component {
                     <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat new password" required></input>
 
                     <input type="button" value="Save" onClick={this.save}/>
+
+                    <input type="button" value="Disconnect" onClick={this.props.logout}/>
                 </div>
             </div>
         );
@@ -58,4 +61,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps)(UserSettings); 
+export default connect(mapsStateToProps, {logout})(UserSettings); 
