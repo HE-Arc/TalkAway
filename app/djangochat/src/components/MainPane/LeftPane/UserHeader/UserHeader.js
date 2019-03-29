@@ -58,7 +58,7 @@ class UserHeader extends Component {
                     <img id="connection" alt="" src={connectionImg}/>
                 </div>
                 <div id="username">
-                    Username
+                    {this.props.username}
                 </div>
             </div>
         );
