@@ -37,7 +37,7 @@ class ServerInfos extends Component {
             <div id="serverContainer" className="container">
                 <div id="serverButtons" className="row">
                     <button className="buttonServer unselectable">Add user</button>
-                    <button className="buttonServer unselectable">Server settings</button>
+                    <button className="buttonServer unselectable" onClick={this.props.switchSettings}>Server settings</button>
                 </div>
                 <hr className="serverhr" />
                 <div id="serverChannels" className="row">

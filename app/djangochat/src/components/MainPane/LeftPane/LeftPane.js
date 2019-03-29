@@ -18,6 +18,8 @@ class LeftPane extends Component {
     render() {
         let component;
         if(this.state.settingsVisible){
+            component = <UserSettings switchSettings={this.switchSettings}/>
+        } else {
             component =
                 <div>
                     <div id="settings" className="bg-secondary">
@@ -27,8 +29,6 @@ class LeftPane extends Component {
                         <ContactList />
                     </div>
                 </div>;
-        } else {
-            component = <UserSettings switchSettings={this.switchSettings}/>
         }
 
         return (

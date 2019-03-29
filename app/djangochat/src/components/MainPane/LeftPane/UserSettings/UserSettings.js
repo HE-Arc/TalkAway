@@ -4,6 +4,10 @@ import {connect} from 'react-redux';
 
 class UserSettings extends Component {
     
+    save = () => {
+        console.log("TODO SAVE in UserSettings Component")
+    }
+
     render() {
         // Return the component
         return (
@@ -16,7 +20,6 @@ class UserSettings extends Component {
                             </button>
                         </div>
                     </div>
-
                     
                     <div className="mx-auto text-center">
                         <h2 className="">
@@ -32,6 +35,17 @@ class UserSettings extends Component {
                     <div className="col-12" onClick={this.displayServers}>
                         TODO ADD Settings fields and actions
                     </div>
+                    <input type="email" placeholder="Email" required></input>
+                    <label htmlFor="old-password" >Old password</label>
+                    <input type="password" id="old-password" name="old-password" placeholder="Old password" required></input>
+
+                    <label htmlFor="new-password" >New password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="New password" required></input>
+
+                    <label htmlFor="repeat-password" >Repeat your password</label>
+                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat new password" required></input>
+
+                    <input type="button" value="Save" onClick={this.save}/>
                 </div>
             </div>
         );
