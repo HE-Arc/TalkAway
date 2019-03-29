@@ -52,15 +52,13 @@ class UserHeader extends Component {
 
         // Return the component
         return (
-            <div className="container unselectable">
-                <div id="rowProfile" className="row">
-                    <div id="image" className="col-3">
-                        <img alt="" src={require('./images/profile.png')} width="50" height="50" onClick={this.openSettings}/>
-                        <img id="connection" alt="" src={connectionImg}/>
-                    </div>
-                    <div id="username" className="col-6">
-                    {this.props.username}
-                    </div>
+            <div id="rowProfile">
+                <div id="images">
+                    <img id="image" alt="" src={require('./images/profile.png')}/>
+                    <img id="connection" alt="" src={connectionImg}/>
+                </div>
+                <div id="username">
+                    Username
                 </div>
             </div>
         );
