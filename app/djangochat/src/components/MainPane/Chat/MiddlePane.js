@@ -117,6 +117,8 @@ class MiddlePane extends Component {
                 baseWebsocketUrl + '/' + this.props.channelId + '/');
 
             this.chatSocket.onmessage = (e) => {
+                console.log("Message received")
+                console.log(e.data)
                 let message = JSON.parse(e.data).message;
                 
                 const messageType = Boolean(message.direct_type);
