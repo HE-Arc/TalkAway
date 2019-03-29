@@ -78,7 +78,7 @@ class ChatConsumer(WebsocketConsumer):
                         'channel_id': message.channel.id,
                         'friend_id': friend_id,
                         'my_id': self.user.id,
-                        'direct_type': "true"
+                        'direct_type': True
                     }
                 })
 
@@ -96,7 +96,7 @@ class ChatConsumer(WebsocketConsumer):
                         },
                         'channel_id': message.channel.id,
                         'server_id': self.server.id,
-                        'direct_type': "false"
+                        'direct_type': False
                     }
                 })
 
@@ -105,12 +105,12 @@ class ChatConsumer(WebsocketConsumer):
     def chat_message(self, event):
         message = event['message']
 
-        if message['direct_type'] == "true":
+        if message['direct_type']:
             if message['friend_id'] == self.user.id or message['my_id'] == self.user.id:
                 self.send(text_data=json.dumps({
                     'message': message
                 }))
-        elif message['direct_type'] == "false":
+        else:
             for server in self.subscribedServers:
                 if server.id == message['server_id']:
                     self.send(text_data=json.dumps({
