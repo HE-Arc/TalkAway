@@ -152,30 +152,44 @@ class CreateFriend(graphene.Mutation):
         )
 
 
-# class AddUser(graphene.Mutation):
-#     server = graphene.Field(ServerType)
-#     user = graphene.Field(UserType)
+class AddUser(graphene.Mutation):
+    right = graphene.Field(RightType)
 
-#     class Arguments:
-#         server_id = graphene.Int(required=True)
-#         user_id = graphene.Int(required=True)
+    class Arguments:
+        server_id = graphene.Int(required=True)
+        user_id = graphene.Int(required=True)
+        right = graphene.Int()
 
-#         @login_required
-#         def mutate(self, info, server_id, user_id):
+    @login_required
+    def mutate(self, info, server_id, user_id, right=3):
 
-#             authUser = info.context.user
+        authUser = info.context.user
 
-#             server = Server.objects.get(id=server_id)
+        server = Server.objects.get(id=server_id)
 
-#             mySubScribedServers = authUser.servers()
+        if right > 3 or right < 1:
+            raise Exception(
+                "The right value is incorrect, please enter a value between 1 and 3")
 
-#             if server not in mySubScribedServers:
-#                 raise Exception("You are not in this server")
+        if server not in authUser.servers.all():
+            raise Exception("You are not participating to this server")
 
-#             user = get_user_model().objects.get(id=user_id)
+        if Right.objects.get(user=authUser, server=server).right > 1:
+            raise Exception(
+                "You don't have the right to add a user to this server")
 
-#             if server in user.servers():
-#                 Exception("This user is already in this server")
+        user = get_user_model().objects.get(id=user_id)
+
+        if server in user.servers.all():
+            raise Exception("This user is already in this server")
+
+        right = Right(right=right, user=user, server=server)
+
+        right.save()
+
+        return AddUser(
+            right=right
+        )
 
 
 class CreateMessage(graphene.Mutation):
@@ -215,6 +229,7 @@ class CreateMessage(graphene.Mutation):
         )
 
 
+# https://django-graphql-jwt.domake.io/en/stable/customizing.html
 class ObtainJSONWebTokenWithUser(graphql_jwt.JSONWebTokenMutation):
     user = graphene.Field(UserType)
 
@@ -224,8 +239,10 @@ class ObtainJSONWebTokenWithUser(graphql_jwt.JSONWebTokenMutation):
 
 
 class Mutation(graphene.ObjectType):
+    getJWTToken = ObtainJSONWebTokenWithUser.Field()
+
     create_server = CreateServer.Field()
     create_user = CreateUser.Field()
     create_message = CreateMessage.Field()
-    getJWTToken = ObtainJSONWebTokenWithUser.Field()
     create_friend = CreateFriend.Field()
+    add_user = AddUser.Field()
