@@ -16,25 +16,20 @@ class ChatConsumer(WebsocketConsumer):
 
         self.channel = Channel.objects.get(id=channel_id)
 
-        authServer = False
-
         if self.channel.direct_type:
             self.friend = Friend.objects.get(chanel=self.channel)
-            if self.friend.user_one == self.user or self.friend.user_two == self.user:
-                authServer = True
+            if self.friend.user_one != self.user and self.friend.user_two != self.user:
+               raise Exception(
+                "Authentication error, the user isn't a friend with the user he's trying to send a message to")
         else:
             self.server = self.channel.server
 
             self.subscribedServers = self.user.servers.all()
 
-            for subscribedServer in self.subscribedServers:
-                if subscribedServer == self.server:
-                    authServer = True
-                    break
-
-        if not authServer:
-            raise Exception(
+            if self.server not in self.subscribedServers:
+                raise Exception(
                 "Authentication error, the user isn't allowed to join this channel")
+
 
         self.room_name = channel_id
         self.room_group_name = "all"
