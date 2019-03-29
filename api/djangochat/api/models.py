@@ -22,7 +22,7 @@ class User(AbstractUser):
 
 class Channel(models.Model):
     name = models.CharField(max_length=200, blank=True)
-    direct_type = models.BooleanField()
+    direct_type = models.BooleanField(default=False)
     server = models.ForeignKey(
         Server, null=True, on_delete=models.CASCADE, blank=True)
 

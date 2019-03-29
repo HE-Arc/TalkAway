@@ -106,7 +106,6 @@ class CreateUser(graphene.Mutation):
             user=user,
         )
 
-
 class CreateServer(graphene.Mutation):
     id = graphene.Int()
     name = graphene.String()
@@ -127,6 +126,24 @@ class CreateServer(graphene.Mutation):
             user_adding_right=server.user_adding_right,
         )
 
+
+class CreateChannel(graphene.Mutation):
+    channel = graphene.Field(ChannelType)
+
+    class Arguments:
+        name = graphene.String(required=True)
+        server_id = graphene.Int(required=True)
+
+    @login_required
+    def mutate(self, info, server_id, name):
+        #TODO: Check right to create a channel
+
+        channel = Channel(name=name, server_id=server_id, direct_type=False)
+        channel.save()
+
+        return CreateChannel(
+            channel=channel
+        )
 
 class CreateFriend(graphene.Mutation):
     friend = graphene.Field(FriendType)
@@ -247,8 +264,9 @@ class ObtainJSONWebTokenWithUser(graphql_jwt.JSONWebTokenMutation):
 class Mutation(graphene.ObjectType):
     getJWTToken = ObtainJSONWebTokenWithUser.Field()
 
-    create_server = CreateServer.Field()
-    create_user = CreateUser.Field()
-    create_message = CreateMessage.Field()
-    create_friend = CreateFriend.Field()
     add_user = AddUser.Field()
+    create_user = CreateUser.Field()
+    create_server = CreateServer.Field()
+    create_friend = CreateFriend.Field()
+    create_message = CreateMessage.Field()
+    create_channel = CreateChannel.Field()
