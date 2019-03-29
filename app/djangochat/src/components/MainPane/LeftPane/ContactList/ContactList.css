@@ -1,3 +1,23 @@
+@media (min-width: 1281px) {
+    
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    
+}
+
+@media (max-width: 480px) {
+    
+}
+
 .row.selectable:hover {
     background-color: rgba(40, 40, 40, 200);
     cursor: pointer;
@@ -14,6 +34,40 @@
 
 .contactSelector {
     max-height: 10%;
+    height: 35px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selectorServers {
+    padding: 0;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#selectorSeparator {
+    display: inline-block;
+}
+
+#selectorFriends {
+    padding: 0;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#contactList {
+    width: 100%;
+    height: 100%;
+}
+
+.contact {
+    height: 50px;
+    padding-left: 20px;
+    margin-bottom: 4px;
 }
 
 .scrollable {

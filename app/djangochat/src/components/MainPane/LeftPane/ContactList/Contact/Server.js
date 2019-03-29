@@ -12,25 +12,23 @@ class Server extends Component {
     }
 
     render() {
-        let connectivity = "";
+        /*let connectivity = "";
         if (this.state.connected !== -1 && this.state.max !== -1)
         {
             connectivity = "(" + this.state.connected + "/" + this.state.max + ")";
-        }
+        }*/
 
         return (
-            <div id="containerServer" className="container" onClick={() => this.props.serverSelected(this.props.server.id)}>
-                <div className="row">
-                    <div className="pr-2">
-                        <img alt="" src={require('./images/profile.png')} width="50" height="50"/>
-                    </div>
-                    <div className="col-6 col-sm-6 textServer">
-                        {this.props.server.name}
-                    </div>
-                    <div className="col-3 d-none textServer">
-                        {connectivity}
-                    </div>
+            <div className="containerServer" onClick={() => this.props.serverSelected(this.props.server.id)}>
+                <div id="contactServerImages">
+                    <img id="contactServerImage" alt="" src={require('./images/profile.png')}/>
                 </div>
+                <div id="contactServerName">
+                    {this.props.server.name}
+                </div>
+                {/*<div className="col-3 textServer">
+                    {connectivity}
+                </div>*/}
             </div>
         );
     }

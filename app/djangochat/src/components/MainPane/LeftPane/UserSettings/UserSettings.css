@@ -1,0 +1,120 @@
+#close-settings {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+}
+
+#todo-image {
+    width: 90%;
+    left: 5%;
+    top: 30px;
+    position: absolute;
+}
+
+#settings-username {
+    width: 90%;
+    left: 5%;
+    top: 70px;
+    position: absolute;
+}
+
+#settings-separator {
+    width: 90%;
+    left: 5%;
+    top: 100px;
+    position: absolute;
+}
+
+#todo {
+    width: 90%;
+    left: 5%;
+    top: 120px;
+    position: absolute;
+}
+
+#email-label {
+    width: 90%;
+    left: 5%;
+    top: 155px;
+    position: absolute;
+}
+
+#email {
+    width: 90%;
+    left: 5%;
+    top: 180px;
+    position: absolute;
+}
+
+#old-password-label {
+    width: 90%;
+    left: 5%;
+    top: 220px;
+    position: absolute;
+}
+
+#old-password {
+    width: 90%;
+    left: 5%;
+    top: 245px;
+    position: absolute;
+}
+
+#new-password-label {
+    width: 90%;
+    left: 5%;
+    top: 285px;
+    position: absolute;
+}
+
+#new-password {
+    width: 90%;
+    left: 5%;
+    top: 310px;
+    position: absolute;
+}
+
+#repeat-password-label {
+    width: 90%;
+    left: 5%;
+    top: 350px;
+    position: absolute;
+}
+
+#repeat-password {
+    width: 90%;
+    left: 5%;
+    top: 375px;
+    position: absolute;
+}
+
+#saveButton {
+    background-color: rgb(71, 71, 206);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    top: 425px;
+    width: 80%;
+    left: 10%;
+    border-radius: 5px;
+    height: 40px;
+}
+
+#disconnectButton {
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 10%;
+    border-radius: 5px;
+    height: 40px;
+}

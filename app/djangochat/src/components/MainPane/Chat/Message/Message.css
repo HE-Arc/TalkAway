@@ -6,7 +6,7 @@
 }
 
 .messagePicture {
-    width: 15%;
+    width: 70px;
     height: 100%;
     display: inline-block;
     text-align: center;
@@ -19,9 +19,9 @@
 }
 
 .messageContent {
-    width: 85%;
+    width: calc(100% - 70px);
     max-width: 85%;
-    left: 15%;
+    left: 70px;
     position: relative;
     display: inline-block;
 }
