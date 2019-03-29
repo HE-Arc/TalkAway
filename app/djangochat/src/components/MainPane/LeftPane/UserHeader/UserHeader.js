@@ -13,7 +13,13 @@ class UserHeader extends Component {
             delay: 10000
         };
 
-        setInterval(this.checkActivity, 1000);
+        this.refresh = setInterval(this.checkActivity, 1000);
+    }
+
+    //TODO: Change function name to unmount event
+    destroy(){
+        console.log("unmount")
+        clearInterval(this.refresh);
     }
 
     checkActivity = () => {
