@@ -16,9 +16,7 @@ class UserHeader extends Component {
         this.refresh = setInterval(this.checkActivity, 1000);
     }
 
-    //TODO: Change function name to unmount event
-    destroy(){
-        console.log("unmount")
+    componentWillUnmount(){
         clearInterval(this.refresh);
     }
 
