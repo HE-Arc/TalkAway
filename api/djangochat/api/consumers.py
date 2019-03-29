@@ -30,6 +30,7 @@ class ChatConsumer(WebsocketConsumer):
             for subscribedServer in self.subscribedServers:
                 if subscribedServer == self.server:
                     authServer = True
+                    break
 
         if not authServer:
             raise Exception(

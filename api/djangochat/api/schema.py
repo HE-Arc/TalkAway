@@ -95,8 +95,7 @@ class CreateUser(graphene.Mutation):
         )
         user.set_password(password)
         user.save()
-        # TODO Check if username already exist
-        # if so throw an exception
+
         return CreateUser(
             user=user,
         )
@@ -138,7 +137,26 @@ class CreateMessage(graphene.Mutation):
         authUser = info.context.user
         channel = Channel.objects.get(id=channel_id)
 
-        # TODO: CHECK IF USER IS IN CHANNEL
+        authServer = False
+
+        if channel.direct_type:
+            friend = Friend.objects.get(chanel=channel)
+
+            if friend.user_one == authUser or friend.user_two == authUser:
+                authServer = True
+        else:
+            subscribedServers = authUser.servers.all()
+
+            server = channel.server
+
+            for subscribedServer in subscribedServers:
+                if subscribedServer == server:
+                    authServer = True
+                    break
+
+        if not authServer:
+            raise Exception(
+                "Authentication error, the user isn't allowed to add a message in this channel")
 
         message = Message(text=text, channel=channel, user=authUser)
         message.save()
