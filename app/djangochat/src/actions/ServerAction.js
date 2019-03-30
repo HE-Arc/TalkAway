@@ -120,12 +120,13 @@ export function requestEditServer(serverId, name, image, userAddingRight) {
             query: `
             mutation{
                 editServer(serverId:${serverId},name:"${name}",image:"${image}",userAddingRight:${userAddingRight}){
-                  server{
-                    image
-                    id
-                  }
+                    server{
+                        image
+                        name
+                        id
+                    }
                 }
-              
+            }
             `
         };
         return fetch(baseGraphqlUrl + '/', {
@@ -140,7 +141,7 @@ export function requestEditServer(serverId, name, image, userAddingRight) {
                 throw new Error('Failed')
             }
             return res.json();
-        }).then((data)=>{
+        }).then((data) => {
             //TODO: 
             let serverUpdated = data.data.editServer.server;
             dispatch(_editServer(serverUpdated));

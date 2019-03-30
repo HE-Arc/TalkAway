@@ -5,3 +5,7 @@
 #serverInfos {
     height: 85vh;
 }
+
+#divImageServer img {
+    border-radius: 100%
+}

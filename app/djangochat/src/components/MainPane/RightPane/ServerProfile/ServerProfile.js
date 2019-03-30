@@ -11,7 +11,7 @@ class ServerProfile extends Component {
             imageServer = this.props.activeServer[0].image;
         }
         else {
-            imageServer = require('./images/profile.png');
+            imageServer = require('../images/profile.png');
         }
         return (
             <div id="rowProfileServer">

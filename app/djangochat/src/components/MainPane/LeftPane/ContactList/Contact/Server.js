@@ -12,6 +12,14 @@ class Server extends Component {
     }
 
     render() {
+        let imageServer;
+        if (this.props.server.image !== '') {
+            imageServer = this.props.server.image;
+        }
+        else {
+            imageServer = require('./images/profile.png');
+        }
+
         /*let connectivity = "";
         if (this.state.connected !== -1 && this.state.max !== -1)
         {
@@ -21,9 +29,9 @@ class Server extends Component {
         return (
             <div className="containerServer" onClick={() => this.props.serverSelected(this.props.server.id)}>
                 <div id="contactServerImages">
-                    <img id="contactServerImage" alt="" src={require('./images/profile.png')}/>
+                    <img className="contactServerImage" alt="" src={imageServer}/>
                 </div>
-                <div id="contactServerName">
+                <div className="contactServerName">
                     {this.props.server.name}
                 </div>
                 {/*<div className="col-3 textServer">

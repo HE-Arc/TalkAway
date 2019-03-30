@@ -6,10 +6,9 @@ import Channel from './Channel/Channel';
 
 import { selectChannel, requestCreateChannel } from "../../../../actions/ChannelAction";
 import { requestMessageList } from "../../../../actions/MessageAction";
+
 import Autocomplete from "../Autocomplete/Autocomplete";
-
 import { getAllUsers } from "../../../../actions/ContactAction";
-
 import { requestAddUser } from "../../../../actions/ServerAction";
 
 class ServerInfos extends Component {
