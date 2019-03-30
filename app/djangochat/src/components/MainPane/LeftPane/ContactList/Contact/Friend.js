@@ -4,12 +4,12 @@ import './Friend.css';
 class Friend extends Component {
     render() {
         return (
-            <div className="containerFriend" onClick={() => this.props.friendSelected(this.props.friend.id)}>
+            <div className="containerFriend" onClick={() => this.props.friendSelected(this.props.friend.friend.id)}>
                 <div id="contactFriendImages">
                     <img id="contactFriendImage" alt="" src={require('./images/profile.png')}/>
                 </div>
                 <div id="contactFriendName">
-                    {this.props.friend.username}
+                    {this.props.friend.friend.username}
                 </div>
             </div>
         );

@@ -9,9 +9,9 @@ export function selectFriend(friendId) {
         });
         dispatch({
             type: 'SELECT_CHANNEL',
-            payload: getState().friend.friends.filter(f=>f.friend.id === friendId)[0].channelId
+            payload: getState().friend.friends.filter(f=>Number(f.friend.id) === Number(friendId))[0].channelId
         });
-    }
+    };
 }
 
 export function requestFriendList() {
