@@ -24,6 +24,12 @@ const friendReducer = (state = {
                 activeFriendId: 0
             }
             break;
+        case "LOGOUT":
+            state = {
+                friends: [],
+                activeFriendId: 0
+            }
+            break;
         default:
     }
     return state;

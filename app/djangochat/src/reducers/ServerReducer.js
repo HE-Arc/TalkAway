@@ -13,10 +13,10 @@ const serverReducer = (state = {
                     servers: [
                         ...state.servers.map(
                             s => Number(s.id) !== state.activeServerId ?
-                            s : {
-                                ...s,
-                                selectedChannel: Number(action.payload.channelId)
-                            })
+                                s : {
+                                    ...s,
+                                    selectedChannel: Number(action.payload.channelId)
+                                })
                     ]
                 }
             }
@@ -28,9 +28,12 @@ const serverReducer = (state = {
             };
             break;
         case "CREATE_SERVER":
-            //TODO
             state = {
                 ...state,
+                servers: [
+                    ...state.servers,
+                    action.payload
+                ]
             };
             break;
         case "LIST_SERVER":
@@ -39,7 +42,12 @@ const serverReducer = (state = {
                 servers: action.payload
             };
             break;
-
+        case "LOGOUT":
+            state = {
+                servers: [],
+                activeServerId: 0
+            }
+            break;
         default:
     }
     return state;

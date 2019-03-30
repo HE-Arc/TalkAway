@@ -20,6 +20,11 @@ const serverReducer = (state = {
                 messages: action.payload
             };
             break;
+        case "LOGOUT":
+            state = {
+             messages: []
+            }
+            break;
         default:
     }
     return state;

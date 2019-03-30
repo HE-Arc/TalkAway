@@ -36,6 +36,13 @@ const channelReducer = (state = {
                 ]
             }
             break;
+        case "LOGOUT":
+            state = {
+                channels:[],
+                activeChannelId: 0,
+                newMessageChannelId: []
+            }
+            break;
         default:
     }
     return state;
