@@ -2,7 +2,6 @@
 
 
 
-
 .no-suggestions {
     color: #999;
     padding: 0.5rem;
@@ -10,24 +9,24 @@
 
 .suggestionInput {
     margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
-    width:100%;
+    margin-left: 20px;
+    /* margin-right: 75px; */
+    width:60%;
 }
 
 .suggestions {
     margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    /* margin-right: 75px; */
 
     border: 1px solid #999;
     border-top-width: 0;
     list-style: none;
-    max-height: 143px;
+    max-height: 150px;
     overflow-y: auto;
     padding-left: 0;
-    width: 90%;
-    background-color: #008f68;
+    width: 60%;
+    background-color: #6b757c;
     position: absolute;
 }
 
@@ -37,8 +36,8 @@
 
 .suggestion-active,
 .suggestions li:hover {
-    background-color: #008f68;
-    color: #fae042;
+    background-color: #2c2c2c;
+    color: white;
     cursor: pointer;
     font-weight: 700;
 }

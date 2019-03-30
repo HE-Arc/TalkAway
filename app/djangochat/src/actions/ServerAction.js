@@ -60,3 +60,33 @@ export function requestServerList() {
         });
     }
 }
+
+
+export function requestAddUser(user_id, server_id) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            mutation {
+                addUser(userId: ${user_id}, serverId: ${server_id}) {
+                    right {
+                        id
+                    }
+                }
+            }
+            `
+        };
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        })
+    }
+}
