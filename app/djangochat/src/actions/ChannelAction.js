@@ -10,6 +10,18 @@ export function selectChannel(channelId) {
     }
 }
 
+export function selectChannelAuto(serverId) {
+    return (dispatch, getState) => {
+        let server = getState().server.servers.filter(s=>s.id===serverId);
+        let selectedChannel = server.selectedChannel;
+        if(selectChannel === undefined){
+            const channelList = getState().channel.channels.filter(c=>c.serverId === serverId);
+            selectedChannel = channelList.length > 0 ? channelList[0].id : 0;
+        }
+        dispatch(selectChannel(selectedChannel))
+    }
+}
+
 function _updateChannelList(data) {
     return {
         type: 'LIST_CHANNEL',
