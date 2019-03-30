@@ -80,6 +80,12 @@ function _updateFriendList(data) {
     }
 }
 
+function _addFriend(data) {
+    return {
+        type: 'ADD_FRIEND',
+        payload: data
+    }
+}
 
 export function requestAddFriend(user_id) {
     return (dispatch, getState) => {
@@ -90,6 +96,14 @@ export function requestAddFriend(user_id) {
                     friend{
                         chanel{
                             id
+                        }
+                        userOne{
+                            id
+                            username
+                        }
+                        userTwo{
+                            id
+                            username
                         }
                     }
                 }
@@ -108,6 +122,16 @@ export function requestAddFriend(user_id) {
                 throw new Error('Failed')
             }
             return res.json();
+        }).then((data)=>{
+            const friend = data.data.createFriend.friend;
+            const friendData = friend.userOne.id === user_id ? friend.userOne : friend.userTwo;
+            const newFriend = {
+                friend:{
+                    ...friendData
+                },
+                channelId: friend.chanel.id,
+            }
+            dispatch(_addFriend(newFriend));
         })
     }
 }

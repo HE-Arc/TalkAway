@@ -76,10 +76,11 @@ class ContactList extends Component {
             })[0].id;
 
             this.props.requestAddFriend(user_id);
+            
+            this.setState({
+                addingFriend:false
+            });
         }
-        this.setState({
-            addingFriend:false
-        });
     }
 
     render() {
