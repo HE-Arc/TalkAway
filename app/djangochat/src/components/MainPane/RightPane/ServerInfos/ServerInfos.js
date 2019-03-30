@@ -67,16 +67,27 @@ class ServerInfos extends Component {
     };
 
     addChannel = () => {
+        let channelName = String(this.channelInputRef.current.value);
+        if(channelName === ""){
+            return;
+        }
+
         this.props.requestCreateChannel(this.props.serverId, String(this.channelInputRef.current.value))
         .then(()=>{
             this.setState({
                 channelCreation: false
             })
-            //TODO: clear field
+            this.channelInputRef.current.value = '';
         }).catch((err)=>{
             console.log(err)
         });
     };
+
+    _handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.addChannel();
+        }
+    }
 
     render() {
             let channelComponents = '';
@@ -123,7 +134,7 @@ class ServerInfos extends Component {
                                 </div>
                                 <div className={!this.state.channelCreation?"d-none":""}>
                                     <div className="input-group mb-3">
-                                        <input ref={this.channelInputRef} type="text" className="form-control" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
+                                        <input ref={this.channelInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
                                         <div className="input-group-append">
                                             <button onClick={this.addChannel} className="btn btn-primary" type="button">Add</button>
                                         </div>
