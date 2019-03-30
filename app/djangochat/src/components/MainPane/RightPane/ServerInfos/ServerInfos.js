@@ -23,6 +23,8 @@ class ServerInfos extends Component {
             addingUser:false
         };
 
+        this.props.getAllUsers();
+        
         this.newUserInput = React.createRef();
 
         this.channelInputRef = React.createRef();

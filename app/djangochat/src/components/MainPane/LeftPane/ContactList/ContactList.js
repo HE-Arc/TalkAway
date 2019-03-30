@@ -21,6 +21,7 @@ class ContactList extends Component {
         }
 
         console.log(this.props.allUsers)
+        this.props.getAllUsers();
         this.props.requestFriendList();
         this.props.requestServerList();
         window.addEventListener("resize", this.updateDimensions);
@@ -139,11 +140,11 @@ const mapsStateToProps = (state) => {
         activeFriendId: state.friend.activeFriendId,
         allUsers: state.contact.allUsers.users.filter(
             u => {
-                return Number(u.id) !== Number(state.auth.id) && u.friends.length === u.friends.filter(
+                return u.friends.length === u.friends.filter(
                     f => {
                         return Number(f.id) !== Number(state.auth.id);
                     }
-                ).length;
+                ).length && Number(u.id) !== Number(state.auth.id);
             }
         )
     }

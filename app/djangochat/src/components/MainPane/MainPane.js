@@ -12,7 +12,6 @@ class MainPane extends Component {
         super(props);
 
         this.props.getAllUsers();
-
     }
 
     render() {
