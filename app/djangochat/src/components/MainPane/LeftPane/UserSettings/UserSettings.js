@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import './UserSettings.css';
 
 import {logout} from "../../../../actions/AuthAction";
 
@@ -12,43 +13,41 @@ class UserSettings extends Component {
     render() {
         // Return the component
         return (
-            <div className="container" style={{paddingTop: '10px', height: '100%'}}>
-                <div className="row contactSelector unselectable" style={{marginBottom: '20px'}}>
-                    <div className="col-12">
-                        <div className="ml-auto mb-4 text-right text-white">
-                            <button type="button" className="close text-right text-white" onClick={this.props.switchSettings}>
-                                <span>&times;</span>
-                            </button>
-                        </div>
-                    </div>
+            <div>
+                <div>
+                    <button id="close-settings" type="button" className="close" onClick={this.props.switchSettings}>
+                        &times;
+                    </button>
                     
                     <div className="mx-auto text-center">
-                        <h2 className="">
-                            TODO Image
-                        </h2>
-                        <h2 className="">
+                        <h3 id="todo-image" className="">
+                            Image
+                        </h3>
+                        <h3 id="settings-username" className="">
                             {this.props.auth.username}
-                        </h2>
+                        </h3>
                     </div>
 
-                    <hr className="mt-6 mb-6 col-12 text-white border-white" />
+                    <hr id="settings-separator" className="text-white border-white" />
 
-                    <div className="col-12" onClick={this.displayServers}>
-                        TODO ADD Settings fields and actions
+                    <div id="todo" onClick={this.displayServers}>
+                        TODO - Add Settings
                     </div>
-                    <input type="email" placeholder="Email" required></input>
-                    <label htmlFor="old-password" >Old password</label>
-                    <input type="password" id="old-password" name="old-password" placeholder="Old password" required></input>
 
-                    <label htmlFor="new-password" >New password</label>
-                    <input type="password" id="new-password" name="new-password" placeholder="New password" required></input>
+                    <label id="email-label" htmlFor="email" >Email</label>
+                    <input type="email" id="email" required></input>
 
-                    <label htmlFor="repeat-password" >Repeat your password</label>
-                    <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat new password" required></input>
+                    <label id="old-password-label" htmlFor="old-password" >Old password</label>
+                    <input type="password" id="old-password" name="old-password" required></input>
 
-                    <input type="button" value="Save" onClick={this.save}/>
+                    <label id="new-password-label" htmlFor="new-password" >New password</label>
+                    <input type="password" id="new-password" name="new-password" required></input>
 
-                    <input type="button" value="Disconnect" onClick={this.props.logout}/>
+                    <label id="repeat-password-label" htmlFor="repeat-password" >Repeat your password</label>
+                    <input type="passwordConfirmation" id="repeat-password" name="repeat-password" required></input>
+
+                    <input id="saveButton" type="button" value="Save" onClick={this.save}/>
+                    <input id="disconnectButton" type="button" value="Disconnect" onClick={this.props.logout}/>
                 </div>
             </div>
         );

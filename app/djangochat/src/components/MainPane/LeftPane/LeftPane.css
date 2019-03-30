@@ -1,7 +1,7 @@
 #settings {
-    height: 15vh;
+    height: 100px;
 }
 
 #list {
-    height: 85vh;
+    height: calc(100vh - 100px);
 }

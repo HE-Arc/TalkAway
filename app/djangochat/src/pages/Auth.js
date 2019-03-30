@@ -23,7 +23,7 @@ const AuthPage = props => {
     return (
         <div className="text-center">
             <form className="form-signin">
-                <img className="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="TODO Logo" width="72" height="72"/>
+                <img className="mb-4" src={require('./images/TalkAway.png')} alt="" width="150" height="150"/>
                 
                 {authComponent}
                 
