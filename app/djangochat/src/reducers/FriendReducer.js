@@ -6,7 +6,7 @@ const friendReducer = (state = {
         case "SELECT_FRIEND":
             state = {
                 ...state,
-                activeFriendId: Number(action.payload)
+                activeFriendId: action.payload
             };
             break;
         case "ADD_FRIEND":

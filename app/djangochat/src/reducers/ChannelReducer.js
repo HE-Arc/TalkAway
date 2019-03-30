@@ -7,7 +7,7 @@ const channelReducer = (state = {
         case "SELECT_CHANNEL":
             state = {
                 ...state,
-                activeChannelId: Number(action.payload.channelId)
+                activeChannelId: action.payload.channelId
             }
             break;
         case "SEND_MESSAGE":

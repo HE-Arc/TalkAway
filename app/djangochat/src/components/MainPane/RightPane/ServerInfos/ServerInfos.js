@@ -91,7 +91,7 @@ class ServerInfos extends Component {
     render() {
             let channelComponents = '';
             channelComponents = this.props.channels.map((channel) => {
-                const channelId = Number(channel.id);
+                const channelId = channel.id;
                 let classes = ["row"];
                 if (channelId === this.props.activeChannelId) {
                     classes.push("selected");
@@ -160,7 +160,7 @@ const mapsStateToProps = (state) => {
             u => { 
                 return u.servers.length === u.servers.filter(
                     s => {
-                        return Number(s.id)!==Number(state.server.activeServerId);
+                        return s.id!==state.server.activeServerId;
                     }
                 ).length;
             }

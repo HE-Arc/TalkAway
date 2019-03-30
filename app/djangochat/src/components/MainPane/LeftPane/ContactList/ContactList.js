@@ -51,8 +51,7 @@ class ContactList extends Component {
         this.props.requestMessageList(channelId);
     }
 
-    serverSelected = (id) => {
-        let serverId = Number(id);
+    serverSelected = (serverId) => {
         this.props.selectServer(serverId);
         this.props.requestChannelList(serverId).then(() => {
             this.props.selectChannelAuto(serverId);
@@ -76,7 +75,7 @@ class ContactList extends Component {
         const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
             contactRows = this.props.servers.map((server) => {
-                const serverId = Number(server.id);
+                const serverId = server.id;
                 let classes = (serverId === this.props.activeServerId) ? classesSelected : classesSelectable;
                 return (<div key={serverId} className={classes.join(' ')}>
                     <Server contact={{}} server={server} serverSelected={this.serverSelected} />
@@ -84,7 +83,7 @@ class ContactList extends Component {
             });
         } else {
             contactRows = this.props.friends.map((friend) => {
-                const friendId = Number(friend.friend.id);
+                const friendId = friend.friend.id;
                 let classes = (friendId === this.props.activeFriendId) ? classesSelected : classesSelectable;
                 return (<div key={friend.friend.id + this.props.servers.length} className={classes.join(' ')}>
                     <Friend friend={friend} friendSelected={this.friendSelected} />
@@ -142,9 +141,9 @@ const mapsStateToProps = (state) => {
             u => {
                 return u.friends.length === u.friends.filter(
                     f => {
-                        return Number(f.id) !== Number(state.auth.id);
+                        return f.id !== state.auth.id;
                     }
-                ).length && Number(u.id) !== Number(state.auth.id);
+                ).length && u.id !== state.auth.id;
             }
         )
     }

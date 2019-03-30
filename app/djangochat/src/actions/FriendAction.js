@@ -11,7 +11,7 @@ export function selectFriend(friendId) {
             type: 'SELECT_CHANNEL',
             payload: {
                 isServerChannel:false,
-                channelId:getState().friend.friends.filter(f=>Number(f.friend.id) === Number(friendId))[0].channelId
+                channelId:getState().friend.friends.filter(f=>f.friend.id === friendId)[0].channelId
             }
         });
     };
