@@ -14,14 +14,6 @@ export function selectChannel(channelId, channelServerType) {
     }
 }
 
-function _updateMessageList(data) {
-    return {
-        type: 'LIST_MESSAGE',
-        payload: data
-    }
-}
-
-
 export function selectChannelAuto(serverId) {
     return (dispatch, getState) => {
         let server = getState().server.servers.filter(s=>Number(s.id)===Number(serverId));

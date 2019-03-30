@@ -7,25 +7,29 @@ import './ContactList.css';
 
 import { requestMessageList } from "../../../../actions/MessageAction";
 import { requestChannelList, selectChannelAuto } from "../../../../actions/ChannelAction";
-import { requestServerList, selectServer } from "../../../../actions/ServerAction";
-import { requestFriendList, selectFriend ,requestAddFriend} from "../../../../actions/FriendAction";
+import { requestServerList, requestCreateServer, selectServer } from "../../../../actions/ServerAction";
+import { requestFriendList, selectFriend, requestAddFriend } from "../../../../actions/FriendAction";
 import { showFriends, showServers, getAllUsers } from "../../../../actions/ContactAction";
 
 import Autocomplete from "../../RightPane/Autocomplete/Autocomplete";
 
 class ContactList extends Component {
+    
+    state = {
+        serverDisplayed: true,
+        addingFriend: false,
+        serverCreation: false
+    }
 
     constructor(props) {
         super(props);
-        this.state = {
-            serverDisplayed: true,
-            addingFriend: false
-        }
 
         this.newUserInput = React.createRef();
         this.props.requestFriendList();
         this.props.requestServerList();
         window.addEventListener("resize", this.updateDimensions);
+
+        this.serverInputRef = React.createRef();
     }
 
     updateDimensions = () => {
@@ -67,19 +71,51 @@ class ContactList extends Component {
         });
     }
 
-    addFriend = () =>{
-        if(this.newUserInput.state.userInput!=="" && this.props.allUsers.filter(u=>{
-            return u.username===this.newUserInput.state.userInput
-        }).length>0){
-            let user_id=this.props.allUsers.filter(u=>{
-                return u.username===this.newUserInput.state.userInput
+    addFriend = () => {
+        if (this.newUserInput.state.userInput !== "" && this.props.allUsers.filter(u => {
+            return u.username === this.newUserInput.state.userInput
+        }).length > 0) {
+            let user_id = this.props.allUsers.filter(u => {
+                return u.username === this.newUserInput.state.userInput
             })[0].id;
 
             this.props.requestAddFriend(user_id);
-            
+
             this.setState({
-                addingFriend:false
+                addingFriend: false
             });
+        }
+    }
+
+    showServerCreation = () => {
+        this.setState({
+            serverCreation: true
+        },
+        ()=>{
+            this.serverInputRef.current.focus();
+        })
+    }
+    
+    createServer = () => {
+        const serverName = String(this.serverInputRef.current.value);
+        if(serverName === ""){
+            return;
+        }
+
+        this.props.requestCreateServer(serverName)
+        .then(()=>{
+            this.setState({
+                serverCreation: false
+            })
+            this.serverInputRef.current.value = '';
+        }).catch((err)=>{
+            console.log(err)
+        });
+    }
+
+    _handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.createServer();
         }
     }
 
@@ -130,28 +166,37 @@ class ContactList extends Component {
                     </div>
                 </div>
                 <div id="contactList" className="container scrollable unselectable">
-                {
-                !this.state.serverDisplayed ?
-                    this.state.addingFriend ?
-                    <div className="input-group mb-3">
-                        <Autocomplete  ref={(newUserInput) => {this.newUserInput = newUserInput;}}
-                        suggestions={this.props.allUsers.map(u=>{
-                            return u.username
-                        })}
-                        /> 
-                        <div className="input-group-append">
-                            <button onClick={this.addFriend} className="btn btn-primary col" type="button">Add</button>
+                    {!this.state.serverDisplayed ?
+                        this.state.addingFriend ?
+                            <div className="input-group mb-3">
+                                <Autocomplete ref={(newUserInput) => { this.newUserInput = newUserInput; }}
+                                    suggestions={this.props.allUsers.map(u => {
+                                        return u.username
+                                    })}
+                                />
+                                <div className="input-group-append">
+                                    <button onClick={this.addFriend} className="btn btn-primary col" type="button">Add</button>
+                                </div>
+                            </div>
+                            :
+                            <div>
+                                <button onClick={this.addingFriend}>Add friend</button>
+                            </div>
+                        :
+                        <div className="row mb-3">
+                            <div className={this.state.serverCreation?"d-none":""}>
+                                <button onClick={this.showServerCreation}>Create a server</button>
+                            </div>
+                            <div className={!this.state.serverCreation?"d-none":""}>
+                                <div className="input-group mb-3">
+                                    <input ref={this.serverInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="basic-addon2" />
+                                    <div className="input-group-append">
+                                        <button onClick={this.createServer} className="btn btn-primary" type="button">Add</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    :
-                    <div>
-                        <button onClick={this.addingFriend}>Add friend</button>
-                    </div>
-                :
-                <div>
-
-                </div>
-                }
+                    }
                     {contactRows}
                 </div>
             </div>
@@ -167,26 +212,27 @@ const mapsStateToProps = (state) => {
         activeFriendId: state.friend.activeFriendId,
         allUsers: state.contact.allUsers.users.filter(
             u => {
-                return Number(u.id) !== Number(state.auth.id) &&state.friend.friends.filter(f => {
+                return Number(u.id) !== Number(state.auth.id) && state.friend.friends.filter(f => {
                     return Number(f.friend.id) === Number(u.id);
-                }).length===0;
+                }).length === 0;
             }
         )
     }
 }
 
 const mapDispatchToProps = {
-    requestServerList,
-    requestFriendList,
-    requestMessageList,
-    requestChannelList,
-    selectChannelAuto,
     selectServer,
     selectFriend,
     showFriends,
     showServers,
     getAllUsers,
-    requestAddFriend
+    requestAddFriend,
+    selectChannelAuto,
+    requestServerList,
+    requestFriendList,
+    requestMessageList,
+    requestChannelList,
+    requestCreateServer,
 }
 
 export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 
