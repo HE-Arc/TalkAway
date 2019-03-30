@@ -4,15 +4,8 @@ import LeftPane from './LeftPane/LeftPane';
 import MiddlePane from './Chat/MiddlePane';
 import RightPane from './RightPane/RightPane';
 import './MainPane.css';
-import {getAllUsers} from '../../actions/ContactAction';
 
 class MainPane extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.props.getAllUsers();
-    }
 
     render() {
         if (this.props.serversDisplayed) {
@@ -54,4 +47,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps,{getAllUsers})(MainPane);
+export default connect(mapsStateToProps)(MainPane);

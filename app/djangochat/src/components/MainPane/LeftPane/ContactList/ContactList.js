@@ -8,9 +8,9 @@ import './ContactList.css';
 import {requestMessageList} from "../../../../actions/MessageAction";
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
-import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
+import {requestFriendList, selectFriend,requestAddFriend} from "../../../../actions/FriendAction";
 import {showFriends, showServers, getAllUsers} from "../../../../actions/ContactAction";
-
+import Autocomplete from "../../RightPane/Autocomplete/Autocomplete";
 
 class ContactList extends Component {
     
@@ -21,8 +21,7 @@ class ContactList extends Component {
             addingFriend:false
         }
 
-        console.log(this.props.allUsers)
-        this.props.getAllUsers();
+        this.newUserInput = React.createRef();
         this.props.requestFriendList();
         this.props.requestServerList();
         window.addEventListener("resize", this.updateDimensions);
@@ -37,6 +36,7 @@ class ContactList extends Component {
             serverDisplayed: false
         })
         this.props.showFriends();
+        this.props.getAllUsers();
     }
 
     displayServers = () => {
@@ -60,6 +60,21 @@ class ContactList extends Component {
     addingFriend=()=>{
         this.setState({
             addingFriend:true
+        });
+    }
+
+    addFriend = () =>{
+        if(this.newUserInput.state.userInput!=="" && this.props.allUsers.filter(u=>{
+            return u.username===this.newUserInput.state.userInput
+        }).length>0){
+            let user_id=this.props.allUsers.filter(u=>{
+                return u.username===this.newUserInput.state.userInput
+            })[0].id;
+
+            this.props.requestAddFriend(user_id);
+        }
+        this.setState({
+            addingFriend:false
         });
     }
 
@@ -113,7 +128,16 @@ class ContactList extends Component {
                 {
                 !this.state.serverDisplayed ?
                     this.state.addingFriend ?
-                    <div>ADD</div>
+                    <div className="input-group mb-3">
+                        <Autocomplete  ref={(newUserInput) => {this.newUserInput = newUserInput;}}
+                        suggestions={this.props.allUsers.map(u=>{
+                            return u.username
+                        })}
+                        /> 
+                        <div className="input-group-append">
+                            <button onClick={this.addFriend} className="btn btn-primary col" type="button">Add</button>
+                        </div>
+                    </div>
                     :
                     <div>
                         <button onClick={this.addingFriend}>Add friend</button>
@@ -138,11 +162,9 @@ const mapsStateToProps = (state) => {
         activeFriendId: state.friend.activeFriendId,
         allUsers:state.contact.allUsers.users.filter(
             u => {
-                return u.friends.length === u.friends.filter(
-                    f => {
-                        return Number(f.id)!== Number(state.auth.id);
-                    }
-                ).length && Number(u.id) !== Number(state.auth.id);
+                return Number(u.id) !== Number(state.auth.id) &&state.friend.friends.filter(f => {
+                    return Number(f.friend.id) === Number(u.id);
+                }).length===0;
             }
         )
     }
@@ -157,7 +179,8 @@ const mapDispatchToProps= {
     selectFriend,
     showFriends,
     showServers,
-    getAllUsers
+    getAllUsers,
+    requestAddFriend
 }
 
 export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 

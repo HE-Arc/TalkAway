@@ -23,8 +23,7 @@ class ServerInfos extends Component {
             addingUser:false
         };
 
-        this.props.getAllUsers();
-        
+
         this.newUserInput = React.createRef();
 
         this.channelInputRef = React.createRef();
@@ -39,6 +38,7 @@ class ServerInfos extends Component {
         this.setState({
             addingUser:true
         });
+        this.props.getAllUsers();
     };
 
     addUser = () =>{
@@ -113,11 +113,11 @@ class ServerInfos extends Component {
                         suggestions={this.props.allUsers.map(u=>{
                             return u.username
                         })}
-                    /> 
-                    <div className="input-group-append">
-                        <button onClick={this.addUser} className="btn btn-primary col" type="button">Add</button>
+                        /> 
+                        <div className="input-group-append">
+                            <button onClick={this.addUser} className="btn btn-primary col" type="button">Add</button>
+                        </div>
                     </div>
-                </div>
                     :
                         <button className="buttonServer unselectable" onClick={this.addingUser}>Add user</button>
                     }
