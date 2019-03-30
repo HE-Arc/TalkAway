@@ -9,7 +9,10 @@ export function selectFriend(friendId) {
         });
         dispatch({
             type: 'SELECT_CHANNEL',
-            payload: getState().friend.friends.filter(f=>Number(f.friend.id) === Number(friendId))[0].channelId
+            payload: {
+                isServerChannel:false,
+                channelId:getState().friend.friends.filter(f=>Number(f.friend.id) === Number(friendId))[0].channelId
+            }
         });
     };
 }

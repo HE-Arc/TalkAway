@@ -20,8 +20,6 @@ class ContactList extends Component {
             addingFriend: false
         }
 
-        this.props.getAllUsers();
-
         console.log(this.props.allUsers)
         this.props.requestFriendList();
         this.props.requestServerList();
@@ -53,9 +51,10 @@ class ContactList extends Component {
     }
 
     serverSelected = (id) => {
-        this.props.selectServer(id);
-        this.props.requestChannelList(id).then(() => {
-            this.props.selectChannelAuto(id);
+        let serverId = Number(id);
+        this.props.selectServer(serverId);
+        this.props.requestChannelList(serverId).then(() => {
+            this.props.selectChannelAuto(serverId);
         });
     }
 

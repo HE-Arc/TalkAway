@@ -3,6 +3,24 @@ const serverReducer = (state = {
     activeServerId: 0
 }, action) => {
     switch (action.type) {
+        case "SELECT_CHANNEL":
+            console.log(action.payload)
+            if (action.payload.isServerChannel) {
+                console.log(state.servers)
+                console.log(state.servers.filter(s => Number(s.id) === state.activeServerId))
+                state = {
+                    ...state,
+                    servers: [
+                        ...state.servers.map(
+                            s => Number(s.id) !== state.activeServerId ?
+                            s : {
+                                ...s,
+                                selectedChannel: Number(action.payload.channelId)
+                            })
+                    ]
+                }
+            }
+            break;
         case "SELECT_SERVER":
             state = {
                 ...state,
@@ -21,7 +39,7 @@ const serverReducer = (state = {
                 servers: action.payload
             };
             break;
-        
+
         default:
     }
     return state;

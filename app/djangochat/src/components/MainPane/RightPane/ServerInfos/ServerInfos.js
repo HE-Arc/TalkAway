@@ -23,16 +23,13 @@ class ServerInfos extends Component {
             addingUser:false
         };
 
-        this.props.getAllUsers();
-
-
         this.newUserInput = React.createRef();
 
         this.channelInputRef = React.createRef();
     }
 
     channelSelected = (id) => {
-        this.props.selectChannel(id);
+        this.props.selectChannel(id, true);
         this.props.requestMessageList(id);
     };
 

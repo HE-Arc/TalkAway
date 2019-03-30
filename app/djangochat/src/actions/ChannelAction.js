@@ -1,24 +1,27 @@
 
 import { baseGraphqlUrl } from '../config/config';
 
-export function selectChannel(channelId) {
+export function selectChannel(channelId, channelServerType) {
     return (dispatch) => {
         dispatch({
             type: 'SELECT_CHANNEL',
-            payload: channelId
+            payload: {
+                isServerChannel:true,
+                channelId: channelId
+            }
         });
     }
 }
 
 export function selectChannelAuto(serverId) {
     return (dispatch, getState) => {
-        let server = getState().server.servers.filter(s=>s.id===serverId);
-        let selectedChannel = server.selectedChannel;
-        if(selectChannel === undefined){
+        let server = getState().server.servers.filter(s=>Number(s.id)===Number(serverId));
+        let selectedChannel = server.length > 0 ? server[0].selectedChannel : undefined;
+        if(selectedChannel === undefined){
             const channelList = getState().channel.channels.filter(c=>c.serverId === serverId);
             selectedChannel = channelList.length > 0 ? channelList[0].id : 0;
         }
-        dispatch(selectChannel(selectedChannel))
+        dispatch(selectChannel(selectedChannel, true))
     }
 }
 

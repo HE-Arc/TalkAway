@@ -49,6 +49,7 @@ export function getAllUsers(){
             }
             return res.json();
         }).then(resData => {
+            
             let response = {
                 users:resData.data.allUsers
             };
