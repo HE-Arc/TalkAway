@@ -30,7 +30,7 @@ class ServerInfos extends Component {
     }
 
     channelSelected = (id) => {
-        this.props.selectChannel(id);
+        this.props.selectChannel(id, true);
         this.props.requestMessageList(id);
     };
 
