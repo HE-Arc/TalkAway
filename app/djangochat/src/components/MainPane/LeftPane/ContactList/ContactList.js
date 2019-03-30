@@ -21,6 +21,8 @@ class ContactList extends Component {
             addingFriend:false
         }
 
+        this.props.getAllUsers();
+
         console.log(this.props.allUsers)
         this.props.requestFriendList();
         this.props.requestServerList();
