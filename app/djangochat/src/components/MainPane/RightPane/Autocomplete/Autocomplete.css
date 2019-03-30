@@ -1,0 +1,48 @@
+/* Source: https://alligator.io/react/react-autocomplete/ */
+
+
+
+
+.no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+}
+
+.suggestionInput {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width:100%;
+}
+
+.suggestions {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    border: 1px solid #999;
+    border-top-width: 0;
+    list-style: none;
+    max-height: 143px;
+    overflow-y: auto;
+    padding-left: 0;
+    width: 90%;
+    background-color: #008f68;
+    position: absolute;
+}
+
+.suggestions li {
+    padding: 0.5rem;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+    background-color: #008f68;
+    color: #fae042;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+    border-bottom: 1px solid #999;
+}

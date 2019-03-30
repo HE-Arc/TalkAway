@@ -6,12 +6,26 @@ import Channel from './Channel/Channel';
 
 import { selectChannel } from "../../../../actions/ChannelAction";
 import { requestMessageList } from "../../../../actions/MessageAction";
+import Autocomplete from "../Autocomplete/Autocomplete";
 
 class ServerInfos extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            addingUser:false
+        };
+    }
 
     channelSelected = (id) => {
         this.props.selectChannel(id);
         this.props.requestMessageList(id);
+    }
+
+    addUser = () => {
+        this.setState({
+            addingUser:true
+        });
     }
 
     render() {
@@ -36,7 +50,25 @@ class ServerInfos extends Component {
         return (
             <div id="serverContainer" className="container">
                 <div id="serverButtons" className="row">
-                    <button className="buttonServer unselectable">Add user</button>
+                {
+                this.state.addingUser ?
+                <Autocomplete
+                suggestions={[
+                  "Alligator",
+                  "Bask",
+                  "Crocodilian",
+                  "Death Roll",
+                  "Eggs",
+                  "Jaws",
+                  "Reptile",
+                  "Solitary",
+                  "Tail",
+                  "Wetlands"
+                ]}
+              />
+                :
+                    <button className="buttonServer unselectable" onClick={this.addUser}>Add user</button>
+                }
                     <button className="buttonServer unselectable" onClick={this.props.switchSettings}>Server settings</button>
                 </div>
                 <hr className="serverhr" />
