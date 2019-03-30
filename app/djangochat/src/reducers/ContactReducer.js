@@ -14,6 +14,12 @@ const contactReducer = (state = {
                 serversDisplayed: true
             };
             break;
+        case "ALL_USERS":
+            state = {
+                ...state,
+                allUsers: action.payload
+            };
+            break;
         default:
     }
     return state;

@@ -21,6 +21,7 @@ const serverReducer = (state = {
                 servers: action.payload
             };
             break;
+        
         default:
     }
     return state;

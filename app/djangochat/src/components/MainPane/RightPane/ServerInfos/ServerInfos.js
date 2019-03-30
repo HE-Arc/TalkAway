@@ -8,17 +8,25 @@ import { selectChannel, requestCreateChannel } from "../../../../actions/Channel
 import { requestMessageList } from "../../../../actions/MessageAction";
 import Autocomplete from "../Autocomplete/Autocomplete";
 
+import {getAllUsers} from "../../../../actions/ContactAction";
+
+import {requestAddUser} from "../../../../actions/ServerAction"; 
+
 class ServerInfos extends Component {
 
     
 
     constructor(props){
         super(props);
-
         this.state = {
             channelCreation: false,
             addingUser:false
         };
+
+        this.props.getAllUsers();
+
+
+        this.newUserInput = React.createRef();
 
         this.channelInputRef = React.createRef();
     }
@@ -28,11 +36,23 @@ class ServerInfos extends Component {
         this.props.requestMessageList(id);
     };
 
-    addUser = () => {
+    addingUser = () => {
         this.setState({
             addingUser:true
         });
     };
+
+    addUser = () =>{
+        let user_id=this.props.allUsers.filter(u=>{
+            return u.username===this.newUserInput.state.userInput
+        })[0].id;
+
+        this.props.requestAddUser(user_id,this.props.serverId);
+        
+        this.setState({
+            addingUser:false
+        });
+    }
 
     showChannelCreation = () => {
         this.setState({
@@ -68,7 +88,6 @@ class ServerInfos extends Component {
 
     render() {
             let channelComponents = '';
-        
             channelComponents = this.props.channels.map((channel) => {
                 const channelId = Number(channel.id);
                 let classes = ["row"];
@@ -87,22 +106,18 @@ class ServerInfos extends Component {
                     <div id="serverButtons" className="row">
                     {
                     this.state.addingUser ?
-                    <Autocomplete
-                    suggestions={[
-                    "Alligator",
-                    "Bask",
-                    "Crocodilian",
-                    "Death Roll",
-                    "Eggs",
-                    "Jaws",
-                    "Reptile",
-                    "Solitary",
-                    "Tail",
-                    "Wetlands"
-                    ]}
-                />
+                    <div className="input-group mb-3">
+                        <Autocomplete  ref={(newUserInput) => {this.newUserInput = newUserInput;}}
+                        suggestions={this.props.allUsers.map(u=>{
+                            return u.username
+                        })}
+                    /> 
+                    <div className="input-group-append">
+                        <button onClick={this.addUser} className="btn btn-primary col" type="button">Add</button>
+                    </div>
+                </div>
                     :
-                        <button className="buttonServer unselectable" onClick={this.addUser}>Add user</button>
+                        <button className="buttonServer unselectable" onClick={this.addingUser}>Add user</button>
                     }
                         <button className="buttonServer unselectable" onClick={this.props.switchSettings}>Server settings</button>
                     </div>
@@ -138,8 +153,17 @@ const mapsStateToProps = (state) => {
     return {
         channels: state.channel.channels.filter(c => c.serverId === state.server.activeServerId),
         activeChannelId: state.channel.activeChannelId,
-        serverId: state.server.activeServerId
+        serverId: state.server.activeServerId,
+        allUsers:state.contact.allUsers.users.filter(
+            u => { 
+                return u.servers.length === u.servers.filter(
+                    s => {
+                        return Number(s.id)!==Number(state.server.activeServerId);
+                    }
+                ).length;
+            }
+        )
     }
 }
 
-export default connect(mapsStateToProps, { selectChannel, requestCreateChannel, requestMessageList })(ServerInfos); 
+export default connect(mapsStateToProps, { selectChannel, requestCreateChannel, requestMessageList,getAllUsers,requestAddUser })(ServerInfos); 
