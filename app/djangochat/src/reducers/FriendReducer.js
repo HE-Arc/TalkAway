@@ -12,14 +12,21 @@ const friendReducer = (state = {
         case "ADD_FRIEND":
             state = {
                 ...state,
-                friends: state
-                    .friends
-                    .push(action.payload)
+                friends: [
+                    ...state.friends,
+                    action.payload
+                ]
             }
             break;
         case "LIST_FRIEND":
             state = {
                 friends: action.payload,
+                activeFriendId: 0
+            }
+            break;
+        case "LOGOUT":
+            state = {
+                friends: [],
                 activeFriendId: 0
             }
             break;

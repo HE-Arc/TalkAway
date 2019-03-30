@@ -108,25 +108,22 @@ class CreateUser(graphene.Mutation):
         )
 
 class CreateServer(graphene.Mutation):
-    id = graphene.Int()
-    name = graphene.String()
-    user_adding_right = graphene.Int()
+    server = graphene.Field(ServerType)
 
     class Arguments:
         name = graphene.String()
-        user_adding_right = graphene.Int()
 
     @login_required
-    def mutate(self, info, name, user_adding_right):
-        server = Server(name=name, user_adding_right=user_adding_right)
+    def mutate(self, info, name):
+        server = Server(name=name, user_adding_right=1)
         server.save()
 
-        return CreateServer(
-            id=server.id,
-            name=server.name,
-            user_adding_right=server.user_adding_right,
-        )
+        right = Right(user=info.context.user, server=server, right=1)
+        right.save()
 
+        return CreateServer(
+            server = server
+        )
 
 class CreateChannel(graphene.Mutation):
     channel = graphene.Field(ChannelType)

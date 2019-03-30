@@ -1,5 +1,6 @@
 
 import { baseGraphqlUrl } from '../config/config';
+import {requestMessageList} from './MessageAction';
 
 export function selectChannel(channelId, channelServerType) {
     return (dispatch) => {
@@ -21,7 +22,8 @@ export function selectChannelAuto(serverId) {
             const channelList = getState().channel.channels.filter(c=>c.serverId === serverId);
             selectedChannel = channelList.length > 0 ? channelList[0].id : 0;
         }
-        dispatch(selectChannel(selectedChannel, true))
+        dispatch(selectChannel(selectedChannel, true));
+        dispatch(requestMessageList(selectedChannel));
     }
 }
 

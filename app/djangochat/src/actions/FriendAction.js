@@ -79,3 +79,59 @@ function _updateFriendList(data) {
         payload: data
     }
 }
+
+function _addFriend(data) {
+    return {
+        type: 'ADD_FRIEND',
+        payload: data
+    }
+}
+
+export function requestAddFriend(user_id) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            mutation{
+                createFriend(friendId:${user_id}){
+                    friend{
+                        chanel{
+                            id
+                        }
+                        userOne{
+                            id
+                            username
+                        }
+                        userTwo{
+                            id
+                            username
+                        }
+                    }
+                }
+            }
+            `
+        };
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then((data)=>{
+            const friend = data.data.createFriend.friend;
+            const friendData = friend.userOne.id === user_id ? friend.userOne : friend.userTwo;
+            const newFriend = {
+                friend:{
+                    ...friendData
+                },
+                channelId: friend.chanel.id,
+            }
+            dispatch(_addFriend(newFriend));
+        })
+    }
+}

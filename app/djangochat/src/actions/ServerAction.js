@@ -1,7 +1,7 @@
 
 import { baseGraphqlUrl } from '../config/config';
 
-export function createServer(data) {
+export function _createServer(data) {
     return {
         type: 'CREATE_SERVER',
         payload: data
@@ -27,6 +27,50 @@ export function selectServer(serverId) {
         dispatch({
             type: 'SELECT_SERVER',
             payload: serverId
+        });
+    }
+}
+
+function _updateMessageList(data) {
+    return {
+        type: 'LIST_MESSAGE',
+        payload: data
+    }
+}
+
+export function requestCreateServer(serverName) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            mutation{
+                createServer(name:"${serverName}"){
+                    server{
+                        id
+                        name
+                    }
+                }
+            }
+            `
+        };
+
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            const server = resData.data.createServer.server;
+            dispatch(_createServer(server));
+            dispatch(selectServer(server.id));
+            dispatch(_updateMessageList([]));
+            return server.id
         });
     }
 }

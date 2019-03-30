@@ -23,6 +23,14 @@ const contactReducer = (state = {
                 allUsers: action.payload
             };
             break;
+        case "LOGOUT":
+            state = {
+                serversDisplayed: true,
+                allUsers:{
+                    users:[]
+                }
+            }
+            break;
         default:
     }
     return state;
