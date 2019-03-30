@@ -28,6 +28,9 @@ export function getAllUsers(){
                     servers{
                         id
                     }
+                    friends{
+                        id
+                    }
                 }
             }
             `

@@ -9,7 +9,8 @@ import {requestMessageList} from "../../../../actions/MessageAction";
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
 import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
-import {showFriends, showServers} from "../../../../actions/ContactAction";
+import {showFriends, showServers,getAllUsers} from "../../../../actions/ContactAction";
+
 
 class ContactList extends Component {
     
@@ -17,8 +18,10 @@ class ContactList extends Component {
         super(props);
         this.state = {
             serverDisplayed: true,
+            addingFriend:false
         }
 
+        console.log(this.props.allUsers)
         this.props.requestFriendList();
         this.props.requestServerList();
         window.addEventListener("resize", this.updateDimensions);
@@ -51,6 +54,12 @@ class ContactList extends Component {
     serverSelected = (id) => {
         this.props.selectServer(id);
         this.props.requestChannelList(id);
+    }
+
+    addingFriend=()=>{
+        this.setState({
+            addingFriend:true
+        });
     }
 
     render() {
@@ -100,6 +109,19 @@ class ContactList extends Component {
                     </div>
                 </div>
                 <div id="contactList" className="container scrollable unselectable">
+                {
+                !this.state.serverDisplayed ?
+                    this.state.addingFriend ?
+                    <div>ADD</div>
+                    :
+                    <div>
+                        <button onClick={this.addingFriend}>Add friend</button>
+                    </div>
+                :
+                <div>
+
+                </div>
+                }
                     {contactRows}
                 </div>
             </div>
@@ -113,6 +135,15 @@ const mapsStateToProps = (state) => {
         activeServerId: state.server.activeServerId,
         friends: state.friend.friends,
         activeFriendId: state.friend.activeFriendId,
+        allUsers:state.contact.allUsers.users.filter(
+            u => { 
+                return Number(u.id) !== Number(state.auth.id) &&  u.friends.length === u.friends.filter(
+                    f => {
+                        return Number(f.id)!== Number(state.auth.id);
+                    }
+                ).length;
+            }
+        )
     }
 }
 
@@ -124,7 +155,8 @@ const mapDispatchToProps= {
     selectServer,
     selectFriend,
     showFriends,
-    showServers
+    showServers,
+    getAllUsers
 }
 
 export default connect(mapsStateToProps, mapDispatchToProps)(ContactList); 

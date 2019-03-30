@@ -18,6 +18,7 @@
     
 }
 
+
 .row.selectable:hover {
     background-color: rgba(40, 40, 40, 200);
     cursor: pointer;

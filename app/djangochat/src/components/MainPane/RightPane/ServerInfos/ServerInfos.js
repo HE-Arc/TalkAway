@@ -43,12 +43,15 @@ class ServerInfos extends Component {
     };
 
     addUser = () =>{
-        let user_id=this.props.allUsers.filter(u=>{
+        if(this.newUserInput.state.userInput!=="" && this.props.allUsers.filter(u=>{
             return u.username===this.newUserInput.state.userInput
-        })[0].id;
+        }).length>0){
+            let user_id=this.props.allUsers.filter(u=>{
+                return u.username===this.newUserInput.state.userInput
+            })[0].id;
 
-        this.props.requestAddUser(user_id,this.props.serverId);
-        
+            this.props.requestAddUser(user_id,this.props.serverId);
+        }
         this.setState({
             addingUser:false
         });
