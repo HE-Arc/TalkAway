@@ -1,5 +1,8 @@
 const contactReducer = (state = {
     serversDisplayed: true,
+    allUsers:{
+        users:[]
+    }
 }, action) => {
     switch (action.type) {
         case "SHOW_FRIENDS":
