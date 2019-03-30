@@ -9,7 +9,7 @@ import {requestMessageList} from "../../../../actions/MessageAction";
 import {requestChannelList} from "../../../../actions/ChannelAction";
 import {requestServerList, selectServer} from "../../../../actions/ServerAction";
 import {requestFriendList, selectFriend} from "../../../../actions/FriendAction";
-import {showFriends, showServers,getAllUsers} from "../../../../actions/ContactAction";
+import {showFriends, showServers, getAllUsers} from "../../../../actions/ContactAction";
 
 
 class ContactList extends Component {
@@ -20,8 +20,6 @@ class ContactList extends Component {
             serverDisplayed: true,
             addingFriend:false
         }
-
-        this.props.getAllUsers();
 
         console.log(this.props.allUsers)
         this.props.requestFriendList();
@@ -138,7 +136,7 @@ const mapsStateToProps = (state) => {
         friends: state.friend.friends,
         activeFriendId: state.friend.activeFriendId,
         allUsers:state.contact.allUsers.users.filter(
-            u => { 
+            u => {
                 return Number(u.id) !== Number(state.auth.id) &&  u.friends.length === u.friends.filter(
                     f => {
                         return Number(f.id)!== Number(state.auth.id);
