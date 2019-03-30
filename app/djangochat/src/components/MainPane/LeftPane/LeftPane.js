@@ -16,27 +16,22 @@ class LeftPane extends Component {
     }
 
     render() {
-        let component;
-        if(this.state.settingsVisible){
-            component = <UserSettings switchSettings={this.switchSettings}/>
-        } else {
-            component =
-                <div>
+        return (
+            <div>
+                <div className={!this.state.settingsVisible?"d-none":""} >
+                    <UserSettings switchSettings={this.switchSettings}/>
+                </div>
+                <div className={this.state.settingsVisible?"d-none":""}>
                     <div id="settings" className="bg-secondary">
                         <UserHeader switchSettings={this.switchSettings} />
                     </div>
                     <div id="list">
                         <ContactList />
                     </div>
-                </div>;
-        }
-
-        return (
-            <div>
-                {component}
+                </div>
             </div>
         );
     }
 }
 
-export default LeftPane; 
+export default LeftPane;
