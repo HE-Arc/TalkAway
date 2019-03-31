@@ -58,7 +58,6 @@ class UserSettings extends Component {
                 <hr id="settings-separator" className="text-white border-white" />
 
                 <div className="row">
-                    <button onClick={this.save}>Save image</button>
                     <ImageEditor ref={this.refEditor} id={this.props.auth.id} image={this.props.auth.image}></ImageEditor>
                 </div>
 
