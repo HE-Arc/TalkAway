@@ -13,8 +13,9 @@
     position: absolute;
 }
 
-#messageImage {
+.messageImage {
     position: relative;
+    border-radius: 100%;
     top: 10px;
 }
 

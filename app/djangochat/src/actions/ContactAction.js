@@ -19,12 +19,15 @@ export function showServers() {
 
 export function getAllUsers(){
     return (dispatch, getState) => {
+        //TODO: Improve loading images only for required users
+        //TODO: Check if we really need all these informations
         const requestBody = {
             query: `
             query{
                 allUsers{
                     id
                     username
+                    image
                     servers{
                         id
                     }

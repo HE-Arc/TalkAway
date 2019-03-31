@@ -118,8 +118,6 @@ class MiddlePane extends Component {
         
     }
 
-
-
     handleChange(event) {
         this.setState({ messageInput: event.target.value });
     }
@@ -146,7 +144,6 @@ class MiddlePane extends Component {
             });
     }
 
-
     render() {
         const messagesAvailable = this.props.messages.length > 0;
 
@@ -161,7 +158,7 @@ class MiddlePane extends Component {
                     <section id="messages" onScroll={this.scroll} style={{ height: window.innerHeight - this.state.chatInputHeight }}>
                         {
                             this.props.messages.map(message => {
-                                return <MessageComponent messageObject={message} key={message.id}></MessageComponent>
+                                return <MessageComponent auth={this.props.auth} contact={this.props.contact} messageObject={message} key={message.id}></MessageComponent>
                             })
                         }
                     </section>
@@ -201,7 +198,9 @@ const mapsStateToProps = (state) => {
         },
         channelId: state.channel.activeChannelId,
         serverId: state.server.activeServerId,
-        ws:state.ws.ws
+        ws:state.ws.ws,
+        contact: state.contact,
+        auth: state.auth
     }
 }
 
