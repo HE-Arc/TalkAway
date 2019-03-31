@@ -120,12 +120,3 @@ export function requestChannelList(serverId) {
     }
 }
 
-
-export function notifyNewMessage(channelId) {
-    return (dispatch) => {
-        dispatch({
-            type: 'NOTIFY_NEW_MESSAGE',
-            payload: channelId
-        });
-    }
-}

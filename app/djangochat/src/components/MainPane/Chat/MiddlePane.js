@@ -9,8 +9,6 @@ import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
 
 import {requestFriendList}  from "../../../actions/FriendAction";
 
-import { notifyNewMessage } from "../../../actions/ChannelAction";
-
 import {connectChannel} from "../../../actions/WebSocketAction";
 
 import {requestServerList} from "../../../actions/ServerAction";
@@ -76,10 +74,6 @@ class MiddlePane extends Component {
         }
     }
 
-    notifyNewMessage = (channel_id) => {
-        //TODO: notify
-    }
-
     componentDidUpdate() {
 
         if (this.props.ws!=null && this.props.ws.readyState === WebSocket.OPEN && Number(this.props.channelId)!==0 && (!this.state.wsConnected || Number(this.state.lastChannelId) !== Number(this.props.channelId))) {
@@ -100,26 +94,21 @@ class MiddlePane extends Component {
                             messageReceived: true
                         });
                     } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
-                        console.log("New message from another channel but same server, channelId: " + message.channel_id);
-                        notifyNewMessage(message.channel_id);
                         toastr.info('New message on channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
                     } else if (!messageType) {
-                        console.log("New message from another server, serverId:" + message.server_id + " channelId: " + message.channel_id);
-                        //notifyNewMessage(message.channel_id);
                         toastr.info('New message on server "'+message.server_name+'" , channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
                     } else {
-                        console.log("New message from friend, friendId: " + message.friend_id + " channelId: " + message.channel_id);
                         toastr.info('New message from '+message.friend_name,message.text)
                     }
 
-            }else{
-                let notification = JSON.parse(e.data).notification;
-                toastr.success(notification.title,notification.text);
-                if(notification.type==='server')
-                    this.props.requestServerList()
-                else if(notification.type==='friend')
-                    this.props.requestFriendList()
-            }
+                }else{
+                    let notification = JSON.parse(e.data).notification;
+                    toastr.success(notification.title,notification.text);
+                    if(notification.type==='server')
+                        this.props.requestServerList();
+                    else if(notification.type==='friend')
+                        this.props.requestFriendList();
+                }
             };
             this.setState({
                 wsConnected:true
@@ -216,4 +205,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, requestSendMessage, notifyNewMessage,connectChannel,requestServerList,requestFriendList})(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage,connectChannel,requestServerList,requestFriendList})(MiddlePane); 
