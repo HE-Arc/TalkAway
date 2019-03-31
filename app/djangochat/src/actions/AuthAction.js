@@ -6,7 +6,7 @@ export function logout() {
         dispatch(
             _logout()
         );
-    }
+    };
 }
 
 export function requestLogin(username, password) {
@@ -46,7 +46,7 @@ export function requestLogin(username, password) {
             
             dispatch(_login(response));
         });
-    }
+    };
 }
 
 export function requestRegister(email, username, password) {
@@ -55,11 +55,11 @@ export function requestRegister(email, username, password) {
             query: `
             mutation {
                 createUser(username:"${username}", password:"${password}", email:"${email}") {
-                  user {
-                    username
-                  }
+                    user {
+                        username
+                    }
                 }
-              }
+            }
             `
         };
 
@@ -76,15 +76,46 @@ export function requestRegister(email, username, password) {
             return res.json();
         }).then(resData => {
             return dispatch(requestLogin(username, password));
-        })
-    }
+        });
+    };
 }
+
+export function requestEditUser(email, newPassword2,newPassword, oldPassword) {
+    return (dispatch,getState)=>{
+        const requestBody = {
+            query: `
+            mutation{
+                editUser(newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
+                    ok
+                }
+            }
+            `
+        };
+
+        return fetch(baseGraphqlUrl+'/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            return resData.data.editUser.ok;
+        });
+    };
+}
+
 
 function _logout() {
     return {
         type: 'LOGOUT',
         payload: null
-    }
+    };
 }
 
 function _login(data) {
