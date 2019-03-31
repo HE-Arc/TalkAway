@@ -4,23 +4,34 @@ import Dropzone from 'react-dropzone'
 
 class ImageEditor extends Component {
 
-
-
     constructor(props){
         super(props);
         this.refEditor = React.createRef();
         this.dropzoneRef = React.createRef()
 
-        this.state = {
-            image: this.props.image,
-            scale: 1
+        this.state = this.initialState();
+    }
+
+    initialState = () => {
+        return{
+            id: this.props.id,
+            image: this.props.image === '' ? require('./image/drop.png') : this.props.image,
+            scale: 1,
+            empty: this.props.image === ''
+        };
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if(this.props.id !== prevProps.id){
+            this.setState(this.initialState());
         }
     }
 
     handleDrop = dropped => {
-        console.log("TEST")
-        console.log(dropped[0])
-        this.setState({ image: dropped[0] })
+        this.setState({
+            image: dropped[0],
+            empty: false
+        })
     }
     
     changeScale = (e) => {
@@ -28,6 +39,8 @@ class ImageEditor extends Component {
     }
 
     getData = () => {
+        if(this.state.empty)
+            return '';
         return this.refEditor.current.getImageScaledToCanvas().toDataURL();
     }
 
@@ -43,13 +56,13 @@ class ImageEditor extends Component {
                     {({ getRootProps, getInputProps }) => (
                         <div {...getRootProps()}>
                             <input {...getInputProps()} onClick={e=>e.preventDefault()} />
-                            <AvatarEditor ref={this.refEditor} width={200} height={200} borderRadius={100} image={this.state.image} />
+                            <AvatarEditor ref={this.refEditor} width={200} height={200} borderRadius={this.state.empty?40:100} image={this.state.image} />
                         </div>
                     )}
-                    {/*  {...getInputProps()}  */}
                 </Dropzone>
+                {/* FIXME: Scale not working */}
                 <input type="range" min="0.5" max="100" defaultValue={this.state.scale} onChange={this.changeScale} className="slider" id="Scale"></input>
-                <input type="file" text="Select an image"/>
+                {/* <input type="file" text="Select an image"/> */}
             </div>
         )
     }

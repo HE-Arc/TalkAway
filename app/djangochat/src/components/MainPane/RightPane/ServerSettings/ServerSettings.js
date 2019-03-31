@@ -53,7 +53,7 @@ class ServerSettings extends Component {
                     <div className="col-12 mt-3">
                         TODO Complete this part
                         <button onClick={this.save}>Test</button>
-                        <ImageEditor ref={this.refEditor} image={server.image}></ImageEditor>
+                        <ImageEditor ref={this.refEditor} id={server.id} image={server.image}></ImageEditor>
                     </div>
                 </div>
             </div>
