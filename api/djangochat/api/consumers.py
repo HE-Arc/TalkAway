@@ -35,6 +35,17 @@ class ChatConsumer(WebsocketConsumer):
         text_data_json = json.loads(text_data)
 
         try:
+            notification = text_data_json['notification']
+            async_to_sync(self.channel_layer.group_send)(
+                    self.room_group_name,
+                    {
+                        'type': 'chat_message',
+                        'notification': notification
+                    })
+        except:
+            pass
+
+        try:
             new_channel_id = text_data_json['connectChannel']['id']
             self.channel = Channel.objects.get(id=new_channel_id)
             if self.channel.direct_type:
@@ -110,18 +121,31 @@ class ChatConsumer(WebsocketConsumer):
     # Receive message from room group
 
     def chat_message(self, event):
-        if self.channel != 0:
-            message = event['message']
 
-            if message['direct_type']:
-                if message['friend_id'] == self.user.id or message['my_id'] == self.user.id:
-                    self.send(text_data=json.dumps({
-                        'message': message
-                    }))
-            else:
-                for server in self.subscribedServers:
-                    if server.id == message['server_id']:
+        try:
+            notification = event['notification']
+            if self.user.id == int(notification['user_id']):
+                self.send(text_data=json.dumps({
+                            'notification': notification
+                        }))
+        except:
+            pass
+        try:
+            message = event['message']
+            if self.channel != 0:
+                
+                if message['direct_type']:
+                    if message['friend_id'] == self.user.id or message['my_id'] == self.user.id:
                         self.send(text_data=json.dumps({
                             'message': message
                         }))
-                        break
+                else:
+                    for server in self.subscribedServers:
+                        if server.id == message['server_id']:
+                            self.send(text_data=json.dumps({
+                                'message': message
+                            }))
+                            break
+        except:
+            pass
+

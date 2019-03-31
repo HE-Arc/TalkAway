@@ -8,8 +8,6 @@ import AuthPage from './pages/Auth';
 import HomePage from './pages/Home';
 import ChatPage from './pages/Chat';
 
-import {initWebSocket} from './actions/WebSocketAction';
-
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 class App extends Component {

@@ -83,27 +83,35 @@ class MiddlePane extends Component {
             this.props.connectChannel(this.props.channelId);
             this.dropDown();
             this.props.ws.onmessage = (e) => {
-                let message = JSON.parse(e.data).message;
-                
-                const messageType = message.direct_type;
-    
-                if (Number(message.channel_id) === Number(this.props.channelId)) {
-                    this.props.addMessage(message);
-                    this.setState({
-                        messageReceived: true
-                    });
-                } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
-                    console.log("New message from another channel but same server, channelId: " + message.channel_id);
-                    notifyNewMessage(message.channel_id);
-                    toastr.info('New message on channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
-                } else if (!messageType) {
-                    console.log("New message from another server, serverId:" + message.server_id + " channelId: " + message.channel_id);
-                    //notifyNewMessage(message.channel_id);
-                    toastr.info('New message on server "'+message.server_name+'" , channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
-                } else {
-                    console.log("New message from friend, friendId: " + message.friend_id + " channelId: " + message.channel_id);
-                    toastr.info('New message from '+message.friend_name,message.text)
-                }
+
+                let data = JSON.parse(e.data);
+                console.log(data)
+                let message=data.message;
+                if(message!=null){
+                    const messageType = message.direct_type;
+        
+                    if (Number(message.channel_id) === Number(this.props.channelId)) {
+                        this.props.addMessage(message);
+                        this.setState({
+                            messageReceived: true
+                        });
+                    } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
+                        console.log("New message from another channel but same server, channelId: " + message.channel_id);
+                        notifyNewMessage(message.channel_id);
+                        toastr.info('New message on channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                    } else if (!messageType) {
+                        console.log("New message from another server, serverId:" + message.server_id + " channelId: " + message.channel_id);
+                        //notifyNewMessage(message.channel_id);
+                        toastr.info('New message on server "'+message.server_name+'" , channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                    } else {
+                        console.log("New message from friend, friendId: " + message.friend_id + " channelId: " + message.channel_id);
+                        toastr.info('New message from '+message.friend_name,message.text)
+                    }
+
+            }else{
+                let notification = JSON.parse(e.data).notification;
+                toastr.success(notification.title,notification.text);
+            }
             };
             this.setState({
                 wsConnected:true

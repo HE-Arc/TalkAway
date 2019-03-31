@@ -74,6 +74,7 @@ class ContactList extends Component {
     }
 
     addFriend = () => {
+        
         if (this.newUserInput.state.userInput !== "" && this.props.allUsers.filter(u => {
             return u.username === this.newUserInput.state.userInput
         }).length > 0) {
@@ -86,6 +87,14 @@ class ContactList extends Component {
             this.setState({
                 addingFriend: false
             });
+
+            this.props.ws.send(JSON.stringify({
+                notification: {
+                    user_id: user_id,
+                    text:this.props.username+" added you in his friendlist",
+                    title:"New friend"
+                }
+            }));
         }
     }
 
@@ -212,6 +221,8 @@ const mapsStateToProps = (state) => {
         activeServerId: state.server.activeServerId,
         friends: state.friend.friends,
         activeFriendId: state.friend.activeFriendId,
+        ws:state.ws.ws,
+        username: state.auth.username,
         allUsers: state.contact.allUsers.users.filter(
             u => {
                 return u.id !== state.auth.id && state.friend.friends.filter(f => {
