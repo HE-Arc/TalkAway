@@ -19,6 +19,7 @@ export function requestLogin(username, password) {
                     user {
                         id
                         username
+                        image
                     }
                 }
             }
@@ -37,11 +38,11 @@ export function requestLogin(username, password) {
             }
             return res.json();
         }).then(resData => {
+            const data = resData.data.getJWTToken;
             const response = {
-                token: resData.data.getJWTToken.token,
-                username: resData.data.getJWTToken.user.username,
-                id: resData.data.getJWTToken.user.id,
-                isLogged: true
+                token: data.token,
+                isLogged: true,
+                ...data.user
             }
             
             dispatch(_login(response));
@@ -76,6 +77,38 @@ export function requestRegister(email, username, password) {
             return res.json();
         }).then(resData => {
             return dispatch(requestLogin(username, password));
+        })
+    }
+}
+
+export function requestEditProfile(image) {
+    return dispatch => {
+        //TODO: Create mutation on server side
+        const requestBody = {
+            query: `
+            mutation {
+                editProfile(image:"${image}") {
+                  user {
+                    username
+                  }
+                }
+              }
+            `
+        };
+
+        return fetch(baseGraphqlUrl+'/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody), // JSON Object
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then(resData => {
+            //TODO: update profile image
         })
     }
 }

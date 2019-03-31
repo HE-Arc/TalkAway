@@ -47,7 +47,6 @@ class ImageEditor extends Component {
     render() {
         return (
             <div>
-                <p>Hello</p>
                 <Dropzone
                     onDrop={this.handleDrop}
                     onClick={e=>e.preventDefault()}
