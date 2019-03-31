@@ -6,10 +6,9 @@ import Channel from './Channel/Channel';
 
 import { selectChannel, requestCreateChannel } from "../../../../actions/ChannelAction";
 import { requestMessageList } from "../../../../actions/MessageAction";
+
 import Autocomplete from "../Autocomplete/Autocomplete";
-
 import { getAllUsers } from "../../../../actions/ContactAction";
-
 import { requestAddUser } from "../../../../actions/ServerAction";
 
 class ServerInfos extends Component {
@@ -85,23 +84,23 @@ class ServerInfos extends Component {
     }
 
     render() {
-        let channelComponents = '';
-        channelComponents = this.props.channels.map((channel) => {
-            const channelId = Number(channel.id);
-            let classes = ["row"];
-            if (channelId === this.props.activeChannelId) {
-                classes.push("selected");
-            } else {
-                classes.push("selectable");
-            }
-            return (<div key={channel.id} className={classes.join(' ')}>
-                <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
-            </div>);
-        });
-
-        return (
-            <div id="serverContainer" className="container">
-                <div id="serverButtons" className="row">
+            let channelComponents = '';
+            channelComponents = this.props.channels.map((channel) => {
+                const channelId = channel.id;
+                let classes = ["row"];
+                if (channelId === this.props.activeChannelId) {
+                    classes.push("selected");
+                } else {
+                    classes.push("selectable");
+                }
+                return (<div key={channel.id} className={classes.join(' ')}>
+                    <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
+                </div>);
+            });
+        
+            return (
+                <div id="serverContainer" className="container">
+                    <div id="serverButtons" className="row">
                     {
                         this.state.addingUser ?
                             <div className="input-group mb-3">
@@ -156,7 +155,7 @@ const mapsStateToProps = (state) => {
             u => {
                 return u.servers.length === u.servers.filter(
                     s => {
-                        return Number(s.id) !== Number(state.server.activeServerId);
+                        return s.id!==state.server.activeServerId;
                     }
                 ).length;
             }

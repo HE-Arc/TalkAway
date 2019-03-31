@@ -44,6 +44,7 @@ class FriendType(DjangoObjectType):
 class UserType(DjangoObjectType):
     class Meta:
         model = get_user_model()
+        exclude_fields = ('password')
 
 
 class Query(graphene.ObjectType):
@@ -94,10 +95,10 @@ class CreateUser(graphene.Mutation):
         password = graphene.String(required=True)
         email = graphene.String(required=True)
 
-    def mutate(self, info, username, password, email):
+    def mutate(self, info, username, password, email, image):
         user = get_user_model()(
             username=username,
-            email=email,
+            email=email
         )
         user.set_password(password)
         user.save()
@@ -143,6 +144,28 @@ class CreateChannel(graphene.Mutation):
         return CreateChannel(
             channel=channel
         )
+
+
+class EditServer(graphene.Mutation):
+    server = graphene.Field(ServerType)
+
+    class Arguments:
+        server_id = graphene.Int(required=True)
+
+        name = graphene.String(required=False)
+        image = graphene.String(required=False)
+        user_adding_right = graphene.Int(required=False)
+
+    @login_required
+    def mutate(self, info, server_id, **kwargs):
+        # TODO: Check rights
+        server = Server.objects.get(id=server_id)
+
+        for k, v in kwargs.items():
+            setattr(server, k, v)
+
+        server.save()
+        return EditServer(server)
 
 
 class CreateFriend(graphene.Mutation):
@@ -223,9 +246,10 @@ class EditUser(graphene.Mutation):
         newPassword = graphene.String()
         newPassword2 = graphene.String()
         newMail = graphene.String()
+        image = graphene.String()
 
     @login_required
-    def mutate(self, info, oldPassword, newPassword="", newPassword2="", newMail=""):
+    def mutate(self, info, oldPassword, newPassword="", newPassword2="", newMail="", image=""):
 
         authUser = info.context.user
 
@@ -240,6 +264,9 @@ class EditUser(graphene.Mutation):
 
         if newMail != "":
             authUser.email = newMail
+
+        if image != "":
+            authUser.image = image
 
         authUser.save()
 
@@ -298,6 +325,7 @@ class Mutation(graphene.ObjectType):
     getJWTToken = ObtainJSONWebTokenWithUser.Field()
 
     add_user = AddUser.Field()
+    edit_server = EditServer.Field()
     create_user = CreateUser.Field()
     create_server = CreateServer.Field()
     create_friend = CreateFriend.Field()

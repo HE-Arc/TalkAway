@@ -16,7 +16,7 @@ export function selectChannel(channelId, channelServerType) {
 
 export function selectChannelAuto(serverId) {
     return (dispatch, getState) => {
-        let server = getState().server.servers.filter(s=>Number(s.id)===Number(serverId));
+        let server = getState().server.servers.filter(s=>s.id===serverId);
         let selectedChannel = server.length > 0 ? server[0].selectedChannel : undefined;
         if(selectedChannel === undefined){
             const channelList = getState().channel.channels.filter(c=>c.serverId === serverId);
@@ -108,7 +108,7 @@ export function requestChannelList(serverId) {
             console.log()
             let response = {
                 serverId: serverId,
-                channels: resData.data.serverChannels.map(c => { return { ...c, serverId: Number(serverId) } })
+                channels: resData.data.serverChannels.map(c => { return { ...c, serverId: serverId } })
             };
             if (response.channels == null) {
                 response.channels = [];

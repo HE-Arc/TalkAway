@@ -15,6 +15,13 @@ function _updateServerList(data) {
     }
 }
 
+function _editServer(data) {
+    return {
+        type: 'EDIT_SERVER',
+        payload: data
+    }
+}
+
 export function selectServer(serverId) {
     return (dispatch) => {
         dispatch({
@@ -76,6 +83,7 @@ export function requestServerList() {
                 myServers{
                     name
                     id
+                    image
                 }
             }
             `
@@ -106,12 +114,48 @@ export function requestServerList() {
 }
 
 
-export function requestAddUser(user_id, server_id) {
+export function requestEditServer(serverId, name, image, userAddingRight) {
+    return (dispatch, getState) => {
+        const requestBody = {
+            query: `
+            mutation{
+                editServer(serverId:${serverId},name:"${name}",image:"${image}",userAddingRight:${userAddingRight}){
+                    server{
+                        image
+                        name
+                        id
+                    }
+                }
+            }
+            `
+        };
+        return fetch(baseGraphqlUrl + '/', {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
+            }
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+                throw new Error('Failed')
+            }
+            return res.json();
+        }).then((data) => {
+            //TODO: 
+            let serverUpdated = data.data.editServer.server;
+            dispatch(_editServer(serverUpdated));
+        })
+    }
+}
+
+
+export function requestAddUser(userId, serverId) {
     return (dispatch, getState) => {
         const requestBody = {
             query: `
             mutation {
-                addUser(userId: ${user_id}, serverId: ${server_id}) {
+                addUser(userId: ${userId}, serverId: ${serverId}) {
                     right {
                         id
                     }

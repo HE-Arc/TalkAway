@@ -3,7 +3,8 @@ const authReducer = (state = {
     username: '',
     email: '',
     token: '',
-    isLogged: false
+    isLogged: false,
+    image: ''
 }, action) => {
     switch (action.type) {
         case "LOGIN":
@@ -19,6 +20,7 @@ const authReducer = (state = {
                 token: '',
                 email: '',
                 isLogged: false,
+                image: ''
             }
             break;
         default:

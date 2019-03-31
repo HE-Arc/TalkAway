@@ -10,6 +10,7 @@ class Server(models.Model):
     name = models.CharField(max_length=200)
     user_adding_right = models.IntegerField(
         validators=[MaxValueValidator(3), MinValueValidator(1)])
+    image = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
@@ -19,6 +20,7 @@ class User(AbstractUser):
     servers = models.ManyToManyField(Server, through='Right')
     friends = models.ManyToManyField('self', through='Friend',
                                       symmetrical=False)
+    image = models.TextField(blank=True)
 
 class Channel(models.Model):
     name = models.CharField(max_length=200, blank=True)

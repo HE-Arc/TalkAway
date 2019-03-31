@@ -57,8 +57,7 @@ class ContactList extends Component {
         this.props.requestMessageList(channelId);
     }
 
-    serverSelected = (id) => {
-        let serverId = Number(id);
+    serverSelected = (serverId) => {
         this.props.selectServer(serverId);
         this.props.requestChannelList(serverId).then(() => {
             this.props.selectChannelAuto(serverId);
@@ -130,7 +129,7 @@ class ContactList extends Component {
         const [styleServers, styleFriends] = this.state.serverDisplayed ? [blue, white] : [white, blue];
         if (this.state.serverDisplayed) {
             contactRows = this.props.servers.map((server) => {
-                const serverId = Number(server.id);
+                const serverId = server.id;
                 let classes = (serverId === this.props.activeServerId) ? classesSelected : classesSelectable;
                 return (<div key={serverId} className={classes.join(' ')}>
                     <Server contact={{}} server={server} serverSelected={this.serverSelected} />
@@ -138,7 +137,7 @@ class ContactList extends Component {
             });
         } else {
             contactRows = this.props.friends.map((friend) => {
-                const friendId = Number(friend.friend.id);
+                const friendId = friend.friend.id;
                 let classes = (friendId === this.props.activeFriendId) ? classesSelected : classesSelectable;
                 return (<div key={friend.friend.id + this.props.servers.length} className={classes.join(' ')}>
                     <Friend friend={friend} friendSelected={this.friendSelected} />
@@ -212,8 +211,8 @@ const mapsStateToProps = (state) => {
         activeFriendId: state.friend.activeFriendId,
         allUsers: state.contact.allUsers.users.filter(
             u => {
-                return Number(u.id) !== Number(state.auth.id) && state.friend.friends.filter(f => {
-                    return Number(f.friend.id) === Number(u.id);
+                return u.id !== state.auth.id && state.friend.friends.filter(f => {
+                    return f.friend.id === u.id;
                 }).length === 0;
             }
         )

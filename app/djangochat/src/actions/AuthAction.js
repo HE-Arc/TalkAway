@@ -19,6 +19,7 @@ export function requestLogin(username, password) {
                     user {
                         id
                         username
+                        image
                     }
                 }
             }
@@ -37,11 +38,11 @@ export function requestLogin(username, password) {
             }
             return res.json();
         }).then(resData => {
+            const data = resData.data.getJWTToken;
             const response = {
-                token: resData.data.getJWTToken.token,
-                username: resData.data.getJWTToken.user.username,
-                id: resData.data.getJWTToken.user.id,
-                isLogged: true
+                token: data.token,
+                isLogged: true,
+                ...data.user
             }
             
             dispatch(_login(response));
@@ -80,12 +81,12 @@ export function requestRegister(email, username, password) {
     };
 }
 
-export function requestEditUser(email, newPassword2,newPassword, oldPassword) {
+export function requestEditUser(email, newPassword2,newPassword, oldPassword,image) {
     return (dispatch,getState)=>{
         const requestBody = {
             query: `
             mutation{
-                editUser(newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
+                editUser(image:"${image}",newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
                     ok
                 }
             }
