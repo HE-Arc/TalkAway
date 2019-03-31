@@ -45,6 +45,14 @@ class ServerInfos extends Component {
             })[0].id;
 
             this.props.requestAddUser(user_id, this.props.serverId);
+            this.props.ws.send(JSON.stringify({
+                notification: {
+                    user_id: user_id,
+                    text:this.props.username+' added you on server "'+this.props.activeServer[0].name+'"',
+                    title:'Added to server',
+                    type:'server'
+                }
+            }));
         }
         this.setState({
             addingUser: false
@@ -149,8 +157,11 @@ class ServerInfos extends Component {
 const mapsStateToProps = (state) => {
     return {
         channels: state.channel.channels.filter(c => c.serverId === state.server.activeServerId),
+        ws:state.ws.ws,
+        username: state.auth.username,
         activeChannelId: state.channel.activeChannelId,
         serverId: state.server.activeServerId,
+        activeServer:state.server.servers.filter(s=>Number(s.id)===Number(state.server.activeServerId)),
         allUsers: state.contact.allUsers.users.filter(
             u => {
                 return u.servers.length === u.servers.filter(

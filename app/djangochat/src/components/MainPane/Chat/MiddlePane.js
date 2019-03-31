@@ -7,9 +7,13 @@ import './MiddlePane.css';
 
 import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
 
+import {requestFriendList}  from "../../../actions/FriendAction";
+
 import { notifyNewMessage } from "../../../actions/ChannelAction";
 
 import {connectChannel} from "../../../actions/WebSocketAction";
+
+import {requestServerList} from "../../../actions/ServerAction";
 
 import {toastr} from 'react-redux-toastr'
 
@@ -85,7 +89,7 @@ class MiddlePane extends Component {
             this.props.ws.onmessage = (e) => {
 
                 let data = JSON.parse(e.data);
-                console.log(data)
+
                 let message=data.message;
                 if(message!=null){
                     const messageType = message.direct_type;
@@ -111,6 +115,10 @@ class MiddlePane extends Component {
             }else{
                 let notification = JSON.parse(e.data).notification;
                 toastr.success(notification.title,notification.text);
+                if(notification.type==='server')
+                    this.props.requestServerList()
+                else if(notification.type==='friend')
+                    this.props.requestFriendList()
             }
             };
             this.setState({
@@ -208,4 +216,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, requestSendMessage, notifyNewMessage,connectChannel })(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage, notifyNewMessage,connectChannel,requestServerList,requestFriendList})(MiddlePane); 

@@ -92,7 +92,8 @@ class ContactList extends Component {
                 notification: {
                     user_id: user_id,
                     text:this.props.username+" added you in his friendlist",
-                    title:"New friend"
+                    title:"New friend",
+                    type:'friend'
                 }
             }));
         }
