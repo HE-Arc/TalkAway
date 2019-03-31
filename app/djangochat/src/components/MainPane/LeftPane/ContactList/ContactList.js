@@ -52,16 +52,19 @@ class ContactList extends Component {
     }
 
     friendSelected = (id) => {
-        this.props.selectFriend(id);
-        const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
-        this.props.requestMessageList(channelId);
+            this.props.selectFriend(id);
+            const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
+            this.props.requestMessageList(channelId);
     }
 
     serverSelected = (serverId) => {
         this.props.selectServer(serverId);
-        this.props.requestChannelList(serverId).then(() => {
-            this.props.selectChannelAuto(serverId);
-        });
+        if(this.props.activeServerId!==serverId){
+            
+            this.props.requestChannelList(serverId).then(() => {
+                this.props.selectChannelAuto(serverId);
+            });
+        }
     }
 
     addingFriend = () => {
