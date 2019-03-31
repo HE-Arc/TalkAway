@@ -39,6 +39,14 @@ class UserHeader extends Component {
     }
 
     render() {
+        let imageprofile;
+        if (this.props.auth.image !== '') {
+            imageprofile = this.props.auth.image;
+        }
+        else {
+            imageprofile = require('./images/profile.png');
+        }
+
         // Find appropriate state image
         let connectionImg;
         switch (this.state.activity)
@@ -53,12 +61,12 @@ class UserHeader extends Component {
         // Return the component
         return (
             <div id="rowProfile" onClick={this.openSettings}>
-                <div id="images">
-                    <img id="image" alt="" src={require('./images/profile.png')}/>
+                <div className="images">
+                    <img className="image-profile" alt="" src={imageprofile}/>
                     <img id="connection" alt="" src={connectionImg}/>
                 </div>
-                <div id="username">
-                    {this.props.username}
+                <div className="username-profile">
+                    {this.props.auth.username}
                 </div>
             </div>
         );
@@ -67,7 +75,7 @@ class UserHeader extends Component {
 
 const mapsStateToProps = (state) => {
     return {
-        username: state.auth.username
+        auth: state.auth
     }
 }
 
