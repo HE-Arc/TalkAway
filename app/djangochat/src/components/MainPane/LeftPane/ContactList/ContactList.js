@@ -74,7 +74,6 @@ class ContactList extends Component {
     }
 
     addFriend = () => {
-        
         if (this.newUserInput.state.userInput !== "" && this.props.allUsers.filter(u => {
             return u.username === this.newUserInput.state.userInput
         }).length > 0) {

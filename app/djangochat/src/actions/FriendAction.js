@@ -26,10 +26,12 @@ export function requestFriendList() {
                   userOne{
                     username
                     id
+                    image
                   }
                   userTwo{
                     username
                     id
+                    image
                   }
                   chanel{
                     id
@@ -100,10 +102,12 @@ export function requestAddFriend(user_id) {
                         userOne{
                             id
                             username
+                            image
                         }
                         userTwo{
                             id
                             username
+                            image
                         }
                     }
                 }

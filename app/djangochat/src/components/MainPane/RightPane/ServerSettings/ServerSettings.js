@@ -26,7 +26,7 @@ class ServerSettings extends Component {
 
     render() {
         const server = this.props.activeServer[0]
-        // Return the component
+        
         let imageServer;
         if (server !== undefined && server.image !== '') {
             imageServer = this.props.activeServer[0].image;
