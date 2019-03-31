@@ -9,7 +9,8 @@ import serverReducer from './reducers/ServerReducer';
 import friendReducer from './reducers/FriendReducer';
 import messageReducer from './reducers/MessageReducer';
 import contactReducer from './reducers/ContactReducer';
-
+import webSocketReducer from './reducers/WebSocketReducer';
+import {reducer as toastrReducer} from 'react-redux-toastr'
 // const logger = createLogger({
 //     // ...options
 // });
@@ -29,7 +30,9 @@ const store = createStore(
         channel: channelReducer,
         friend: friendReducer,
         message: messageReducer,
-        contact: contactReducer
+        contact: contactReducer,
+        ws:webSocketReducer,
+        toastr: toastrReducer
     }),
     persistedState,
     applyMiddleware(...middleware)

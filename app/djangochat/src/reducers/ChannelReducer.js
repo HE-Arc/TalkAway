@@ -26,16 +26,6 @@ const channelReducer = (state = {
                 channels: [...action.payload.channels, ...newChannels]
             }
             break;
-        case "NOTIFY_NEW_MESSAGE":
-            console.log(action.payload)
-            state = {
-                ...state,
-                newMessageChannelId: [
-                    ...state.newMessageChannelId,
-                    action.payload
-                ]
-            }
-            break;
         case "LOGOUT":
             state = {
                 channels:[],

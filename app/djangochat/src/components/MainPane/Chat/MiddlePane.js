@@ -5,10 +5,15 @@ import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
-import { baseWebsocketUrl } from '../../../config/config.js';
 import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
 
-import { notifyNewMessage } from "../../../actions/ChannelAction";
+import {requestFriendList}  from "../../../actions/FriendAction";
+
+import {connectChannel} from "../../../actions/WebSocketAction";
+
+import {requestServerList} from "../../../actions/ServerAction";
+
+import {toastr} from 'react-redux-toastr'
 
 class MiddlePane extends Component {
 
@@ -20,7 +25,8 @@ class MiddlePane extends Component {
             scrolling: false,
             messageSent: false,
             lastChannelId: 0,
-            messageReceived: false
+            messageReceived: false,
+            wsConnected:false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,6 +34,7 @@ class MiddlePane extends Component {
 
         // Messages scrollbar policy
         document.body.addEventListener('DOMSubtreeModified', this.DOMModified, false);
+
     }
 
     DOMModified = () => {
@@ -67,17 +74,51 @@ class MiddlePane extends Component {
         }
     }
 
-    notifyNewMessage = (channel_id) => {
-        //TODO: notify
+    componentDidUpdate() {
+
+        if (this.props.ws!=null && this.props.ws.readyState === WebSocket.OPEN && Number(this.props.channelId)!==0 && (!this.state.wsConnected || Number(this.state.lastChannelId) !== Number(this.props.channelId))) {
+            this.setState({ lastChannelId: this.props.channelId });
+            this.props.connectChannel(this.props.channelId);
+            this.dropDown();
+            this.props.ws.onmessage = (e) => {
+
+                let data = JSON.parse(e.data);
+
+                let message=data.message;
+                if(message!=null){
+                    const messageType = message.direct_type;
+        
+                    if (Number(message.channel_id) === Number(this.props.channelId)) {
+                        this.props.addMessage(message);
+                        this.setState({
+                            messageReceived: true
+                        });
+                    } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
+                        toastr.info('New message on channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                    } else if (!messageType) {
+                        toastr.info('New message on server "'+message.server_name+'" , channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                    } else {
+                        toastr.info('New message from '+message.friend_name,message.text)
+                    }
+
+                }else{
+                    let notification = JSON.parse(e.data).notification;
+                    toastr.success(notification.title,notification.text);
+                    if(notification.type==='server')
+                        this.props.requestServerList();
+                    else if(notification.type==='friend')
+                        this.props.requestFriendList();
+                }
+            };
+            this.setState({
+                wsConnected:true
+            });
+            }
+        
+        
     }
 
-    componentDidUpdate() {
-        if (this.state.lastChannelId !== this.props.channelId) {
-            this.connectWebsocket();
-            this.setState({ lastChannelId: this.props.channelId });
-            this.dropDown();
-        }
-    }
+
 
     handleChange(event) {
         this.setState({ messageInput: event.target.value });
@@ -89,7 +130,7 @@ class MiddlePane extends Component {
             .then(resData => {
                 const messageId = resData.data.createMessage.id;
 
-                this.chatSocket.send(JSON.stringify({
+                this.props.ws.send(JSON.stringify({
                     newMessage: {
                         id: messageId
                     }
@@ -100,47 +141,11 @@ class MiddlePane extends Component {
                     messageSent: true
                 });
             }).catch((err) => {
-                console.log("Error while sending yout message :(");
+                console.log("Error while sending your message :(");
                 console.log(err);
             });
     }
 
-    connectWebsocket = () => {
-        if (this.props.channelId > 0) {
-            //If we select a new channel and a previous WebSocket instance already exists
-            if (this.chatSocket instanceof WebSocket) {
-                this.chatSocket.close();
-            }
-
-            document.cookie = "token=" + this.props.user.token + ";max-age=1";
-            this.chatSocket = new WebSocket(
-                baseWebsocketUrl + '/' + this.props.channelId + '/');
-
-            this.chatSocket.onmessage = (e) => {
-                let message = JSON.parse(e.data).message;
-
-                const messageType = message.direct_type;
-                if (message.channel_id === this.props.channelId) {
-                    this.props.addMessage(message);
-                    this.setState({
-                        messageReceived: true
-                    });
-                } else if (!messageType && message.server_id === this.props.serverId) {
-                    console.log("New message from another channel but same server, channelId: " + message.channel_id);
-                    notifyNewMessage(message.channel_id);
-                } else if (!messageType) {
-                    console.log("New message from another server, serverId:" + message.server_id + " channelId: " + message.channel_id);
-                    //notifyNewMessage(message.channel_id);
-                } else {
-                    console.log("New message from friend, friendId: " + message.friend_id + " channelId: " + message.channel_id);
-                }
-            };
-
-            // this.chatSocket.onclose = function(e) {
-            //     console.error('Chat socket closed unexpectedly');
-            // };
-        }
-    }
 
     render() {
         const messagesAvailable = this.props.messages.length > 0;
@@ -195,8 +200,9 @@ const mapsStateToProps = (state) => {
             token: state.auth.token
         },
         channelId: state.channel.activeChannelId,
-        serverId: state.server.activeServerId
+        serverId: state.server.activeServerId,
+        ws:state.ws.ws
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, requestSendMessage, notifyNewMessage })(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage,connectChannel,requestServerList,requestFriendList})(MiddlePane); 

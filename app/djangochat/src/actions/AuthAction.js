@@ -6,7 +6,7 @@ export function logout() {
         dispatch(
             _logout()
         );
-    }
+    };
 }
 
 export function requestLogin(username, password) {
@@ -47,7 +47,7 @@ export function requestLogin(username, password) {
             
             dispatch(_login(response));
         });
-    }
+    };
 }
 
 export function requestRegister(email, username, password) {
@@ -56,11 +56,11 @@ export function requestRegister(email, username, password) {
             query: `
             mutation {
                 createUser(username:"${username}", password:"${password}", email:"${email}") {
-                  user {
-                    username
-                  }
+                    user {
+                        username
+                    }
                 }
-              }
+            }
             `
         };
 
@@ -77,30 +77,28 @@ export function requestRegister(email, username, password) {
             return res.json();
         }).then(resData => {
             return dispatch(requestLogin(username, password));
-        })
-    }
+        });
+    };
 }
 
-export function requestEditProfile(image) {
-    return dispatch => {
-        //TODO: Create mutation on server side
+export function requestEditUser(email, newPassword2,newPassword, oldPassword,image) {
+    return (dispatch,getState)=>{
         const requestBody = {
             query: `
-            mutation {
-                editProfile(image:"${image}") {
-                  user {
-                    username
-                  }
+            mutation{
+                editUser(image:"${image}",newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
+                    ok
                 }
-              }
+            }
             `
         };
 
         return fetch(baseGraphqlUrl+'/', {
             method: 'POST',
-            body: JSON.stringify(requestBody), // JSON Object
+            body: JSON.stringify(requestBody),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'JWT ' + getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -108,16 +106,17 @@ export function requestEditProfile(image) {
             }
             return res.json();
         }).then(resData => {
-            //TODO: update profile image
-        })
-    }
+            return resData.data.editUser.ok;
+        });
+    };
 }
+
 
 function _logout() {
     return {
         type: 'LOGOUT',
         payload: null
-    }
+    };
 }
 
 function _login(data) {

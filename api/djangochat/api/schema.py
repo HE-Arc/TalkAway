@@ -107,6 +107,7 @@ class CreateUser(graphene.Mutation):
             user=user,
         )
 
+
 class CreateServer(graphene.Mutation):
     server = graphene.Field(ServerType)
 
@@ -122,8 +123,9 @@ class CreateServer(graphene.Mutation):
         right.save()
 
         return CreateServer(
-            server = server
+            server=server
         )
+
 
 class CreateChannel(graphene.Mutation):
     channel = graphene.Field(ChannelType)
@@ -134,7 +136,7 @@ class CreateChannel(graphene.Mutation):
 
     @login_required
     def mutate(self, info, server_id, name):
-        #TODO: Check right to create a channel
+        # TODO: Check right to create a channel
 
         channel = Channel(name=name, server_id=server_id, direct_type=False)
         channel.save()
@@ -142,6 +144,7 @@ class CreateChannel(graphene.Mutation):
         return CreateChannel(
             channel=channel
         )
+
 
 class EditServer(graphene.Mutation):
     server = graphene.Field(ServerType)
@@ -152,10 +155,10 @@ class EditServer(graphene.Mutation):
         name = graphene.String(required=False)
         image = graphene.String(required=False)
         user_adding_right = graphene.Int(required=False)
-    
+
     @login_required
     def mutate(self, info, server_id, **kwargs):
-        #TODO: Check rights
+        # TODO: Check rights
         server = Server.objects.get(id=server_id)
 
         for k, v in kwargs.items():
@@ -163,6 +166,7 @@ class EditServer(graphene.Mutation):
 
         server.save()
         return EditServer(server)
+
 
 class CreateFriend(graphene.Mutation):
     friend = graphene.Field(FriendType)
@@ -234,6 +238,43 @@ class AddUser(graphene.Mutation):
         )
 
 
+class EditUser(graphene.Mutation):
+    ok = graphene.Boolean()
+
+    class Arguments:
+        oldPassword = graphene.String(required=True)
+        newPassword = graphene.String()
+        newPassword2 = graphene.String()
+        newMail = graphene.String()
+        image = graphene.String()
+
+    @login_required
+    def mutate(self, info, oldPassword, newPassword="", newPassword2="", newMail="", image=""):
+
+        authUser = info.context.user
+
+        if not authUser.check_password(oldPassword):
+            raise Exception("Incorrect password")
+
+        if newPassword != "" and newPassword2 != "":
+            if newPassword != newPassword2:
+                raise Exception(
+                    "Mismatch between new password and confirmation")
+            authUser.set_password(newPassword)
+
+        if newMail != "":
+            authUser.email = newMail
+
+        if image != "":
+            authUser.image = image
+
+        authUser.save()
+
+        return EditUser(
+            ok=True
+        )
+
+
 class CreateMessage(graphene.Mutation):
     text = graphene.String()
     date = graphene.DateTime()
@@ -290,3 +331,4 @@ class Mutation(graphene.ObjectType):
     create_friend = CreateFriend.Field()
     create_message = CreateMessage.Field()
     create_channel = CreateChannel.Field()
+    edit_user = EditUser.Field()
