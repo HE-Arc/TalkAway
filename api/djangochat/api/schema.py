@@ -240,6 +240,7 @@ class AddUser(graphene.Mutation):
 
 class EditUser(graphene.Mutation):
     ok = graphene.Boolean()
+    user = graphene.Field(UserType)
 
     class Arguments:
         oldPassword = graphene.String(required=True)
@@ -271,7 +272,8 @@ class EditUser(graphene.Mutation):
         authUser.save()
 
         return EditUser(
-            ok=True
+            ok=True,
+            user=authUser
         )
 
 

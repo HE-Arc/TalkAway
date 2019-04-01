@@ -47,6 +47,7 @@ export function requestCreateServer(serverName) {
                     server{
                         id
                         name
+                        image
                     }
                 }
             }
