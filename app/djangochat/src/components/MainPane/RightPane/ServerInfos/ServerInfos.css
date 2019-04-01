@@ -2,7 +2,7 @@
     height: 100%;
 }
 
-#serverButtons {
+.serverButtons {
     height: 100px;
 }
 
@@ -12,11 +12,11 @@
     margin-right: 10px;
 }
 
-#serverUsers {
+.serverUsers {
     height: 200px;
 }
 
-#channelsContainer {
+.channelsContainer {
     width: 90%;
     height: 100%;
 }

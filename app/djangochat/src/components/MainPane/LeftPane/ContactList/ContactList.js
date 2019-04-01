@@ -18,7 +18,11 @@ class ContactList extends Component {
     state = {
         serverDisplayed: true,
         addingFriend: false,
-        serverCreation: false
+        serverCreation: false,
+        defaultServerSelected: false,
+        defaultFriendSelected: false,
+        idSelectedServer: 0, 
+        idSelectedFriend: 0
     }
 
     constructor(props) {
@@ -32,6 +36,28 @@ class ContactList extends Component {
         this.serverInputRef = React.createRef();
     }
 
+    selectDefaultServer = () => {
+        if (this.props.servers.length > 0) {
+            const defaultServer = this.props.servers[this.state.idSelectedServer];
+            this.serverSelected(defaultServer.id);
+            
+            this.setState({
+                defaultServerSelected: true
+            })
+        }
+    }
+
+    selectDefaultFriend = () => {
+        if (this.props.friends.length > 0) {
+            const defaultFriend = this.props.friends[this.state.idSelectedFriend];
+            this.friendSelected(defaultFriend.friend.id);
+            
+            this.setState({
+                defaultFriendSelected: true
+            })
+        }
+    }
+
     updateDimensions = () => {
         this.forceUpdate();
     }
@@ -42,6 +68,7 @@ class ContactList extends Component {
         })
         this.props.showFriends();
         this.props.getAllUsers();
+        this.friendSelected(this.state.idSelectedFriend);
     }
 
     displayServers = () => {
@@ -49,22 +76,30 @@ class ContactList extends Component {
             serverDisplayed: true
         })
         this.props.showServers();
+        this.serverSelected(this.state.idSelectedServer);
     }
 
     friendSelected = (id) => {
-            this.props.selectFriend(id);
-            const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
-            this.props.requestMessageList(channelId);
+        this.props.selectFriend(id);
+        const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
+        this.props.requestMessageList(channelId);
+
+        this.setState({
+            idSelectedFriend: id
+        })
     }
 
     serverSelected = (serverId) => {
         this.props.selectServer(serverId);
         if(this.props.activeServerId!==serverId){
-            
             this.props.requestChannelList(serverId).then(() => {
                 this.props.selectChannelAuto(serverId);
             });
         }
+
+        this.setState({
+            idSelectedServer: serverId
+        })
     }
 
     addingFriend = () => {
@@ -130,6 +165,16 @@ class ContactList extends Component {
         }
     }
 
+    componentDidUpdate() {
+        if (!this.state.defaultServerSelected) {
+            this.selectDefaultServer();
+        }
+
+        if (!this.state.defaultFriendSelected) {
+            this.selectDefaultFriend();
+        }
+    }
+
     render() {
         // Update the displayed list
         const white = '#FFFFFF';
@@ -168,15 +213,15 @@ class ContactList extends Component {
         return (
             <div style={{ paddingTop: '10px', height: '100%', width: '100%' }}>
                 <div className="contactSelector unselectable">
-                    <div id="selectorServers" className="cursor" onClick={this.displayServers} style={{ color: styleServers }}>
+                    <div className="selectorServers cursor" onClick={this.displayServers} style={{ color: styleServers }}>
                         {selectorServersDescription}
                     </div>
-                    <div id="selectorSeparator">/</div>
-                    <div id="selectorFriends" className="cursor" onClick={this.displayFriends} style={{ color: styleFriends }}>
+                    <div className="selectorSeparator">/</div>
+                    <div className="selectorFriends cursor" onClick={this.displayFriends} style={{ color: styleFriends }}>
                         {selectorfriendsDescription}
                     </div>
                 </div>
-                <div id="contactList" className="container scrollable unselectable">
+                <div className="contactList container scrollable unselectable">
                     {!this.state.serverDisplayed ?
                         this.state.addingFriend ?
                             <div className="input-group mb-3">

@@ -40,11 +40,11 @@ class ServerSettings extends Component {
                     &times;
                 </button>
 
-                <div id="rowProfile" className="mx-auto text-center">
-                    <div id="image" className="col-3">
+                <div className="rowProfile mx-auto text-center">
+                    <div className="image col-3">
                         <img alt="" src={imageServer} width="70" height="70" />
                     </div>
-                    <div id="servername" className="col-9">
+                    <div className="servername col-9">
                         {server.name}
                     </div>
                 </div>
@@ -52,7 +52,7 @@ class ServerSettings extends Component {
                     <div className="col-12 mt-3">
                         <ImageEditor ref={this.refEditor} id={server.id} image={server.image}></ImageEditor>
                         {/* TODO Complete this part */}
-                        <input id="saveButton" type="button" value="Save" onClick={this.save}/>
+                        <input className="saveButton" type="button" value="Save" onClick={this.save}/>
                     </div>
                 </div>
             </div>

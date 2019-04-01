@@ -12,13 +12,13 @@ class MainPane extends Component {
             return (
                 <div className="container-fluid">
                     <div className="row fullHeight">
-                        <div id="leftPane" className="col-3 col-md-3 col-xl-2 sidepane pane text-white">
+                        <div className="col-3 col-md-3 col-xl-2 sidepane pane text-white">
                             <LeftPane/>
                         </div>
-                        <div id="middlePane" className={this.props.serversDisplayed?"col-9 col-md-6 col-xl-8 pane":"col-9 col-md-9 col-xl-10 pane"}>
+                        <div className={this.props.serversDisplayed?"col-9 col-md-6 col-xl-8 pane":"col-9 col-md-9 col-xl-10 pane"}>
                             <MiddlePane/>
                         </div>
-                        <div id="rightPane" className={this.props.serversDisplayed?"d-none d-md-block col-md-3 col-xl-2 sidepane pane":"d-none"}>
+                        <div className={this.props.serversDisplayed?"d-none d-md-block col-md-3 col-xl-2 sidepane pane":"d-none"}>
                             <RightPane/>
                         </div>
                     </div>
