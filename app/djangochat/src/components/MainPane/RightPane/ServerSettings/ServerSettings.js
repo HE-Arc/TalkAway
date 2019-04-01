@@ -51,9 +51,9 @@ class ServerSettings extends Component {
                 </div>
                 <div className="row">
                     <div className="col-12 mt-3">
-                        TODO Complete this part
-                        <button onClick={this.save}>Test</button>
                         <ImageEditor ref={this.refEditor} id={server.id} image={server.image}></ImageEditor>
+                        {/* TODO Complete this part */}
+                        <input id="saveButton" type="button" value="Save" onClick={this.save}/>
                     </div>
                 </div>
             </div>
