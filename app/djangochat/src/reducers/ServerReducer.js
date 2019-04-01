@@ -36,8 +36,20 @@ const serverReducer = (state = {
         case "LIST_SERVER":
             state = {
                 ...state,
-                servers: action.payload
+                servers: [
+                    ...action.payload.map(s=>
+                        ({
+                            ...s,
+                            userSet:[s.userSet.map(u=>
+                                ({
+                                    ...u,
+                                    image:undefined
+                                }))
+                            ]
+                        }))
+                ]
             };
+            console.log(action.payload)
             break;
         case "EDIT_SERVER":
             const editedServer = action.payload;

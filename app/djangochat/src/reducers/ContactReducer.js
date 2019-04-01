@@ -1,8 +1,7 @@
 const contactReducer = (state = {
     serversDisplayed: true,
-    allUsers:{
-        users:[]
-    }
+    users:[],
+    images: {}
 }, action) => {
     switch (action.type) {
         case "SHOW_FRIENDS":
@@ -17,18 +16,57 @@ const contactReducer = (state = {
                 serversDisplayed: true
             };
             break;
+        case "LOGIN":
+            const me = {}
+            me[action.payload.id] = action.payload.image
+            state = {
+                ...state,
+                images:{
+                    ...state.images,
+                    ...me
+                }
+            }
+            break;
+        case "LIST_FRIEND":
+            console.log(action.payload)
+            let imagesFriend = {}
+            action.payload.forEach(f=>{
+                imagesFriend[f.friend.id] = f.friend.image
+            })
+            state = {
+                ...state,
+                images:{
+                    ...state.images,
+                    ...imagesFriend
+                }
+            }
+            break;
+        case "LIST_SERVER":
+            const usersServers = action.payload.map(s=>s.userSet)
+            let images = {};
+            usersServers.forEach(users => {
+                users.forEach(u=>{
+                    images[u.id]=u.image
+                })
+            });
+            state = {
+                ...state,
+                images:{
+                    ...state.images,
+                    ...images
+                }
+            }
+            break;
         case "ALL_USERS":
             state = {
                 ...state,
-                allUsers: action.payload
+                users: action.payload.users
             };
             break;
         case "LOGOUT":
             state = {
                 serversDisplayed: true,
-                allUsers:{
-                    users:[]
-                }
+                users:[]
             }
             break;
         default:

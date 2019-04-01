@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr'
 
 import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
 import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
-
-import {requestFriendList}  from "../../../actions/FriendAction";
-
-import {connectChannel} from "../../../actions/WebSocketAction";
-
-import {requestServerList} from "../../../actions/ServerAction";
-
-import {toastr} from 'react-redux-toastr'
+import { requestFriendList } from "../../../actions/FriendAction";
+import { connectChannel } from "../../../actions/WebSocketAction";
+import { requestServerList } from "../../../actions/ServerAction";
 
 class MiddlePane extends Component {
 
@@ -26,7 +22,7 @@ class MiddlePane extends Component {
             messageSent: false,
             lastChannelId: 0,
             messageReceived: false,
-            wsConnected:false
+            wsConnected: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -76,7 +72,8 @@ class MiddlePane extends Component {
 
     componentDidUpdate() {
 
-        if (this.props.ws!=null && this.props.ws.readyState === WebSocket.OPEN && Number(this.props.channelId)!==0 && (!this.state.wsConnected || Number(this.state.lastChannelId) !== Number(this.props.channelId))) {
+        if (this.props.ws != null && this.props.ws.readyState === WebSocket.OPEN && Number(this.props.channelId) !== 0 &&
+            (!this.state.wsConnected || Number(this.state.lastChannelId) !== Number(this.props.channelId))) {
             this.setState({ lastChannelId: this.props.channelId });
             this.props.connectChannel(this.props.channelId);
             this.dropDown();
@@ -84,38 +81,39 @@ class MiddlePane extends Component {
 
                 let data = JSON.parse(e.data);
 
-                let message=data.message;
-                if(message!=null){
+                let message = data.message;
+                if (message != null) {
                     const messageType = message.direct_type;
-        
+
                     if (Number(message.channel_id) === Number(this.props.channelId)) {
                         this.props.addMessage(message);
                         this.setState({
                             messageReceived: true
                         });
                     } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
-                        toastr.info('New message on channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                        toastr.info('New message on channel "' + message.channel_name + '"', message.user.username + ' : ' + message.text)
                     } else if (!messageType) {
-                        toastr.info('New message on server "'+message.server_name+'" , channel "'+message.channel_name+'"', message.user.username+' : '+message.text)
+                        toastr.info('New message on server "' + message.server_name + '" , channel "' + message.channel_name + '"',
+                            message.user.username + ' : ' + message.text)
                     } else {
-                        toastr.info('New message from '+message.friend_name,message.text)
+                        toastr.info('New message from ' + message.friend_name, message.text)
                     }
 
-                }else{
+                } else {
                     let notification = JSON.parse(e.data).notification;
-                    toastr.success(notification.title,notification.text);
-                    if(notification.type==='server')
+                    toastr.success(notification.title, notification.text);
+                    if (notification.type === 'server')
                         this.props.requestServerList();
-                    else if(notification.type==='friend')
+                    else if (notification.type === 'friend')
                         this.props.requestFriendList();
                 }
             };
             this.setState({
-                wsConnected:true
+                wsConnected: true
             });
-            }
-        
-        
+        }
+
+
     }
 
     handleChange(event) {
@@ -158,7 +156,11 @@ class MiddlePane extends Component {
                     <section id="messages" onScroll={this.scroll} style={{ height: window.innerHeight - this.state.chatInputHeight }}>
                         {
                             this.props.messages.map(message => {
-                                return <MessageComponent auth={this.props.auth} contact={this.props.contact} messageObject={message} key={message.id}></MessageComponent>
+                                return <MessageComponent
+                                    auth={this.props.auth}
+                                    images={this.props.images}
+                                    messageObject={message}
+                                    key={message.id}></MessageComponent>
                             })
                         }
                     </section>
@@ -198,10 +200,11 @@ const mapsStateToProps = (state) => {
         },
         channelId: state.channel.activeChannelId,
         serverId: state.server.activeServerId,
-        ws:state.ws.ws,
-        contact: state.contact,
+        server: state.server.servers.filter(s=>s.id === state.server.activeServerId),
+        ws: state.ws.ws,
+        images: state.contact.images,
         auth: state.auth
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, requestSendMessage,connectChannel,requestServerList,requestFriendList})(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage, connectChannel, requestServerList, requestFriendList })(MiddlePane); 

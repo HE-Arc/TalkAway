@@ -84,6 +84,11 @@ export function requestServerList() {
                     name
                     id
                     image
+                    userSet{
+                        username
+                        id
+                        image
+                    }
                 }
             }
             `

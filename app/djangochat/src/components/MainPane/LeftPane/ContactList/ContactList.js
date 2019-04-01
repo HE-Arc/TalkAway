@@ -223,7 +223,7 @@ const mapsStateToProps = (state) => {
         activeFriendId: state.friend.activeFriendId,
         ws:state.ws.ws,
         username: state.auth.username,
-        allUsers: state.contact.allUsers.users.filter(
+        allUsers: state.contact.users.filter(
             u => {
                 return u.id !== state.auth.id && state.friend.friends.filter(f => {
                     return f.friend.id === u.id;

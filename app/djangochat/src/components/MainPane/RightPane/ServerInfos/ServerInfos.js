@@ -162,7 +162,7 @@ const mapsStateToProps = (state) => {
         activeChannelId: state.channel.activeChannelId,
         serverId: state.server.activeServerId,
         activeServer:state.server.servers.filter(s=>Number(s.id)===Number(state.server.activeServerId)),
-        allUsers: state.contact.allUsers.users.filter(
+        allUsers: state.contact.users.filter(
             u => {
                 return u.servers.length === u.servers.filter(
                     s => {
