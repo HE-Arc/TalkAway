@@ -22,10 +22,10 @@ class LeftPane extends Component {
                     <UserSettings switchSettings={this.switchSettings}/>
                 </div>
                 <div className={this.state.settingsVisible?"d-none":""}>
-                    <div id="settings" className="bg-secondary">
+                    <div className="settings bg-secondary">
                         <UserHeader switchSettings={this.switchSettings} />
                     </div>
-                    <div id="list">
+                    <div className="list">
                         <ContactList />
                     </div>
                 </div>

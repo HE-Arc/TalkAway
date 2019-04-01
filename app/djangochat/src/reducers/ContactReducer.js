@@ -1,6 +1,6 @@
 const contactReducer = (state = {
     serversDisplayed: true,
-    users:[],
+    users: [],
     images: {}
 }, action) => {
     switch (action.type) {
@@ -21,36 +21,47 @@ const contactReducer = (state = {
             me[action.payload.id] = action.payload.image
             state = {
                 ...state,
-                images:{
+                images: {
                     ...state.images,
                     ...me
                 }
             }
             break;
+        case "ADD_USER_SERVER":
+            let newOne = {};
+            newOne[action.payload.id] = action.payload.image
+            state = {
+                ...state,
+                images: {
+                    ...state.images,
+                    ...newOne
+                }
+            }
+            break;
         case "LIST_FRIEND":
             let imagesFriend = {}
-            action.payload.forEach(f=>{
+            action.payload.forEach(f => {
                 imagesFriend[f.friend.id] = f.friend.image
             })
             state = {
                 ...state,
-                images:{
+                images: {
                     ...state.images,
                     ...imagesFriend
                 }
             }
             break;
         case "LIST_SERVER":
-            const usersServers = action.payload.map(s=>s.userSet)
+            const usersServers = action.payload.map(s => s.userSet)
             let images = {};
             usersServers.forEach(users => {
-                users.forEach(u=>{
-                    images[u.id]=u.image
+                users.forEach(u => {
+                    images[u.id] = u.image
                 })
             });
             state = {
                 ...state,
-                images:{
+                images: {
                     ...state.images,
                     ...images
                 }
@@ -65,7 +76,7 @@ const contactReducer = (state = {
         case "LOGOUT":
             state = {
                 serversDisplayed: true,
-                users:[]
+                users: []
             }
             break;
         default:

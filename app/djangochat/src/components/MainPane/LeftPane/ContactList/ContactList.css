@@ -1,24 +1,3 @@
-@media (min-width: 1281px) {
-    
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-    
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-    
-}
-
-@media (max-width: 480px) {
-    
-}
-
-
 .row.selectable:hover {
     background-color: rgba(40, 40, 40, 200);
     cursor: pointer;
@@ -44,23 +23,23 @@
     align-items: center;
 }
 
-#selectorServers {
+.selectorServers {
     padding: 0;
     margin-right: 10px;
     display: inline-block;
 }
 
-#selectorSeparator {
+.selectorSeparator {
     display: inline-block;
 }
 
-#selectorFriends {
+.selectorFriends {
     padding: 0;
     margin-left: 10px;
     display: inline-block;
 }
 
-#contactList {
+.contactList {
     width: 100%;
     height: 100%;
 }

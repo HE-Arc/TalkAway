@@ -17,7 +17,8 @@ class ServerInfos extends Component {
         super(props);
         this.state = {
             channelCreation: false,
-            addingUser: false
+            addingUser: false,
+            defaultChannelSelected: false
         };
 
         this.newUserInput = React.createRef();
@@ -48,9 +49,9 @@ class ServerInfos extends Component {
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
-                    text:this.props.username+' added you on server "'+this.props.activeServer[0].name+'"',
-                    title:'Added to server',
-                    type:'server'
+                    text: this.props.username + ' added you on server "' + this.props.server.name + '"',
+                    title: 'Added to server',
+                    type: 'server'
                 }
             }));
         }
@@ -108,7 +109,7 @@ class ServerInfos extends Component {
         
             return (
                 <div id="serverContainer" className="container">
-                    <div id="serverButtons" className="row">
+                    <div className="serverButtons row">
                     {
                         this.state.addingUser ?
                             <div className="input-group mb-3">
@@ -128,7 +129,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr" />
                 <div id="serverChannels" className="row">
-                    <div id="channelsContainer" className="container scrollableServer unselectable">
+                    <div className="channelsContainer container scrollableServer unselectable">
                         {channelComponents}
                         <div className="row mt-3">
                             <div className={this.state.channelCreation ? "d-none" : ""}>
@@ -146,8 +147,16 @@ class ServerInfos extends Component {
                     </div>
                 </div>
                 <hr className="serverhr" />
-                <div id="serverUsers" className="row">
-                    {/* TODO Add user section */}
+                <div className="serverUsers row">
+                    {
+                        this.props.server.userSet.map(u => {
+                            let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];
+                            return (<div className="col-3" key={u.id}>
+                                <p>{u.username}</p>
+                                <img className="image-profile2" src={image} alt={u.username} />
+                            </div>);
+                        })
+                    }
                 </div>
             </div>
         );
@@ -157,20 +166,21 @@ class ServerInfos extends Component {
 const mapsStateToProps = (state) => {
     return {
         channels: state.channel.channels.filter(c => c.serverId === state.server.activeServerId),
-        ws:state.ws.ws,
+        ws: state.ws.ws,
         username: state.auth.username,
         activeChannelId: state.channel.activeChannelId,
         serverId: state.server.activeServerId,
-        activeServer:state.server.servers.filter(s=>Number(s.id)===Number(state.server.activeServerId)),
+        server: state.server.servers.filter(s => s.id === state.server.activeServerId)[0],
         allUsers: state.contact.users.filter(
             u => {
                 return u.servers.length === u.servers.filter(
                     s => {
-                        return s.id!==state.server.activeServerId;
+                        return s.id !== state.server.activeServerId;
                     }
                 ).length;
             }
-        )
+        ),
+        images: state.contact.images
     }
 }
 

@@ -1,71 +1,71 @@
-#close-settings {
+.close-settings {
     position: absolute;
     top: 5px;
     right: 10px;
     color: white;
 }
 
-#todo-image {
+.todo-image {
     width: 90%;
     left: 5%;
 }
 
-#settings-username {
+.settings-username {
     width: 90%;
     left: 5%;
 }
 
-#settings-separator {
+.settings-separator {
     width: 90%;
     left: 5%;
 }
 
-#todo {
+.todo {
     width: 90%;
     left: 5%;
 }
 
-#email-label {
+.email-label {
     width: 90%;
     left: 5%;
 }
 
-#email {
+.email {
     width: 90%;
     left: 5%;
 }
 
-#old-password-label {
+.old-password-label {
     width: 90%;
     left: 5%;
 }
 
-#old-password {
+.old-password {
     width: 90%;
     left: 5%;
 }
 
-#new-password-label {
+.new-password-label {
     width: 90%;
     left: 5%;
 }
 
-#new-password {
+.new-password {
     width: 90%;
     left: 5%;
 }
 
-#repeat-password-label {
+.repeat-password-label {
     width: 90%;
     left: 5%;
 }
 
-#repeat-password {
+.repeat-password {
     width: 90%;
     left: 5%;
 }
 
-#saveButton {
+.saveButton {
     background-color: rgb(71, 71, 206);
     border: none;
     color: white;
@@ -78,7 +78,7 @@
     height: 40px;
 }
 
-#disconnectButton {
+.disconnectButton {
     background-color: red;
     border: none;
     color: white;
