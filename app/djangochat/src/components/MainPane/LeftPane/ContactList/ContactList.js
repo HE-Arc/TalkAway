@@ -19,7 +19,8 @@ class ContactList extends Component {
         serverDisplayed: true,
         addingFriend: false,
         serverCreation: false,
-        defaultSelected: false
+        defaultServerSelected: false,
+        defaultFriendSelected: false
     }
 
     constructor(props) {
@@ -33,13 +34,24 @@ class ContactList extends Component {
         this.serverInputRef = React.createRef();
     }
 
-    selectDefault = () => {
+    selectDefaultServer = () => {
         if (this.props.servers.length > 0) {
             const defaultServer = this.props.servers[0];
             this.serverSelected(defaultServer.id);
             
             this.setState({
-                defaultSelected: true
+                defaultServerSelected: true
+            })
+        }
+    }
+
+    selectDefaultFriend = () => {
+        if (this.props.friends.length > 0) {
+            const defaultFriend = this.props.friends[0];
+            this.friendSelected(defaultFriend.friend.id);
+            
+            this.setState({
+                defaultFriendSelected: true
             })
         }
     }
@@ -143,8 +155,12 @@ class ContactList extends Component {
     }
 
     componentDidUpdate() {
-        if (!this.state.defaultSelected) {
-            this.selectDefault();
+        if (!this.state.defaultServerSelected) {
+            this.selectDefaultServer();
+        }
+
+        if (!this.state.defaultFriendSelected) {
+            this.selectDefaultFriend();
         }
     }
 
