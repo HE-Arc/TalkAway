@@ -7,13 +7,15 @@ export function selectFriend(friendId) {
             type: 'SELECT_FRIEND',
             payload: friendId
         });
-        dispatch({
-            type: 'SELECT_CHANNEL',
-            payload: {
-                isServerChannel:false,
-                channelId:getState().friend.friends.filter(f=>f.friend.id === friendId)[0].channelId
-            }
-        });
+        if(friendId !== undefined){
+            dispatch({
+                type: 'SELECT_CHANNEL',
+                payload: {
+                    isServerChannel:false,
+                    channelId:getState().friend.friends.filter(f=>f.friend.id === friendId)[0].channelId
+                }
+            });
+        }
     };
 }
 
