@@ -29,8 +29,8 @@ class MessageComponent extends Component {
                     <img className="messageImage" alt="" src={imageprofile} width="50" height="50"/>
                 </div>
                 <div className="messageContent">
-                    <div>
-                        <p className="sender">{message.user.username}</p><p id="time">{this.extractTime(message.date)}</p>
+                    <div className="messageHeader">
+                        <p className="sender">{message.user.username}</p><p className="time">{this.extractTime(message.date)}</p>
                     </div>
                     <div className="message">
                         {/*Source https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746*/}

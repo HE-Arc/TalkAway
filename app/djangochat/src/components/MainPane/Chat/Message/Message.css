@@ -27,7 +27,7 @@
     display: inline-block;
 }
 
-#sender {
+.sender {
     position: relative;
     top: 5px;
     font-size: 1em;
@@ -35,7 +35,7 @@
     display: inline-block;
 }
 
-#time {
+.time {
     position: relative;
     top: 5px;
     left: 10px;
