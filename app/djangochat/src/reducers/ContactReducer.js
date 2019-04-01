@@ -28,7 +28,6 @@ const contactReducer = (state = {
             }
             break;
         case "LIST_FRIEND":
-            console.log(action.payload)
             let imagesFriend = {}
             action.payload.forEach(f=>{
                 imagesFriend[f.friend.id] = f.friend.image

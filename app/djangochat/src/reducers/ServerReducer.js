@@ -49,7 +49,6 @@ const serverReducer = (state = {
                         }))
                 ]
             };
-            console.log(action.payload)
             break;
         case "EDIT_SERVER":
             const editedServer = action.payload;

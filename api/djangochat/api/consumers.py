@@ -86,7 +86,8 @@ class ChatConsumer(WebsocketConsumer):
                             'text': message.text,
                             'date': json.dumps(message.date, cls=DjangoJSONEncoder),
                             'user': {
-                                'username': message.user.username
+                                'username': message.user.username,
+                                'id': self.user.id
                             },
                             'channel_id': message.channel.id,
                             'friend_id': friend_id,
@@ -106,7 +107,8 @@ class ChatConsumer(WebsocketConsumer):
                             'text': message.text,
                             'date': json.dumps(message.date, cls=DjangoJSONEncoder),
                             'user': {
-                                'username': message.user.username
+                                'username': message.user.username,
+                                'id': self.user.id
                             },
                             'channel_id': message.channel.id,
                             'server_id': self.server.id,
