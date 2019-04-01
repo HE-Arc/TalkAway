@@ -17,7 +17,8 @@ class ServerInfos extends Component {
         super(props);
         this.state = {
             channelCreation: false,
-            addingUser: false
+            addingUser: false,
+            defaultChannelSelected: false
         };
 
         this.newUserInput = React.createRef();
@@ -92,23 +93,23 @@ class ServerInfos extends Component {
     }
 
     render() {
-        let channelComponents = '';
-        channelComponents = this.props.channels.map((channel) => {
-            const channelId = channel.id;
-            let classes = ["row"];
-            if (channelId === this.props.activeChannelId) {
-                classes.push("selected");
-            } else {
-                classes.push("selectable");
-            }
-            return (<div key={channel.id} className={classes.join(' ')}>
-                <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
-            </div>);
-        });
-
-        return (
-            <div id="serverContainer" className="container">
-                <div id="serverButtons" className="row">
+            let channelComponents = '';
+            channelComponents = this.props.channels.map((channel) => {
+                const channelId = channel.id;
+                let classes = ["row"];
+                if (channelId === this.props.activeChannelId) {
+                    classes.push("selected");
+                } else {
+                    classes.push("selectable");
+                }
+                return (<div key={channel.id} className={classes.join(' ')}>
+                    <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
+                </div>);
+            });
+        
+            return (
+                <div id="serverContainer" className="container">
+                    <div className="serverButtons row">
                     {
                         this.state.addingUser ?
                             <div className="input-group mb-3">
@@ -128,7 +129,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr" />
                 <div id="serverChannels" className="row">
-                    <div id="channelsContainer" className="container scrollableServer unselectable">
+                    <div className="channelsContainer container scrollableServer unselectable">
                         {channelComponents}
                         <div className="row mt-3">
                             <div className={this.state.channelCreation ? "d-none" : ""}>
@@ -146,7 +147,7 @@ class ServerInfos extends Component {
                     </div>
                 </div>
                 <hr className="serverhr" />
-                <div id="serverUsers" className="row">
+                <div className="serverUsers row">
                     {
                         this.props.server.userSet.map(u => {
                             let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];

@@ -1,11 +1,11 @@
-#serverProfile {
+.serverProfile {
     height: 15vh;
 }
 
-#serverInfos {
+.serverInfos {
     height: 85vh;
 }
 
-#divImageServer img {
+.divImageServer img {
     border-radius: 100%
 }

@@ -1,4 +1,4 @@
-#rowProfileServer {
+.rowProfileServer {
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -7,19 +7,19 @@
     height: 100%;
 }
 
-#divImageServer {
+.divImageServer {
     position: absolute;
     height: 100%;
     width: 50%;
 }
 
-#imageServer {
+.imageServer {
     margin-top: 20px;
     width: 60px;
     height: 60px;
 }
 
-#servername {
+.servername {
     padding-left: 10px;
     font-size: 1em;
     position: absolute;
