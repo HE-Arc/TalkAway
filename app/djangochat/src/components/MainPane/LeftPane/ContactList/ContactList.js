@@ -221,8 +221,7 @@ class ContactList extends Component {
                         {selectorfriendsDescription}
                     </div>
                 </div>
-                <div className="contactList container scrollable unselectable">
-                    {!this.state.serverDisplayed ?
+                {!this.state.serverDisplayed ?
                         this.state.addingFriend ?
                             <div className="input-group mb-3">
                                 <Autocomplete ref={(newUserInput) => { this.newUserInput = newUserInput; }}
@@ -239,12 +238,12 @@ class ContactList extends Component {
                                 <button onClick={this.addingFriend}>Add friend</button>
                             </div>
                         :
-                        <div className="row mb-3">
-                            <div className={this.state.serverCreation?"d-none":""}>
-                                <button onClick={this.showServerCreation}>Create a server</button>
+                        <div className="full-width">
+                            <div className={this.state.serverCreation?"d-none":"full-width"}>
+                                <button className="addServerButton" onClick={this.showServerCreation}>Create a server</button>
                             </div>
                             <div className={!this.state.serverCreation?"d-none":""}>
-                                <div className="input-group mb-3">
+                                <div className="input-group addServerField">
                                     <input ref={this.serverInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="basic-addon2" />
                                     <div className="input-group-append">
                                         <button onClick={this.createServer} className="btn btn-primary" type="button">Add</button>
@@ -253,6 +252,7 @@ class ContactList extends Component {
                             </div>
                         </div>
                     }
+                <div className="contactList container scrollable unselectable">
                     {contactRows}
                 </div>
             </div>
