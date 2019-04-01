@@ -22,6 +22,14 @@ function _editServer(data) {
     }
 }
 
+function _addUser(data) {
+    return {
+        type: 'ADD_USER_SERVER',
+        payload: data
+    }
+}
+
+
 export function selectServer(serverId) {
     return (dispatch) => {
         dispatch({
@@ -48,6 +56,10 @@ export function requestCreateServer(serverName) {
                         id
                         name
                         image
+                        userSet{
+                            username
+                            id
+                        }
                     }
                 }
             }
@@ -164,6 +176,11 @@ export function requestAddUser(userId, serverId) {
                 addUser(userId: ${userId}, serverId: ${serverId}) {
                     right {
                         id
+                        user {
+                            image
+                            id
+                            username
+                        }
                     }
                 }
             }
@@ -181,6 +198,8 @@ export function requestAddUser(userId, serverId) {
                 throw new Error('Failed')
             }
             return res.json();
+        }).then((response)=>{
+            dispatch(_addUser(response.data.addUser.right.user))
         })
     }
 }

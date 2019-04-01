@@ -1,6 +1,6 @@
 const serverReducer = (state = {
     servers: [],
-    activeServerId: 0
+    activeServerId: '0'
 }, action) => {
     switch (action.type) {
         case "SELECT_CHANNEL":
@@ -24,9 +24,28 @@ const serverReducer = (state = {
                 activeServerId: action.payload
             };
             break;
+        case "ADD_USER_SERVER":
+            state = {
+                ...state,
+                servers: [
+                    ...state.servers.map(s=>
+                        ({
+                            ...s,
+                            userSet:[
+                                ...s.userSet,
+                                {
+                                    ...action.payload,
+                                    image: undefined
+                                }
+                            ]
+                        }))
+                ]
+            }
+            break;
         case "CREATE_SERVER":
             state = {
                 ...state,
+                activeServerId: Number(state.activeServerId) <= 0 ? action.payload.id : state.activeServerId,
                 servers: [
                     ...state.servers,
                     action.payload
@@ -36,16 +55,16 @@ const serverReducer = (state = {
         case "LIST_SERVER":
             state = {
                 ...state,
+                activeServerId: Number(state.activeServerId) <= 0 && action.payload.length > 0 ? action.payload[0].id : state.activeServerId,
                 servers: [
                     ...action.payload.map(s=>
                         ({
                             ...s,
-                            userSet:[s.userSet.map(u=>
+                            userSet:s.userSet.map(u=>
                                 ({
                                     ...u,
                                     image:undefined
                                 }))
-                            ]
                         }))
                 ]
             };
@@ -60,7 +79,7 @@ const serverReducer = (state = {
         case "LOGOUT":
             state = {
                 servers: [],
-                activeServerId: 0
+                activeServerId: '0'
             }
             break;
         default:
