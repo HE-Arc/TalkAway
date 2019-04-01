@@ -84,7 +84,7 @@ class Query(graphene.ObjectType):
 
     @login_required
     def resolve_all_users(self, info, **kwargs):
-        return get_user_model().objects.all().exclude(username="admin")
+        return get_user_model().objects.all()
 
 
 class CreateUser(graphene.Mutation):

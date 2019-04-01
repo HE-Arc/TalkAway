@@ -109,7 +109,6 @@ export function requestEditUser(email, newPassword2,newPassword, oldPassword,ima
             }
             return res.json();
         }).then(resData => {
-            console.log(resData.data.user)
             dispatch(_editProfile(resData.data.editUser.user))
             return resData.data.editUser.ok;
         });

@@ -8,7 +8,7 @@ import './MainPane.css';
 class MainPane extends Component {
 
     render() {
-        if (this.props.serversDisplayed) {
+        if (this.props.serversDisplayed && this.props.serverDispo) {
             return (
                 <div className="container-fluid">
                     <div className="row fullHeight">
@@ -43,7 +43,8 @@ class MainPane extends Component {
 
 const mapsStateToProps = (state) => {
     return {
-        serversDisplayed: state.contact.serversDisplayed
+        serversDisplayed: state.contact.serversDisplayed,
+        serverDispo: state.server.servers.length > 0
     }
 }
 

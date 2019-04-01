@@ -19,7 +19,6 @@ class ServerSettings extends Component {
         console.log(image);
 
         const name = server.name;
-        //const image = ;
         const userAddingRight = 1;
         this.props.requestEditServer(server.id, name, image, userAddingRight)
     }
