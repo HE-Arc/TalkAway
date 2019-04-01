@@ -68,7 +68,9 @@ class ContactList extends Component {
         })
         this.props.showFriends();
         this.props.getAllUsers();
-        this.friendSelected(this.state.idSelectedFriend);
+        if(Number(this.state.idSelectedFriend)>0){
+            this.friendSelected(this.state.idSelectedFriend);
+        }
     }
 
     displayServers = () => {
