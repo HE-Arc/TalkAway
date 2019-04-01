@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toastr } from 'react-redux-toastr'
 
 import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
@@ -22,7 +21,8 @@ class MiddlePane extends Component {
             messageSent: false,
             lastChannelId: 0,
             messageReceived: false,
-            wsConnected: false
+            wsConnected: false,
+            messageEventListenerAdded:false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -77,43 +77,28 @@ class MiddlePane extends Component {
             this.setState({ lastChannelId: this.props.channelId });
             this.props.connectChannel(this.props.channelId);
             this.dropDown();
-            this.props.ws.onmessage = (e) => {
+            if(!this.state.messageEventListenerAdded){
+                this.props.ws.addEventListener('message',messageData => {
+                    if(messageData.hasOwnProperty('data')){
+                        let message=JSON.parse(messageData.data).message; 
 
-                let data = JSON.parse(e.data);
+                        if(Number(message.channel_id)===Number(this.props.channelId)){
+                            this.props.addMessage(message);
 
-                let message = data.message;
-                if (message != null) {
-                    const messageType = message.direct_type;
-
-                    if (Number(message.channel_id) === Number(this.props.channelId)) {
-                        this.props.addMessage(message);
-                        this.setState({
-                            messageReceived: true
-                        });
-                    } else if (!messageType && Number(message.server_id) === Number(this.props.serverId)) {
-                        toastr.info('New message on channel "' + message.channel_name + '"', message.user.username + ' : ' + message.text)
-                    } else if (!messageType) {
-                        toastr.info('New message on server "' + message.server_name + '" , channel "' + message.channel_name + '"',
-                            message.user.username + ' : ' + message.text)
-                    } else {
-                        toastr.info('New message from ' + message.friend_name, message.text)
+                            this.setState({
+                                messageReceived: true,
+                                messageEventListenerAdded: true
+                            });
+                        }
                     }
-
-                } else {
-                    let notification = JSON.parse(e.data).notification;
-                    toastr.success(notification.title, notification.text);
-                    if (notification.type === 'server')
-                        this.props.requestServerList();
-                    else if (notification.type === 'friend')
-                        this.props.requestFriendList();
-                }
-            };
+                });
+                this.setState({ messageEventListenerAdded: true});
+            }
             this.setState({
                 wsConnected: true
             });
+            
         }
-
-
     }
 
     handleChange(event) {
