@@ -14,6 +14,8 @@ class ChatConsumer(WebsocketConsumer):
         self.user = self.scope['user']
         self.channel = 0
 
+        self.subscribedServers = self.user.servers.all()
+
         self.room_name = self.user.username
         self.room_group_name = "all"
 
@@ -24,6 +26,13 @@ class ChatConsumer(WebsocketConsumer):
         )
         self.accept()
 
+        async_to_sync(self.channel_layer.group_send)(
+            self.room_group_name,
+            {
+                'type': 'chat_message',
+                'action': 'new_user'
+            })
+
     def disconnect(self, close_code):
         # Leave room group
         async_to_sync(self.channel_layer.group_discard)(
@@ -31,15 +40,15 @@ class ChatConsumer(WebsocketConsumer):
             self.channel_name
         )
 
-    def handle_notification(self,notification):
+    def handle_notification(self, notification):
         async_to_sync(self.channel_layer.group_send)(
-                    self.room_group_name,
-                    {
-                        'type': 'chat_message',
-                        'notification': notification
-                    })
+            self.room_group_name,
+            {
+                'type': 'chat_message',
+                'notification': notification
+            })
 
-    def handle_channel_change(self,new_channel_id):
+    def handle_channel_change(self, new_channel_id):
         self.channel = Channel.objects.get(id=new_channel_id)
         if self.channel.direct_type:
             self.friend = Friend.objects.get(chanel=self.channel)
@@ -49,13 +58,13 @@ class ChatConsumer(WebsocketConsumer):
         else:
             self.server = self.channel.server
 
-            self.subscribedServers = self.user.servers.all()
+            
 
             if self.server not in self.subscribedServers:
                 raise Exception(
                     "Authentication error, the user isn't allowed to join this channel")
 
-    def handle_new_message(self,message_id):
+    def handle_new_message(self, message_id):
         message = Message.objects.get(id=message_id)
 
         if self.channel.direct_type:
@@ -100,8 +109,8 @@ class ChatConsumer(WebsocketConsumer):
                         'channel_id': message.channel.id,
                         'server_id': self.server.id,
                         'direct_type': False,
-                        'channel_name':message.channel.name,
-                        'server_name':self.server.name
+                        'channel_name': message.channel.name,
+                        'server_name': self.server.name
                     }
                 })
 
@@ -126,18 +135,8 @@ class ChatConsumer(WebsocketConsumer):
     def chat_message(self, event):
 
         try:
-            notification = event['notification']
-            if self.user.id == int(notification['user_id']):
-                self.send(text_data=json.dumps({
-                            'notification': notification
-                        }))
-        except:
-            pass
-            
-        try:
             message = event['message']
             if self.channel != 0:
-                
                 if message['direct_type']:
                     if message['friend_id'] == self.user.id or message['my_id'] == self.user.id:
                         self.send(text_data=json.dumps({
@@ -150,6 +149,24 @@ class ChatConsumer(WebsocketConsumer):
                                 'message': message
                             }))
                             break
-        except:
+        except Exception as e:
             pass
 
+        try:
+            notification = event['notification']
+            if self.user.id == int(notification['user_id']):
+                self.send(text_data=json.dumps({
+                    'notification': notification
+                }))
+                if notification.type=="server":
+                    self.subscribedServers = self.user.servers.all()
+        except Exception as e:
+            pass
+
+        try:
+            action = event['action']
+            self.send(text_data=json.dumps({
+                'action': action
+            }))
+        except Exception as e:
+            pass

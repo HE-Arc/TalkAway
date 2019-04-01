@@ -13,6 +13,10 @@ import {
     requestServerList
 } from "./ServerAction";
 
+import{
+    getAllUsers
+} from"./ContactAction";
+
 export function initWebSocket() {
     return (dispatch, getState) => {
         document.cookie = "token=" + getState().auth.token + ";max-age=1";
@@ -23,7 +27,6 @@ export function initWebSocket() {
             ws.onmessage = (e) => {
                 if (e.data) {
                     let data = JSON.parse(e.data);
-
                     if (data.hasOwnProperty('message')) {
                         let message = data.message;
                         if (Number(message.channel_id) === Number(getState().channel.activeChannelId)) {
@@ -45,7 +48,9 @@ export function initWebSocket() {
                         else if (notification.type === 'friend')
                             dispatch(requestFriendList());
                     } else if (data.hasOwnProperty('action')) {
-
+                        let action=data.action;
+                        if(action==='new_user')
+                            dispatch(getAllUsers());
                     }
                 };
             }
