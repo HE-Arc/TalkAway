@@ -20,7 +20,9 @@ class ContactList extends Component {
         addingFriend: false,
         serverCreation: false,
         defaultServerSelected: false,
-        defaultFriendSelected: false
+        defaultFriendSelected: false,
+        idSelectedServer: 0, 
+        idSelectedFriend: 0
     }
 
     constructor(props) {
@@ -36,7 +38,7 @@ class ContactList extends Component {
 
     selectDefaultServer = () => {
         if (this.props.servers.length > 0) {
-            const defaultServer = this.props.servers[0];
+            const defaultServer = this.props.servers[this.state.idSelectedServer];
             this.serverSelected(defaultServer.id);
             
             this.setState({
@@ -47,7 +49,7 @@ class ContactList extends Component {
 
     selectDefaultFriend = () => {
         if (this.props.friends.length > 0) {
-            const defaultFriend = this.props.friends[0];
+            const defaultFriend = this.props.friends[this.state.idSelectedFriend];
             this.friendSelected(defaultFriend.friend.id);
             
             this.setState({
@@ -66,6 +68,7 @@ class ContactList extends Component {
         })
         this.props.showFriends();
         this.props.getAllUsers();
+        this.friendSelected(this.state.idSelectedFriend);
     }
 
     displayServers = () => {
@@ -73,22 +76,30 @@ class ContactList extends Component {
             serverDisplayed: true
         })
         this.props.showServers();
+        this.serverSelected(this.state.idSelectedServer);
     }
 
     friendSelected = (id) => {
             this.props.selectFriend(id);
             const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
             this.props.requestMessageList(channelId);
+
+            this.setState({
+                idSelectedFriend: id
+            })
     }
 
     serverSelected = (serverId) => {
         this.props.selectServer(serverId);
         if(this.props.activeServerId!==serverId){
-            
             this.props.requestChannelList(serverId).then(() => {
                 this.props.selectChannelAuto(serverId);
             });
         }
+
+        this.setState({
+            idSelectedServer: serverId
+        })
     }
 
     addingFriend = () => {
