@@ -106,7 +106,14 @@ class ServerInfos extends Component {
                     <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
                 </div>);
             });
-        
+            
+            const users = this.props.server.userSet.map(u => {
+                let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];
+                return (<div className="col-3" key={u.id}>
+                    <p>{u.username}</p>
+                    <img className="image-profile2" src={image} alt={u.username} />
+                </div>);
+            })
             return (
                 <div id="serverContainer" className="container">
                     <div className="serverButtons row">
@@ -149,13 +156,7 @@ class ServerInfos extends Component {
                 <hr className="serverhr" />
                 <div className="serverUsers row">
                     {
-                        this.props.server.userSet.map(u => {
-                            let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];
-                            return (<div className="col-3" key={u.id}>
-                                <p>{u.username}</p>
-                                <img className="image-profile2" src={image} alt={u.username} />
-                            </div>);
-                        })
+                        users
                     }
                 </div>
             </div>

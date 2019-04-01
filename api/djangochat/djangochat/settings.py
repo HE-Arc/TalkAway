@@ -157,6 +157,25 @@ CHANNEL_LAYERS = {
     },
 }
 
+DATABASES = {  # Debug databases on sqlite
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+if not DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('GROUPNAME', 'djangochat'),
+            'USER': os.getenv('GROUPNAME', 'djangochat'),
+            'PASSWORD': os.getenv('PASSWORD', '1234'),
+            'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+            'PORT': os.getenv('POSTGRES_PORT', 5432),
+        }
+}
+
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
