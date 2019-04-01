@@ -18,7 +18,8 @@ class ContactList extends Component {
     state = {
         serverDisplayed: true,
         addingFriend: false,
-        serverCreation: false
+        serverCreation: false,
+        defaultSelected: false
     }
 
     constructor(props) {
@@ -30,6 +31,17 @@ class ContactList extends Component {
         window.addEventListener("resize", this.updateDimensions);
 
         this.serverInputRef = React.createRef();
+    }
+
+    selectDefault = () => {
+        if (this.props.servers.length > 0) {
+            const defaultServer = this.props.servers[0];
+            this.serverSelected(defaultServer.id);
+            
+            this.setState({
+                defaultSelected: true
+            })
+        }
     }
 
     updateDimensions = () => {
@@ -127,6 +139,12 @@ class ContactList extends Component {
     _handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             this.createServer();
+        }
+    }
+
+    componentDidUpdate() {
+        if (!this.state.defaultSelected) {
+            this.selectDefault();
         }
     }
 
