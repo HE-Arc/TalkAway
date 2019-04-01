@@ -80,13 +80,13 @@ class ContactList extends Component {
     }
 
     friendSelected = (id) => {
-            this.props.selectFriend(id);
-            const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
-            this.props.requestMessageList(channelId);
+        this.props.selectFriend(id);
+        const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
+        this.props.requestMessageList(channelId);
 
-            this.setState({
-                idSelectedFriend: id
-            })
+        this.setState({
+            idSelectedFriend: id
+        })
     }
 
     serverSelected = (serverId) => {
@@ -213,15 +213,15 @@ class ContactList extends Component {
         return (
             <div style={{ paddingTop: '10px', height: '100%', width: '100%' }}>
                 <div className="contactSelector unselectable">
-                    <div id="selectorServers" className="cursor" onClick={this.displayServers} style={{ color: styleServers }}>
+                    <div className="selectorServers cursor" onClick={this.displayServers} style={{ color: styleServers }}>
                         {selectorServersDescription}
                     </div>
-                    <div id="selectorSeparator">/</div>
-                    <div id="selectorFriends" className="cursor" onClick={this.displayFriends} style={{ color: styleFriends }}>
+                    <div className="selectorSeparator">/</div>
+                    <div className="selectorFriends cursor" onClick={this.displayFriends} style={{ color: styleFriends }}>
                         {selectorfriendsDescription}
                     </div>
                 </div>
-                <div id="contactList" className="container scrollable unselectable">
+                <div className="contactList container scrollable unselectable">
                     {!this.state.serverDisplayed ?
                         this.state.addingFriend ?
                             <div className="input-group mb-3">

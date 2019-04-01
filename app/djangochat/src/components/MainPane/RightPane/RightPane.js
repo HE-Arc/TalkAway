@@ -21,10 +21,10 @@ class RightPane extends Component{
             component = (<ServerSettings switchSettings={this.switchSettings} />);
         } else {
             component = (<div>
-                <div id="serverProfile">
+                <div className="serverProfile">
                     <ServerProfile/>
                 </div>
-                <div id="serverInfos" className="bg-secondary">
+                <div className="serverInfos bg-secondary">
                     <ServerInfos switchSettings={this.switchSettings} />
                 </div>
             </div>);

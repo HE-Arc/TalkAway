@@ -45,7 +45,7 @@
     border-radius: 100%;
 }
 
-#connection {
+.connection {
     position: absolute;
     left: 55px;
     top: 60px;
@@ -53,7 +53,7 @@
     height: 25px;
 }
 
-#rowProfile {
+.rowProfile {
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -61,11 +61,6 @@
     margin-left: calc((100% - 180px) / 2);
     height: 100%;
     cursor: pointer;
-}
-
-#settingsButton {
-    padding-top: 42px;
-    padding-left: 0;
 }
 
 .cursor {

@@ -17,7 +17,8 @@ class ServerInfos extends Component {
         super(props);
         this.state = {
             channelCreation: false,
-            addingUser: false
+            addingUser: false,
+            defaultChannelSelected: false
         };
 
         this.newUserInput = React.createRef();
@@ -108,7 +109,7 @@ class ServerInfos extends Component {
         
             return (
                 <div id="serverContainer" className="container">
-                    <div id="serverButtons" className="row">
+                    <div className="serverButtons row">
                     {
                         this.state.addingUser ?
                             <div className="input-group mb-3">
@@ -128,7 +129,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr" />
                 <div id="serverChannels" className="row">
-                    <div id="channelsContainer" className="container scrollableServer unselectable">
+                    <div className="channelsContainer container scrollableServer unselectable">
                         {channelComponents}
                         <div className="row mt-3">
                             <div className={this.state.channelCreation ? "d-none" : ""}>
@@ -146,7 +147,7 @@ class ServerInfos extends Component {
                     </div>
                 </div>
                 <hr className="serverhr" />
-                <div id="serverUsers" className="row">
+                <div className="serverUsers row">
                     {/* TODO Add user section */}
                 </div>
             </div>

@@ -14,11 +14,11 @@ class ServerProfile extends Component {
             imageServer = require('../images/profile.png');
         }
         return (
-            <div id="rowProfileServer">
-                <div id="divImageServer">
-                    <img id="imageServer" alt="" src={imageServer} width="50" height="50" />
+            <div className="rowProfileServer">
+                <div className="divImageServer">
+                    <img className="imageServer" alt="" src={imageServer} width="50" height="50" />
                 </div>
-                <div id="servername">
+                <div className="servername">
                     {this.props.activeServer[0] !== undefined ? this.props.activeServer[0].name : "X"}
                 </div>
             </div>
