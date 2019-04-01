@@ -235,7 +235,7 @@ class ContactList extends Component {
                             </div>
                             :
                             <div>
-                                <button onClick={this.addingFriend}>Add friend</button>
+                                <button className="addFriendButton" onClick={this.addingFriend}>Add friend</button>
                             </div>
                         :
                         <div className="full-width">
