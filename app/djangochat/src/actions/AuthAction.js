@@ -88,6 +88,9 @@ export function requestEditUser(email, newPassword2,newPassword, oldPassword,ima
             mutation{
                 editUser(image:"${image}",newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
                     ok
+                    user {
+                        image
+                    }
                 }
             }
             `
@@ -106,11 +109,18 @@ export function requestEditUser(email, newPassword2,newPassword, oldPassword,ima
             }
             return res.json();
         }).then(resData => {
+            dispatch(_editProfile(resData.data.editUser.user))
             return resData.data.editUser.ok;
         });
     };
 }
 
+function _editProfile(user) {
+    return {
+        type: 'EDIT_PROFIL',
+        payload: user
+    };
+}
 
 function _logout() {
     return {

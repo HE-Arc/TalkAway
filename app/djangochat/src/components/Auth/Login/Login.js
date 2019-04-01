@@ -1,13 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {requestLogin} from "../../../actions/AuthAction";
+import { requestLogin } from "../../../actions/AuthAction";
 import '../Auth.css';
 
 class Login extends React.Component {
     state = {
-        errors : null,
-        shakingError : false
+        errors: null,
+        shakingError: false
     }
 
     constructor(props) {
@@ -21,7 +21,7 @@ class Login extends React.Component {
             errors: 'Invalid credentials',
             shakingError: true
         });
-        setTimeout(()=>{
+        setTimeout(() => {
             this.setState({
                 shakingError: false
             })
@@ -39,11 +39,10 @@ class Login extends React.Component {
             return;
         }
 
-        console.log("Request login");
         this
             .props
             .requestLogin(username, password)
-            .catch((error)=>{
+            .catch((error) => {
                 this.showError();
             });
     }
@@ -53,7 +52,7 @@ class Login extends React.Component {
             <React.Fragment>
                 <h1 className="h3 mb-3 font-weight-normal">Welcome back!</h1>
 
-                <div className={this.state.shakingError ? 'ahashakeheartache':''}>
+                <div className={this.state.shakingError ? 'ahashakeheartache' : ''}>
                     <span style={{
                         color: "red"
                     }}>{this.state.errors}</span>
@@ -66,7 +65,7 @@ class Login extends React.Component {
                     placeholder="Username"
                     required
                     autoFocus
-                    ref={this.usernameRef}/>
+                    ref={this.usernameRef} />
                 <label htmlFor="inputPassword" className="sr-only">Password</label>
                 <input
                     type="password"
@@ -74,11 +73,11 @@ class Login extends React.Component {
                     className="form-control last"
                     placeholder="Password"
                     required
-                    ref={this.passwordRef}/>
+                    ref={this.passwordRef} />
                 <button className="btn btn-lg btn-primary btn-block" onClick={this.submit}>Log in</button>
             </React.Fragment>
         );
     }
 };
 
-export default connect(null, {requestLogin})(Login);
+export default connect(null, { requestLogin })(Login);

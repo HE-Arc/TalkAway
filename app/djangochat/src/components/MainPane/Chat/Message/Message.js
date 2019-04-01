@@ -26,16 +26,16 @@ class MessageComponent extends Component {
         return (
             <div className="messageBox">
                 <div className="messagePicture">
-                    <img className="messageImage" alt="" src={imageprofile} width="50" height="50"/>
+                    <img className="messageImage" alt="" src={imageprofile} width="50" height="50" />
                 </div>
                 <div className="messageContent">
                     <div className="messageHeader">
                         <p className="sender">{message.user.username}</p><p className="time">{this.extractTime(message.date)}</p>
                     </div>
                     <div className="message">
-                        {/*Source https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746*/}
+                        {/* Source https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746 */}
                         {message.text.split('\n').map((item, key) => {
-                            return <span key={key}>{item}<br/></span>
+                            return <span key={key}>{item}<br /></span>
                         })}
                     </div>
                 </div>

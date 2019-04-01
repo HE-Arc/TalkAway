@@ -84,7 +84,7 @@ class Query(graphene.ObjectType):
 
     @login_required
     def resolve_all_users(self, info, **kwargs):
-        return get_user_model().objects.all().exclude(username="admin")
+        return get_user_model().objects.all()
 
 
 class CreateUser(graphene.Mutation):
@@ -240,6 +240,7 @@ class AddUser(graphene.Mutation):
 
 class EditUser(graphene.Mutation):
     ok = graphene.Boolean()
+    user = graphene.Field(UserType)
 
     class Arguments:
         oldPassword = graphene.String(required=True)
@@ -271,7 +272,8 @@ class EditUser(graphene.Mutation):
         authUser.save()
 
         return EditUser(
-            ok=True
+            ok=True,
+            user=authUser
         )
 
 

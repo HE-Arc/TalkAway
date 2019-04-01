@@ -1,33 +1,49 @@
 
 import { baseGraphqlUrl } from '../config/config';
+import { selectServer } from './ServerAction';
+import { selectChannelAuto } from './ChannelAction';
+import { selectFriend } from './FriendAction';
+import { requestMessageList, clearMessageList } from './MessageAction';
 
 export function showFriends() {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         dispatch({
             type: 'SHOW_FRIENDS'
         });
+        let friendId = getState().friend.activeFriendId;
+        
+        if(friendId <= 0 && getState().friend.friends.length > 0){
+            friendId = getState().friend.friends[0].friend.id
+        }
+
+        if(friendId <= 0){
+            dispatch(clearMessageList());
+        }else{
+            dispatch(selectFriend(friendId));
+            let channelId = getState().friend.friends.filter(f => f.friend.id === friendId)[0].channelId;
+            dispatch(requestMessageList(channelId));
+        }
     }
 }
 
 export function showServers() {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         dispatch({
             type: 'SHOW_SERVERS'
         });
+        dispatch(selectServer(getState().server.activeServerId));
+        dispatch(selectChannelAuto(getState().server.activeServerId));
     }
 }
 
-export function getAllUsers(){
+export function getAllUsers() {
     return (dispatch, getState) => {
-        //TODO: Improve loading images only for required users
-        //TODO: Check if we really need all these informations
         const requestBody = {
             query: `
             query{
                 allUsers{
                     id
                     username
-                    image
                     servers{
                         id
                     }
@@ -52,9 +68,9 @@ export function getAllUsers(){
             }
             return res.json();
         }).then(resData => {
-            
+
             let response = {
-                users:resData.data.allUsers
+                users: resData.data.allUsers
             };
             dispatch(_getAllUsers(response));
         }).catch(err => {
@@ -63,7 +79,7 @@ export function getAllUsers(){
     }
 }
 
-function _getAllUsers(data){
+function _getAllUsers(data) {
     return {
         type: 'ALL_USERS',
         payload: data

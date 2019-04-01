@@ -7,6 +7,12 @@ const authReducer = (state = {
     image: ''
 }, action) => {
     switch (action.type) {
+        case "EDIT_PROFIL":
+            state = {
+                ...state,
+                ...action.payload
+            }
+            break;
         case "LOGIN":
             state = {
                 ...state,

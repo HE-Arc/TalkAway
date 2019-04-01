@@ -1,10 +1,19 @@
 
-import {baseGraphqlUrl} from '../config/config';
+import { baseGraphqlUrl } from '../config/config';
 
 function _updateMessageList(data) {
     return {
         type: 'LIST_MESSAGE',
         payload: data
+    }
+}
+
+export function clearMessageList() {
+    return dispatch => {
+        dispatch({
+            type: 'LIST_MESSAGE',
+            payload: []
+        })
     }
 }
 
@@ -62,12 +71,12 @@ export function requestMessageList(channelId) {
             `
         };
 
-        return fetch(baseGraphqlUrl+'/', {
+        return fetch(baseGraphqlUrl + '/', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'JWT '+getState().auth.token
+                'Authorization': 'JWT ' + getState().auth.token
             }
         }).then(res => {
             if (res.status !== 200 && res.status !== 201) {
@@ -76,7 +85,7 @@ export function requestMessageList(channelId) {
             return res.json();
         }).then(resData => {
             let response = resData.data.allMessagesByChannel;
-            if(response == null){
+            if (response == null) {
                 response = [];
             }
             dispatch(_updateMessageList(response));
