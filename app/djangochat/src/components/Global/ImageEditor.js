@@ -45,6 +45,7 @@ class ImageEditor extends Component {
     }
 
     render() {
+        const scale = !this.state.empty ? <input type="range" step='0.01' min='0.1' max='3' defaultValue={this.state.scale} onChange={this.changeScale} className="slider" id="Scale"></input> : '';
         return (
             <div>
                 <Dropzone
@@ -59,7 +60,7 @@ class ImageEditor extends Component {
                         </div>
                     )}
                 </Dropzone>
-                <input type="range" step='0.01' min='0.1' max='3' defaultValue={this.state.scale} onChange={this.changeScale} className="slider" id="Scale"></input>
+                {scale}
             </div>
         )
     }
