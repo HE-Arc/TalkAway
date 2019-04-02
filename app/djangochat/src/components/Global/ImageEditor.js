@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 import Dropzone from 'react-dropzone'
+import './ImageEditor.css';
 
 class ImageEditor extends Component {
 
@@ -45,18 +46,17 @@ class ImageEditor extends Component {
     }
 
     render() {
-        const scale = !this.state.empty ? <input type="range" step='0.01' min='0.1' max='3' defaultValue={this.state.scale} onChange={this.changeScale} className="slider" id="Scale"></input> : '';
+        const scale = !this.state.empty ? <input className="sliderEditor slider" type="range" step='0.01' min='0.1' max='3' defaultValue={this.state.scale} onChange={this.changeScale} id="Scale"></input> : '';
         return (
-            <div>
-                <Dropzone
+            <div className="imageEditorContainer">
+                <Dropzone className="dropzone"
                     onDrop={this.handleDrop}
                     onClick={e=>e.preventDefault()}
-                    disableClick
-                    style={{ width: '200px', height: '200px' }}>
+                    disableClick >
                     {({ getRootProps, getInputProps }) => (
                         <div {...getRootProps()}>
                             <input {...getInputProps()} onClick={e=>e.preventDefault()} />
-                            <AvatarEditor ref={this.refEditor} width={200} height={200} scale={Number(this.state.scale)} borderRadius={this.state.empty?40:100} image={this.state.image} />
+                            <AvatarEditor className="avatarEditor" ref={this.refEditor} width={100} height={100} scale={Number(this.state.scale)} borderRadius={this.state.empty?40:100} image={this.state.image} />
                         </div>
                     )}
                 </Dropzone>

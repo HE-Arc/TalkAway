@@ -5,64 +5,14 @@
     color: white;
 }
 
-.todo-image {
-    width: 90%;
-    left: 5%;
+.titleName {
+    margin-top: 10px;
 }
 
-.settings-username {
+.form-elem {
     width: 90%;
-    left: 5%;
-}
-
-.settings-separator {
-    width: 90%;
-    left: 5%;
-}
-
-.todo {
-    width: 90%;
-    left: 5%;
-}
-
-.email-label {
-    width: 90%;
-    left: 5%;
-}
-
-.email {
-    width: 90%;
-    left: 5%;
-}
-
-.old-password-label {
-    width: 90%;
-    left: 5%;
-}
-
-.old-password {
-    width: 90%;
-    left: 5%;
-}
-
-.new-password-label {
-    width: 90%;
-    left: 5%;
-}
-
-.new-password {
-    width: 90%;
-    left: 5%;
-}
-
-.repeat-password-label {
-    width: 90%;
-    left: 5%;
-}
-
-.repeat-password {
-    width: 90%;
-    left: 5%;
+    margin-left: 5%;
+    margin-bottom: 2px;
 }
 
 .saveButton {
@@ -73,7 +23,8 @@
     text-decoration: none;
     font-size: 16px;
     width: 80%;
-    left: 10%;
+    margin-left: 10%;
+    margin-top: 20px;
     border-radius: 5px;
     height: 40px;
 }
