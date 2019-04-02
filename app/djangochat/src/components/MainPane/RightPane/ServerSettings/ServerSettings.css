@@ -15,3 +15,10 @@
 .contentServerSettings {
     margin-left: 10%;
 }
+
+.close-settings {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+}

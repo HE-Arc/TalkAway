@@ -31,7 +31,7 @@ class ServerSettings extends Component {
         return (
             <div className="container unselectable">
 
-                <button id="close-settings" type="button" className="close" onClick={this.props.switchSettings}>
+                <button id="close-settings" type="button" className="close close-settings" onClick={this.props.switchSettings}>
                     &times;
                 </button>
 
