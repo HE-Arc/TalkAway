@@ -3,7 +3,7 @@ import { toastr } from 'react-redux-toastr'
 
 import { requestFriendList } from "./FriendAction";
 import { requestServerList } from "./ServerAction";
-import { getAllUsers } from "./ContactAction";
+
 
 export function initWebSocket() {
     return (dispatch, getState) => {
@@ -43,6 +43,8 @@ export function initWebSocket() {
                         let action=data.action;
                         if(action.type==='user_added')
                             ws.dispatchEvent(new CustomEvent("userAdded",{detail:action}));
+                        else if(action.type==='channel_created')
+                            ws.dispatchEvent(new CustomEvent("channelCreated",{detail:action}));
                     }
                 }
             };

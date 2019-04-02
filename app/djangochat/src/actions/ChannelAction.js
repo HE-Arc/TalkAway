@@ -34,7 +34,7 @@ function _updateChannelList(data) {
     }
 }
 
-function _createChannel(data) {
+export function _createChannel(data) {
     return {
         type: 'CREATE_CHANNEL',
         payload: data
@@ -70,6 +70,14 @@ export function requestCreateChannel(serverId, name) {
         }).then(resData => {
             let response = { ...resData.data.createChannel.channel, serverId: serverId };
             dispatch(_createChannel(response));
+            getState().ws.ws.send(JSON.stringify({
+                action: {
+                    type: "channel_created",
+                    server_id: serverId,
+                    my_id: getState().auth.id,
+                    channel:response
+                }
+            }));
         });
     }
 }
@@ -86,7 +94,7 @@ export function requestChannelList(serverId) {
                         id
                     }
                 }
-              }
+            }
             `
         };
 

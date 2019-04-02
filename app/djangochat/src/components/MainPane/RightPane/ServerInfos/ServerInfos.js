@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import './ServerInfos.css';
 import Channel from './Channel/Channel';
 
-import { selectChannel, requestCreateChannel } from "../../../../actions/ChannelAction";
+import { selectChannel, requestCreateChannel,_createChannel } from "../../../../actions/ChannelAction";
 import { requestMessageList } from "../../../../actions/MessageAction";
 
 import Autocomplete from "../Autocomplete/Autocomplete";
@@ -73,6 +73,9 @@ class ServerInfos extends Component {
         if (this.props.ws != null && this.props.ws.readyState === WebSocket.OPEN && !this.state.userUpdateListenerAdded){
             this.props.ws.addEventListener('userAdded',actionData=>{
                 this.props._addUser(actionData.detail.user);
+            });
+            this.props.ws.addEventListener('channelCreated',actionData=>{
+                this.props._createChannel(actionData.detail.channel);
             });
             this.setState({userUpdateListenerAdded:true});
         }
@@ -211,7 +214,8 @@ const mapsDispatchToPros = {
     requestAddUser,
     requestMessageList,
     requestCreateChannel,
-    _addUser
+    _addUser,
+    _createChannel
 }
 
 export default connect(mapsStateToProps, mapsDispatchToPros)(ServerInfos); 
