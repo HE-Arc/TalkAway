@@ -18,7 +18,6 @@ export function clearMessageList() {
 }
 
 export function addMessage(message) {
-    console.log(message)
     return (dispatch) => {
         dispatch({
             type: 'SEND_MESSAGE',

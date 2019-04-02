@@ -78,10 +78,9 @@ class MiddlePane extends Component {
             this.props.connectChannel(this.props.channelId);
             this.dropDown();
             if(!this.state.messageEventListenerAdded){
-                this.props.ws.addEventListener('message',messageData => {   
-                    try{
-                        let message=JSON.parse(messageData.data).message; 
-                        console.log(message)
+                this.props.ws.addEventListener('displayMessage',messageData => {   
+                    
+                        let message=messageData.detail; 
                         if(Number(message.channel_id)===Number(this.props.channelId)){
                             this.props.addMessage(message);
                             
@@ -89,10 +88,7 @@ class MiddlePane extends Component {
                                 messageReceived: true,
                                 messageEventListenerAdded: true
                             });
-                        }
-                    }catch(err){
-                        console.error(err);
-                }   
+                        } 
                 });
                 this.setState({ messageEventListenerAdded: true});
             }

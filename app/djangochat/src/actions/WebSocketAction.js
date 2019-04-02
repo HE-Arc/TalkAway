@@ -30,7 +30,7 @@ export function initWebSocket() {
                     if (data.hasOwnProperty('message')) {
                         let message = data.message;
                         if (Number(message.channel_id) === Number(getState().channel.activeChannelId)) {
-                            ws.dispatchEvent(new CustomEvent("message", message));
+                            ws.dispatchEvent(new CustomEvent("displayMessage", {detail:message}));
                         } else {
                             const messageType = message.direct_type;
                             if (messageType) {
