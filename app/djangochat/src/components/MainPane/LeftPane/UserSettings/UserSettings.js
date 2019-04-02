@@ -35,7 +35,6 @@ class UserSettings extends Component {
         }
 
         if(Object.keys(errors).length > 0){
-            console.log(errors)
             this.setState({
                 ...this.state,
                 errors: errors

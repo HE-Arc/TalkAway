@@ -16,8 +16,7 @@ class ServerSettings extends Component {
         const server = this.props.activeServer[0]
 
         const image = this.refEditor.current.getData();
-        console.log(image);
-
+        
         const name = server.name;
         const userAddingRight = 1;
         this.props.requestEditServer(server.id, name, image, userAddingRight).catch(() => {
