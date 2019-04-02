@@ -122,6 +122,9 @@ class CreateServer(graphene.Mutation):
         right = Right(user=info.context.user, server=server, right=1)
         right.save()
 
+        channel = Channel(name="General", server_id=server.id, direct_type=False)
+        channel.save()
+
         return CreateServer(
             server=server
         )

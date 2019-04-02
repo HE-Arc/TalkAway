@@ -2,6 +2,10 @@ import {
     baseGraphqlUrl
 } from '../config/config';
 
+import{
+    requestChannelList
+}from './ChannelAction';
+
 export function _createServer(data) {
     return {
         type: 'CREATE_SERVER',
@@ -85,6 +89,7 @@ export function requestCreateServer(serverName) {
             dispatch(_createServer(server));
             dispatch(selectServer(server.id));
             dispatch(_updateMessageList([]));
+            dispatch(requestChannelList(server.id));
             return server.id
         });
     }
