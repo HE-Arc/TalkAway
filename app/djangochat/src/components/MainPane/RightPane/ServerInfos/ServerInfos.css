@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-.addUserInServerButton {
+.addChannelInServerButton {
     width: 100%;
     text-align: center;
     font-size: 0.8em;
@@ -27,21 +27,30 @@
     margin-left: 8%;
 }
 
-.addUserInServerInput {
+.addChannelInServerInput {
     margin-left: 8%;
 }
 
-.addUserInServerName {
+.addChannelInServerName {
     height: 30px;
 }
 
-.addUserInServerAdd {
+.addChannelInServerAdd {
+    height: 30px;
+}
+
+.addChannelInServerAddButton {
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.addUserInServer {
     height: 30px;
 }
 
 .addUserInServerAddButton {
-    padding-left: 10px;
-    padding-top: 3px;
+    height: 40px;
+    margin-top: 10px;
 }
 
 #serverChannels {

@@ -119,14 +119,14 @@ class ServerInfos extends Component {
                     <div className="serverButtons row">
                     {
                         this.state.addingUser ?
-                            <div className="input-group mb-3">
-                                <Autocomplete ref={(newUserInput) => { this.newUserInput = newUserInput; }}
+                            <div className="input-group addUserInServer">
+                                <Autocomplete className="autocomplete-server" ref={(newUserInput) => { this.newUserInput = newUserInput; }}
                                     suggestions={this.props.allUsers.map(u => {
                                         return u.username
                                     })}
                                 />
-                                <div className="input-group-append">
-                                    <button onClick={this.addUser} className="btn btn-primary col" type="button">Add</button>
+                                <div className="input-group-append addUserInServerAdd">
+                                    <button onClick={this.addUser} className="btn btn-primary addUserInServerAddButton" type="button">Add</button>
                                 </div>
                             </div>
                             :
@@ -140,13 +140,13 @@ class ServerInfos extends Component {
                         {channelComponents}
                         <div className="row full-width">
                             <div className={this.state.channelCreation ? "d-none" : "full-width"}>
-                                <button className="addUserInServerButton" onClick={this.showChannelCreation}>Add a channel</button>
+                                <button className="addChannelInServerButton" onClick={this.showChannelCreation}>Add a channel</button>
                             </div>
                             <div className={!this.state.channelCreation ? "d-none" : ""}>
-                                <div className="input-group addUserInServerInput">
-                                    <input ref={this.channelInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control addUserInServerName" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
-                                    <div className="input-group-append addUserInServerAdd">
-                                        <button onClick={this.addChannel} className="btn btn-primary addUserInServerAddButton" type="button">Add</button>
+                                <div className="input-group addChannelInServerInput">
+                                    <input ref={this.channelInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control addChannelInServerName" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
+                                    <div className="input-group-append addChannelInServerAdd">
+                                        <button onClick={this.addChannel} className="btn btn-primary addChannelInServerAddButton" type="button">Add</button>
                                     </div>
                                 </div>
                             </div>
