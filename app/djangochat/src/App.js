@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import AuthPage from './pages/Auth';
-import HomePage from './pages/Home';
 import ChatPage from './pages/Chat';
 
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
@@ -20,8 +19,7 @@ class App extends Component {
                     <main >
                         <Switch >
                             <Redirect from="/" to='/home' exact/>
-                            <Route path="/home" component={HomePage}/>
-                            <Route path="/auth" render={() => (
+                            <Route path="/home" render={() => (
                                 this.props.isLogged ? (
                                     <Redirect to="/chat"/>
                                 ) : (
@@ -30,7 +28,7 @@ class App extends Component {
                             )}/>
                             <Route path="/chat" render={() => (
                                 !this.props.isLogged ? (
-                                    <Redirect to="/auth"/>
+                                    <Redirect to="/home"/>
                                 ) : (
                                     <ChatPage/>
                                 )
