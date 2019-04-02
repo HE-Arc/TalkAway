@@ -96,7 +96,7 @@ class ServerInfos extends Component {
             let channelComponents = '';
             channelComponents = this.props.channels.map((channel) => {
                 const channelId = channel.id;
-                let classes = ["row"];
+                let classes = ["row", "channelrow"];
                 if (channelId === this.props.activeChannelId) {
                     classes.push("selected");
                 } else {
@@ -138,15 +138,15 @@ class ServerInfos extends Component {
                 <div id="serverChannels" className="row">
                     <div className="channelsContainer container scrollableServer unselectable">
                         {channelComponents}
-                        <div className="row mt-3">
-                            <div className={this.state.channelCreation ? "d-none" : ""}>
-                                <button onClick={this.showChannelCreation}>Add a channel</button>
+                        <div className="row full-width">
+                            <div className={this.state.channelCreation ? "d-none" : "full-width"}>
+                                <button className="addUserInServerButton" onClick={this.showChannelCreation}>Add a channel</button>
                             </div>
                             <div className={!this.state.channelCreation ? "d-none" : ""}>
-                                <div className="input-group mb-3">
-                                    <input ref={this.channelInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
-                                    <div className="input-group-append">
-                                        <button onClick={this.addChannel} className="btn btn-primary" type="button">Add</button>
+                                <div className="input-group addUserInServerInput">
+                                    <input ref={this.channelInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control addUserInServerName" placeholder="Channel name" aria-label="Channel name" aria-describedby="basic-addon2" />
+                                    <div className="input-group-append addUserInServerAdd">
+                                        <button onClick={this.addChannel} className="btn btn-primary addUserInServerAddButton" type="button">Add</button>
                                     </div>
                                 </div>
                             </div>
