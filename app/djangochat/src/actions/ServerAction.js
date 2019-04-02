@@ -28,7 +28,6 @@ function _editServer(data) {
 }
 
 export function _addUser(data) {
-    console.log(data)
     return {
         type: 'ADD_USER_SERVER',
         payload: data
