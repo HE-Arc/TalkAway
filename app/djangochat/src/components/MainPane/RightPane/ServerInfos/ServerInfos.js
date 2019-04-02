@@ -139,7 +139,6 @@ class ServerInfos extends Component {
                 serverUsers=this.props.server.userSet.map(u => {
                     let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];
                     return (<div className="col-3" key={u.id}>
-                        <p>{u.username}</p>
                         <img className="image-profile2" src={image} alt={u.username} />
                     </div>);
                 });
