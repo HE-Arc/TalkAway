@@ -72,7 +72,8 @@ class ServerInfos extends Component {
     componentDidUpdate() {
         if (this.props.ws != null && this.props.ws.readyState === WebSocket.OPEN && !this.state.userUpdateListenerAdded){
             this.props.ws.addEventListener('userAdded',actionData=>{
-                this.props._addUser(actionData.detail.user);
+                this.props._addUser(actionData.detail);
+                console.log(actionData)
             });
             this.props.ws.addEventListener('channelCreated',actionData=>{
                 this.props._createChannel(actionData.detail.channel);

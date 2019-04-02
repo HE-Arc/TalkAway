@@ -169,7 +169,7 @@ class ChatConsumer(WebsocketConsumer):
 
         try:
             action = event['action']
-            if self.server.id == int(action['server_id']) and self.user.id != int(action['my_id']):
+            if self.server.id == int(action['serverId']) and self.user.id != int(action['my_id']):
                 self.send(text_data=json.dumps({
                     'action': action
                 }))

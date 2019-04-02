@@ -24,6 +24,7 @@ function _editServer(data) {
 }
 
 export function _addUser(data) {
+    console.log(data)
     return {
         type: 'ADD_USER_SERVER',
         payload: data
@@ -201,11 +202,11 @@ export function requestAddUser(userId, serverId) {
                 serverId: serverId,
                 user: response.data.addUser.right.user
             }
-            dispatch(_addUser(data))
+            dispatch(_addUser(data));
             getState().ws.ws.send(JSON.stringify({
                 action: {
                     type: "user_added",
-                    server_id: serverId,
+                    serverId: serverId,
                     user: response.data.addUser.right.user,
                     my_id: getState().auth.id
                 }

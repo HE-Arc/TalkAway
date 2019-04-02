@@ -73,7 +73,7 @@ export function requestCreateChannel(serverId, name) {
             getState().ws.ws.send(JSON.stringify({
                 action: {
                     type: "channel_created",
-                    server_id: serverId,
+                    serverId: serverId,
                     my_id: getState().auth.id,
                     channel:response
                 }
