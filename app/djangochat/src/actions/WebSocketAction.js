@@ -7,7 +7,7 @@ import { getAllUsers } from "./ContactAction";
 
 export function initWebSocket() {
     return (dispatch, getState) => {
-        document.cookie = "token=" + getState().auth.token + ";max-age=1";
+        document.cookie = `token=${getState().auth.token};max-age=1`;
         let ws = new WebSocket(
             baseWebsocketUrl);
 
@@ -40,14 +40,12 @@ export function initWebSocket() {
                                 toastr.error("Error","Impossible to retrieve friend list")
                             });
                     } else if (data.hasOwnProperty('action')) {
-                        let action = data.action;
-                        if (action === 'new_user')
-                            dispatch(getAllUsers()).catch(()=>{
-                                toastr.error("Error","Impossible to retrieve user list")
-                            });
+                        let action=data.action;
+                        if(action.type==='user_added')
+                            ws.dispatchEvent(new CustomEvent("userAdded",{detail:action}));
                     }
-                };
-            }
+                }
+            };
         };
 
         dispatch(_connectWS(ws));

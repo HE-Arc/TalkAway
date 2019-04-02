@@ -26,13 +26,6 @@ class ChatConsumer(WebsocketConsumer):
         )
         self.accept()
 
-        async_to_sync(self.channel_layer.group_send)(
-            self.room_group_name,
-            {
-                'type': 'chat_message',
-                'action': 'new_user'
-            })
-
     def disconnect(self, close_code):
         # Leave room group
         async_to_sync(self.channel_layer.group_discard)(
@@ -48,6 +41,14 @@ class ChatConsumer(WebsocketConsumer):
                 'notification': notification
             })
 
+    def handle_action(self, action):
+        async_to_sync(self.channel_layer.group_send)(
+            self.room_group_name,
+            {
+                'type': 'chat_message',
+                'action': action
+            })
+
     def handle_channel_change(self, new_channel_id):
         self.channel = Channel.objects.get(id=new_channel_id)
         if self.channel.direct_type:
@@ -57,8 +58,6 @@ class ChatConsumer(WebsocketConsumer):
                     "Authentication error, the user isn't a friend with the user he's trying to send a message to")
         else:
             self.server = self.channel.server
-
-            
 
             if self.server not in self.subscribedServers:
                 raise Exception(
@@ -118,6 +117,11 @@ class ChatConsumer(WebsocketConsumer):
         text_data_json = json.loads(text_data)
 
         try:
+            self.handle_action(text_data_json['action'])
+        except:
+            pass
+
+        try:
             self.handle_notification(text_data_json['notification'])
         except:
             pass
@@ -158,15 +162,16 @@ class ChatConsumer(WebsocketConsumer):
                 self.send(text_data=json.dumps({
                     'notification': notification
                 }))
-                if notification.type=="server":
+                if notification.type == "server":
                     self.subscribedServers = self.user.servers.all()
         except Exception as e:
             pass
 
         try:
             action = event['action']
-            self.send(text_data=json.dumps({
-                'action': action
-            }))
+            if self.server.id == int(action['server_id']) and self.user.id != int(action['my_id']):
+                self.send(text_data=json.dumps({
+                    'action': action
+                }))
         except Exception as e:
             pass

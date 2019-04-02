@@ -136,7 +136,6 @@ class CreateChannel(graphene.Mutation):
 
     @login_required
     def mutate(self, info, server_id, name):
-        # TODO: Check right to create a channel
 
         channel = Channel(name=name, server_id=server_id, direct_type=False)
         channel.save()
@@ -158,7 +157,6 @@ class EditServer(graphene.Mutation):
 
     @login_required
     def mutate(self, info, server_id, **kwargs):
-        # TODO: Check rights
         server = Server.objects.get(id=server_id)
 
         for k, v in kwargs.items():
@@ -220,9 +218,9 @@ class AddUser(graphene.Mutation):
         if server not in authUser.servers.all():
             raise Exception("You are not participating to this server")
 
-        if Right.objects.get(user=authUser, server=server).right > 1:
-            raise Exception(
-                "You don't have the right to add a user to this server")
+        # if Right.objects.get(user=authUser, server=server).right > 1:
+        #     raise Exception(
+        #         "You don't have the right to add a user to this server")
 
         user = get_user_model().objects.get(id=user_id)
 

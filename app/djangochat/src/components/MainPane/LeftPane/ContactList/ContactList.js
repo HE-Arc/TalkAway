@@ -118,6 +118,7 @@ class ContactList extends Component {
     }
 
     addingFriend = () => {
+        this.props.getAllUsers();
         this.setState({
             addingFriend: true
         });
@@ -142,7 +143,7 @@ class ContactList extends Component {
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
-                    text: this.props.username + " added you in his friendlist",
+                    text: `${this.props.username} added you in his friendlist`,
                     title: "New friend",
                     type: 'friend'
                 }
