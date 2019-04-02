@@ -16,7 +16,7 @@
     max-height: 10%;
     height: 35px;
     font-size: 1.3em;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -56,6 +56,7 @@
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 0.8em;
     background-color: gray;
@@ -65,12 +66,18 @@
     cursor: pointer;
 }
 
+.addFriendAddButton {
+    height: 40px;
+    margin-top: 10px;
+}
+
 .addFriendButton {
     width: 80%;
     height: 40px;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 0.8em;
     background-color: gray;
@@ -81,10 +88,23 @@
 }
 
 .addServerField {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 86%;
+    margin-left: 7%;
+    margin-right: 7%;
     margin-bottom: 20px;
+}
+
+.top-margin-input {
+    margin-top: 10px;
+}
+
+.addServerFieldAddButton {
+    height: 40px;
+    margin-top: 10px;
+}
+
+.addServerInput {
+    height: 40px;
 }
 
 .full-width {

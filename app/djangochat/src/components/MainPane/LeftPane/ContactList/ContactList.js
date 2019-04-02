@@ -232,7 +232,7 @@ class ContactList extends Component {
                                     })}
                                 />
                                 <div className="input-group-append">
-                                    <button onClick={this.addFriend} className="btn btn-primary col" type="button">Add</button>
+                                    <button onClick={this.addFriend} className="btn btn-primary addFriendAddButton" type="button">Add</button>
                                 </div>
                             </div>
                             :
@@ -246,9 +246,9 @@ class ContactList extends Component {
                             </div>
                             <div className={!this.state.serverCreation?"d-none":""}>
                                 <div className="input-group addServerField">
-                                    <input ref={this.serverInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="basic-addon2" />
+                                    <input ref={this.serverInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control top-margin-input addServerInput" placeholder="Server name" aria-label="Server name" aria-describedby="basic-addon2" />
                                     <div className="input-group-append">
-                                        <button onClick={this.createServer} className="btn btn-primary" type="button">Add</button>
+                                        <button onClick={this.createServer} className="btn btn-primary addServerFieldAddButton" type="button">Add</button>
                                     </div>
                                 </div>
                             </div>
