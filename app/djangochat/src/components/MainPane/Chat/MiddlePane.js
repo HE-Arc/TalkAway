@@ -76,8 +76,8 @@ class MiddlePane extends Component {
             this.setState({ lastChannelId: this.props.channelId });
             this.props.connectChannel(this.props.channelId);
             this.dropDown();
-            if(!this.state.messageEventListenerAdded){
-                this.props.ws.addEventListener('displayMessage',messageData => {   
+            if (!this.state.messageEventListenerAdded) {
+                this.props.ws.addEventListener('displayMessage', messageData => {   
                     
                         let message=messageData.detail; 
                         if(Number(message.channel_id)===Number(this.props.channelId)){
