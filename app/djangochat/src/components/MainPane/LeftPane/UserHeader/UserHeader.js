@@ -48,7 +48,7 @@ class UserHeader extends Component {
         }
 
         // Find appropriate state image
-        let connectionImg;
+        /*let connectionImg;
         switch (this.state.activity)
         {
             case "Away":    
@@ -56,14 +56,14 @@ class UserHeader extends Component {
                 break;
             default:
                 connectionImg = require('./images/connected.png');
-        }
+        }*/
 
         // Return the component
         return (
             <div className="rowProfile" onClick={this.openSettings}>
                 <div className="images">
                     <img className="image-profile" alt="" src={imageprofile}/>
-                    <img className="connection" alt="" src={connectionImg}/>
+                    {/*{<img className="connection" alt="" src={connectionImg}/>*/}
                 </div>
                 <div className="username-profile">
                     {this.props.auth.username}
