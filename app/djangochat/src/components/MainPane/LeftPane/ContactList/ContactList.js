@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr'
 
 import Server from './Contact/Server';
 import Friend from './Contact/Friend';
@@ -14,14 +15,14 @@ import { showFriends, showServers, getAllUsers } from "../../../../actions/Conta
 import Autocomplete from "../../RightPane/Autocomplete/Autocomplete";
 
 class ContactList extends Component {
-    
+
     state = {
         serverDisplayed: true,
         addingFriend: false,
         serverCreation: false,
         defaultServerSelected: false,
         defaultFriendSelected: false,
-        idSelectedServer: 0, 
+        idSelectedServer: 0,
         idSelectedFriend: 0
     }
 
@@ -29,8 +30,12 @@ class ContactList extends Component {
         super(props);
 
         this.newUserInput = React.createRef();
-        this.props.requestFriendList();
-        this.props.requestServerList();
+        this.props.requestFriendList().catch(()=>{
+            toastr.error("Error","Impossible to retrieve friend list")
+        });
+        this.props.requestServerList().catch(()=>{
+            toastr.error("Error","Impossible to retrieve servers list")
+        });;
         window.addEventListener("resize", this.updateDimensions);
 
         this.serverInputRef = React.createRef();
@@ -38,7 +43,9 @@ class ContactList extends Component {
 
     selectDefaultServer = () => {
         if (this.props.servers.length > 0) {
-            const defaultServer = this.props.servers[this.state.idSelectedServer];
+            const defaultServer = this.props.servers[0];
+            console.log(defaultServer)
+            console.log("yep")
             this.serverSelected(defaultServer.id);
             
             this.setState({
@@ -49,9 +56,9 @@ class ContactList extends Component {
 
     selectDefaultFriend = () => {
         if (this.props.friends.length > 0) {
-            const defaultFriend = this.props.friends[this.state.idSelectedFriend];
+            const defaultFriend = this.props.friends[0];
             this.friendSelected(defaultFriend.friend.id);
-            
+
             this.setState({
                 defaultFriendSelected: true
             })
@@ -67,8 +74,9 @@ class ContactList extends Component {
             serverDisplayed: false
         })
         this.props.showFriends();
-        this.props.getAllUsers();
-        if(Number(this.state.idSelectedFriend)>0){
+        this.props.getAllUsers()
+            .catch(() => toastr.error("Error", "An internal error occured"));
+        if (Number(this.state.idSelectedFriend) > 0) {
             this.friendSelected(this.state.idSelectedFriend);
         }
     }
@@ -79,12 +87,16 @@ class ContactList extends Component {
         })
         this.props.showServers();
         this.serverSelected(this.state.idSelectedServer);
+        this.props.selectChannelAuto(this.state.idSelectedServer);
     }
 
     friendSelected = (id) => {
         this.props.selectFriend(id);
         const channelId = this.props.friends.filter(f => f.friend.id === id)[0].channelId;
-        this.props.requestMessageList(channelId);
+        this.props.requestMessageList(channelId)
+        .catch(()=>{
+            toastr.error("Error", "Error while retrieving messages")
+        });
 
         this.setState({
             idSelectedFriend: id
@@ -92,10 +104,13 @@ class ContactList extends Component {
     }
 
     serverSelected = (serverId) => {
+        const oldId = this.props.activeServerId;
         this.props.selectServer(serverId);
-        if(this.props.activeServerId!==serverId){
+        if (oldId !== serverId) {
             this.props.requestChannelList(serverId).then(() => {
                 this.props.selectChannelAuto(serverId);
+            }).catch(()=>{
+                toastr.error("Error","Impossible to retrieve channel list")
             });
         }
 
@@ -118,7 +133,9 @@ class ContactList extends Component {
                 return u.username === this.newUserInput.state.userInput
             })[0].id;
 
-            this.props.requestAddFriend(user_id);
+            this.props.requestAddFriend(user_id).catch(()=>{
+                toastr.error("Error", "Impossible to add this user");
+            });
 
             this.setState({
                 addingFriend: false
@@ -127,9 +144,9 @@ class ContactList extends Component {
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
-                    text:this.props.username+" added you in his friendlist",
-                    title:"New friend",
-                    type:'friend'
+                    text: this.props.username + " added you in his friendlist",
+                    title: "New friend",
+                    type: 'friend'
                 }
             }));
         }
@@ -139,26 +156,26 @@ class ContactList extends Component {
         this.setState({
             serverCreation: true
         },
-        ()=>{
-            this.serverInputRef.current.focus();
-        })
+            () => {
+                this.serverInputRef.current.focus();
+            })
     }
-    
+
     createServer = () => {
         const serverName = String(this.serverInputRef.current.value);
-        if(serverName === ""){
+        if (serverName === "") {
             return;
         }
 
         this.props.requestCreateServer(serverName)
-        .then(()=>{
-            this.setState({
-                serverCreation: false
-            })
-            this.serverInputRef.current.value = '';
-        }).catch((err)=>{
-            console.log(err)
-        });
+            .then(() => {
+                this.setState({
+                    serverCreation: false
+                })
+                this.serverInputRef.current.value = '';
+            }).catch((err) => {
+                toastr.error("Error", "Impossible to create a server")
+            });
     }
 
     _handleKeyPress = (e) => {
@@ -168,12 +185,12 @@ class ContactList extends Component {
     }
 
     componentDidUpdate() {
-        if (!this.state.defaultServerSelected) {
-            this.selectDefaultServer();
-        }
-
         if (!this.state.defaultFriendSelected) {
             this.selectDefaultFriend();
+        }
+
+        if (!this.state.defaultServerSelected) {
+            this.selectDefaultServer();
         }
     }
 
@@ -242,10 +259,10 @@ class ContactList extends Component {
                             </div>
                         :
                         <div className="row mb-3">
-                            <div className={this.state.serverCreation?"d-none":""}>
+                            <div className={this.state.serverCreation ? "d-none" : ""}>
                                 <button onClick={this.showServerCreation}>Create a server</button>
                             </div>
-                            <div className={!this.state.serverCreation?"d-none":""}>
+                            <div className={!this.state.serverCreation ? "d-none" : ""}>
                                 <div className="input-group mb-3">
                                     <input ref={this.serverInputRef} onKeyPress={this._handleKeyPress} type="text" className="form-control" placeholder="Server name" aria-label="Server name" aria-describedby="basic-addon2" />
                                     <div className="input-group-append">
@@ -268,7 +285,7 @@ const mapsStateToProps = (state) => {
         activeServerId: state.server.activeServerId,
         friends: state.friend.friends,
         activeFriendId: state.friend.activeFriendId,
-        ws:state.ws.ws,
+        ws: state.ws.ws,
         username: state.auth.username,
         allUsers: state.contact.users.filter(
             u => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr'
 
 import './ServerInfos.css';
 import Channel from './Channel/Channel';
@@ -27,7 +28,9 @@ class ServerInfos extends Component {
 
     channelSelected = (id) => {
         this.props.selectChannel(id, true);
-        this.props.requestMessageList(id);
+        this.props.requestMessageList(id).catch(()=>{
+            toastr.error("Error","Impossible to retrieve message list")
+        });;
     };
 
     addingUser = () => {
@@ -45,7 +48,9 @@ class ServerInfos extends Component {
                 return u.username === this.newUserInput.state.userInput
             })[0].id;
 
-            this.props.requestAddUser(user_id, this.props.serverId);
+            this.props.requestAddUser(user_id, this.props.serverId).catch(()=>{
+                toastr.error("Error", "Impossible to add a user.")
+            });
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
@@ -81,8 +86,10 @@ class ServerInfos extends Component {
                     serverCreation: false
                 })
                 this.serverInputRef.current.value = '';
+                toastr.success("Success", "Channel successfuly created");
             }).catch((err) => {
                 console.log(err)
+                toastr.error("Error", "Impossible to create a channel");
             });
     };
 

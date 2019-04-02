@@ -1,13 +1,13 @@
 
 import { baseGraphqlUrl } from '../config/config';
-import {requestMessageList} from './MessageAction';
+import { requestMessageList } from './MessageAction';
 
 export function selectChannel(channelId, channelServerType) {
     return (dispatch) => {
         dispatch({
             type: 'SELECT_CHANNEL',
             payload: {
-                isServerChannel:true,
+                isServerChannel: true,
                 channelId: channelId
             }
         });
@@ -16,10 +16,10 @@ export function selectChannel(channelId, channelServerType) {
 
 export function selectChannelAuto(serverId) {
     return (dispatch, getState) => {
-        let server = getState().server.servers.filter(s=>s.id===serverId);
+        let server = getState().server.servers.filter(s => s.id === serverId);
         let selectedChannel = server.length > 0 ? server[0].selectedChannel : undefined;
-        if(selectedChannel === undefined){
-            const channelList = getState().channel.channels.filter(c=>c.serverId === serverId);
+        if (selectedChannel === undefined) {
+            const channelList = getState().channel.channels.filter(c => c.serverId === serverId);
             selectedChannel = channelList.length > 0 ? channelList[0].id : 0;
         }
         dispatch(selectChannel(selectedChannel, true));
@@ -70,8 +70,6 @@ export function requestCreateChannel(serverId, name) {
         }).then(resData => {
             let response = { ...resData.data.createChannel.channel, serverId: serverId };
             dispatch(_createChannel(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }
@@ -105,7 +103,6 @@ export function requestChannelList(serverId) {
             }
             return res.json();
         }).then(resData => {
-            console.log()
             let response = {
                 serverId: serverId,
                 channels: resData.data.serverChannels.map(c => { return { ...c, serverId: serverId } })
@@ -114,8 +111,6 @@ export function requestChannelList(serverId) {
                 response.channels = [];
             }
             dispatch(_updateChannelList(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }

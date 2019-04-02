@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ImageEditor from '../../../Global/ImageEditor'
+import { toastr } from 'react-redux-toastr';
+import ImageEditor from '../../../Global/ImageEditor';
 
 import { requestEditServer } from "../../../../actions/ServerAction";
 
@@ -13,19 +14,20 @@ class ServerSettings extends Component {
 
     save = () => {
         const server = this.props.activeServer[0]
-        //TODO: Save data
 
         const image = this.refEditor.current.getData();
         console.log(image);
 
         const name = server.name;
         const userAddingRight = 1;
-        this.props.requestEditServer(server.id, name, image, userAddingRight)
+        this.props.requestEditServer(server.id, name, image, userAddingRight).catch(() => {
+            toastr.error("Error", "Impossible to save your settings")
+        });
     }
 
     render() {
         const server = this.props.activeServer[0]
-        
+
         let imageServer;
         if (server !== undefined && server.image !== '') {
             imageServer = this.props.activeServer[0].image;
@@ -51,8 +53,7 @@ class ServerSettings extends Component {
                 <div className="row">
                     <div className="col-12 mt-3">
                         <ImageEditor ref={this.refEditor} id={server.id} image={server.image}></ImageEditor>
-                        {/* TODO Complete this part */}
-                        <input className="saveButton" type="button" value="Save" onClick={this.save}/>
+                        <input className="saveButton" type="button" value="Save" onClick={this.save} />
                     </div>
                 </div>
             </div>
