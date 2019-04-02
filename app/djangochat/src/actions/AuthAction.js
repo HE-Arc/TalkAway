@@ -14,7 +14,7 @@ export function requestLogin(username, password) {
         const requestBody = {
             query: `
             mutation {
-                getJWTToken(username: "${username.replace(/"/g, '\\"')}", password: "${password}") {
+                getJWTToken(username: "${username.replace(/"/g, '\\"').replace(/\\/g, '\\\\')}", password: "${password}") {
                     token
                     user {
                         id

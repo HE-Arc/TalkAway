@@ -45,7 +45,7 @@ export function requestCreateChannel(serverId, name) {
         const requestBody = {
             query: `
             mutation{
-                createChannel(serverId:${serverId}, name:"${name.replace(/"/g, '\\"')}"){
+                createChannel(serverId:${serverId}, name:"${name.replace(/"/g, '\\"').replace(/\\/g, '\\\\')}"){
                     channel{
                         id
                         name

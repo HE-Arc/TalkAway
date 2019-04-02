@@ -119,7 +119,7 @@ class MiddlePane extends Component {
                     messageSent: true
                 });
             }).catch((err) => {
-                toastr.error("Error", "Impossible to send yout message :'(")
+                toastr.error("Error", "Impossible to send your message :'(")
             });
     }
 
