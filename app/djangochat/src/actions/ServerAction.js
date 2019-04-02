@@ -197,7 +197,11 @@ export function requestAddUser(userId, serverId) {
             }
             return res.json();
         }).then((response) => {
-            dispatch(_addUser(response.data.addUser.right.user));
+            const data = {
+                serverId: serverId,
+                user: response.data.addUser.right.user
+            }
+            dispatch(_addUser(data))
             getState().ws.ws.send(JSON.stringify({
                 action: {
                     type: "user_added",

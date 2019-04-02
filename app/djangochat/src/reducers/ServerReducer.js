@@ -25,19 +25,23 @@ const serverReducer = (state = {
             };
             break;
         case "ADD_USER_SERVER":
+        
+            console.log(action.payload.serverId)
             state = {
                 ...state,
                 servers: [
                     ...state.servers.map(s=>
-                        ({
+                        (s.id === action.payload.serverId ? {
                             ...s,
                             userSet:[
                                 ...s.userSet,
                                 {
-                                    ...action.payload,
+                                    ...action.payload.user,
                                     image: undefined
                                 }
                             ]
+                        } : {
+                            ...s
                         }))
                 ]
             }

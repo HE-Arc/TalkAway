@@ -29,7 +29,7 @@ const contactReducer = (state = {
             break;
         case "ADD_USER_SERVER":
             let newOne = {};
-            newOne[action.payload.id] = action.payload.image
+            newOne[action.payload.user.id] = action.payload.user.image
             state = {
                 ...state,
                 images: {
