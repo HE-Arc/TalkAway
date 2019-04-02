@@ -31,7 +31,7 @@ export function requestSendMessage(text, channelId) {
         const requestBody = {
             query: `
             mutation {
-                createMessage(text: "${text}", channelId: ${channelId}) {
+                createMessage(text: "${text.replace(/"/g, '\\"')}", channelId: ${channelId}) {
                     id
                 }
             }

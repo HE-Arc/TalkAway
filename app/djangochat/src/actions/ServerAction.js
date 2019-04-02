@@ -52,7 +52,7 @@ export function requestCreateServer(serverName) {
         const requestBody = {
             query: `
             mutation{
-                createServer(name:"${serverName}"){
+                createServer(name:"${serverName.replace(/"/g, '\\"')}"){
                     server{
                         id
                         name
@@ -136,7 +136,7 @@ export function requestEditServer(serverId, name, image, userAddingRight) {
         const requestBody = {
             query: `
             mutation{
-                editServer(serverId:${serverId},name:"${name}",image:"${image}",userAddingRight:${userAddingRight}){
+                editServer(serverId:${serverId},name:"${name.replace(/"/g, '\\"')}",image:"${image}",userAddingRight:${userAddingRight}){
                     server{
                         image
                         name

@@ -3,7 +3,6 @@ import { toastr } from 'react-redux-toastr'
 
 import { requestFriendList } from "./FriendAction";
 import { requestServerList } from "./ServerAction";
-import { getAllUsers } from "./ContactAction";
 
 export function initWebSocket() {
     return (dispatch, getState) => {
