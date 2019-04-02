@@ -70,11 +70,8 @@ class UserSettings extends Component {
                     &times;
                 </button>
                 
-                <div className="mx-auto text-center">
-                    <h3 className="todo-image">
-                        Image
-                    </h3>
-                    <h3 className="settings-username">
+                <div className="mx-auto text-center titleName">
+                    <h3 className="form-elem">
                         {this.props.auth.username}
                     </h3>
                 </div>
@@ -85,24 +82,26 @@ class UserSettings extends Component {
                     <ImageEditor ref={this.refEditor} id={this.props.auth.id} image={this.props.auth.image}></ImageEditor>
                 </div>
 
+                <hr className="settings-separator text-white border-white"/>
+
                 <div className="row">
-                    <label className="email-label" htmlFor="email" >Email</label>
-                    <input type="email" value={this.state.mail} className="email" onChange={(evt) => { this.setState({mail:evt.target.value}); }} required></input>
+                    <label className="form-elem" htmlFor="email" >Email</label>
+                    <input type="email" value={this.state.mail} className="form-elem" onChange={(evt) => { this.setState({mail:evt.target.value}); }} required></input>
 
                     <span style={{
                         color: "red"
                     }}>{this.state.errors["password"]}</span>
-                    <label className="old-password-label" htmlFor="old-password" >Old password</label>
-                    <input type="password" value={this.state.oldPassword} className="old-password" onChange={(evt) => { this.setState({oldPassword:evt.target.value}); }}  name="old-password" required></input>
+                    <label className="form-elem" htmlFor="old-password" >Old password</label>
+                    <input type="password" value={this.state.oldPassword} className="form-elem" onChange={(evt) => { this.setState({oldPassword:evt.target.value}); }}  name="old-password" required></input>
 
-                    <label className="new-password-label" htmlFor="new-password" >New password</label>
-                    <input type="password" value={this.state.newPassword} className="new-password" onChange={(evt) => { this.setState({newPassword:evt.target.value}); }} name="new-password" required></input>
+                    <label className="form-elem" htmlFor="new-password" >New password</label>
+                    <input type="password" value={this.state.newPassword} className="form-elem" onChange={(evt) => { this.setState({newPassword:evt.target.value}); }} name="new-password" required></input>
 
                     <span style={{
                         color: "red"
                     }}>{this.state.errors["password_repeat"]}</span>
-                    <label className="repeat-password-label" htmlFor="repeat-password" >Repeat your password</label>
-                    <input type="password" className="repeat-password" value={this.state.newPassword2} onChange={(evt) => { this.setState({newPassword2:evt.target.value}); }} name="repeat-password" required></input>
+                    <label className="form-elem" htmlFor="repeat-password" >Repeat your password</label>
+                    <input type="password" className="form-elem" value={this.state.newPassword2} onChange={(evt) => { this.setState({newPassword2:evt.target.value}); }} name="repeat-password" required></input>
 
                     <input className="saveButton" type="button" value="Save" onClick={this.save}/>
                     <input className="disconnectButton" type="button" value="Disconnect" onClick={this.props.logout}/>

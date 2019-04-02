@@ -1,0 +1,36 @@
+.imageEditorContainer {
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.avatarEditor {
+    margin-left: calc((100% - 150px) / 2);
+    background-color: white;
+}
+
+.sliderEditor {
+    -webkit-appearance: none;
+    width: 150px;
+    margin-left: calc((100% - 150px) / 2);
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+}
+  
+.sliderEditor::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: gray;
+    cursor: pointer;
+}
+  
+.sliderEditor::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
