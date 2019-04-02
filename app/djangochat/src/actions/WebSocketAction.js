@@ -13,13 +13,9 @@ import {
     requestServerList
 } from "./ServerAction";
 
-import{
-    getAllUsers
-} from"./ContactAction";
-
 export function initWebSocket() {
     return (dispatch, getState) => {
-        document.cookie = "token=" + getState().auth.token + ";max-age=1";
+        document.cookie = `token=${getState().auth.token};max-age=1`;
         let ws = new WebSocket(
             baseWebsocketUrl);
 
@@ -49,11 +45,11 @@ export function initWebSocket() {
                             dispatch(requestFriendList());
                     } else if (data.hasOwnProperty('action')) {
                         let action=data.action;
-                        if(action==='new_user')
-                            dispatch(getAllUsers());
+                        if(action.type==='user_added')
+                            ws.dispatchEvent(new CustomEvent("userAdded",{detail:action}));
                     }
-                };
-            }
+                }
+            };
         };
 
         dispatch(_connectWS(ws));

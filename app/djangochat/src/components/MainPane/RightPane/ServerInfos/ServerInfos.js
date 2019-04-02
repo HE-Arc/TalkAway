@@ -9,7 +9,7 @@ import { requestMessageList } from "../../../../actions/MessageAction";
 
 import Autocomplete from "../Autocomplete/Autocomplete";
 import { getAllUsers } from "../../../../actions/ContactAction";
-import { requestAddUser } from "../../../../actions/ServerAction";
+import { requestAddUser,_addUser } from "../../../../actions/ServerAction";
 
 class ServerInfos extends Component {
 
@@ -18,12 +18,14 @@ class ServerInfos extends Component {
         this.state = {
             channelCreation: false,
             addingUser: false,
-            defaultChannelSelected: false
+            defaultChannelSelected: false,
+            userUpdateListenerAdded:false
         };
 
         this.newUserInput = React.createRef();
         this.channelInputRef = React.createRef();
     }
+
 
     channelSelected = (id) => {
         this.props.selectChannel(id, true);
@@ -31,10 +33,10 @@ class ServerInfos extends Component {
     };
 
     addingUser = () => {
+        this.props.getAllUsers();
         this.setState({
             addingUser: true
         });
-        this.props.getAllUsers();
     };
 
     addUser = () => {
@@ -46,18 +48,30 @@ class ServerInfos extends Component {
             })[0].id;
 
             this.props.requestAddUser(user_id, this.props.serverId);
+
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
-                    text: this.props.username + ' added you on server "' + this.props.server.name + '"',
+                    text: `${this.props.username} added you to server "${this.props.server.name}"`,
                     title: 'Added to server',
                     type: 'server'
                 }
             }));
+
+
         }
         this.setState({
             addingUser: false
         });
+    }
+
+    componentDidUpdate() {
+        if (this.props.ws != null && this.props.ws.readyState === WebSocket.OPEN && !this.state.userUpdateListenerAdded){
+            this.props.ws.addEventListener('userAdded',actionData=>{
+                this.props._addUser(actionData.detail.user);
+            });
+            this.setState({userUpdateListenerAdded:true});
+        }
     }
 
     showChannelCreation = () => {
@@ -92,6 +106,8 @@ class ServerInfos extends Component {
         }
     }
 
+
+
     render() {
             let channelComponents = '';
             channelComponents = this.props.channels.map((channel) => {
@@ -106,14 +122,15 @@ class ServerInfos extends Component {
                     <Channel name={channel.name} channelSelected={this.channelSelected} idChannel={channel.id} />
                 </div>);
             });
-            
-            const users = this.props.server.userSet.map(u => {
+
+            let serverUsers=this.props.server.userSet.map(u => {
                 let image = this.props.images[u.id] === '' ? require('../images/profile.png') : this.props.images[u.id];
                 return (<div className="col-3" key={u.id}>
                     <p>{u.username}</p>
                     <img className="image-profile2" src={image} alt={u.username} />
                 </div>);
-            })
+            });
+            
             return (
                 <div id="serverContainer" className="container">
                     <div className="serverButtons row">
@@ -155,9 +172,7 @@ class ServerInfos extends Component {
                 </div>
                 <hr className="serverhr" />
                 <div className="serverUsers row">
-                    {
-                        users
-                    }
+                    {serverUsers}
                 </div>
             </div>
         );
@@ -181,7 +196,7 @@ const mapsStateToProps = (state) => {
                 ).length;
             }
         ),
-        images: state.contact.images
+        images: state.contact.images,
     }
 }
 
@@ -191,6 +206,7 @@ const mapsDispatchToPros = {
     requestAddUser,
     requestMessageList,
     requestCreateChannel,
+    _addUser
 }
 
 export default connect(mapsStateToProps, mapsDispatchToPros)(ServerInfos); 

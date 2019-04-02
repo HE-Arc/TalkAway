@@ -67,7 +67,7 @@ class ContactList extends Component {
             serverDisplayed: false
         })
         this.props.showFriends();
-        this.props.getAllUsers();
+        
         if(Number(this.state.idSelectedFriend)>0){
             this.friendSelected(this.state.idSelectedFriend);
         }
@@ -105,6 +105,7 @@ class ContactList extends Component {
     }
 
     addingFriend = () => {
+        this.props.getAllUsers();
         this.setState({
             addingFriend: true
         });
@@ -127,9 +128,9 @@ class ContactList extends Component {
             this.props.ws.send(JSON.stringify({
                 notification: {
                     user_id: user_id,
-                    text:this.props.username+" added you in his friendlist",
-                    title:"New friend",
-                    type:'friend'
+                    text: `${this.props.username} added you in his friendlist`,
+                    title: "New friend",
+                    type: 'friend'
                 }
             }));
         }
