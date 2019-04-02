@@ -90,6 +90,7 @@ export function requestEditUser(email, newPassword2,newPassword, oldPassword,ima
                     ok
                     user {
                         image
+                        id
                     }
                 }
             }
