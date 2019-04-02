@@ -1,0 +1,17 @@
+.serverNameSettings {
+    height: auto;
+    color: white;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.imageEditorServer {
+    width: 100px;
+}
+
+.contentServerSettings {
+    margin-left: 10%;
+}
