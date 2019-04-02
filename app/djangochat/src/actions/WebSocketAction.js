@@ -4,7 +4,6 @@ import { toastr } from 'react-redux-toastr'
 import { requestFriendList } from "./FriendAction";
 import { requestServerList } from "./ServerAction";
 
-
 export function initWebSocket() {
     return (dispatch, getState) => {
         document.cookie = `token=${getState().auth.token};max-age=1`;

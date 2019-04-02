@@ -102,9 +102,12 @@ class ServerInfos extends Component {
                 this.setState({
                     serverCreation: false
                 })
-                this.serverInputRef.current.value = '';
+                if(this.serverInputRef !== undefined){
+                    this.serverInputRef.current.value = '';
+                }
                 toastr.success("Success", "Channel successfuly created");
             }).catch((err) => {
+                console.log(err)
                 toastr.error("Error", "Impossible to create a channel");
             });
     };

@@ -2,7 +2,7 @@
 import { baseGraphqlUrl } from '../config/config';
 import { requestMessageList } from './MessageAction';
 
-export function selectChannel(channelId, channelServerType) {
+export function selectChannel(channelId) {
     return (dispatch) => {
         dispatch({
             type: 'SELECT_CHANNEL',
@@ -22,7 +22,7 @@ export function selectChannelAuto(serverId) {
             const channelList = getState().channel.channels.filter(c => c.serverId === serverId);
             selectedChannel = channelList.length > 0 ? channelList[0].id : 0;
         }
-        dispatch(selectChannel(selectedChannel, true));
+        dispatch(selectChannel(selectedChannel));
         dispatch(requestMessageList(selectedChannel));
     }
 }
@@ -45,7 +45,7 @@ export function requestCreateChannel(serverId, name) {
         const requestBody = {
             query: `
             mutation{
-                createChannel(serverId:${serverId}, name:"${name}"){
+                createChannel(serverId:${serverId}, name:"${name.replace(/"/g, '\\"').replace(/\\/g, '\\\\')}"){
                     channel{
                         id
                         name
