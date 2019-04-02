@@ -300,7 +300,7 @@ class CreateMessage(graphene.Mutation):
                 raise Exception(
                     "Authentication error, the user isn't allowed to add a message in this channel")
 
-        message = Message(text=text, channel=channel, user=authUser)
+        message = Message(text=text.replace('񮦅','\n'), channel=channel, user=authUser)
         message.save()
 
         return CreateMessage(
