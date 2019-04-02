@@ -81,7 +81,7 @@ namespace :redis do
     desc "Start redis server"
     task :start do
         on roles(:web) do |h|
-            execute :sudo, "/etc/init.d/redis-server start"
+            execute :sudo, "sv restart redis"
         end
     end
 end
@@ -92,7 +92,6 @@ namespace :daphne do
     desc "Restart daphne server for websockets"
     task :restart do
         on roles(:web) do |h|
-            #execute :sudo, "chmod a+rw #{release_path}/api/djangochat/debug.log"
             execute :sudo, "sv restart daphne"
         end
     end

@@ -126,8 +126,6 @@ export function requestServerList() {
                 response = [];
             }
             dispatch(_updateServerList(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }
@@ -161,10 +159,9 @@ export function requestEditServer(serverId, name, image, userAddingRight) {
             }
             return res.json();
         }).then((data) => {
-            //TODO: 
             let serverUpdated = data.data.editServer.server;
             dispatch(_editServer(serverUpdated));
-        })
+        });
     }
 }
 

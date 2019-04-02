@@ -71,8 +71,6 @@ export function requestFriendList() {
                 friends = []
             }
             dispatch(_updateFriendList(friends));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }

@@ -1,17 +1,9 @@
-import {
-    baseWebsocketUrl
-} from '../config/config';
+import { baseWebsocketUrl } from '../config/config';
+import { toastr } from 'react-redux-toastr'
 
-import {
-    toastr
-} from 'react-redux-toastr'
-
-import {
-    requestFriendList
-} from "./FriendAction";
-import {
-    requestServerList
-} from "./ServerAction";
+import { requestFriendList } from "./FriendAction";
+import { requestServerList } from "./ServerAction";
+import { getAllUsers } from "./ContactAction";
 
 export function initWebSocket() {
     return (dispatch, getState) => {
@@ -26,7 +18,7 @@ export function initWebSocket() {
                     if (data.hasOwnProperty('message')) {
                         let message = data.message;
                         if (Number(message.channel_id) === Number(getState().channel.activeChannelId)) {
-                            ws.dispatchEvent(new CustomEvent("displayMessage", {detail:message}));
+                            ws.dispatchEvent(new CustomEvent("displayMessage", { detail: message }));
                         } else {
                             const messageType = message.direct_type;
                             if (messageType) {
@@ -40,9 +32,13 @@ export function initWebSocket() {
 
                         toastr.success(notification.title, notification.text);
                         if (notification.type === 'server')
-                            dispatch(requestServerList());
+                            dispatch(requestServerList()).catch(()=>{
+                                toastr.error("Error","Impossible to retrieve servers list")
+                            });
                         else if (notification.type === 'friend')
-                            dispatch(requestFriendList());
+                            dispatch(requestFriendList()).catch(()=>{
+                                toastr.error("Error","Impossible to retrieve friend list")
+                            });
                     } else if (data.hasOwnProperty('action')) {
                         let action=data.action;
                         if(action.type==='user_added')

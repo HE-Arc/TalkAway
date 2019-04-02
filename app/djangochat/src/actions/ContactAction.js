@@ -73,8 +73,6 @@ export function getAllUsers() {
                 users: resData.data.allUsers
             };
             dispatch(_getAllUsers(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }

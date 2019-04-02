@@ -243,22 +243,18 @@ class EditUser(graphene.Mutation):
     class Arguments:
         oldPassword = graphene.String(required=True)
         newPassword = graphene.String()
-        newPassword2 = graphene.String()
         newMail = graphene.String()
         image = graphene.String()
 
     @login_required
-    def mutate(self, info, oldPassword, newPassword="", newPassword2="", newMail="", image=""):
+    def mutate(self, info, oldPassword, newPassword="", newMail="", image=""):
 
         authUser = info.context.user
 
         if not authUser.check_password(oldPassword):
             raise Exception("Incorrect password")
 
-        if newPassword != "" and newPassword2 != "":
-            if newPassword != newPassword2:
-                raise Exception(
-                    "Mismatch between new password and confirmation")
+        if newPassword != "":
             authUser.set_password(newPassword)
 
         if newMail != "":

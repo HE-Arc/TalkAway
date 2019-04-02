@@ -81,15 +81,16 @@ export function requestRegister(email, username, password) {
     };
 }
 
-export function requestEditUser(email, newPassword2,newPassword, oldPassword,image) {
+export function requestEditUser(email, newPassword, oldPassword,image) {
     return (dispatch,getState)=>{
         const requestBody = {
             query: `
             mutation{
-                editUser(image:"${image}",newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}",newPassword2:"${newPassword2}"){
+                editUser(image:"${image}",newMail:"${email}",oldPassword:"${oldPassword}",newPassword:"${newPassword}"){
                     ok
                     user {
                         image
+                        id
                     }
                 }
             }
@@ -109,6 +110,10 @@ export function requestEditUser(email, newPassword2,newPassword, oldPassword,ima
             }
             return res.json();
         }).then(resData => {
+            if(resData.errors !== undefined){
+                throw new Error('Failed')
+            }
+            
             dispatch(_editProfile(resData.data.editUser.user))
             return resData.data.editUser.ok;
         });

@@ -67,6 +67,17 @@ const contactReducer = (state = {
                 }
             }
             break;
+        case "EDIT_PROFIL":
+            let myself = {};
+            myself[action.payload.id] = action.payload.image
+            state = {
+                ...state,
+                images: {
+                    ...state.images,
+                    ...myself
+                }
+            }
+            break;
         case "ALL_USERS":
             state = {
                 ...state,

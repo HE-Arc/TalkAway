@@ -89,8 +89,6 @@ export function requestMessageList(channelId) {
                 response = [];
             }
             dispatch(_updateMessageList(response));
-        }).catch(err => {
-            console.log(err);
         });
     }
 }

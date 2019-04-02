@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr';
 
 import MessageComponent from './Message/Message';
 import ChatInput from './ChatInput/ChatInput';
 import './MiddlePane.css';
 
 import { addMessage, requestSendMessage } from "../../../actions/MessageAction";
-import { requestFriendList } from "../../../actions/FriendAction";
 import { connectChannel } from "../../../actions/WebSocketAction";
-import { requestServerList } from "../../../actions/ServerAction";
 
 class MiddlePane extends Component {
 
@@ -120,8 +119,7 @@ class MiddlePane extends Component {
                     messageSent: true
                 });
             }).catch((err) => {
-                console.log("Error while sending your message :(");
-                console.log(err);
+                toastr.error("Error", "Impossible to send yout message :'(")
             });
     }
 
@@ -190,4 +188,4 @@ const mapsStateToProps = (state) => {
     }
 }
 
-export default connect(mapsStateToProps, { addMessage, requestSendMessage, connectChannel, requestServerList, requestFriendList })(MiddlePane); 
+export default connect(mapsStateToProps, { addMessage, requestSendMessage, connectChannel })(MiddlePane); 
