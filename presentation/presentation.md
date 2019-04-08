@@ -36,15 +36,17 @@ TODO Let's go image
 </aside>
 
 ## GraphQl
-
-
+![GraphQL structure](./images/graphql_schema.png)
 
 <aside class="notes">
-Bastien
+Bastien,
+
+Présenter graphql avec ses avantages / inconvénients
 </aside>
 
-## Django Channels
 
+## Django Channels
+TODO:
 
 
 <aside class="notes">
@@ -52,13 +54,14 @@ Sergiy
 </aside>
 
 ## React
-
+TODO:
 
 <aside class="notes">
 Etienne ?
 </aside>
 
 ## Redux
+TODO:
 
 <aside class="notes">
 Bastien
@@ -88,3 +91,14 @@ Bastien
 </aside>
 
 ## Questions ?
+![Questions](./images/questions.jpg)
+
+-------
+<!-- Create verticals slides -->
+### GraphQL
+asdasd
+
+### sub 2
+asdasd
+
+-------

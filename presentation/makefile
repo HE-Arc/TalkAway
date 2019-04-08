@@ -1,7 +1,7 @@
 all: compile-scss generate
 
 generate:
-	pandoc -t revealjs -s -o presentation.html presentation.md  -V revealjs-url=https://revealjs.com -V css=slides.css
+	pandoc -t revealjs -s -o presentation.html presentation.md --section-divs -V revealjs-url=https://revealjs.com -V css=slides.css
 
 	# pandoc -t revealjs -s -o presentation-beige.html presentation.md  -V revealjs-url=./reveal.js -V css=slides.css -V theme=beige
 	# pandoc -t revealjs -s -o presentation-black.html presentation.md  -V revealjs-url=./reveal.js -V css=slides.css -V theme=black
