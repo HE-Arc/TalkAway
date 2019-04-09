@@ -1,4 +1,4 @@
-% TalkAway
+% ­&nbsp;&nbsp;&nbsp;&nbsp;
 % Sergiy Goloviatinski, Etienne Hüsler & Bastien Wermeille
 % 10 Avril 2019
 
@@ -70,7 +70,7 @@ Bastien
 ## Conclusion
 
 * Fonctionnel
-* ...
+* Difficulté principale: jongler avec/intégrer pleins de nouvelles technos
 
 <aside class="notes">
 
