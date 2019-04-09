@@ -100,6 +100,10 @@ body {
   color: #69abc3;
 }
 
+.reveal .progress {
+  height: 1%;
+}
+
 h2 {
   color: #516e80 !important;
   vertical-align: top !important;
