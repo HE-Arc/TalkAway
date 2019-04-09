@@ -95,12 +95,27 @@ Etienne
 
 ## React (4)
 
-## Redux
-TODO:
+## Redux (1)
+<br/>
+<br/>
+<br/>
 
-<aside class="notes">
-Bastien
-</aside>
+* Bibliothèque Javascript libre
+* Utilisée principalement avec React et Angular
+* Petite bibliothèque, simple d'utilisation
+* Conteneur d'état de l'application
+
+## Redux (2)
+
+## Redux (3)
+<br/>
+
+* (+) Etat "immuable"
+* (+) Modifications temporelles (undo, redo ...)
+* (+) Très léger (~ 2 ko) sans nos classes
+* (-) Pas intuitif pour des habitués de la POO
+* (-) Beaucoup de code nécessaire
+* (-) Références compliquées (actions hors composants)
 
 ## Conclusion
 <br/>

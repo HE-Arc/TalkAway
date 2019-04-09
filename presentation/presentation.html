@@ -9,12 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+  <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="slides.css"/>
   <!-- Printing and PDF exports -->
@@ -33,7 +28,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide">
+<section>
   <h1 class="title">­</h1>
   <p class="author">Sergiy Goloviatinski, Etienne Hüsler &amp; Bastien Wermeille</p>
   <p class="date">10 Avril 2019</p>
@@ -54,7 +49,7 @@
 </section>
 <section id="le-projet" class="slide level2">
 <h2>Le projet</h2>
-<p><br/> <br/> <br/> <br/> Création d’un chat, inspiré de Discord</p>
+<p><br/> <br/> <br/> <br/> Création d'un chat, inspiré de Discord</p>
 </section>
 <section id="buts" class="slide level2">
 <h2>Buts</h2>
@@ -79,7 +74,7 @@
 <section id="graphql" class="slide level2">
 <h2>GraphQl</h2>
 <figure>
-<img data-src="./images/graphql_schema.png" alt="GraphQL structure" /><figcaption>GraphQL structure</figcaption>
+<img src="./images/graphql_schema.png" alt="GraphQL structure" /><figcaption>GraphQL structure</figcaption>
 </figure>
 <aside class="notes">
 <p>Bastien,</p>
@@ -88,7 +83,9 @@ Présenter graphql avec ses avantages / inconvénients
 </section>
 <section id="django-channels-1" class="slide level2">
 <h2>Django Channels (1)</h2>
-<p><img data-src="./images/channels_schema.png" /></p>
+<figure>
+<img src="./images/channels_schema.png" />
+</figure>
 <aside class="notes">
 Sergiy Dire que React est buildé côté serveur et servi aux clients à la première connexion
 </aside>
@@ -98,9 +95,9 @@ Sergiy Dire que React est buildé côté serveur et servi aux clients à la prem
 <p><br/></p>
 <ul>
 <li>Authentification en passant JWT par cookie à la connexion WS</li>
-<li>Un “consumer” côté backend par utilisateur connecté
+<li>Un &quot;consumer&quot; côté backend par utilisateur connecté
 <ul>
-<li>tous les consumers dans le même “groupe”, mais filtrage côté backend avant d’envoyer au client</li>
+<li>tous les consumers dans le même &quot;groupe&quot;, mais filtrage côté backend avant d'envoyer au client</li>
 </ul></li>
 <li>Message inséré dans DB avec GraphQL, ensuite envoyé par WS</li>
 <li>WS pour mettre à jour GUI</li>
@@ -113,9 +110,9 @@ Sergiy Dire que React est buildé côté serveur et servi aux clients à la prem
 <ul>
 <li>Bibliothèque Javascript libre</li>
 <li>Developpée par Facebook et une communauté de développeurs indépendants</li>
-<li>Faciliter la création d’applications web monopage</li>
-<li>Composants générant une partie ou la totalité d’une page web</li>
-<li>Utilisée par Netflix, WhatsApp, Yahoo …</li>
+<li>Faciliter la création d'applications web monopage</li>
+<li>Composants générant une partie ou la totalité d'une page web</li>
+<li>Utilisée par Netflix, WhatsApp, Yahoo ...</li>
 <li>Vue du modèle MVC</li>
 </ul>
 <aside class="notes">
@@ -131,12 +128,30 @@ Etienne
 <section id="react-4" class="slide level2">
 <h2>React (4)</h2>
 </section>
-<section id="redux" class="slide level2">
-<h2>Redux</h2>
-<p>TODO:</p>
-<aside class="notes">
-Bastien
-</aside>
+<section id="redux-1" class="slide level2">
+<h2>Redux (1)</h2>
+<p><br/> <br/> <br/></p>
+<ul>
+<li>Bibliothèque Javascript libre</li>
+<li>Utilisée principalement avec React et Angular</li>
+<li>Petite bibliothèque, simple d'utilisation</li>
+<li>Conteneur d'état de l'application</li>
+</ul>
+</section>
+<section id="redux-2" class="slide level2">
+<h2>Redux (2)</h2>
+</section>
+<section id="redux-3" class="slide level2">
+<h2>Redux (3)</h2>
+<p><br/></p>
+<ul>
+<li>(+) Etat &quot;immuable&quot;</li>
+<li>(+) Modifications temporelles (undo, redo ...)</li>
+<li>(+) Très léger (~ 2 ko) sans nos classes</li>
+<li>(-) Pas intuitif pour des habitués de la POO</li>
+<li>(-) Beaucoup de code nécessaire</li>
+<li>(-) Références compliquées (actions hors composants)</li>
+</ul>
 </section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
@@ -166,7 +181,9 @@ Bastien
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions ?</h2>
-<p><img data-src="./images/questions.jpg" /></p>
+<figure>
+<img src="./images/questions.jpg" />
+</figure>
 </section>
     </div>
   </div>
@@ -179,14 +196,12 @@ Bastien
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        // Push each slide change to the browser history
-        history: true,
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+              { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
