@@ -46,8 +46,18 @@ Apprendre de nouvelles technologies
 
 </aside>
 
-## GraphQl
-![GraphQL structure](./images/graphql_schema.png)
+## GraphQl (1)
+
+- Query language
+- API
+- Toutes les technologies
+- Query / Mutations / Subscriptions
+
+![](./images/graphql_1.png)
+
+## GraphQl (2)
+
+![](./images/graphql_schema.png)
 
 <aside class="notes">
 Bastien,
