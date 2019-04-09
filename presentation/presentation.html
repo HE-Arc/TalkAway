@@ -85,12 +85,22 @@
 Présenter graphql avec ses avantages / inconvénients
 </aside>
 </section>
-<section id="django-channels" class="slide level2">
-<h2>Django Channels</h2>
+<section id="django-channels-1" class="slide level2">
+<h2>Django Channels (1)</h2>
 <p><img data-src="./images/channels_schema.png" /></p>
 <aside class="notes">
-Sergiy Dire que React est buildé côté serveur et servi aux clients à la première connexion Dire qu’il y a un “consumer” par client connecté Dire que les messages sont d’abord inséré dans db avec graphql et qu’ensuite ws est utilisé pour envoyer message à ceux qui ont le channel ouvert Utilisation des ws pour notifier de changement de la GUI sans devoir recharger page Utilisation des ws pour afficher toastr (notifications)
+Sergiy Dire que React est buildé côté serveur et servi aux clients à la première connexion
 </aside>
+</section>
+<section id="django-channels-2" class="slide level2">
+<h2>Django Channels (2)</h2>
+<p><br/> <br/></p>
+<ul>
+<li>Un “consumer” côté backend par client connecté</li>
+<li>Message inséré dans DB avec GraphQL, ensuite envoyé par WS</li>
+<li>WS pour notifier changement GUI</li>
+<li>WS pour notifications avec toastr</li>
+</ul>
 </section>
 <section id="react" class="slide level2">
 <h2>React</h2>
