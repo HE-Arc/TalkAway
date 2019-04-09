@@ -89,9 +89,7 @@ Etienne
 
 ## React (2)
 
-<aside class="notes">
-Etienne
-</aside>
+## React (3)
 
 ## Redux
 TODO:
