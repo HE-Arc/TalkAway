@@ -46,7 +46,7 @@ Présenter graphql avec ses avantages / inconvénients
 
 
 ## Django Channels
-TODO:
+![](./images/channels_schema.png)
 
 
 <aside class="notes">
