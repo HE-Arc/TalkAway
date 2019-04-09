@@ -3,6 +3,7 @@
 % 10 Avril 2019
 
 ## Sommaire
+<br/>
 
 * Projet
 * Buts
@@ -13,14 +14,19 @@
 * Redux
 
 ## Le projet
-Création d'un chat
+<br/>
+<br/>
+<br/>
+<br/>
+Création d'un chat, inspiré de Discord
 
 ## Buts
+<br/>
 Apprendre de nouvelles technologies
 
 * Django
 * Django channels
-* GraphQl
+* GraphQL
 * React
 * Redux
 
@@ -29,7 +35,11 @@ Apprendre de nouvelles technologies
 </aside>
 
 ## Démonstration
-TODO Let's go image
+<br/>
+<br/>
+<br/>
+<br/>
+[https://djangochat.srvz-webapp.he-arc.ch](https://djangochat.srvz-webapp.he-arc.ch)
 
 <aside class="notes">
 
@@ -51,6 +61,7 @@ Présenter graphql avec ses avantages / inconvénients
 
 <aside class="notes">
 Sergiy
+Dire que React est buildé côté serveur et servi aux clients à la première connexion
 </aside>
 
 ## React
@@ -68,6 +79,9 @@ Bastien
 </aside>
 
 ## Conclusion
+<br/>
+<br/>
+<br/>
 
 * Fonctionnel
 * Difficulté principale: jongler avec/intégrer pleins de nouvelles technos
@@ -77,11 +91,13 @@ Bastien
 </aside>
 
 ## Améliorations
+<br/>
 
+* Effacer messages/channels/serveur/amis
 * Interface mobile
 * Gestion et mise en place des droits
 * Bannir
-* Modification du système d'ami (accepter invitation)
+* Accepter invitation ami
 * Notifications avec bulles quand nouveau message sur autre channel/serveur
 * Réactions
 * ...
