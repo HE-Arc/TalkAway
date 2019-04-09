@@ -122,9 +122,9 @@ Etienne
 <br/>
 <br/>
 
-* Fonctionnel
-* Difficulté principale: jongler avec/intégrer pleins de nouvelles technos
-* Pas pu implémenter tout ce qui était prévu par manque de temps
+* L'application est fonctionelle
+* Difficulté principale: intégrer et combiner une multitude de nouvelles technologies
+* Pas pu implémenter tout ce qui était prévu par manque de temps et à cause de la complexité du projet
 
 <aside class="notes">
 
