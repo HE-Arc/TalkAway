@@ -29,6 +29,7 @@ Apprendre de nouvelles technologies
 * GraphQL
 * React
 * Redux
+* JWT
 
 <aside class="notes">
 
@@ -66,11 +67,12 @@ Dire que React est buildé côté serveur et servi aux clients à la première c
 
 ## Django Channels (2)
 <br/>
-<br/>
 
-- Un "consumer" côté backend par client connecté
+- Authentification en passant JWT par cookie à la connexion WS
+- Un "consumer" côté backend par utilisateur connecté
+    - tous les consumers dans le même "groupe", mais filtrage côté backend avant d'envoyer au client
 - Message inséré dans DB avec GraphQL, ensuite envoyé par WS
-- WS pour notifier changement GUI
+- WS pour mettre à jour GUI
 - WS pour notifications avec toastr
 
 ## React (1)
@@ -105,6 +107,7 @@ Bastien
 
 * Fonctionnel
 * Difficulté principale: jongler avec/intégrer pleins de nouvelles technos
+* Pas pu implémenter tout ce qui était prévu par manque de temps
 
 <aside class="notes">
 
@@ -120,7 +123,6 @@ Bastien
 * Accepter invitation ami
 * Notifications avec bulles quand nouveau message sur autre channel/serveur
 * Réactions
-* ...
 
 <aside class="notes">
 
