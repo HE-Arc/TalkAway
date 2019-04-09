@@ -9,7 +9,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="https://revealjs.com/css/theme/black.css" id="theme">
   <link rel="stylesheet" href="slides.css"/>
   <!-- Printing and PDF exports -->
@@ -28,10 +33,10 @@
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">TalkAway</h1>
   <p class="author">Sergiy Goloviatinski, Etienne Hüsler &amp; Bastien Wermeille</p>
-  <p class="date">25 Janvier 2019</p>
+  <p class="date">10 Avril 2019</p>
 </section>
 
 <section id="sommaire" class="slide level2">
@@ -48,7 +53,7 @@
 </section>
 <section id="le-projet" class="slide level2">
 <h2>Le projet</h2>
-<p>Création d'un chat</p>
+<p>Création d’un chat</p>
 </section>
 <section id="buts" class="slide level2">
 <h2>Buts</h2>
@@ -65,22 +70,19 @@
 </section>
 <section id="démonstration" class="slide level2">
 <h2>Démonstration</h2>
-<p>TODO Let's go image</p>
+<p>TODO Let’s go image</p>
 <aside class="notes">
 </aside>
 </section>
 <section id="graphql" class="slide level2">
 <h2>GraphQl</h2>
 <figure>
-<img src="./images/graphql_schema.png" alt="GraphQL structure" /><figcaption>GraphQL structure</figcaption>
+<img data-src="./images/graphql_schema.png" alt="GraphQL structure" /><figcaption>GraphQL structure</figcaption>
 </figure>
 <aside class="notes">
-Bastien
+<p>Bastien,</p>
+Présenter graphql avec ses avantages / inconvénients
 </aside>
-</section>
-<section id="graphql-1" class="slide level2">
-<h2>GraphQl</h2>
-<p>Exemple concret</p>
 </section>
 <section id="django-channels" class="slide level2">
 <h2>Django Channels</h2>
@@ -107,7 +109,7 @@ Bastien
 <h2>Conclusion</h2>
 <ul>
 <li>Fonctionnel</li>
-<li>...</li>
+<li>…</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -118,10 +120,10 @@ Bastien
 <li>Interface mobile</li>
 <li>Gestion et mise en place des droits</li>
 <li>Bannir</li>
-<li>Modification du système d'ami</li>
+<li>Modification du système d’ami</li>
 <li>Notifications pour channels avec messages</li>
 <li>Réactions</li>
-<li>...</li>
+<li>…</li>
 </ul>
 <aside class="notes">
 </aside>
@@ -129,21 +131,8 @@ Bastien
 <section id="questions" class="slide level2">
 <h2>Questions ?</h2>
 <figure>
-<img src="./images/questions.jpg" alt="Questions" /><figcaption>Questions</figcaption>
+<img data-src="./images/questions.jpg" alt="Questions" /><figcaption>Questions</figcaption>
 </figure>
-<table style="width:10%;">
-<colgroup>
-<col style="width: 9%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><!-- Create verticals slides --> ### GraphQL asdasd</td>
-</tr>
-<tr class="even">
-<td>### sub 2 asdasd</td>
-</tr>
-</tbody>
-</table>
 </section>
     </div>
   </div>
@@ -156,14 +145,26 @@ Bastien
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
 
         // Optional reveal.js plugins
         dependencies: [
           { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-              { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
+    <script>
+      // Doc: https://github.com/hakimel/reveal.js#configuration
+      Reveal.configure({
+          slideNumber: 'c/t',
+          showSlideNumber: 'all',
+          history: 'false',
+          controls: false,
+          progress: true,
+      });
+  </script>
     </body>
 </html>

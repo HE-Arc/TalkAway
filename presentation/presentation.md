@@ -1,6 +1,6 @@
 % TalkAway
 % Sergiy Goloviatinski, Etienne Hüsler & Bastien Wermeille
-% 25 Janvier 2019
+% 10 Avril 2019
 
 ## Sommaire
 
@@ -92,13 +92,3 @@ Bastien
 
 ## Questions ?
 ![Questions](./images/questions.jpg)
-
--------
-<!-- Create verticals slides -->
-### GraphQL
-asdasd
-
-### sub 2
-asdasd
-
--------

@@ -1,13 +1,18 @@
 
 // Body
-$body-bg: #fffdfa;
+$body-bg: #dad5d1;
+$slide-bg:#ffffff;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+$light-blue:#69abc3;
+
 // Colors
+$fake-black:#281a1a;
+$title-blue:#516e80;
 $blue: #3490dc;
 $indigo: #6574cd;
 $cadet_blue: #54A4A6;
@@ -34,6 +39,3 @@ $black: #000;
 
 // Angles
 $title_angle: 10deg;
-
-//Yes and no button width percentage
-$yesno_button_width:8rem;

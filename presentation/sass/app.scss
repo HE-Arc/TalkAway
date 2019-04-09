@@ -1,3 +1,394 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+
+.reveal .slide-number {
+    font-size: 2rem;
+}
+
+.resize-img img {
+    width: 90%;
+    height: 90%;
+}
+
+.resize-img2 img {
+    width: 70% !important;
+    height: 70% !important;
+}
+
+.column {
+    float: left !important;
+    width: 33% !important;
+}
+
+.column2 {
+    float: left !important;
+    width: 50% !important;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+@font-face {
+    font-family: MonaFree;
+    src: url("mona_free.otf") format("opentype");
+}
 
 // Variables
 @import 'variables';
+
+* {
+    box-sizing: border-box;
+}
+
+/* Title */
+.title {
+    color: $title-blue !important;
+    font-size: 4.80rem !important;
+    text-transform: none !important;
+    font-family: 'Helvetica' !important;
+    margin-top: 2% !important;
+    margin-bottom: 2% !important;
+    color: $title-blue !important;
+}
+
+.fragment.current-visible.visible:not(.current-fragment) {
+    display: none;
+    height: 0px;
+    line-height: 0px;
+    font-size: 0px;
+}
+
+
+/* Background */
+
+body {
+    background: $body-bg;
+    background: -moz-radial-gradient(center, circle cover, $slide-bg 0%, $body-bg 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $slide-bg), color-stop(100%, $body-bg));
+    background: -webkit-radial-gradient(center, circle cover, $slide-bg 0%, $body-bg 100%);
+    background: -o-radial-gradient(center, circle cover, $slide-bg 0%, $body-bg 100%);
+    background: -ms-radial-gradient(center, circle cover, $slide-bg 0%, $body-bg 100%);
+    background: radial-gradient(center, circle cover, $slide-bg 0%, $body-bg 100%);
+    background-color: $body-bg;
+}
+
+
+.reveal p {
+    font-family: 'Helvetica' !important;
+}
+
+.reveal ul {
+    font-family: 'Helvetica' !important;
+}
+
+.slide {
+    color: $fake-black;
+}
+
+
+.author {
+    color: $title-blue !important;
+    font-size: 2.5rem !important;
+}
+
+.date {
+    color: $title-blue !important;
+    font-size: 2rem !important;
+}
+
+
+/* reveal */
+.reveal h2 {
+    color: $title-blue;
+}
+
+.reveal .progress,
+.reveal .controls {
+    color: $light-blue;
+}
+
+h2 {
+    color: $title-blue !important;
+    vertical-align: top !important;
+
+    text-transform: none !important;
+    font-family: 'Helvetica' !important;
+}
+
+section {
+    height: 90%;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    background-color: $slide-bg;
+    border-radius: 10px;
+    font-size: 2rem !important;
+}
+
+
+#title-slide {
+    background-position: 50% 95%;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-image: url(logo.png);
+}
+
+.left {
+    left: -8.33%;
+    text-align: left;
+    float: left;
+    width: 50%;
+    z-index: -10;
+}
+
+.right {
+    left: 31.25%;
+    top: 75px;
+    float: right;
+    text-align: right;
+    z-index: -10;
+    width: 50%;
+}
+
+.left2 {
+    left: -8.33%;
+    text-align: left;
+    float: left;
+    width: 70%;
+    z-index: -10;
+}
+
+.right2 {
+    left: 31.25%;
+    top: 75px;
+    float: right;
+    text-align: right;
+    z-index: -10;
+    width: 30%;
+}
+
+.left3 {
+    left: -8.33%;
+    text-align: left;
+    float: left;
+    width: 45%;
+    z-index: -10;
+}
+
+.right3 {
+    left: 31.25%;
+    top: 75px;
+    float: right;
+    text-align: right;
+    z-index: -10;
+    width: 55%;
+}
+
+
+.left4 {
+    left: -8.33%;
+    text-align: left;
+    float: left;
+    width: 60%;
+    z-index: -10;
+}
+
+.right4 {
+    left: 31.25%;
+    top: 75px;
+    float: right;
+    text-align: right;
+    z-index: -10;
+    width: 40%;
+}
+
+figcaption {
+    font-size: 1rem !important;
+}
+
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+    font-weight: bold;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em;
+}
+
+.reveal ol {
+    list-style-type: decimal;
+}
+
+.reveal ul {
+    list-style-type: disc;
+}
+
+.reveal ul ul {
+    list-style-type: square;
+}
+
+.reveal ul ul ul {
+    list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    display: block;
+    margin-left: 40px;
+}
+
+.reveal dt {
+    font-weight: bold;
+}
+
+.reveal dd {
+    margin-left: 40px;
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 5px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+    display: inline-block;
+}
+
+.reveal q {
+    font-style: italic;
+}
+
+.reveal pre {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 0.55em;
+    font-family: monospace;
+    line-height: 1.2em;
+    word-wrap: break-word;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.reveal code {
+    font-family: monospace;
+    text-transform: none;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    max-height: 400px;
+    word-wrap: normal;
+}
+
+.reveal table {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.reveal table th {
+    font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+    text-align: left;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 1px solid;
+}
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+    text-align: center;
+}
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+    text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.reveal sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.reveal sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.reveal small {
+    display: inline-block;
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+}
+
+.reveal small * {
+    vertical-align: top;
+}
+
+.reveal p {
+    max-width: 95%;
+    max-height: 95%;
+    margin: 20px 0;
+    line-height: 1.3;
+}
+
+
+#doom---présentation-du-scénario,
+#q-learning,
+#exploits-du-reinforcement-learning,
+#flappy-bird---résultats,
+#flappy-bird---présentation-du-scénario,
+#doom---résultats,
+#quest-ce-que-le-reinforcement-learning,
+#déroulement-du-projet {
+    top: 35px !important;
+    display: block !important;
+}
+
+.align-left {
+    text-align: left !important;
+}
