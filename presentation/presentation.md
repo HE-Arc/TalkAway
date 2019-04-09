@@ -62,6 +62,10 @@ Présenter graphql avec ses avantages / inconvénients
 <aside class="notes">
 Sergiy
 Dire que React est buildé côté serveur et servi aux clients à la première connexion
+Dire qu'il y a un "consumer" par client connecté
+Dire que les messages sont d'abord inséré dans db avec graphql et qu'ensuite ws est utilisé pour envoyer message à ceux qui ont le channel ouvert
+Utilisation des ws pour notifier de changement de la GUI sans devoir recharger page
+Utilisation des ws pour afficher toastr (notifications)
 </aside>
 
 ## React
