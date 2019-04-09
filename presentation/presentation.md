@@ -73,11 +73,24 @@ Dire que React est buildé côté serveur et servi aux clients à la première c
 - WS pour notifier changement GUI
 - WS pour notifications avec toastr
 
-## React
-TODO:
+## React (1)
+<br/>
+
+* Bibliothèque Javascript libre
+* Developpée par Facebook et une communauté de développeurs indépendants
+* Faciliter la création d'applications web monopage
+* Composants générant une partie ou la totalité d'une page web
+* Utilisée par Netflix, WhatsApp, Yahoo ...
+* Vue du modèle MVC
 
 <aside class="notes">
-Etienne ?
+Etienne
+</aside>
+
+## React (2)
+
+<aside class="notes">
+Etienne
 </aside>
 
 ## Redux
