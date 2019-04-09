@@ -81,8 +81,8 @@ Bastien
 * Interface mobile
 * Gestion et mise en place des droits
 * Bannir
-* Modification du système d'ami
-* Notifications pour channels avec messages
+* Modification du système d'ami (accepter invitation)
+* Notifications avec bulles quand nouveau message sur autre channel/serveur
 * Réactions
 * ...
 
@@ -91,4 +91,4 @@ Bastien
 </aside>
 
 ## Questions ?
-![Questions](./images/questions.jpg)
+![](./images/questions.jpg)
